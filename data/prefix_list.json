@@ -1,0 +1,3149 @@
+[
+    {
+        "jurisdiction": [
+            {
+                "country_code": "PL",
+                "country": "Poland"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Tax Identification Number",
+        "structure": null,
+        "public-database": null,
+        "code": "PL-NIP",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Every business entry in Poland is assigned an ID in 3 different registries: business, court, and tax. This is the tax register.",
+        "url": "https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu, https://wyszukiwarkaregon.stat.gov.pl/appBIR/index.aspx",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "RS",
+                "country": "Serbia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Serbian Business Registrations Agency (APR)",
+        "structure": null,
+        "public-database": null,
+        "code": "RS-APR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The SBRA runs business registers as single, centralized, public electronic databases.",
+        "url": "http://www.apr.gov.rs/eng/Home.aspx",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "MM",
+                "country": "Myanmar"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Ministry of Home Affairs - Central Committee for the Registration and Supervision of Organisations",
+        "structure": null,
+        "public-database": null,
+        "code": "MM-MHA",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The MHA assigns a registration number to each NGO - this number is time limited, for example 4 years, after which the registration is reviewed.",
+        "url": "No url for the ministry (as at 2/10/2013)",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "BD",
+                "country": "Bangladesh"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Bangladesh NGO Affairs Bureau",
+        "structure": null,
+        "public-database": null,
+        "code": "BD-NAB",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://114.129.9.31/welcome/ngo_profile",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "UA",
+                "country": "Ukraine"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "United State Register, Ukraine",
+        "structure": null,
+        "public-database": null,
+        "code": "UA-EDR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://irc.gov.ua/ua/Poshuk-v-YeDR.html",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "CO",
+                "country": "Colombia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Bogota Chamber of Commerce",
+        "structure": null,
+        "public-database": null,
+        "code": "CO-CCB",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The Bogota Chamber of Commerce is a private, non-for-profit organization whose goal is to foster a sustainable Bogota-Region in the long term, by promoting its residents' prosperity, through services which enhance and strengthen the enterprise capabilities present in the region, and which improve the business environment with an impact over public policies.",
+        "url": "http://www.ccb.org.co/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "The Charity Commission for Northern Ireland",
+        "structure": null,
+        "public-database": null,
+        "code": "GB-NIC",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.charitycommissionni.org.uk/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "AU",
+                "country": "Australia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Australian Charities and Not-for-profits Commission",
+        "structure": null,
+        "public-database": null,
+        "code": "AU-ACNC",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.acnc.gov.au/ACNC/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "KE",
+                "country": "Kenya"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Registar of Companies",
+        "structure": null,
+        "public-database": null,
+        "code": "KE-RCO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.attorney-general.go.ke/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": "Secondary",
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "UK Government Departments, Agencies & Public Bodies",
+        "structure": [
+            {
+                "name": "Government Agency",
+                "subtype_of": null
+            }
+        ],
+        "public-database": null,
+        "code": "GB-GOVUK",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Use the final segment of the url (below /organisations) as the \"registration number\", converting all \"-\" to \"_\". Keep \"registration number\" portion all lowercase.",
+        "url": "https://www.gov.uk/government/organisations",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": "Yes",
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "CN",
+                "country": "China"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "State Administration for Industry and Commerce (SAIC)",
+        "structure": null,
+        "public-database": null,
+        "code": "CN-SAIC",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The database is only available in Chinese language",
+        "url": "http://gsxt.saic.gov.cn/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ID",
+                "country": "Indonesia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Ministry of Foreign affairs/ Kementerian Luar Negeri",
+        "structure": null,
+        "public-database": null,
+        "code": "ID-KLN",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "International NGO registration is done through Ministry of Foreign affairs/ Kementerian Luar Negeri",
+        "url": "http://www.kemlu.go.id/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GG",
+                "country": "Guernsey"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "The Guernsey Registry at the Department of Commerce and Employment",
+        "structure": null,
+        "public-database": null,
+        "code": "GG-RCE",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.guernseyregistry.com/charities",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": "Requests for data can be made to the UK Register of Learning Providers by e-mail.",
+        "source": null,
+        "example_identifiers": "10000346, 10010014",
+        "languages": null,
+        "register_type": "Secondary",
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": [
+            {
+                "name": "Education"
+            }
+        ],
+        "license_details": "Requests for data must state the intended re-use. ",
+        "name": "UK Register of Learning Providers",
+        "structure": null,
+        "public-database": null,
+        "code": "GB-UKPRN",
+        "subnational": null,
+        "dataset_features": [
+            "Registered address",
+            "Website",
+            "E-mail address"
+        ],
+        "opencorporates": null,
+        "description": "A UKPRN is a unique number allocated to a provider on successful registration on the UK Register of Learning Providers. ",
+        "url": "https://www.ukrlp.co.uk/",
+        "license_status": "Closed License",
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": "No",
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ZM",
+                "country": "Zambia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Non Governmental Organisation Registration Board",
+        "structure": null,
+        "public-database": null,
+        "code": "ZM-NRB",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": null,
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "IE",
+                "country": "Ireland"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Irish CompaniesRegistration Office",
+        "structure": null,
+        "public-database": null,
+        "code": "IE-CRO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.cro.ie/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "FR",
+                "country": "France"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Registre de Commerce et des Societies /Trade and Companies Register - Commercial Court Registry",
+        "structure": null,
+        "public-database": null,
+        "code": "FR-RCS",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.infogreffe.fr",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "MW",
+                "country": "Malawi"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Malawi Revenue Authority",
+        "structure": null,
+        "public-database": null,
+        "code": "MW-MRA",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.mra.mw/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ZM",
+                "country": "Zambia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Patents and Companies Registration Agency",
+        "structure": null,
+        "public-database": null,
+        "code": "ZM-PCR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.pacra.org.zm/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ZW",
+                "country": "Zimbabwe"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Private Voluntary Organisations Council",
+        "structure": null,
+        "public-database": null,
+        "code": "ZW-PVO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": null,
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "NL",
+                "country": "Netherlands"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Kamer van Koophandel",
+        "structure": null,
+        "public-database": null,
+        "code": "NL-KVK",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.kvk.nl/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "PL",
+                "country": "Poland"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "National Official Business Register",
+        "structure": null,
+        "public-database": null,
+        "code": "PL-REGON",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Every business entry in Poland is assigned an ID in 3 different registries: business, court, and tax. This is the business register.",
+        "url": "http://www.stat.gov.pl/regon/, http://bip.stat.gov.pl/en/regon/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "CO",
+                "country": "Colombia"
+            }
+        ],
+        "online_access_details": "It is possible to search the register online",
+        "source": "Primary research",
+        "example_identifiers": "900876653-3, 900620562-2",
+        "languages": "Spanish",
+        "register_type": "Secondary",
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": "No license is given",
+        "name": "Single Business Register/ Al Registro \u00danico Empresarial",
+        "structure": [
+            {
+                "name": "Company",
+                "subtype_of": null
+            },
+            {
+                "name": "Charity",
+                "subtype_of": null
+            },
+            {
+                "name": "Sole trader",
+                "subtype_of": [
+                    "reciN6k5BN1PawHxI"
+                ]
+            }
+        ],
+        "public-database": "http://www.rues.org.co/RUES_Web/",
+        "code": "CO-RUE",
+        "subnational": null,
+        "dataset_features": [
+            "Industry classifications",
+            "Date of registration",
+            "Number of employees",
+            "Legal representatives"
+        ],
+        "opencorporates": null,
+        "description": "The Single Business Registration (RUE) was created by Article 11 of Law 590 of 2000, and integrates the Commercial Register and the National Register of Bidders, and will incorporate and integrate the following records:\n\n* Registration of Non-Profit Institutions\n* Public National Register of vendors Games of chance\n* Public Registry of citizen oversight\n* National Tourism Registry\n* Register of Foreign Entities of Private Law Non-Profit\n* Registration Solidarity Economy\n\nThe Single Business Registration and Social (RUES) is administered by the Chambers of Commerce. ",
+        "url": "http://www.rues.org.co/RUES_Web/",
+        "license_status": "No License",
+        "deprecated": null,
+        "confirmed": null,
+        "data_access_properties": null,
+        "available_online": "Yes",
+        "guidance_on_locating_ids": "Search through the online interface.",
+        "last_updated": "2016-09-02"
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "PK",
+                "country": "Pakistan"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Pakistan Centre for Philanthropy",
+        "structure": null,
+        "public-database": null,
+        "code": "PK-PCP",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The PCP Certification Programme seeks to bring transparency, accountability and good governance in the nonprofit sector in Pakistan. The first initiative of its kind in South Asia; it involves the evaluation of a nonprofit organisation on standardised parameters of internal governance, financial management and programme delivery.",
+        "url": "https://drive.google.com/file/d/0B67B7u-xqLazZFhHTkUtUVVRWXc/view",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Scottish Charity Register",
+        "structure": null,
+        "public-database": null,
+        "code": "GB-SC",
+        "subnational": [
+            {
+                "country": [
+                    "recbO0TnMgfxNbDxe"
+                ],
+                "region_code": "GB-SCT",
+                "region_name": "Scotland"
+            }
+        ],
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.oscr.org.uk/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ET",
+                "country": "Ethiopia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Ministry of Foreign Affairs",
+        "structure": null,
+        "public-database": null,
+        "code": "ET-MFA",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Charities are registered but no openly searchable database yet available.",
+        "url": "http://www.mfa.gov.et/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Companies House",
+        "structure": null,
+        "public-database": null,
+        "code": "GB-COH",
+        "subnational": null,
+        "dataset_features": [
+            "Registered address",
+            "Directors / Trustees / Governors"
+        ],
+        "opencorporates": true,
+        "description": null,
+        "url": "http://www.companieshouse.gov.uk/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "BE",
+                "country": "Belgium"
+            },
+            {
+                "country_code": "BG",
+                "country": "Bulgaria"
+            },
+            {
+                "country_code": "CZ",
+                "country": "Czech Republic"
+            },
+            {
+                "country_code": "DE",
+                "country": "Germany"
+            },
+            {
+                "country_code": "EE",
+                "country": "Estonia"
+            },
+            {
+                "country_code": "IE",
+                "country": "Ireland"
+            },
+            {
+                "country_code": "GR",
+                "country": "Greece"
+            },
+            {
+                "country_code": "ES",
+                "country": "Spain"
+            },
+            {
+                "country_code": "FR",
+                "country": "France"
+            },
+            {
+                "country_code": "HR",
+                "country": "Croatia"
+            },
+            {
+                "country_code": "IT",
+                "country": "Italy"
+            },
+            {
+                "country_code": "CY",
+                "country": "Cyprus"
+            },
+            {
+                "country_code": "LV",
+                "country": "Latvia"
+            },
+            {
+                "country_code": "LT",
+                "country": "Lithuania"
+            },
+            {
+                "country_code": "LU",
+                "country": "Luxembourg"
+            },
+            {
+                "country_code": "HU",
+                "country": "Hungary"
+            },
+            {
+                "country_code": "MT",
+                "country": "Malta"
+            },
+            {
+                "country_code": "NL",
+                "country": "Netherlands"
+            },
+            {
+                "country_code": "AT",
+                "country": "Austria"
+            },
+            {
+                "country_code": "PL",
+                "country": "Poland"
+            },
+            {
+                "country_code": "PT",
+                "country": "Portugal"
+            },
+            {
+                "country_code": "RO",
+                "country": "Romania"
+            },
+            {
+                "country_code": "SI",
+                "country": "Slovenia"
+            },
+            {
+                "country_code": "SK",
+                "country": "Slovakia"
+            },
+            {
+                "country_code": "FI",
+                "country": "Finland"
+            },
+            {
+                "country_code": "SE",
+                "country": "Sweden"
+            },
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": null,
+        "source": "Primary research",
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "NUTS - European Union Nomenclature of Territorial Units for Statistics",
+        "structure": [
+            {
+                "name": "Local Government",
+                "subtype_of": [
+                    "recqv4TKU67OCjRyB"
+                ]
+            }
+        ],
+        "public-database": "http://ec.europa.eu/eurostat/web/nuts/local-administrative-units",
+        "code": "XR-NUTS",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The European Union's Nomenclature of Territorial Units for Statistics (NUTS) provides codes for territorial areas at a number of different levels.\n\nWhere no primary identifiers for regional and local government entities are available, then NUTS level 2 and 3 codes, and Local Administrative Unit (LAU 1 and LAU 2 level) codes could be used as a proxy for the primary local government body responsible for that area. \n\nEuroStat currently maintain a cross-walk between different levels, codes and area names for each jurisdiction. \n\nTo construct an identifier:\n\nFor NUTS 2 and 3 codes, use the prefix (XR-NUTS-) and then the NUTS code provided.\n\nFor LAU1 and 2 codes (Local authority/ward), use the prefix (XR-NUTS-), the country prefix and underscore (e.g. UK_) , and then the LAU_NAT_Code provided (e.g. E05004874)\n\nFor example: XR-NUTS-UK_E07000105\n\n\n",
+        "url": "http://ec.europa.eu/eurostat/web/nuts/local-administrative-units",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": null,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ID",
+                "country": "Indonesia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "NGOs registered at Provinicial Level",
+        "structure": null,
+        "public-database": null,
+        "code": "ID-PRO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Registration for NGO in Indonesia can be done at the provincial level. Because there is regional autonomy, each provincial has different requirements. Website is just one example",
+        "url": "http://www.satulayanan.net/layanan/pendaftaran-lsm-atau-ormas/perizinan-lsm-atau-ormas-baru",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "SG",
+                "country": "Singapore"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Accounting and Corporate Regulatory Authority (ACRA)",
+        "structure": null,
+        "public-database": null,
+        "code": "SG-ACRA",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The Accounting and Corporate Regulatory Authority (ACRA) is the national regulator of business entities, public accountants and corporate service providers in Singapore",
+        "url": "http://www.acra.gov.sg/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ZA",
+                "country": "South Africa"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "SA Revenue Service Tax Exemption Unit / Public Benefit Organisations",
+        "structure": null,
+        "public-database": null,
+        "code": "ZA-PBO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.sars.gov.za/home.asp?pid=170",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "FI",
+                "country": "Finland"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Finnish Patent and Registration office",
+        "structure": null,
+        "public-database": null,
+        "code": "FI-PRO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.prh.fi/en/index.html",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "BE",
+                "country": "Belgium"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Au Greffe du Tribunal de Commerce Francophone de Bruxelles",
+        "structure": null,
+        "public-database": null,
+        "code": "BE-GTCF",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The Registry of the Francophone Brussels Commercial Court",
+        "url": "http://www.juridat.be/tribunal_commerce/bruxelles/index.htm",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "US",
+                "country": "United States"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": "Secondary",
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Internal Revenue Service / Employer Identification Number",
+        "structure": [
+            {
+                "name": "Company",
+                "subtype_of": null
+            },
+            {
+                "name": "Charity",
+                "subtype_of": null
+            },
+            {
+                "name": "Sole trader",
+                "subtype_of": [
+                    "reciN6k5BN1PawHxI"
+                ]
+            },
+            {
+                "name": "Listed company",
+                "subtype_of": [
+                    "reciN6k5BN1PawHxI"
+                ]
+            },
+            {
+                "name": "Partnership",
+                "subtype_of": [
+                    "reciN6k5BN1PawHxI"
+                ]
+            }
+        ],
+        "public-database": null,
+        "code": "US-EIN",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.irs.gov/businesses/small/article/0,,id=98350,00.html",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": "No",
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "SE",
+                "country": "Sweden"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Bolagsverket / Swedish Companies Registration Office",
+        "structure": null,
+        "public-database": null,
+        "code": "SE-BLV",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.bolagsverket.se/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "JE",
+                "country": "Jersey"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Jersey Overseas Aid Commission",
+        "structure": null,
+        "public-database": null,
+        "code": "JE-OAC",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.jerseyoverseasaid.org.je/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "DK",
+                "country": "Denmark"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Danish Central Business Register",
+        "structure": null,
+        "public-database": null,
+        "code": "DK-CVR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The Central Business Register at Virk is available with English headings and categories. It can be used to search for information on all Danish businesses.",
+        "url": "https://datacvr.virk.dk/data/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "PL",
+                "country": "Poland"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "The National Court Register",
+        "structure": null,
+        "public-database": null,
+        "code": "PL-KRS",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Every business entry in Poland is assigned an ID in 3 different registries: business, court, and tax. This is the court register.",
+        "url": "https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ZA",
+                "country": "South Africa"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Association for Non-Profit Organisations",
+        "structure": null,
+        "public-database": null,
+        "code": "ZA-NPO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.npo.gov.za/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "IM",
+                "country": "Isle of Man"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Isle of Man Index of Registered Charities",
+        "structure": null,
+        "public-database": null,
+        "code": "IM-GR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.gov.im/registries/courts/charities/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "NO",
+                "country": "Norway"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Br\u00f8nn\u00f8ysundregistrene",
+        "structure": null,
+        "public-database": null,
+        "code": "NO-BRC",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.brreg.no/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "XI",
+                "country": null
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": "Local",
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "International Aid Transparency Initiative Organisation Identifier",
+        "structure": null,
+        "public-database": null,
+        "code": "XI-IATI",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "XI-IATI is a list of organisation identifiers that is maintained by the IATI Secretariat. Any publisher may apply to the IATI Technical Team for an identifier to be generated.",
+        "url": "http://iatistandard.org/codelists/IATIOrganisationIdentifier/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "IE",
+                "country": "Ireland"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Irish Register of Charities",
+        "structure": null,
+        "public-database": null,
+        "code": "IE-CHY",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": null,
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "UG",
+                "country": "Uganda"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "NGO Board, Ministry of Internal Affairs",
+        "structure": null,
+        "public-database": null,
+        "code": "UG-NGB",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.mia.go.ug/?page_id=62",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ID",
+                "country": "Indonesia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Ministry Home affairs/ Kementerian Dalam Negeri",
+        "structure": null,
+        "public-database": null,
+        "code": "ID-KDN",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "NGO registration can also be done through Ministry Home affairs/ Kementerian Dalam Negeri",
+        "url": "http://www.kemendagri.go.id/media/filemanager/2011/02/22/d/a/daf.ormas___lsm_2010.pdf",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "UG",
+                "country": "Uganda"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Registration Services Bureau",
+        "structure": null,
+        "public-database": null,
+        "code": "UG-RSB",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.ursb.go.ug/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "BE",
+                "country": "Belgium"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Banque Carrefour des entreprises / Kruispuntbank van ondernemingen",
+        "structure": null,
+        "public-database": null,
+        "code": "BE-BCE_KBO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "economie.fgov.be/fr/entreprises/BCE",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "FR",
+                "country": "France"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "The National Institute of Statistics and Economic Studies / Institute National de la Statistique et des etudes economiques",
+        "structure": null,
+        "public-database": null,
+        "code": "FR-INSEE",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "The National Institute of Statistics and Economic Studies provide a registration service for companies and associations with details being held on the SIRENE database",
+        "url": "http://www.insee.fr/fr/service/default.asp?page=entreprises/entreprise.htm",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "CZ",
+                "country": "Czech Republic"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Access to Registers of Economic Subjects / Entities (ARES)",
+        "structure": null,
+        "public-database": null,
+        "code": "CZ-ICO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Public registers comprising: the Commercial Register, the Federal Register, the Register of Foundations, the Register\u2019s Institute, and the Register of Public Service Companies. Information on companies is searchable in English and is free-of-charge.",
+        "url": "http://wwwinfo.mfcr.cz/ares/ares_es.html.en",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "MW",
+                "country": "Malawi"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "NGO Board of Malawi",
+        "structure": null,
+        "public-database": null,
+        "code": "MW-NBM",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "There is a pdf file with a list of registered NGOs, but these do not appear to be registration numbers. New database is planned",
+        "url": "http://ngoboardmalawi.mw/directory.php",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "CA",
+                "country": "Canada"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Canadian Revenue Agency / Agence du revenu du Canada",
+        "structure": null,
+        "public-database": null,
+        "code": "CA-CRA_ACR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "CRA_ACR is legal requirement for bilingual use",
+        "url": "http://www.cra-arc.gc.ca/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GH",
+                "country": "Ghana"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Department of Social Welfare",
+        "structure": null,
+        "public-database": null,
+        "code": "GH-DSW",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": null,
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "EE",
+                "country": "Estonia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Centre of Registers and Information Systems (RIK)",
+        "structure": null,
+        "public-database": null,
+        "code": "EE-RIK",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "You can view the data related to you free-of-charge by logging in with your ID-card.",
+        "url": "http://www.rik.ee/en/e-business-register",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "LV",
+                "country": "Latvia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Register of Enterprises of the Republic of Latvia",
+        "structure": null,
+        "public-database": null,
+        "code": "LV-RE",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Free of charge information includes type of legal entity; registered office; new or current name or trade name and previously registered or historical name or trade name; registration number; Single Euro Payment Area beneficiary identification code (if allocated); registration date; date of deletion of the legal entity from the register (or the date of reorganisation if the reason for the deletion is a reorganisation); deadline for registration of religious organisations that are subject to re-registration.",
+        "url": "http://www.ur.gov.lv/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ID",
+                "country": "Indonesia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Ministry of Justice & Human Rights/ Kementerian Hukum Dan Hak",
+        "structure": null,
+        "public-database": null,
+        "code": "ID-KHH",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Company registration is done through Ministry of Justice & Human Rights/ Kementerian Hukum Dan Hak",
+        "url": "http://www.kemenkumham.go.id/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "LS",
+                "country": "Lesotho"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Lesotho Council of Non Governmental Organisations",
+        "structure": null,
+        "public-database": null,
+        "code": "LS-LCN",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.lcn.org.ls/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "MZ",
+                "country": "Mozambique"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Mozambique Ministry of Justice",
+        "structure": null,
+        "public-database": null,
+        "code": "MZ-MOJ",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": null,
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "TZ",
+                "country": "Tanzania, United Republic of"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Tanzania Business Registrations and Licensing Agency",
+        "structure": null,
+        "public-database": null,
+        "code": "TZ-BRLA",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.brela.go.tz/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "KE",
+                "country": "Kenya"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Registrar of Societies",
+        "structure": null,
+        "public-database": null,
+        "code": "KE-RSO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.attorney-general.go.ke/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "NP",
+                "country": "Nepal"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Company Registrar Office",
+        "structure": null,
+        "public-database": null,
+        "code": "NP-CRO",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.cro.gov.np/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "XM",
+                "country": null
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "United Nations Office for the Coordination of Humanitarian Affairs",
+        "structure": null,
+        "public-database": null,
+        "code": "XM-OCHA",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "OCHA is the part of the United Nations Secretariat responsible for bringing together humanitarian actors to ensure a coherent response to emergencies.",
+        "url": "http://www.unocha.org",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "SK",
+                "country": "Slovakia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Slovakia Ministry Of Interior Trade Register",
+        "structure": null,
+        "public-database": null,
+        "code": "SK-ZRSR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Most organisations (including NGOs) have to be registered with the Ministry of Interior for the Trade Register Of The Slovak Republic (\u017divnostensky Register Slovenskej Republiky) and are allocated a unique registration number",
+        "url": "http://www.zrsr.sk/default.aspx?LANG=en",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "MW",
+                "country": "Malawi"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "The Council for Non Governmental Organisations in Malawi",
+        "structure": null,
+        "public-database": null,
+        "code": "MW-CNM",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.congoma.mw/index.html",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "PK",
+                "country": "Pakistan"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Pakistan Voluntary Social Welfare Agency",
+        "structure": null,
+        "public-database": null,
+        "code": "PK-VSWA",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "All NGOs are required to register with their local Voluntary Social Welfare department",
+        "url": "No Website available",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": "Online search is available at https://www.gov.uk/government/organisations/charity-commission",
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": "Primary",
+        "data_access_details": "Bulk download available at http://data.charitycommission.gov.uk/",
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": "Open Government Licence v2.0",
+        "name": "Charity Commission",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtype_of": null
+            }
+        ],
+        "public-database": null,
+        "code": "GB-CHC",
+        "subnational": [
+            {
+                "country": [
+                    "recbO0TnMgfxNbDxe"
+                ],
+                "region_code": "GB-ENG",
+                "region_name": "England"
+            },
+            {
+                "country": [
+                    "recbO0TnMgfxNbDxe"
+                ],
+                "region_code": "GB-WLS",
+                "region_name": "Wales"
+            }
+        ],
+        "dataset_features": [
+            "Registered address"
+        ],
+        "opencorporates": null,
+        "description": "There are four main types of charity structure in the UK: \n\n(1) Charitable incorporated organisation (CIO) \n(2) charitable company (limited by guarantee) \n(3) unincorporated association \n(4) trust\n\nChari",
+        "url": "http://www.charity-commission.gov.uk/",
+        "license_status": "Open License",
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": [
+            "Bulk download"
+        ],
+        "available_online": "Yes",
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "AU",
+                "country": "Australia"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Australian Business Register",
+        "structure": null,
+        "public-database": null,
+        "code": "AU-ABN",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://abr.business.gov.au/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "HM Revenue and Customs",
+        "structure": null,
+        "public-database": null,
+        "code": "GB-REV",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.hmrc.gov.uk/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "US",
+                "country": "United States"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Index of U.S. Government Departments and Agencies",
+        "structure": null,
+        "public-database": null,
+        "code": "US-USAGOV",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Use the final segment of the url (below /federal and excluding the extension) as the \"registration number\", converting all \"-\" to \"_\". Keep \"registration number\" portion all lowercase.",
+        "url": "http://www.usa.gov/directory/federal/index.shtml",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "MW",
+                "country": "Malawi"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Registrar General, Department of Justice",
+        "structure": null,
+        "public-database": null,
+        "code": "MW-RG",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": null,
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ZW",
+                "country": "Zimbabwe"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Registrar of Deeds",
+        "structure": null,
+        "public-database": null,
+        "code": "ZW-ROD",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": null,
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "AF",
+                "country": "Afghanistan"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Afghanistan Central Business Registry",
+        "structure": [
+            {
+                "name": "Company",
+                "subtype_of": null
+            }
+        ],
+        "public-database": null,
+        "code": "AF-CBR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Website not yet searchable",
+        "url": "http://acbr.gov.af/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ZA",
+                "country": "South Africa"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Companies and Intellectual Property Commission (CIPC)",
+        "structure": null,
+        "public-database": null,
+        "code": "ZA-CIP",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.cipro.gov.za/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "UK Government Departments Reference Numbers",
+        "structure": null,
+        "public-database": null,
+        "code": "GB-GOV",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Codes for use by IATI for UK Government Departments.",
+        "url": "http://data.gov.uk/dataset/iati-organisation-identifier-for-uk-government-bodies",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "XI",
+                "country": null
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": "Third-party",
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Public Bodies",
+        "structure": [
+            {
+                "name": "Government Agency",
+                "subtype_of": null
+            }
+        ],
+        "public-database": null,
+        "code": "XI-PB",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Public Bodies aims to provide a unique ID for every part of every government.",
+        "url": "http://publicbodies.org/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "XM",
+                "country": null
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "OECD Development Assistance Committee",
+        "structure": null,
+        "public-database": null,
+        "code": "XM-DAC",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "See Donor, Agency, and Delivery Channel codes",
+        "url": "http://www.oecd.org/dac/stats/dacandcrscodelists.htm",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "US",
+                "country": "United States"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Corporation registration is the responsibility of each state (see link)",
+        "structure": null,
+        "public-database": null,
+        "code": "US-DOS",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.companieshouse.gov.uk/links/usaLink.shtml",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "IN",
+                "country": "India"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Government of India, Minstry of Corporate Affairs",
+        "structure": null,
+        "public-database": null,
+        "code": "IN-MCA",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "MCA regulates corporate affairs in India through the Companies Act, 1956, 2013 and other allied Acts, Bills and Rules.",
+        "url": "http://www.mca.gov.in/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "JE",
+                "country": "Jersey"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Jersey Companies Registry",
+        "structure": null,
+        "public-database": null,
+        "code": "JE-CR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.jerseyfsc.org/registry/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": "It is possible to search the register online, but documents and bulk download of data are not freely available.",
+        "source": null,
+        "example_identifiers": "235C, IP031455",
+        "languages": null,
+        "register_type": "Primary",
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": "Copyright information on the site places restrictions on re-use.",
+        "name": "Mutuals Public Register",
+        "structure": [
+            {
+                "name": "Mutual",
+                "subtype_of": null
+            }
+        ],
+        "public-database": null,
+        "code": "GB-MPR",
+        "subnational": null,
+        "dataset_features": [
+            "Registered address"
+        ],
+        "opencorporates": true,
+        "description": "The Mutuals Public Register is the public record of registered mutual societies:\n\n* building societies\n* credit unions\n* friendly societies\n* registered societies\n\nIt contains:\n\n* details of societies\u2019 registered offices and contact information\nthe services they offer\n* public documents such as yearly returns and accounts",
+        "url": "https://mutuals.fsa.gov.uk/",
+        "license_status": "Closed License",
+        "deprecated": null,
+        "confirmed": null,
+        "data_access_properties": null,
+        "available_online": "Yes",
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Edubase, by the Department of Education",
+        "structure": null,
+        "public-database": null,
+        "code": "GB-EDU",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "Edubase is provided by the Department of Education and provides a URN for each school, university and other educational establishment in England and Wales",
+        "url": "http://www.education.gov.uk/edubase/home.xhtml",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "AF",
+                "country": "Afghanistan"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Ministry of Economy",
+        "structure": null,
+        "public-database": null,
+        "code": "AF-MOE",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://moec.gov.af/en",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "NG",
+                "country": "Nigeria"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Nigerian Corporate Affairs Commission",
+        "structure": null,
+        "public-database": null,
+        "code": "NG-CAC",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://new.cac.gov.ng/home/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "KE",
+                "country": "Kenya"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "NGO's Coordination Board",
+        "structure": null,
+        "public-database": null,
+        "code": "KE-NCB",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.ngobureau.or.ke/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "NP",
+                "country": "Nepal"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "NGO registration",
+        "structure": null,
+        "public-database": null,
+        "code": "NP-SWC",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.swc.org.np/",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "ES",
+                "country": "Spain"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Common Directory of Organizational Units and Offices - DIR3",
+        "structure": null,
+        "public-database": null,
+        "code": "ES-DIR3",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": "EXCEL Tables: http://administracionelectronica.gob.es/ctt/resources/Soluciones/238/Area%20descargas/Listado%20Oficinas%20AGE.xlsx?idIniciativa=238&idElemento=2745",
+        "url": "http://administracionelectronica.gob.es/ctt/dir3/descargas",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    },
+    {
+        "jurisdiction": [
+            {
+                "country_code": "IM",
+                "country": "Isle of Man"
+            }
+        ],
+        "online_access_details": null,
+        "source": null,
+        "example_identifiers": null,
+        "languages": null,
+        "register_type": null,
+        "data_access_details": null,
+        "former_prefixes": null,
+        "wikipedia": null,
+        "sector": null,
+        "license_details": null,
+        "name": "Isle of Man Companies Registry",
+        "structure": null,
+        "public-database": null,
+        "code": "IM-CR",
+        "subnational": null,
+        "dataset_features": null,
+        "opencorporates": null,
+        "description": null,
+        "url": "http://www.gov.im/ded/companies/companiesregistry.xml?menuid=21615",
+        "license_status": null,
+        "deprecated": null,
+        "confirmed": true,
+        "data_access_properties": null,
+        "available_online": null,
+        "guidance_on_locating_ids": null,
+        "last_updated": null
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "country": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "region_code": "GB-WLS",
+        "region_name": "Wales"
+    },
+    {
+        "country": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "region_code": "GB-NIR",
+        "region_name": "Northern Ireland"
+    },
+    {
+        "country": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "region_code": "GB-SCT",
+        "region_name": "Scotland"
+    },
+    {
+        "country": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "region_code": "GB-ENG",
+        "region_name": "England"
+    }
+]

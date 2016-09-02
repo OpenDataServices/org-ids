@@ -1,0 +1,66 @@
+[
+    {
+        "name": null,
+        "subtype_of": null
+    },
+    {
+        "name": "Mutual",
+        "subtype_of": null
+    },
+    {
+        "name": "Unincorporated body",
+        "subtype_of": null
+    },
+    {
+        "name": "Listed company",
+        "subtype_of": [
+            {
+                "name": "Company"
+            }
+        ]
+    },
+    {
+        "name": "Local Government",
+        "subtype_of": [
+            {
+                "name": "Government Agency"
+            }
+        ]
+    },
+    {
+        "name": "Sole trader",
+        "subtype_of": [
+            {
+                "name": "Company"
+            }
+        ]
+    },
+    {
+        "name": "Partnership",
+        "subtype_of": [
+            {
+                "name": "Company"
+            }
+        ]
+    },
+    {
+        "name": "Company",
+        "subtype_of": null
+    },
+    {
+        "name": "Charity",
+        "subtype_of": null
+    },
+    {
+        "name": "Community Interest Company",
+        "subtype_of": [
+            {
+                "name": "Company"
+            }
+        ]
+    },
+    {
+        "name": "Government Agency",
+        "subtype_of": null
+    }
+]
