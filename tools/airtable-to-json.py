@@ -4,7 +4,7 @@
 
 import os
 import requests
-from ratelimit import *
+from ratelimit import rate_limited
 import json
 from collections import OrderedDict
 

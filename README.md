@@ -67,3 +67,26 @@ python airtable-to-python.py
 ```
 
 This should update the files in ```data/``` 
+
+
+## Prefix Finder Django App
+
+### Installation
+Steps to installation:
+
+* Clone the repository
+* Change into the cloned repository
+* Create a virtual environment (note this application uses python3)
+* Activate the virtual environment
+* Install dependencies
+* Run the development server
+
+```
+git clone https://github.com/OpenDataServices/org-id.git
+cd org-id
+virtualenv .ve --python=/usr/bin/python3
+source .ve/bin/activate
+pip install -r requirements_dev.txt
+python manage.py runserver
+```
+

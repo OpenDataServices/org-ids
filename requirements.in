@@ -1,0 +1,11 @@
+Django<1.9
+#^^ rq.filter: <1.9
+django-bootstrap3
+requests
+django-environ
+raven
+python-dateutil
+titlecase
+dealer
+ratelimit
+django-super-favicon

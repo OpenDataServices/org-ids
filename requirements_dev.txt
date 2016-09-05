@@ -8,7 +8,27 @@ titlecase==0.8.1
 dealer==2.0.5
 ratelimit==1.1.0
 django-super-favicon==0.6.0
+
+
+flake8==3.0.4
+# flake8 requires pyflakes <1.1
+pyflakes==1.0.0 # rq.filter: <1.1
+
+# pytest and plugins
+pytest==3.0.2
+pytest-django==3.0.0
+pytest-cov==2.3.1
+pytest-localserver==0.3.6
+
+coveralls==1.1
+selenium==2.53.6
 ## The following requirements were added by pip --freeze:
 Pillow==3.3.1
+Werkzeug==0.11.11
 contextlib2==0.5.4
+coverage==4.2
+docopt==0.6.2
+mccabe==0.5.2
+py==1.4.31
+pycodestyle==2.0.0
 six==1.10.0
