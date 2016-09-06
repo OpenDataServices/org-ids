@@ -7,9 +7,106 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h1> Organization prefix finder </h1>
+        <h1 class="text-center"> Find an Organization Prefix </h1>
+        <br/>
+        <h3> What country is the organization registered in?</h3>
+        <form>
+          <select name="jurisdiction" class="selectpicker" data-live-search="true" data-width="300px">
+            <option value="">Any country</option>
+            {% for country in lists.jurisdictions %}
+            <option {% if query.jurisdiction == country.country_code %} selected {% endif %}  value="{{country.country_code}}">{{country.country}}</option>
+            {% endfor %}
+          </select>
+          <h3> What type of organization is it?</h3>
+          <select name="organisation_type" class="selectpicker" data-live-search="true" data-width="300px">
+            <option value = "">Any type</option>
+            {% for org_type in lists.organisation_types %}
+              {% if not org_type.subtype_of and org_type.name %}
+                <option {% if query.organisation_type == org_type.name %} selected {% endif %} value="{{org_type.name}}">{{org_type.name}}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <h3> What sector is the organization in?</h3>
+          <select name="sector" class="selectpicker" data-live-search="true" data-width="300px">
+            <option value = "">Any Sector</option>
+            {% for sector in lists.sectors %}
+               <option {% if query.sector == sector.name %} selected {% endif %} value="{{sector.name}}">{{sector.name}}</option>
+            {% endfor %}
+          </select>
+          </br>
+          </br>
+          <button type="submit" class="btn-primary btn">Find Prefixes</button>
+        </form>
+
+          </br>
+          </br>
+           <h1 id="results" class="text-center">Results</h1>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+          </br>
+
       </div>
     </div>
   </div>
 </div>
+
+{% endblock %}
+
+
+{% block extra_scripts %}
+
+<script>
+$(function() {
+  $("html, body").animate({ scrollTop: $('#results').offset().top }, 1000);
+})
+</script>
+
+
 {% endblock %}
