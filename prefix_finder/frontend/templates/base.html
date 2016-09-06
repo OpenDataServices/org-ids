@@ -52,9 +52,9 @@
               <li>{% trans "The code for this site is available on" %}<br>{% trans "GitHub" %}: <a href="https://github.com/OpenDataServices/org-ids/">{%trans "org-ids" %}</a><br>{% trans "Licence" %}: <a href="https://www.gnu.org/licenses/agpl-3.0.html">{% trans "AGPLv3" %}</a><br>{% trans "Report/View issues" %}: <a href="https://github.com/OpenDataServices/org-ids/issues">{% trans "org-id issues" %}</a>
               </li>
             </ul>
-            <!--<ul class="text-muted">
-              <li><a href="">{% trans "Terms &amp; Conditions" %}</a></li>
-            </ul>-->
+            <ul class="text-muted">
+              <li><a href="{% url 'terms' %}">{% trans "Terms &amp; Conditions" %}</a></li>
+            </ul>
             {% comment %}Translators: Provides information about the version of the code base that is being used{% endcomment %}
             <p class="text-muted">{% blocktrans %}Running version {% endblocktrans %}<a href="https://github.com/OpenDataServices/org-ids/tree/{{request.tag}}">{{request.tag}}</a></p>
           </div>
