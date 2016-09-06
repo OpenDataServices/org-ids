@@ -82,8 +82,8 @@ Steps to installation:
 * Run the development server
 
 ```
-git clone https://github.com/OpenDataServices/org-id.git
-cd org-id
+git clone https://github.com/OpenDataServices/org-ids.git
+cd org-ids
 virtualenv .ve --python=/usr/bin/python3
 source .ve/bin/activate
 pip install -r requirements_dev.txt
