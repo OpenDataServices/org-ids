@@ -1,4 +1,4 @@
-import os 
+import os
 import json
 
 from django.shortcuts import render
@@ -18,6 +18,7 @@ for file in files:
 lists['jurisdictions'].sort(key=lambda k: k.get('country') or k.get('country_code'))
 lists['organisation_types'].sort(key=lambda k: k.get('name') or '')
 
+
 def flatten_structure(structure):
     if isinstance(structure, dict):
         for key, value in structure.items():
@@ -34,10 +35,11 @@ for prefix in lists['prefix_list']:
     prefix['structure_flat'] = structure_flat
     prefix['jurisdiction_flat'] = [jurisdiction['country_code'] for jurisdiction in prefix['jurisdiction']]
 
+
 def home(request):
     context = {
         "lists": lists,
-        "query": {key: value[0] for key, value in dict(request.GET).items() 
+        "query": {key: value[0] for key, value in dict(request.GET).items()
                   if key in ['jurisdiction', 'organisation_type', 'sector']}
     }
     return render(request, "home.html", context=context)
