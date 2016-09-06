@@ -36,10 +36,58 @@ for prefix in lists['prefix_list']:
     prefix['jurisdiction_flat'] = [jurisdiction['country_code'] for jurisdiction in prefix['jurisdiction']]
 
 
+def filter_and_score_results(query):
+    indexed = {prefix['code']: prefix.copy() for prefix in lists['prefix_list']}
+    for prefix in list(indexed.values()):
+        register_type = prefix.get('register_type')
+        if register_type:
+            if register_type == 'Primary':
+                prefix['weight'] = 4
+            else:
+                prefix['weight'] = 1
+        else:
+            prefix['weight'] = 1
+
+    jurisdiction = query.get('jurisdiction')
+    if jurisdiction:
+        for prefix in list(indexed.values()):
+            if prefix['jurisdiction_flat']:
+                if jurisdiction in prefix['jurisdiction_flat']:
+                    prefix['weight'] = prefix['weight'] * 10
+                else:
+                    indexed.pop(prefix['code'])
+
+    organisation_type = query.get('organisation_type')
+    if organisation_type:
+        for prefix in list(indexed.values()):
+            if prefix['structure_flat']:
+                if organisation_type in prefix['structure_flat']:
+                    prefix['weight'] = prefix['weight'] * 10
+                else:
+                    indexed.pop(prefix['code'])
+            else:
+                indexed.pop(prefix['code'])
+            
+    sector = query.get('sector')
+    if sector:
+        for prefix in list(indexed.values()):
+            if prefix['sector']:
+                if sector == prefix['structure_flat']:
+                    prefix['weight'] = prefix['weight'] * 10
+            else:
+                indexed.pop(prefix['code'])
+
+    return sorted(indexed.values(), key=lambda k: -k['weight'])
+
+
 def home(request):
+    query = {key: value[0] for key, value in dict(request.GET).items()
+             if key in ['jurisdiction', 'organisation_type', 'sector']}
     context = {
         "lists": lists,
-        "query": {key: value[0] for key, value in dict(request.GET).items()
-                  if key in ['jurisdiction', 'organisation_type', 'sector']}
+        "query": query
     }
+    if query:
+        context['results'] = filter_and_score_results(query)
+         
     return render(request, "home.html", context=context)
