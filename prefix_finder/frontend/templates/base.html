@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load favicon %}
+{% load i18n %}
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -40,6 +41,35 @@
       </div> 
     </div> 
     {% endblock %}
+    
+    <div class="container">
+      <div id="footer">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>{% trans "About" %}</h4>
+            <ul class="text-muted">
+              <li>{% trans "Built by" %} <a href="http://opendataservices.coop/">{% trans "Open Data Services" %}</a></li>
+              <li>{% trans "The code for this site is available on" %}<br>{% trans "GitHub" %}: <a href="https://github.com/OpenDataServices/org-ids/">{%trans "org-ids" %}</a><br>{% trans "Licence" %}: <a href="https://www.gnu.org/licenses/agpl-3.0.html">{% trans "AGPLv3" %}</a><br>{% trans "Report/View issues" %}: <a href="https://github.com/OpenDataServices/org-ids/issues">{% trans "org-id issues" %}</a>
+              </li>
+            </ul>
+            <!--<ul class="text-muted">
+              <li><a href="">{% trans "Terms &amp; Conditions" %}</a></li>
+            </ul>-->
+            {% comment %}Translators: Provides information about the version of the code base that is being used{% endcomment %}
+            <p class="text-muted">{% blocktrans %}Running version {% endblocktrans %}<a href="https://github.com/OpenDataServices/org-ids/tree/{{request.tag}}">{{request.tag}}</a></p>
+          </div>
+          <div class="col-md-6">
+            <!--<h4>{% trans "Links" %}</h4>
+            <ul class="text-muted">
+              {% block link %}
+              {% endblock %}
+            </ul>-->
+          </div>
+        </div>
+        
+        {% block extrafooter %}{% endblock %}
+      </div><!-- end footer -->
+    </div>
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
