@@ -76,8 +76,8 @@ jurisdictions = api_call("Jurisdictions")
 subnational = api_call("Sub-national%20jurisdictions")
 sectors = api_call("Sectors")
 types = api_call("Organisation%20Types")
-
 lists = api_call("Organisation%20Identifiers")
+n2k = api_call("Need%20to%20know")
 
 
 # Create mappings between AirTable fields and the output we want.
@@ -137,6 +137,24 @@ identifier_table_map = {"Jurisdiction": {"data": jurisdictions,
                                          "mapping": subnational_map}}
 
 
+n2k_map = {"Title": "title",
+           "Jurisdiction": "jurisdiction",
+           "Legal Structure": "structure",
+           "Identifier List": "prefix",
+           "Sector": "sector",
+           "Description": "text"}
+
+n2k_table_map = {"Jurisdiction": {"data": jurisdictions,
+                                  "mapping": country_map},
+                 "Legal Structure": {"data": types,
+                                     "mapping": orgtype_map},
+                 "Sector": {"data": sectors,
+                            "mapping": sector_map},
+                 "Identifier List": {
+    "data": lists,
+    "mapping": {"code": "code", "name": "name"}
+}}
+
 # Write out the data
 with open("../data/jurisdictions.json", "w") as outfile:
     json.dump(build_output(jurisdictions, country_map), outfile, indent=4)
@@ -158,3 +176,7 @@ with open("../data/organisation_types.json", "w") as outfile:
 with open("../data/prefix_list.json", "w") as outfile:
     json.dump(build_output(lists, identifier_map,
                            identifier_table_map), outfile, indent=4)
+
+with open("../data/need_to_know.json", "w") as outfile:
+    json.dump(build_output(n2k, n2k_map,
+                           n2k_table_map), outfile, indent=4)
