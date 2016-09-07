@@ -33,7 +33,7 @@ for prefix in lists['prefix_list']:
     for item in prefix['structure'] or []:
         structure_flat.extend(list(flatten_structure(item)))
     prefix['structure_flat'] = structure_flat
-    prefix['jurisdiction_flat'] = [jurisdiction['country_code'] for jurisdiction in prefix['jurisdiction']]
+    prefix['jurisdiction_flat'] = [jurisdiction['country_code'] for jurisdiction in prefix.get('jurisdiction') or []]
 
 
 def filter_and_score_results(query):
