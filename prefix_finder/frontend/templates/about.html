@@ -4,6 +4,110 @@
 
 <div>
   <h1>{% trans "About" %}</h1>
+
+
+<h2 id="what">What?</h2>
+
+<p>We’re building <strong>a register of organisation identifier lists</strong> to help join up data on organisations across different datasets. </p>
+
+<p>This is the <strong>alpha</strong> version - developed as a proof-of-concept and to test out new research methods to populate the register. </p>
+
+<h2 id="why">Why?</h2>
+
+<p>Because we want to see data that uses <strong>open</strong> and <strong>interoperable</strong> organisation identifiers. </p>
+
+<p>When creating, publishing or using data about organisations it is important to clearly identify the organisations in question. </p>
+
+<p>But there can be hundreds of organisations with the same or similar names. A single name might also be written many different ways. As a result, datasets often include identifying numbers or codes. </p>
+
+<p>These identifiers may be drawn from official registers, or might be maintained by a single organisation. The quality of lists varies in terms of their coverage, quality and the depth of information they provide.</p>
+
+<p>With org.prefix.codes you can:</p>
+
+<ul>
+<li><p>Say which list an identifier is taken from - increasing data interoperability;</p></li>
+<li><p>Identify the best lists to use for new datasets - promoting openness;</p></li>
+<li><p>Find out where to look up more information on an organisation - improving analysis and data quality; </p></li>
+<li><p>Discover crosswalks between different lists - supporting joined-up data;</p></li>
+</ul>
+
+<h2 id="how-do-i-use-it">How do I use it?</h2>
+
+
+
+<h3 id="data-creators">Data creators</h3>
+
+<p>Collecting or publishing data about organisations? </p>
+
+<p><strong>First</strong>, make sure you are collecting an identifier for each organisation, as well as a name. You can lookup the best identifier list to use based on the country, organisation type, or sector you are managing data for.</p>
+
+<p><strong>Second</strong>, when you store and publish data about an organisation, use the prefix code for the organisation identifier list so that data users know which list the identifier is from.</p>
+
+<p>You can do this by combining the prefix and identifier in a single string:</p>
+
+<blockquote>
+  <p>E.g. <code>GB-COH-09506232</code></p>
+</blockquote>
+
+<p>Or separating out the prefix into it’s own field:</p>
+
+<blockquote>
+  <p>E.g. </p>
+  
+  <pre class="prettyprint"><code class=" hljs objectivec">{ <span class="hljs-string">"scheme"</span>:”GB-COH”,
+  ”<span class="hljs-keyword">id</span>”:”<span class="hljs-number">09506232</span>”}</code></pre>
+</blockquote>
+
+<p><strong>P.S.</strong> The more additional identifying information you can provide for each organisation, the better. See our tips on organisation information page (forthcoming).</p>
+
+<h3 id="data-users">Data users</h3>
+
+<p>If you’ve come across an organisation identifier, you can use org.prefix.codes to find out more about it and where to locate related open data.</p>
+
+
+
+<h2 id="what-is-an-organisation-identifier-list">What is an organisation identifier list?</h2>
+
+<p>Our register includes any lists which provide at least an identifying number or code and an organisation name for any collection of organisations: from companies and charities, to government bodies and unincorporated associations.</p>
+
+<p>We collect metadata about each list to describe the kinds of organisations it includes, the jurisdictions it covers, the nature of entries in the list, and whether the list is available as open data.</p>
+
+<p>Using this metadata, we encourage data publishers and users to prefer:</p>
+
+<ul>
+<li><strong>Primary over secondary lists</strong>. 
+
+<p>A primary list is one which directly and unambiguously identifies a particular legal entity. For example, company registration numbers are usually primary identifiers. You cannot be a company without a company number, and you cannot have a company number without being a company.</p>
+
+<p>Secondary lists don’t have this constraint. They contain identifiers assigned to organisations, but where it may be possible: (a) for organisations to receive more than one identifier; (b) for organisations to change their status without this being reflected in the list; (c) the list does not comprehensively cover all organisations of a particular type. </p>
+</li>
+<li><strong>Secondary over local lists</strong>.
+
+<p>Some data publishers have their own lookup lists of organisations and identifiers. When primary or secondary identifiers are not available, publishing these can be useful to enable more joined up data.</p>
+
+</li>
+</ul>
+
+<p>Note that we only provide a register of the lists: we don’t store or provide the actual organisation identifier entries. You will need to follow the links from the register to the websites of each identifier list to find and validate the identifiers these provide.</p>
+
+<p>Services like OpenCorporates provide a very useful search across a wide range of official identifier lists, particularly for companies. </p>
+
+
+
+<h2 id="how-is-orgprefixcodes-populated">How is org.prefix.codes populated?</h2>
+
+<p>We started out with the <a href="http://iatistandard.org/202/codelists/OrganisationRegistrationAgency/">IATI Registration Agency codelist</a>, and we have been working to add to this through detailed research - keeping our research <a href="https://airtable.com/shrsA8pTLjBiR6SVs">in AirTable here</a>.</p>
+
+<p>We are developing a <a href="https://docs.google.com/document/d/1lkLjHxXaH9GuAR_g-pv9Qru28f1EeOMZtwXduVboMa4/edit?usp=drive_web">research handbook</a> to guide population of the register.</p>
+
+<h2 id="who-is-responsible-for-orgprefixcodes">Who is responsible for org.prefix.codes?</h2>
+
+<p>The proof-of-concept is being developed by <a href="http://www.opendataservices.coop">Open Data Services Co-operative</a> for a group of partners including: <a href="http://juds.joinedupdata.org/">Joined Up Data Standards</a>, the <a href="http://www.iatistandard.org">International Aid Transparency Initiative</a>, <a href="http://www.resourcegovernance.org/">Natural Resource Governance Institute</a>, <a href="http://www.threesixtygiving.org">360Giving</a>, the <a href="https://www.interaction.org/project/open-ag-funding/overview">Initiative for Open Ag Funding</a> and <a href="http://www.open-contracting.org">Open Contracting</a>. </p>
+
+<p>We plan to open up this group to wider participation, and to develop an ongoing governance model for the project over late 2016. </p>
+
+<p>For more information contact <a href="mailto:tim.davies@opendataservices.coop">tim.davies@opendataservices.coop</a></p>
+
 </div>
 
 {% endblock %}
