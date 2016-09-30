@@ -76,7 +76,7 @@ jurisdictions = api_call("Jurisdictions")
 subnational = api_call("Sub-national%20jurisdictions")
 sectors = api_call("Sectors")
 types = api_call("Organisation%20Types")
-lists = api_call("Organisation%20Identifiers")
+lists = api_call("Organisation%20lists")
 n2k = api_call("Need%20to%20know")
 
 

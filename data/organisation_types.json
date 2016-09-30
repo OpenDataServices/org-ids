@@ -4,24 +4,36 @@
         "name": "Trust"
     },
     {
-        "subtype_of": [
-            {
-                "name": "Company"
-            }
-        ],
-        "name": "Community Interest Company"
-    },
-    {
         "subtype_of": null,
         "name": null
     },
     {
+        "subtype_of": null,
+        "name": "Company"
+    },
+    {
+        "subtype_of": null,
+        "name": "Charity"
+    },
+    {
         "subtype_of": [
             {
                 "name": "Company"
             }
         ],
-        "name": "Sole trader"
+        "name": "Mutual"
+    },
+    {
+        "subtype_of": null,
+        "name": "Government Agency"
+    },
+    {
+        "subtype_of": [
+            {
+                "name": "Company"
+            }
+        ],
+        "name": "Limited Company"
     },
     {
         "subtype_of": [
@@ -40,26 +52,6 @@
         "name": "Local Government"
     },
     {
-        "subtype_of": null,
-        "name": "Unincorporated body"
-    },
-    {
-        "subtype_of": [
-            {
-                "name": "Company"
-            }
-        ],
-        "name": "Mutual"
-    },
-    {
-        "subtype_of": null,
-        "name": "Government Agency"
-    },
-    {
-        "subtype_of": null,
-        "name": "Charity"
-    },
-    {
         "subtype_of": [
             {
                 "name": "Company"
@@ -69,6 +61,26 @@
     },
     {
         "subtype_of": null,
-        "name": "Company"
+        "name": null
+    },
+    {
+        "subtype_of": [
+            {
+                "name": "Company"
+            }
+        ],
+        "name": "Sole trader"
+    },
+    {
+        "subtype_of": null,
+        "name": "Unincorporated body"
+    },
+    {
+        "subtype_of": [
+            {
+                "name": "Company"
+            }
+        ],
+        "name": "Community Interest Company"
     }
 ]

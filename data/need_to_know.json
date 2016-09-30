@@ -1,11 +1,27 @@
 [
     {
+        "prefix": null,
+        "structure": [
+            {
+                "subtype_of": null,
+                "name": "Charity"
+            }
+        ],
+        "title": "Charities in the United Kingdom",
+        "jurisdiction": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ],
         "sector": null,
-        "text": "See http://www.doingbusiness.org/data/exploreeconomies/colombia/starting-a-business/ for information on business registration in Colombia. ",
+        "text": "Whilst some UK charities are incorporated as companies with charitable status, others are Charitable Incorporated Organisations (CIOs) or unincorporated charities and trusts.\n\nThere are also organisations who are recognised as charitable organisations by HM Revenue and Customs (the tax authority) but who are not registered with the Charity Commission, as the are exempt or small charities (with income below a \u00a35,000 threshold). These organisations may have charity numbers beginning with 'X'.\n\nNo public list of these organisations is currently available. "
+    },
+    {
         "prefix": [
             {
-                "code": "CO-RUE",
-                "name": "Single Business Register/ Al Registro \u00danico Empresarial"
+                "name": "Single Business Register/ Al Registro \u00danico Empresarial",
+                "code": "CO-RUE"
             }
         ],
         "structure": null,
@@ -15,15 +31,15 @@
                 "country_code": "CO",
                 "country": "Colombia"
             }
-        ]
+        ],
+        "sector": null,
+        "text": "See http://www.doingbusiness.org/data/exploreeconomies/colombia/starting-a-business/ for information on business registration in Colombia. "
     },
     {
-        "sector": null,
-        "text": "The EU use the code 'UK' to refer to the 'United Kingdom of Great Britain and Northern Ireland', where the ISO country code list uses GB. \n\nThe EU use EL to refer to Greece (based on it's official name of tje 'Hellenic Republic') where the ISO country code list uses GR.",
         "prefix": [
             {
-                "code": "XR-NUTS",
-                "name": "NUTS - European Union Nomenclature of Territorial Units for Statistics"
+                "name": "NUTS - European Union Nomenclature of Territorial Units for Statistics",
+                "code": "XR-NUTS"
             }
         ],
         "structure": null,
@@ -37,14 +53,8 @@
                 "country_code": "GR",
                 "country": "Greece"
             }
-        ]
-    },
-    {
+        ],
         "sector": null,
-        "text": null,
-        "prefix": null,
-        "structure": null,
-        "title": null,
-        "jurisdiction": null
+        "text": "The EU use the code 'UK' to refer to the 'United Kingdom of Great Britain and Northern Ireland', where the ISO country code list uses GB. \n\nThe EU use EL to refer to Greece (based on it's official name of tje 'Hellenic Republic') where the ISO country code list uses GR."
     }
 ]

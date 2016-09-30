@@ -1,42 +1,557 @@
 [
     {
-        "region_code": "GB-ENG",
-        "country": [
-            {
-                "country_code": "GB",
-                "country": "United Kingdom"
-            }
-        ],
-        "region_name": "England"
+        "region_code": "US_MS",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_GA",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_AK",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_41",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_MA",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_14",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_CT",
+        "region_name": null,
+        "country": null
     },
     {
         "region_code": "GB-NIR",
+        "region_name": "Northern Ireland",
         "country": [
             {
                 "country_code": "GB",
                 "country": "United Kingdom"
             }
-        ],
-        "region_name": "Northern Ireland"
+        ]
     },
     {
-        "region_code": "GB-WLS",
-        "country": [
-            {
-                "country_code": "GB",
-                "country": "United Kingdom"
-            }
-        ],
-        "region_name": "Wales"
+        "region_code": "CA_MB",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "AE_AZ",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_92",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_LA",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_OH",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_NV",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_11",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_NH",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_UT",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_65",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_CO",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_MN",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_43",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_QC",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_KS",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_AB",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_NB",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_SC",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_TN",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_50",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_RI",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_61",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "AE_SH",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_MT",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_62",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_NL",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_NJ",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_HI",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_NT",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_22",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "AE_DU",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_SK",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_DE",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_AL",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_46",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_37",
+        "region_name": null,
+        "country": null
     },
     {
         "region_code": "GB-SCT",
+        "region_name": "Scotland",
         "country": [
             {
                 "country_code": "GB",
                 "country": "United Kingdom"
             }
-        ],
-        "region_name": "Scotland"
+        ]
+    },
+    {
+        "region_code": "US_DC",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_36",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_45",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_51",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_33",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_44",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "AE_AJ",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_63",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_ME",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_ND",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_OR",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_53",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_CA",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_15",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "GB-ENG",
+        "region_name": "England",
+        "country": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ]
+    },
+    {
+        "region_code": "US_WA",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_42",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_VA",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_ON",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_TX",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_32",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_NU",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_FL",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_NE",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_NS",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_MO",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_23",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_ID",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_NC",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_52",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_21",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_PE",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "AE_UQ",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_34",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_IN",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "GB-WLS",
+        "region_name": "Wales",
+        "country": [
+            {
+                "country_code": "GB",
+                "country": "United Kingdom"
+            }
+        ]
+    },
+    {
+        "region_code": "US_VT",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "AE_FU",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_54",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_AR",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "AE_RK",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_BC",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_IL",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_13",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_64",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_PA",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_AZ",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_NY",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CA_YT",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_WV",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_MD",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_OK",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_35",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_IA",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_WI",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_12",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_SD",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "CN_31",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_KY",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_WY",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_NM",
+        "region_name": null,
+        "country": null
+    },
+    {
+        "region_code": "US_MI",
+        "region_name": null,
+        "country": null
     }
 ]
