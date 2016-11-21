@@ -1,41 +1,51 @@
 [
     {
-        "prefix": null,
-        "structure": [
-            {
-                "subtype_of": null,
-                "name": "Charity"
-            }
-        ],
-        "title": "Charities in the United Kingdom",
         "jurisdiction": [
             {
-                "country_code": "GB",
-                "country": "United Kingdom"
+                "country": "Colombia",
+                "countryCode": "CO"
             }
         ],
-        "sector": null,
-        "text": "Whilst some UK charities are incorporated as companies with charitable status, others are Charitable Incorporated Organisations (CIOs) or unincorporated charities and trusts.\n\nThere are also organisations who are recognised as charitable organisations by HM Revenue and Customs (the tax authority) but who are not registered with the Charity Commission, as the are exempt or small charities (with income below a \u00a35,000 threshold). These organisations may have charity numbers beginning with 'X'.\n\nNo public list of these organisations is currently available. "
-    },
-    {
         "prefix": [
             {
-                "name": "Single Business Register/ Al Registro \u00danico Empresarial",
+                "name": "Single Business Register / Al Registro \u00danico Empresarial",
                 "code": "CO-RUE"
             }
         ],
         "structure": null,
-        "title": "Colombia Business Registration",
-        "jurisdiction": [
-            {
-                "country_code": "CO",
-                "country": "Colombia"
-            }
-        ],
+        "text": "See http://www.doingbusiness.org/data/exploreeconomies/colombia/starting-a-business/ for information on business registration in Colombia. ",
         "sector": null,
-        "text": "See http://www.doingbusiness.org/data/exploreeconomies/colombia/starting-a-business/ for information on business registration in Colombia. "
+        "title": "Colombia Business Registration"
     },
     {
+        "jurisdiction": [
+            {
+                "country": "United Kingdom",
+                "countryCode": "GB"
+            }
+        ],
+        "prefix": null,
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "text": "Whilst some UK charities are incorporated as companies with charitable status, others are Charitable Incorporated Organisations (CIOs) or unincorporated charities and trusts.\n\nThere are also organisations who are recognised as charitable organisations by HM Revenue and Customs (the tax authority) but who are not registered with the Charity Commission, as the are exempt or small charities (with income below a \u00a35,000 threshold). These organisations may have charity numbers beginning with 'X'.\n\nNo public list of these organisations is currently available. ",
+        "sector": null,
+        "title": "Charities in the United Kingdom"
+    },
+    {
+        "jurisdiction": [
+            {
+                "country": "United Kingdom",
+                "countryCode": "GB"
+            },
+            {
+                "country": "Greece",
+                "countryCode": "GR"
+            }
+        ],
         "prefix": [
             {
                 "name": "NUTS - European Union Nomenclature of Territorial Units for Statistics",
@@ -43,18 +53,31 @@
             }
         ],
         "structure": null,
-        "title": "Codes for Greece and United Kingdom",
+        "text": "The EU use the code 'UK' to refer to the 'United Kingdom of Great Britain and Northern Ireland', where the ISO country code list uses GB. \n\nThe EU use EL to refer to Greece (based on it's official name of tje 'Hellenic Republic') where the ISO country code list uses GR.",
+        "sector": null,
+        "title": "Codes for Greece and United Kingdom"
+    },
+    {
         "jurisdiction": [
             {
-                "country_code": "GB",
-                "country": "United Kingdom"
-            },
-            {
-                "country_code": "GR",
-                "country": "Greece"
+                "country": "Afghanistan",
+                "countryCode": "AF"
             }
         ],
+        "prefix": [
+            {
+                "name": "Ministry of Economy NGO Department / \u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u0627\u0642\u062a\u0635\u0627\u062f  \u0627\u0646\u0633\u062c\u0627\u0645 \u0645\u0648\u0633\u0633\u0627\u062a \u063a\u06cc\u0631 \u062f\u0648\u0644\u062a\u06cc",
+                "code": "AF-MOE"
+            }
+        ],
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "text": "AF-MOE has a public dataset - ist includes both Afghan and International NGOs. If referring to a non-Afghan NGO, first check that there is not an identifier provided by that NGOs home country",
         "sector": null,
-        "text": "The EU use the code 'UK' to refer to the 'United Kingdom of Great Britain and Northern Ireland', where the ISO country code list uses GB. \n\nThe EU use EL to refer to Greece (based on it's official name of tje 'Hellenic Republic') where the ISO country code list uses GR."
+        "title": "International and National Charities in Afghanistan"
     }
 ]

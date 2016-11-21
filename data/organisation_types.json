@@ -1,86 +1,78 @@
 [
     {
-        "subtype_of": null,
-        "name": "Trust"
-    },
-    {
-        "subtype_of": null,
-        "name": null
-    },
-    {
-        "subtype_of": null,
-        "name": "Company"
-    },
-    {
-        "subtype_of": null,
-        "name": "Charity"
-    },
-    {
-        "subtype_of": [
+        "name": "Limited Company",
+        "subtypeOf": [
             {
                 "name": "Company"
             }
-        ],
-        "name": "Mutual"
+        ]
     },
     {
-        "subtype_of": null,
-        "name": "Government Agency"
+        "name": "Charity",
+        "subtypeOf": null
     },
     {
-        "subtype_of": [
+        "name": "Partnership",
+        "subtypeOf": [
             {
                 "name": "Company"
             }
-        ],
-        "name": "Limited Company"
+        ]
     },
     {
-        "subtype_of": [
+        "name": "Listed company",
+        "subtypeOf": [
             {
                 "name": "Company"
             }
-        ],
-        "name": "Listed company"
+        ]
     },
     {
-        "subtype_of": [
+        "name": "Community Interest Company",
+        "subtypeOf": [
+            {
+                "name": "Company"
+            }
+        ]
+    },
+    {
+        "name": "Government Agency",
+        "subtypeOf": null
+    },
+    {
+        "name": "Trust",
+        "subtypeOf": null
+    },
+    {
+        "name": "Unincorporated body",
+        "subtypeOf": null
+    },
+    {
+        "name": "Sole trader",
+        "subtypeOf": [
+            {
+                "name": "Company"
+            }
+        ]
+    },
+    {
+        "name": "Local Government",
+        "subtypeOf": [
             {
                 "name": "Government Agency"
             }
-        ],
-        "name": "Local Government"
+        ]
     },
     {
-        "subtype_of": [
+        "name": "Company",
+        "subtypeOf": null
+    },
+    {
+        "name": "Mutual",
+        "subtypeOf": [
             {
                 "name": "Company"
             }
-        ],
-        "name": "Partnership"
-    },
-    {
-        "subtype_of": null,
-        "name": null
-    },
-    {
-        "subtype_of": [
-            {
-                "name": "Company"
-            }
-        ],
-        "name": "Sole trader"
-    },
-    {
-        "subtype_of": null,
-        "name": "Unincorporated body"
-    },
-    {
-        "subtype_of": [
-            {
-                "name": "Company"
-            }
-        ],
-        "name": "Community Interest Company"
+        ]
     }
 ]

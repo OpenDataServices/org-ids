@@ -7,6 +7,10 @@ import requests
 from ratelimit import rate_limited
 import json
 from collections import OrderedDict
+import shutil
+
+
+current_dir = os.path.dirname(os.path.realpath(__file__))
 
 base = "appuUtoqGjQBojg9g"
 api_key = os.environ['airtable_api_key']
@@ -32,7 +36,7 @@ def api_call(table, record=None, offset=""):
                          table + "?pageSize=100&view=Main%20View" +
                          "&offset=" + offset,
                          headers={"Authorization": "Bearer " + api_key})
-        data = json.loads(r.text)
+        data = json.loads(r.text, object_pairs_hook=OrderedDict)
         records = record_map(data['records'])
 
         if 'offset' in data.keys():
@@ -80,22 +84,23 @@ lists = api_call("Organisation%20lists")
 n2k = api_call("Need%20to%20know")
 
 
+
 # Create mappings between AirTable fields and the output we want.
 # A map just renames keys
 # A table map indicates how record identifiers should be resolved,
 # and what data from the related table should be included
 
-country_map = {"Code": "country_code", "Country": "country"}
+country_map = {"Code": "countryCode", "Country": "country"}
 
-subnational_map = {"Code": "region_code",
-                   "Jurisdiction": "country", "Title": "region_name"}
+subnational_map = {"Code": "regionCode",
+                   "Jurisdiction": "country", "Title": "regionName"}
 subnational_table_map = {"Jurisdiction":
                          {"data": jurisdictions,
                           "mapping": country_map}}
 
 sector_map = {"Name": "name"}
 
-orgtype_map = {"Organisation Type": "name", "Parent": "subtype_of"}
+orgtype_map = {"Organisation Type": "name", "Parent": "subtypeOf"}
 orgtype_table_map = {"Parent": {"data": types,
                                 "mapping": {"Organisation Type": "name"}}}
 
@@ -104,25 +109,25 @@ identifier_map = OrderedDict({"code": "code",
                               "description": "description",
                               "Jurisdiction": "jurisdiction",
                               "url": "url",
-                              "public-database": "public-database",
+                              "public-database": "publicDatabase",
                               "Legal Structure": "structure",
-                              "Example identifier(s)": "example_identifiers",
-                              "Register Type": "register_type",
-                              "Available online?": "available_online",
-                              "Finding the identifiers": "guidance_on_locating_ids",
-                              "Openly licensed": "license_status",
-                              "License details": "license_details",
-                              "Online availability details": "online_access_details",
-                              "Access to data": "data_access_properties",
-                              "Data access details": "data_access_details",
-                              "Data features": "dataset_features",
+                              "Example identifier(s)": "exampleIdentifiers",
+                              "Register Type": "registerType",
+                              "Available online?": "availableOnline",
+                              "Finding the identifiers": "guidanceOnLocatingIds",
+                              "Openly licensed": "licenseStatus",
+                              "License details": "licenseDetails",
+                              "Online availability details": "onlineAccessDetails",
+                              "Access to data": "dataAccessProperties",
+                              "Data access details": "dataAccessDetails",
+                              "Data features": "datasetFeatures",
                               "In OpenCorporates?": "opencorporates",
                               "Languages supported": "languages",
                               "Sector": "sector",
                               "Sub-national": "subnational",
                               "Wikipedia page": "wikipedia",
                               "Confirmed?": "confirmed",
-                              "Last Updated": "last_updated",
+                              "Last Updated": "lastUpdated",
                               "Deprecated": "deprecated",
                               "AKA": "former_prefixes",
                               "Source": "source"})
@@ -180,3 +185,36 @@ with open("../data/prefix_list.json", "w") as outfile:
 with open("../data/need_to_know.json", "w") as outfile:
     json.dump(build_output(n2k, n2k_map,
                            n2k_table_map), outfile, indent=4)
+
+
+
+data_dir = os.path.join(current_dir, '../codes')
+output = build_output(lists, identifier_map, identifier_table_map)
+
+try:
+    shutil.rmtree(data_dir)
+except FileNotFoundError:
+    pass
+
+
+for item in output:
+    code = item['code']
+    code_dir = os.path.join(data_dir, code.split('-')[0].lower())
+    try:
+        os.makedirs(code_dir)
+    except FileExistsError:
+        pass
+    os.path.join(code_dir, code)
+
+    sorted_item = OrderedDict()
+    for key, value in sorted(item.items()):
+        if not value:
+            continue
+        sorted_item[key] = value
+
+    with open(os.path.join(code_dir, code).lower() + '.json', 'w+') as code_file:
+        json.dump(sorted_item, code_file, indent=2)
+
+
+
+
