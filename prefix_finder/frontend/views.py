@@ -1,5 +1,6 @@
 import os
 import json
+import glob
 
 from django.shortcuts import render
 
@@ -7,7 +8,7 @@ from django.shortcuts import render
 current_dir = os.path.dirname(os.path.realpath(__file__))
 data_dir = os.path.join(current_dir, '../../data')
 
-files = ['jurisdictions', 'organisation_types', 'prefix_list', 'sectors', 'subnational']
+files = ['jurisdictions', 'organisation_types', 'sectors', 'subnational']
 
 lists = {}
 
@@ -15,8 +16,18 @@ for file in files:
     with open(os.path.join(data_dir, file) + '.json') as data:
         lists[file] = json.load(data)
 
-lists['jurisdictions'].sort(key=lambda k: k.get('country') or k.get('country_code'))
+lists['jurisdictions'].sort(key=lambda k: k.get('country') or k.get('countryCode'))
 lists['organisation_types'].sort(key=lambda k: k.get('name') or '')
+
+codes_dir = os.path.join(current_dir, '../../codes')
+
+prefixes = []
+for prefix_file_name in glob.glob(codes_dir + '/*/*.json'):
+    with open(prefix_file_name) as prefix_file:
+        prefixes.append(json.load(prefix_file))
+
+lists['prefix_list'] = prefixes
+
 
 
 def flatten_structure(structure):
@@ -33,13 +44,13 @@ for prefix in lists['prefix_list']:
     for item in prefix['structure'] or []:
         structure_flat.extend(list(flatten_structure(item)))
     prefix['structure_flat'] = structure_flat
-    prefix['jurisdiction_flat'] = [jurisdiction['country_code'] for jurisdiction in prefix.get('jurisdiction') or []]
+    prefix['jurisdiction_flat'] = [jurisdiction['countryCode'] for jurisdiction in prefix.get('jurisdiction') or []]
 
 
 def filter_and_score_results(query):
     indexed = {prefix['code']: prefix.copy() for prefix in lists['prefix_list']}
     for prefix in list(indexed.values()):
-        register_type = prefix.get('register_type')
+        register_type = prefix.get('registerType')
         if register_type:
             if register_type == 'Primary':
                 prefix['weight'] = 4

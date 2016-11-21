@@ -10,27 +10,27 @@ name_to_identifier = {"code": "code",
                       "Description": "description",
                       "Jurisdiction": "jurisdiction",
                       "url": "url",
-                      "Public Database": "public-database",
+                      "Public Database": "publicDatabase",
                       "Legal Structure": "structure",
-                      "Example identifier(s)": "example_identifiers",
-                      "Register Type": "register_type",
-                      "Available online?": "available_online",
-                      "Finding the identifiers": "guidance_on_locating_ids",
-                      "Openly licensed": "license_status",
-                      "License details": "license_details",
-                      "Online availability": "online_access_details",
-                      "Access to data": "data_access_properties",
-                      "Data access details": "data_access_details",
-                      "Data features": "dataset_features",
+                      "Example identifier(s)": "exampleIdentifiers",
+                      "Register Type": "registerType",
+                      "Available online?": "availableOnline",
+                      "Finding the identifiers": "guidanceOnLocatingIds",
+                      "Openly licensed": "licenseStatus",
+                      "License details": "licenseDetails",
+                      "Online availability": "onlineAccessDetails",
+                      "Access to data": "dataAccessProperties",
+                      "Data access details": "dataAccessDetails",
+                      "Data features": "datasetFeatures",
                       "In OpenCorporates?": "opencorporates",
                       "Languages supported": "languages",
                       "Sector": "sector",
                       "Sub-national": "subnational",
                       "Wikipedia page": "wikipedia",
                       "Confirmed?": "confirmed",
-                      "Last Updated": "last_updated",
+                      "Last Updated": "lastUpdated",
                       "Deprecated": "deprecated",
-                      "AKA": "former_prefixes",
+                      "AKA": "formerPrefixes",
                       "Source": "source",
                       "Weight": "weight"}
 
@@ -51,10 +51,10 @@ def tidy_results(results):
                 tidied_results[key_name] = ", ".join(value)
                 continue
             if key == 'jurisdiction':
-                tidied_results[key_name] = ", ".join('{country} ({country_code})'.format(**item) for item in value)
+                tidied_results[key_name] = ", ".join('{country} ({countryCode})'.format(**item) for item in value)
                 continue
             if key == 'subnational':
-                tidied_results[key_name] = ", ".join('{region_name} ({region_code})'.format(**item) for item in value)
+                tidied_results[key_name] = ", ".join('{regionName} ({regionCode})'.format(**item) for item in value)
                 continue
             if key == 'sector':
                 tidied_results[key_name] = ", ".join(item['name'] for item in value)

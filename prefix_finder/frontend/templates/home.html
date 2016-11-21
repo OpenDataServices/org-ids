@@ -15,14 +15,14 @@
           <select name="jurisdiction" class="selectpicker" data-live-search="true" data-width="300px">
             <option value="">Any country</option>
             {% for country in lists.jurisdictions %}
-            <option {% if query.jurisdiction == country.country_code %} selected {% endif %}  value="{{country.country_code}}">{{country.country}}</option>
+            <option {% if query.jurisdiction == country.countryCode %} selected {% endif %}  value="{{country.countryCode}}">{{country.country}}</option>
             {% endfor %}
           </select>
           <h3>What type of organization is it?</h3>
           <select name="organisation_type" class="selectpicker" data-live-search="true" data-width="300px">
             <option value = "">Any type</option>
             {% for org_type in lists.organisation_types %}
-              {% if not org_type.subtype_of and org_type.name %}
+              {% if not org_type.subtypeOf and org_type.name %}
                 <option {% if query.organisation_type == org_type.name %} selected {% endif %} value="{{org_type.name}}">{{org_type.name}}</option>
               {% endif %}
             {% endfor %}
