@@ -1,54 +1,6 @@
 [
     {
-        "name": "Limited Company",
-        "subtypeOf": [
-            {
-                "name": "Company"
-            }
-        ]
-    },
-    {
-        "name": "Charity",
-        "subtypeOf": null
-    },
-    {
-        "name": "Partnership",
-        "subtypeOf": [
-            {
-                "name": "Company"
-            }
-        ]
-    },
-    {
         "name": "Listed company",
-        "subtypeOf": [
-            {
-                "name": "Company"
-            }
-        ]
-    },
-    {
-        "name": "Community Interest Company",
-        "subtypeOf": [
-            {
-                "name": "Company"
-            }
-        ]
-    },
-    {
-        "name": "Government Agency",
-        "subtypeOf": null
-    },
-    {
-        "name": "Trust",
-        "subtypeOf": null
-    },
-    {
-        "name": "Unincorporated body",
-        "subtypeOf": null
-    },
-    {
-        "name": "Sole trader",
         "subtypeOf": [
             {
                 "name": "Company"
@@ -64,8 +16,24 @@
         ]
     },
     {
-        "name": "Company",
+        "name": "Sole trader",
+        "subtypeOf": [
+            {
+                "name": "Company"
+            }
+        ]
+    },
+    {
+        "name": "Unincorporated body",
         "subtypeOf": null
+    },
+    {
+        "name": "Community Interest Company",
+        "subtypeOf": [
+            {
+                "name": "Company"
+            }
+        ]
     },
     {
         "name": "Mutual",
@@ -74,5 +42,37 @@
                 "name": "Company"
             }
         ]
+    },
+    {
+        "name": "Trust",
+        "subtypeOf": null
+    },
+    {
+        "name": "Partnership",
+        "subtypeOf": [
+            {
+                "name": "Company"
+            }
+        ]
+    },
+    {
+        "name": "Limited Company",
+        "subtypeOf": [
+            {
+                "name": "Company"
+            }
+        ]
+    },
+    {
+        "name": "Company",
+        "subtypeOf": null
+    },
+    {
+        "name": "Government Agency",
+        "subtypeOf": null
+    },
+    {
+        "name": "Charity",
+        "subtypeOf": null
     }
 ]

@@ -19,8 +19,8 @@ table_cache = {}
 
 def record_map(data):
     """Create a dictionary of records"""
-    records = {}
-    for record in data:
+    records = OrderedDict()
+    for record in sorted(data, key=lambda a: a['id']):
         records[record['id']] = record['fields']
 
     return records
@@ -40,7 +40,7 @@ def api_call(table, record=None, offset=""):
         records = record_map(data['records'])
 
         if 'offset' in data.keys():
-            records = dict(list(records.items()) +
+            records = OrderedDict(list(records.items()) +
                            list(api_call(table=table,
                                          offset=data['offset']).items()))
 
@@ -50,15 +50,16 @@ def api_call(table, record=None, offset=""):
 
 def build_item(item, mapping, table_mapping={}):
     output_item = OrderedDict()
-    for field in mapping.keys():
+    for field in sorted(mapping.keys()):
         if field in item.keys():
             # If there is a table mapping for the field we want to resolve
             # the cross-reference
             if field in table_mapping.keys():
                 # We assume we have one-to-many arrays. This may not always
                 # be true of all tables.
+                output = []
                 output_item[mapping[field]] = []
-                for record in item[field]:
+                for record in sorted(item[field]):
                     output_item[mapping[field]].append(build_item(
                         table_mapping[field]['data'][record],
                         table_mapping[field]['mapping']))
@@ -90,47 +91,52 @@ n2k = api_call("Need%20to%20know")
 # A table map indicates how record identifiers should be resolved,
 # and what data from the related table should be included
 
-country_map = {"Code": "countryCode", "Country": "country"}
+country_map = OrderedDict([("Code", "countryCode"), ("Country", "country")])
 
-subnational_map = {"Code": "regionCode",
-                   "Jurisdiction": "country", "Title": "regionName"}
+subnational_map = OrderedDict([("Code", "regionCode"),
+                               ("Jurisdiction", "country"), 
+                               ("Title", "regionName")])
+
 subnational_table_map = {"Jurisdiction":
-                         {"data": jurisdictions,
-                          "mapping": country_map}}
+                          {"data": jurisdictions,
+                           "mapping": country_map}}
 
 sector_map = {"Name": "name"}
 
-orgtype_map = {"Organisation Type": "name", "Parent": "subtypeOf"}
+orgtype_map = OrderedDict([("Organisation Type", "name"), ("Parent", "subtypeOf")])
+
 orgtype_table_map = {"Parent": {"data": types,
                                 "mapping": {"Organisation Type": "name"}}}
 
-identifier_map = OrderedDict({"code": "code",
-                              "name": "name",
-                              "description": "description",
-                              "Jurisdiction": "jurisdiction",
-                              "url": "url",
-                              "public-database": "publicDatabase",
-                              "Legal Structure": "structure",
-                              "Example identifier(s)": "exampleIdentifiers",
-                              "Register Type": "registerType",
-                              "Available online?": "availableOnline",
-                              "Finding the identifiers": "guidanceOnLocatingIds",
-                              "Openly licensed": "licenseStatus",
-                              "License details": "licenseDetails",
-                              "Online availability details": "onlineAccessDetails",
-                              "Access to data": "dataAccessProperties",
-                              "Data access details": "dataAccessDetails",
-                              "Data features": "datasetFeatures",
-                              "In OpenCorporates?": "opencorporates",
-                              "Languages supported": "languages",
-                              "Sector": "sector",
-                              "Sub-national": "subnational",
-                              "Wikipedia page": "wikipedia",
-                              "Confirmed?": "confirmed",
-                              "Last Updated": "lastUpdated",
-                              "Deprecated": "deprecated",
-                              "AKA": "former_prefixes",
-                              "Source": "source"})
+identifier_map = OrderedDict(
+    [("code", "code"),
+    ("name", "name"),
+    ("description", "description"),
+    ("Jurisdiction", "jurisdiction"),
+    ("url", "url"),
+    ("public-database", "publicDatabase"),
+    ("Legal Structure", "structure"),
+    ("Example identifier(s)", "exampleIdentifiers"),
+    ("Register Type", "registerType"),
+    ("Available online?", "availableOnline"),
+    ("Finding the identifiers", "guidanceOnLocatingIds"),
+    ("Openly licensed", "licenseStatus"),
+    ("License details", "licenseDetails"),
+    ("Online availability details", "onlineAccessDetails"),
+    ("Access to data", "dataAccessProperties"),
+    ("Data access details", "dataAccessDetails"),
+    ("Data features", "datasetFeatures"),
+    ("In OpenCorporates?", "opencorporates"),
+    ("Languages supported", "languages"),
+    ("Sector", "sector"),
+    ("Sub-national", "subnational"),
+    ("Wikipedia page", "wikipedia"),
+    ("Confirmed?", "confirmed"),
+    ("Last Updated", "lastUpdated"),
+    ("Deprecated", "deprecated"),
+    ("AKA", "former_prefixes"),
+    ("Source", "source")]
+)
 
 identifier_table_map = {"Jurisdiction": {"data": jurisdictions,
                                          "mapping": country_map},
@@ -206,14 +212,8 @@ for item in output:
         pass
     os.path.join(code_dir, code)
 
-    sorted_item = OrderedDict()
-    for key, value in sorted(item.items()):
-        if not value:
-            continue
-        sorted_item[key] = value
-
     with open(os.path.join(code_dir, code).lower() + '.json', 'w+') as code_file:
-        json.dump(sorted_item, code_file, indent=2)
+        json.dump(item, code_file, indent=2)
 
 
 

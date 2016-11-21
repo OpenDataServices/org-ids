@@ -1,567 +1,567 @@
 [
     {
+        "regionCode": "CA_SK",
         "country": null,
-        "regionCode": "CN_12",
         "regionName": null
     },
     {
-        "country": null,
-        "regionCode": "US_VA",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_AR",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_63",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CA_AB",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_45",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_NC",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_MI",
-        "regionName": null
-    },
-    {
-        "country": null,
         "regionCode": "US_CA",
+        "country": null,
         "regionName": null
     },
     {
+        "regionCode": "US_KY",
         "country": null,
-        "regionCode": "US_WV",
         "regionName": null
     },
     {
+        "regionCode": "CN_35",
         "country": null,
-        "regionCode": "AE_RK",
         "regionName": null
     },
     {
-        "country": null,
-        "regionCode": "CA_QC",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_92",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_KS",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_50",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_RI",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_33",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CA_NT",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CA_BC",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CA_NU",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_61",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_46",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_UT",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_TN",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_MD",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_54",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_42",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_34",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_IL",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "AE_UQ",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_52",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_MA",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_15",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_43",
-        "regionName": null
-    },
-    {
-        "country": null,
         "regionCode": "CN_11",
+        "country": null,
         "regionName": null
     },
     {
+        "regionCode": "US_MT",
         "country": null,
-        "regionCode": "US_SD",
         "regionName": null
     },
     {
+        "regionCode": "AE_UQ",
         "country": null,
-        "regionCode": "US_TX",
         "regionName": null
     },
     {
+        "regionCode": "CN_46",
         "country": null,
-        "regionCode": "CA_NB",
         "regionName": null
     },
     {
-        "country": null,
-        "regionCode": "CN_32",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_MN",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_62",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_DC",
-        "regionName": null
-    },
-    {
-        "country": [
-            {
-                "country": "Colombia",
-                "countryCode": "CO"
-            }
-        ],
-        "regionCode": "CO-DC",
-        "regionName": "Distrito Capital de Bogot\u00e1"
-    },
-    {
-        "country": null,
-        "regionCode": "AE_AJ",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "AE_SH",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_OK",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_31",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CA_MB",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_13",
-        "regionName": null
-    },
-    {
-        "country": null,
         "regionCode": "AE_AZ",
-        "regionName": null
-    },
-    {
         "country": null,
-        "regionCode": "US_PA",
         "regionName": null
     },
     {
+        "regionCode": "AE_DU",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_SC",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_LA",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_VA",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CA_QC",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "AE_SH",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_CT",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_62",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_MA",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_52",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "AE_AJ",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CA_NS",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_92",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_RI",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_MD",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_TN",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "GB-SCT",
         "country": [
             {
-                "country": "United Kingdom",
-                "countryCode": "GB"
+                "countryCode": "GB",
+                "country": "United Kingdom"
             }
         ],
-        "regionCode": "GB-SCT",
         "regionName": "Scotland"
     },
     {
+        "regionCode": "CN_63",
         "country": null,
-        "regionCode": "CN_22",
         "regionName": null
     },
     {
+        "regionCode": "CN_51",
         "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_31",
+        "country": null,
+        "regionName": null
+    },
+    {
         "regionCode": "US_NY",
+        "country": null,
         "regionName": null
     },
     {
-        "country": null,
-        "regionCode": "US_LA",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_HI",
-        "regionName": null
-    },
-    {
-        "country": [
-            {
-                "country": "United Kingdom",
-                "countryCode": "GB"
-            }
-        ],
-        "regionCode": "GB-ENG",
-        "regionName": "England"
-    },
-    {
-        "country": null,
-        "regionCode": "US_VT",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "AE_DU",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_ME",
-        "regionName": null
-    },
-    {
-        "country": null,
         "regionCode": "CA_ON",
-        "regionName": null
-    },
-    {
         "country": null,
-        "regionCode": "US_MT",
         "regionName": null
     },
     {
+        "regionCode": "US_SD",
         "country": null,
-        "regionCode": "US_NV",
         "regionName": null
     },
     {
+        "regionCode": "US_ND",
         "country": null,
-        "regionCode": "US_WA",
         "regionName": null
     },
     {
+        "regionCode": "CA_NB",
         "country": null,
-        "regionCode": "US_GA",
         "regionName": null
     },
     {
+        "regionCode": "US_HI",
         "country": null,
-        "regionCode": "US_MO",
         "regionName": null
     },
     {
+        "regionCode": "US_AR",
         "country": null,
-        "regionCode": "US_IN",
         "regionName": null
     },
     {
+        "regionCode": "CN_43",
         "country": null,
-        "regionCode": "CN_37",
         "regionName": null
     },
     {
+        "regionCode": "CN_14",
         "country": null,
-        "regionCode": "US_DE",
         "regionName": null
     },
     {
+        "regionCode": "CA_NU",
         "country": null,
-        "regionCode": "US_ID",
         "regionName": null
     },
     {
+        "regionCode": "CA_AB",
         "country": null,
-        "regionCode": "US_OH",
         "regionName": null
     },
     {
-        "country": null,
-        "regionCode": "CA_NS",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_35",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_SC",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_AK",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_CT",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_44",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_41",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_OR",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_NE",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CA_NL",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_21",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_NM",
-        "regionName": null
-    },
-    {
+        "regionCode": "GB-WLS",
         "country": [
             {
-                "country": "United Kingdom",
-                "countryCode": "GB"
+                "countryCode": "GB",
+                "country": "United Kingdom"
             }
         ],
-        "regionCode": "GB-WLS",
         "regionName": "Wales"
     },
     {
+        "regionCode": "US_IL",
         "country": null,
-        "regionCode": "US_MS",
         "regionName": null
     },
     {
+        "regionCode": "CN_54",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "AE_RK",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_36",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_IN",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_WA",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "AE_FU",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_UT",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_MS",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_OH",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_CO",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CA_MB",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_NH",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_DE",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_NM",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CA_NT",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_ME",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_FL",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_AK",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_13",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_50",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_DC",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_34",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_AL",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CA_PE",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_IA",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_NC",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_41",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CA_BC",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CA_NL",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "GB-ENG",
         "country": [
             {
-                "country": "United Kingdom",
-                "countryCode": "GB"
+                "countryCode": "GB",
+                "country": "United Kingdom"
             }
         ],
+        "regionName": "England"
+    },
+    {
+        "regionCode": "CN_12",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_TX",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_64",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_15",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_22",
+        "country": null,
+        "regionName": null
+    },
+    {
         "regionCode": "GB-NIR",
+        "country": [
+            {
+                "countryCode": "GB",
+                "country": "United Kingdom"
+            }
+        ],
         "regionName": "Northern Ireland"
     },
     {
+        "regionCode": "US_VT",
         "country": null,
-        "regionCode": "US_IA",
         "regionName": null
     },
     {
-        "country": null,
-        "regionCode": "US_NJ",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_AL",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_WY",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_14",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "AE_FU",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_64",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CA_SK",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_23",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CA_PE",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "CN_65",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_WI",
-        "regionName": null
-    },
-    {
-        "country": null,
-        "regionCode": "US_FL",
-        "regionName": null
-    },
-    {
-        "country": null,
         "regionCode": "US_AZ",
+        "country": null,
         "regionName": null
     },
     {
+        "regionCode": "CN_37",
         "country": null,
-        "regionCode": "CN_36",
         "regionName": null
     },
     {
+        "regionCode": "CN_42",
         "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_32",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_MO",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_21",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_NE",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_61",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_23",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_NJ",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_45",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_OR",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "CN_44",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_NV",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_MN",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_PA",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_MI",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_GA",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_KS",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_OK",
+        "country": null,
+        "regionName": null
+    },
+    {
+        "regionCode": "US_ID",
+        "country": null,
+        "regionName": null
+    },
+    {
         "regionCode": "CN_53",
+        "country": null,
         "regionName": null
     },
     {
+        "regionCode": "CN_65",
         "country": null,
-        "regionCode": "CN_51",
         "regionName": null
     },
     {
+        "regionCode": "US_WI",
         "country": null,
-        "regionCode": "US_NH",
         "regionName": null
     },
     {
+        "regionCode": "CO-DC",
+        "country": [
+            {
+                "countryCode": "CO",
+                "country": "Colombia"
+            }
+        ],
+        "regionName": "Distrito Capital de Bogot\u00e1"
+    },
+    {
+        "regionCode": "CN_33",
         "country": null,
-        "regionCode": "US_ND",
         "regionName": null
     },
     {
-        "country": null,
         "regionCode": "CA_YT",
+        "country": null,
         "regionName": null
     },
     {
+        "regionCode": "US_WY",
         "country": null,
-        "regionCode": "US_KY",
         "regionName": null
     },
     {
+        "regionCode": "US_WV",
         "country": null,
-        "regionCode": "US_CO",
         "regionName": null
     }
 ]
