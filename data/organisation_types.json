@@ -68,6 +68,14 @@
         "subtypeOf": null
     },
     {
+        "name": "Public service",
+        "subtypeOf": [
+            {
+                "name": "Government Agency"
+            }
+        ]
+    },
+    {
         "name": "Government Agency",
         "subtypeOf": null
     },

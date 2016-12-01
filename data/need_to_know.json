@@ -1,6 +1,29 @@
 [
     {
-        "text": "AF-MOE has a public dataset - ist includes both Afghan and International NGOs. If referring to a non-Afghan NGO, first check that there is not an identifier provided by that NGOs home country",
+        "text": "Prior to IATI v2.x, the IATI Standard used codes relevant to IATI v1.x. These were codes for the same government agencies, but in a slightly different formation.\n\nE.g. GB-GOV-1 was previously GB-1",
+        "prefix": [
+            {
+                "code": "GB-GOV",
+                "name": "UK Government Departments Reference Numbers"
+            }
+        ],
+        "jurisdiction": [
+            {
+                "countryCode": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "structure": [
+            {
+                "name": "Government Agency",
+                "subtypeOf": null
+            }
+        ],
+        "sector": null,
+        "title": "IATI v1.x Codes"
+    },
+    {
+        "text": "AF-MOE has a public dataset - http://ngos.moec.gov.af/Public/Default.aspx\n\nThis list includes both Afghan and International NGOs. If referring to a non-Afghan NGO, first check that there is not an identifier provided by that NGOs home country",
         "prefix": [
             {
                 "code": "AF-MOE",
