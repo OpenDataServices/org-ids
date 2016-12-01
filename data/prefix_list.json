@@ -423,13 +423,13 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": null,
+        "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "Corporation Number -  784899-4 / Business Number: 820336113RC0001",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database which is hosted by the Canadian Government, on a website separate to the Canadian Revenue Agency. The two identifiers available to the user are the Corporate Number and the Business Number. The identifiers will be next to these names, respectively.\n\nPlease note: this registry is incomplete and does not provide results from all companies across Canada",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -456,17 +456,17 @@
             }
         ],
         "licenseDetails": null,
-        "onlineAccessDetails": null,
+        "onlineAccessDetails": "Data is available on a website separate to the CRA. The database is incomplete",
         "licenseStatus": null,
-        "registerType": null,
+        "registerType": "Secondary",
         "sector": null,
         "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "CA-CRA_ACR",
-        "description": "The Canada Revenue Agency is where individuals, companies and charities register in Canada. \n\nNot all companies need a Canadian Business Number. Detailed information can be found here - http://www.cra-arc.gc.ca/tx/bsnss/tpcs/bn-ne/wrks-eng.html\n\nBut it would appear that to become a company, you must register with the CRA - http://www.canadabusiness.ca/government/registering-your-business/\n\nNot all non-profit organisations must register to become a charity. Detailed information can be found here - http://www.cra-arc.gc.ca/chrts-gvng/dnrs/rgltn/dffrnc-rc-np-eng.html",
+        "description": "Companies in Canada register with their provincial authority, e.g. British Columbia, and then if they wish be eligible for a number of national services and/or if they wish to do business with the Canadian government, they have to register with the Canada Revenue Agency and receive a Business Number.\n\nNot all companies need a Canadian Business Number. Detailed information can be found here - http://www.cra-arc.gc.ca/tx/bsnss/tpcs/bn-ne/wrks-eng.html\n\nNot all charities need to register with the Canadian Revenue Agency. Detailed information can be found here - http://www.cra-arc.gc.ca/chrts-gvng/chrts/pplyng/rgstrtn/mnd-eng.html\n\nNot all non-profit organisations must register to become a charity. Detailed information can be found here - http://www.cra-arc.gc.ca/chrts-gvng/dnrs/rgltn/dffrnc-rc-np-eng.html\n\nCompanies can be searched by using the Business Number, as assigned by the CRA, on this incomplete registry hosted by the Canadian govt - https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA\n\n\n\"Your Business Number is a nine-digit account number that identifies your business to federal, provincial, and municipal governments. You can open several different accounts for your business through a single registration. The accounts include:\n\nGST/HST\nPayroll deductions\nCorporate income tax\nImport/export\" [1] \n\n[1] http://www.canadabusiness.ca/programs/business-number-bn-1/",
         "name": "Canadian Revenue Agency / Agence du revenu du Canada",
-        "publicDatabase": null,
+        "publicDatabase": "https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA",
         "url": "http://www.cra-arc.gc.ca/"
     },
     {
@@ -1174,41 +1174,55 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
         "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Directors / Trustees / Governors",
+            "Accounts",
+            "Date of registration",
+            "Registration Number",
+            "Financial Turnover/Details",
+            "Organisation Name",
+            "Organisation Type",
+            "Registered address"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "Corporation Number - 784899-4 / Business Number (BN) - 820336113RC0001",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database which is hosted by the Canadian Government, on a website separate to the Canadian Revenue Agency. The two identifiers available to the user are the Corporate Number and the Business Number. The identifiers will be next to these names, respectively.\n\nPlease note: this registry is incomplete and does not provide results from all companies across Canada",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "CA",
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en",
+            "fr"
+        ],
+        "lastUpdated": "2016-11-29",
         "structure": [
             {
                 "name": "Company",
                 "subtypeOf": null
             }
         ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
+        "licenseDetails": "http://index.okfn.org/place/canada/companies/",
+        "onlineAccessDetails": "Limited details from an incomplete database",
         "licenseStatus": "Closed License",
         "registerType": null,
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "CA-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "description": "Companies in Canada register with their provincial authority, e.g. British Columbia. While there is currently no complete national database for companies in Canada, Corporations Canada are piloting a Business Search Registry, which allows for the search of multiple jurisdictions at once, but not all - https://www.ic.gc.ca/app/scr/ccbr/search-chercher?lang=eng\n\nCorporations Canada also provides a Federal Corporation search - https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA\n\nA number of jurisdictions provide their own registry, a list can be found here under 'Provincial and Territorial Registration' - http://www.canadabusiness.ca/government/registering-your-business/\n\nA Business Search Registry is currently being piloted by the Canadian govt, which allows for the search of multiple jurisdictions at once, but not all - https://www.ic.gc.ca/app/scr/ccbr/search-chercher?lang=eng\n\nThis entry was imported from the Open Corporates Jurisdiction List.",
         "name": "Corporations Canada",
-        "publicDatabase": null,
+        "publicDatabase": "https://www.ic.gc.ca/app/scr/ccbr/search-chercher?lang=eng , https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA",
         "url": "http://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/home"
     },
     {
@@ -4385,14 +4399,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
         "availableOnline": "No",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": "No identifiers found",
+        "guidanceOnLocatingIds": "No identifiers found.\n\nOIPA search returns zero results",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -4400,19 +4416,22 @@
                 "country": "Indonesia"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
+        "languages": [
+            "en",
+            "id"
+        ],
+        "lastUpdated": "2016-11-29",
         "structure": null,
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
+        "licenseStatus": "No License",
         "registerType": "Secondary",
         "sector": null,
         "source": null,
         "subnational": null,
         "wikipedia": null,
         "code": "ID-KLN",
-        "description": "All NGOs foreign to Indonesia who wish to operate in the country must register through the Ministry of Foreign affairs/ Kementerian Luar Negeri. \n\n\"Registration Process:\n\n\n1.    INGO submit complete application documents to the Government of the Republic of Indonesia through the Ministry of Foreign Affairs\" [1]\n\n[1] http://www.kemlu.go.id/en/berita/informasi-penting/Pages/Registration-Guidelines-for-International-Non-Governmental-Organizations-in-Indonesia.aspx",
+        "description": "All NGOs foreign to Indonesia who wish to operate in the country must register through the Ministry of Foreign affairs/ Kementerian Luar Negeri. \n\n\"Registration Process:\n\n1.    INGO submit complete application documents to the Government of the Republic of Indonesia through the Ministry of Foreign Affairs\" [1]\n\n[1] http://www.kemlu.go.id/en/berita/informasi-penting/Pages/Registration-Guidelines-for-International-Non-Governmental-Organizations-in-Indonesia.aspx",
         "name": "Ministry of Foreign affairs/ Kementerian Luar Negeri",
         "publicDatabase": "http://www.smeru.or.id/en/content/ngo-database",
         "url": "http://www.kemlu.go.id/"
@@ -4499,6 +4518,45 @@
         "name": "Central Business Register, Danish Business Authority",
         "publicDatabase": null,
         "url": "http://www.cvr.dk"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "KW",
+                "country": "Kuwait"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "Closed License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "KW-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Kuwait Chamber of Commerce & Industry",
+        "publicDatabase": null,
+        "url": "http://www.kuwaitchamber.org.kw/echamber/website/index.jsp"
     },
     {
         "former_prefixes": null,
@@ -4680,7 +4738,7 @@
             "ODS"
         ],
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": [
             "Organisation Name",
@@ -5886,45 +5944,6 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "KE",
-                "country": "Kenya"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "Closed License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "KE-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Attorney General - Registrar of Companies",
-        "publicDatabase": null,
-        "url": "http://www.attorney-general.go.ke/"
-    },
-    {
-        "former_prefixes": null,
         "dataAccessProperties": [
             "Available: but details unknown"
         ],
@@ -6765,42 +6784,59 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
+        "dataAccessProperties": [
+            "PDF",
+            "HTML"
+        ],
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registered address",
+            "Organisation Type",
+            "Organisation Name",
+            "Registration Number",
+            "Status",
+            "Date of registration",
+            "AKAs"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "Companies - 56234, 14392, 28419 / Charities - CH1, CH144, CH545 / NPOs - NP3, NP126, NP219",
+        "guidanceOnLocatingIds": "For Companies:\n\nUsers can find identifiers using the simple, searchable database - https://www.greg.gg/webCompSearch.aspx\n\nThe identifier will be under the column heading 'Entity Reg Number' on the results returned, and if the user clicks on document icon to the left, more details will be shown. The identifier will be shown next to 'Company Reg Number'\n\nFor Charities and NPOs:\n\nUsers can scroll down the two public lists to search for an organisation, or they can use 'Ctrl-F' to search for a name. The identifier can be found in the left hand column under the header 'Number'\n\nOIPA search returns zero results",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "GG",
                 "country": "Guernsey"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-11-29",
         "structure": [
             {
                 "name": "Company",
                 "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
             }
         ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
+        "licenseDetails": "https://opencorporates.com/registers/298",
+        "onlineAccessDetails": "Data for companies available in a free, simple search. Further details and documents can be requested at a fee. Users can search for a charity or NPO and then download a PDF of the charity/NPO statement",
+        "licenseStatus": "Closed License",
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
-        "code": "GG-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.Company numbers in Guernsey are not unique across the whole list of companies published by Guernsey Registry, so we've included the company registry ID to make them unique.  Please see <a href=https://wiki.opencorporates.com/qa/qa_public/register_problems/guernsey>following link</a> for more details on how we make them unique.",
+        "code": "GG-RCE",
+        "description": "All companies in Guernsey must register with the Guernsey Registry. This also applies to most charities and NPOs. The Guernsey Registry maintain a registry of all companies, charities and all NPOs in Guernsey. These are recorded in a publicly searchable webpage database for companies and also two separate lists for charities and NPOs.\n\nPlease Note: According to OpenCorporates, the identifiers are not unique across the Guernsey Registry, as there a five separate registries that can be assigned to organisation information and up to five companies my have the same identifier. OC have thus added their own identifier number based on each registry type. Further details available here - qa_public/register_problems/guernsey\n\n\"All Guernsey companies must file an Annual Validation submission with the Registry during January 2017 (unless incorporated in December 2016). Submissions received after 31 January 2017 will be subject to a \u00a3100 late filing fee.\" [1]\n\n\"The Charities and Non Profit Organisation (Registration) (Guernsey) Law, 2008 requires all Non Profit organisations based in the Islands of Guernsey, Alderney, Herm and Jethou to register with the Office of the Registrar. A failure to do so is an offence.\n\nHowever there is an exemption from this requirement. This applies to Non Profit organisations based in the Islands of Guernsey, Alderney, Herm and Jethou with gross assets and funds of less than \u00a310,000, or gross annual income of less than \u00a35,000.\" [2]\n\n[1] http://www.guernseyregistry.com/\n[2] http://www.guernseyregistry.com/article/112911/Do-I-need-to-register-a-Charity-or-Non-Profit-organisation-",
         "name": "Guernsey Registry",
-        "publicDatabase": null,
-        "url": "http://www.guernseyregistry.com/"
+        "publicDatabase": "Companies - https://www.greg.gg/webCompSearch.aspx Charities - http://www.guernseyregistry.com/article/112909/Charities-Register NPOs - http://www.guernseyregistry.com/article/112771/NPO-Register",
+        "url": "http://www.guernseyregistry.com/ , http://www.guernseyregistry.com/charities"
     },
     {
         "former_prefixes": null,
@@ -8068,6 +8104,45 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "KR",
+                "country": "Korea, Republic of"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "No License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "KR-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Land and building registry",
+        "publicDatabase": null,
+        "url": "http://www.iros.go.kr/ifrontservlet?cmd=INSEInputNseC&FINDGB=2"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
         "availableOnline": null,
         "confirmed": null,
         "dataAccessDetails": null,
@@ -8103,58 +8178,6 @@
         "name": "Financial Services Regulatory Commission, Registrar of Companies",
         "publicDatabase": null,
         "url": "http://registry.fsrc.kn/"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": [
-            "PDF",
-            "HTML"
-        ],
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": "Only basic search and PDF, no open data section found. Different details present on webpage and PDF. User needs to check both for full account",
-        "datasetFeatures": [
-            "Objectives/Purpose",
-            "Contact address",
-            "Directors / Trustees / Governors",
-            "Date of registration",
-            "Organisation Name",
-            "Status",
-            "Registered address"
-        ],
-        "deprecated": null,
-        "exampleIdentifiers": "Charities - CH1, CH144, CH545 / NPOs - NP3, NP126, NP219",
-        "guidanceOnLocatingIds": "Users can scroll down the two public lists to search for an organisation, or they can use 'Ctrl-F' to search for a name. The identifier can be found in the left hand column under the header 'Number'",
-        "opencorporates": true,
-        "jurisdiction": [
-            {
-                "countryCode": "GG",
-                "country": "Guernsey"
-            }
-        ],
-        "languages": [
-            "en"
-        ],
-        "lastUpdated": "2016-11-24",
-        "structure": [
-            {
-                "name": "Charity",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": "Users can search for a company and then download a PDF of the charity/NPO statement",
-        "licenseStatus": "Closed License",
-        "registerType": "Primary",
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "GG-RCE",
-        "description": "The Guernsey Registry maintain a registry of all charities and all NPOs in Guernsey. These are recorded in two separate lists - Charities and NPOs.\n\n\"The Charities and Non Profit Organisation (Registration) (Guernsey) Law, 2008 requires all Non Profit organisations based in the Islands of Guernsey, Alderney, Herm and Jethou to register with the Office of the Registrar. A failure to do so is an offence.\n\nHowever there is an exemption from this requirement. This applies to Non Profit organisations based in the Islands of Guernsey, Alderney, Herm and Jethou with gross assets and funds of less than \u00a310,000, or gross annual income of less than \u00a35,000.\" [1]\n\n[1] http://www.guernseyregistry.com/article/112911/Do-I-need-to-register-a-Charity-or-Non-Profit-organisation-",
-        "name": "The Guernsey Registry at the Department of Commerce and Employment (Charities)",
-        "publicDatabase": "http://www.guernseyregistry.com/article/112909/Charities-Register, http://www.guernseyregistry.com/article/112771/NPO-Register",
-        "url": "http://www.guernseyregistry.com/charities"
     },
     {
         "former_prefixes": null,
@@ -8715,45 +8738,6 @@
         "opencorporates": null,
         "jurisdiction": [
             {
-                "countryCode": "KW",
-                "country": "Kuwait"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "Closed License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "KW-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Kuwait Chamber of Commerce & Industry",
-        "publicDatabase": null,
-        "url": "http://www.kuwaitchamber.org.kw/echamber/website/index.jsp"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
                 "countryCode": "ME",
                 "country": "Montenegro"
             }
@@ -8789,7 +8773,7 @@
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "Public search is currently unavailable, the link does not work.\n\nOIPA ",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -8799,19 +8783,28 @@
         ],
         "languages": null,
         "lastUpdated": null,
-        "structure": null,
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": null,
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
         "source": null,
         "subnational": null,
         "wikipedia": null,
         "code": "NG-CAC",
-        "description": null,
+        "description": "All companies operating in Nigeria must register with the Corporate Affairs Commission. NGOs also register with the Commission. This database is available through a searchable webpage. \n\n\"The Corporate Affairs Commission (CAC) of Nigeria was established in 1990 vide Companies and Allied Matters Decree no 1 (CAMD) 1990 as amended, now on Act cap C20 Laws of federation of Nigeria. It is an autonomous body charged with the responsibility to regulate the formation and management of companies in Nigeria.\" [1]\n\n\"In Nigeria NGOs may be registered as a company limited by guarantee or as incorporated trustees (by which trustees of the NGO, rather than the NGO itself, obtains the status of a body corporate)... The duly completed application is then submitted to the Corporate Affairs Commission.\" [2]\n\n[1] https://en.wikipedia.org/wiki/Corporate_Affairs_Commission,_Nigeria\n[2] http://www.nigeriaformations.com/charities-and-NGOs.php",
         "name": "Nigerian Corporate Affairs Commission",
-        "publicDatabase": null,
+        "publicDatabase": "http://publicsearch.cac.gov.ng:8080/comsearch/test.php",
         "url": "http://new.cac.gov.ng/home/"
     },
     {
@@ -9867,6 +9860,45 @@
         "name": "Company Registrar Office",
         "publicDatabase": null,
         "url": "http://www.cro.gov.np/"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "TT",
+                "country": "Trinidad and Tobago"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "Closed License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "TT-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Companies Registry, Ministry of Legal Affairs",
+        "publicDatabase": null,
+        "url": "http://rgd.legalaffairs.gov.tt/"
     },
     {
         "former_prefixes": null,
@@ -11242,36 +11274,63 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
         "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "dataAccessDetails": "There is an option to translate the home page into English, but this feature does not move to other pages. ",
+        "datasetFeatures": [
+            "Registered address",
+            "Objectives/Purpose",
+            "Organisation Name",
+            "Registration Number",
+            "Directors / Trustees / Governors",
+            "Activities/Sector Code",
+            "Date of registration"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "972417920, 894961902, 968253980",
+        "guidanceOnLocatingIds": "Users can find identifiers by searching on the homepage of the Br\u00f8nn\u00f8ysundregistren. Identifiers will be under the column heading 'Orgnr.'. If the user clicks on the result for more details, the identifier will be next to 'Organisasjonsnummer' , or 'Organisation number' in English.\n\nOIPA search return with participating organisation Norwegian Ministry of Foreign Affairs : NO-BRC-972417920\n\n972417920 was used to search the Br\u00f8nn\u00f8ysundregistren database and it returned 'FOREIGN MINISTRY'",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "NO",
                 "country": "Norway"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "languages": [
+            "no"
+        ],
+        "lastUpdated": "2016-11-30",
+        "structure": [
+            {
+                "name": "Community Interest Company",
+                "subtypeOf": [
+                    "reciN6k5BN1PawHxI"
+                ]
+            },
+            {
+                "name": "Company",
+                "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "https://opencorporates.com/registers/191",
+        "onlineAccessDetails": "Data is available to search for free",
+        "licenseStatus": "Open License",
+        "registerType": "Secondary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "NO-BRC",
-        "description": null,
+        "description": "Companies in Norway must be Registered with the Register of Business Enterprises. Non-profits are eligible for registry with the Register of Non-Profit Organizations. These registries are maintained by the Br\u00f8nn\u00f8ysundregistrene. This database can be searched by the public for free from the organisation homepage.\n\n\"The Register of Business Enterprises registers all Norwegian and foreign businesses in Norway, ensuring legal protection and financial overview.\" [1] \n\n\"Non-profit organizations that run voluntary activities not motivated by profit are eligible to register. Examples of such organizations are:\n\n- associations\n- non-commercial foundations that do not distribute funds, or that only - distribute funds to non-profit activities\n- commercial foundations that only distribute funds to non-profit activities\n- limited liability companies that only distribute funds to non-profit activities.\" [2] \n\n\"Br\u00f8nn\u00f8ysund Register Centre (Norwegian Bokm\u00e5l: Br\u00f8nn\u00f8ysundregistrene, Norwegian Nynorsk: Br\u00f8nn\u00f8ysundregistra) is a Norwegian government agency that is responsible for the management of numerous public registers for Norway, and governmental systems for digital exchange of information.\" [3]\n\n[1][2] https://www.brreg.no/home/about-us/the-registers-and-their-timeline/\n[3] https://en.wikipedia.org/wiki/Br%C3%B8nn%C3%B8ysund_Register_Centre",
         "name": "Br\u00f8nn\u00f8ysundregistrene",
-        "publicDatabase": null,
+        "publicDatabase": "https://www.brreg.no/home/",
         "url": "http://www.brreg.no/"
     },
     {
@@ -11383,7 +11442,7 @@
         "subnational": null,
         "wikipedia": null,
         "code": "MZ-MOJ",
-        "description": null,
+        "description": "The Mozambique Ministry of Justice does not appear to be associated with the registration process for companies. There is also no website for the Ministry by which this could be confirmed or denied.\n\nCompany registration takes place with the Conservatory of Legal Entities (Conservat\u00f3ria do Registo das Entidades Legais)\n\n\"The registration process comprises the following steps:\n\u2022 Company name reservation at the Conservatory of Legal Entities Registration\" [1]\n\n[1] http://www.mozambiquehighcommission.org.uk/?id_w=7&id_w1=33",
         "name": "Mozambique Ministry of Justice",
         "publicDatabase": null,
         "url": null
@@ -11658,37 +11717,56 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "Basic information available for free. Detailed company records can be downloaded for a fee",
+        "datasetFeatures": [
+            "Website",
+            "Registration Number",
+            "Organisation Name",
+            "Registered address"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "41202535, 54416485, 66140285",
+        "guidanceOnLocatingIds": "Users can find the identifiers by using the publicly searchable database on the Chamber of Commerce website. The identifier will be next to 'KvK', or 'Chamber of Commerce' in English.",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "NL",
                 "country": "Netherlands"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "languages": [
+            "nl",
+            "en"
+        ],
+        "lastUpdated": "2016-11-30",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "https://opencorporates.com/registers/175",
+        "onlineAccessDetails": "Basic company data is available on the KvK website for free. More detailed information is available for download for a fee.",
+        "licenseStatus": "Closed License",
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "NL-KVK",
-        "description": null,
-        "name": "Kamer van Koophandel",
-        "publicDatabase": null,
-        "url": "http://www.kvk.nl/"
+        "description": "All companies and entities (including most NGOs) in the Netherlands must enrol with the Commercial Register, which is hosted by the Dutch Chamber of Commerce. Each entity receives a Chamber of Commerce number upon registration, which is the appropriate identifier Dutch companies and NPOs.\n\nBasic company information is available for free, detailed info can be downloaded for a fee.\n\n\"All companies and entities in the Netherlands must enroll in the Commercial Register. By law, you have a business if you provide common goods or services to others with the intent to make a profit.\" [1] \n\n\"Recipient companies can consult www.kvk.nl/waadi to check if agencies are registered on the Chamber of Commerce website. They can do this simply by entering their Chamber or Commerce number, which is assigned to all companies and legal entities upon registration in the Business Register.\" [2] \n\n\"The major forms of Dutch non-profit organization are the associations, the foundations and the churches... Associations registered in The Netherlands are unions between two or more individuals, physical persons or corporate bodies that pursue certain goals stated in the Articles of Association and that cannot divide profit among its members... There are two types of associations that can be set up in the Netherlands: with complete authority under the law (in this case the articles of associations are drawn by a civil notary and it\u2019s mandatory in this case that the association is registered at the Dutch Chamber of Commerce trade register) and with limited authority under the law (when the articles are not drawn up by a notary and the registration is not mandatory).\" [3] \n\n[1] https://www.kvk.nl/inschrijven-en-wijzigen/inschrijven/?block=420250\n[2] https://www.kvk.nl/english/how-to-register-deregister-and-report-changes/registering-with-the-chamber-of-commerce/hiring-or-provision-of-workers-in-the-netherlands/\n[3] http://www.bridgewest.eu/article/register-non-profit-organization-netherlands",
+        "name": "Chamber of Commerce / Kamer van Koophandel",
+        "publicDatabase": "https://www.kvk.nl/producten-bestellen/",
+        "url": "http://www.kvk.nl/ , https://www.kvk.nl/english/"
     },
     {
         "former_prefixes": null,
@@ -12087,45 +12165,6 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "KR",
-                "country": "Korea, Republic of"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "KR-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Land and building registry",
-        "publicDatabase": null,
-        "url": "http://www.iros.go.kr/ifrontservlet?cmd=INSEInputNseC&FINDGB=2"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
         "availableOnline": null,
         "confirmed": null,
         "dataAccessDetails": null,
@@ -12390,6 +12429,45 @@
         "name": "Ministry of Trade, Registrar of Companies",
         "publicDatabase": null,
         "url": "https://www.companies.org.ls/lesotho-companies-br/viewInstance/view.html?id=13c857736aeecb0a09b5d94dcd0806b1fbc38865177758399a303edf5386cceb&_timestamp=1546598047677291"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": null,
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "TR",
+                "country": "Turkey"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "Closed License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "TR-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Central Registry Number System (MERSIS), Ministry of Customs and Trade",
+        "publicDatabase": null,
+        "url": "http://mersis.gumrukticaret.gov.tr/Mersis/%C5%9EirketSorgulama.aspx"
     },
     {
         "former_prefixes": null,
@@ -12948,6 +13026,59 @@
         "name": "Corporation Section, Division of Corporate & Consumer Services,  Department of Financial Institutions",
         "publicDatabase": null,
         "url": "http://www.wdfi.org/apps/CorpSearch/Search.aspx"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": null,
+        "datasetFeatures": [
+            "Organisation Name",
+            "Website",
+            "Registered address",
+            "E-mail address",
+            "Phone Number",
+            "Objectives/Purpose",
+            "Organisation Type",
+            "Activities/Sector Code"
+        ],
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": "Organisation identifiers are not provided as part of this database",
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "ID",
+                "country": "Indonesia"
+            }
+        ],
+        "languages": [
+            "en",
+            "id"
+        ],
+        "lastUpdated": "2016-11-29",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": "Users can search an NGO by name, province or sector. Ornop - NGO / Provinsi - Province / Sektor kegiatan - Sector activity / Kata kunci lain - Other keywords",
+        "licenseStatus": "No License",
+        "registerType": "Third-party",
+        "sector": null,
+        "source": "Desk research",
+        "subnational": null,
+        "wikipedia": null,
+        "code": "ID-SMR",
+        "description": "The SMERU Research Institute is an independent body which conducts research on social issues in Indonesia. They also maintains a database of NGOs working in Indonesia.\n\n\"The SMERU Research Institute is an independent institution for research and public policy studies. We professionally and proactively provide accurate and timely information, as well as objective analyses, on various socioeconomic and poverty issues considered most urgent and relevant for the people of Indonesia.\" [1]\n\n\"SMERU manages Indonesia's most comprehensive online database of national and regional non-governmental organizations (NGOs). Currently, there are almost 3,000 NGOs in the database, which provides information on the NGOs\u2019 name, address, contact person, vision, mission, legal form, activities, and sector.\" [2]\n\n[1] http://www.smeru.or.id/en/about\n[2] http://www.smeru.or.id/en/content/ngo-database",
+        "name": "The SMERU Research Institute",
+        "publicDatabase": "http://www.smeru.or.id/en/content/ngo-database",
+        "url": "http://www.smeru.or.id/en"
     },
     {
         "former_prefixes": null,
@@ -13708,45 +13839,6 @@
         "name": "Tanzania Business Registrations and Licensing Agency",
         "publicDatabase": null,
         "url": "http://www.brela.go.tz/"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "TT",
-                "country": "Trinidad and Tobago"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "Closed License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "TT-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Companies Registry, Ministry of Legal Affairs",
-        "publicDatabase": null,
-        "url": "http://rgd.legalaffairs.gov.tt/"
     },
     {
         "former_prefixes": null,
@@ -15779,45 +15871,6 @@
         "name": "Corporation Division, Oregon Secretary of State",
         "publicDatabase": null,
         "url": "http://egov.sos.state.or.us/br/pkg_web_name_srch_inq.login"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "TR",
-                "country": "Turkey"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "Closed License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "TR-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Central Registry Number System (MERSIS), Ministry of Customs and Trade",
-        "publicDatabase": null,
-        "url": "http://mersis.gumrukticaret.gov.tr/Mersis/%C5%9EirketSorgulama.aspx"
     },
     {
         "former_prefixes": null,
