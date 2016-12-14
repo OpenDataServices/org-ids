@@ -2,40 +2,6 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-11-21",
-        "structure": null,
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": "Primary",
-        "sector": null,
-        "source": "Desk research",
-        "subnational": null,
-        "wikipedia": null,
-        "code": "CN-SAIC",
-        "description": "The SAIC is the national body which ensures business rights in China, for both domestic and foreign enterprises. Businesses must register with the SAIC. The Enterprise Registration Bureau is the department responsible for enterprise registration.\n\n For further details on the procedure for starting a business entity, see this WikiProcedure - https://www.wikiprocedure.com/index.php/China_-_Start_a_Business_Entity\n\nThe database is only available in Chinese language\n\n\"The State Administration for Industry & Commerce (SAIC) of the People\u2019s Republic of China is the competent authority of ministerial level directly under the State Council in charge of market supervision/regulation and related law enforcement through administrative means.\n\nWith creating a regulated and harmonized market environment of fairness, justice and faithfulness for the coordinated socioeconomic development as its objective, SAIC functions in maintaining market order and protecting the legitimate rights and interests of businesses and consumers by carrying out regulations in the fields of enterprise registration, competition, consumer protection, trademark protection and combating economic illegalities.\" [1] \n\n\"Our responsibilities:\n2.     Carry out and administer registration of enterprises (including foreign-invested enterprises), agricultural cooperatives, entities or individuals engaged in business operation and resident representative offices of foreign companies; and take charge of the investigation and ban on unlicensed business operation according to law.\" [2]\n\n\"Enterprise Registration Bureau\n-        Draft measures and practice directions regarding enterprise registration;\n-        Coordinate and guide enterprise registration nationwide; \n-        Take charge of registration of certain enterprises and supervises the registrants\u2019 registration practices; \n-        Organize and guide credit rating of businesses; \n-        Establish and maintain the national database of enterprise registration information, and analyze and publish registration information of domestic enterprises.\" [3]\n\n[1][2] http://www.saic.gov.cn/english/aboutus/Mission/index.html\n[3] http://www.saic.gov.cn/english/aboutus/Departments/",
-        "name": "State Administration for Industry and Commerce (SAIC)",
-        "publicDatabase": null,
-        "url": "http://gsxt.saic.gov.cn/"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
         "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
@@ -110,51 +76,6 @@
         "name": "Central Register of Social Denominations",
         "publicDatabase": null,
         "url": "http://www.minjusdh.gov.ao/VerPrestadorServico.aspx?id=233"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "CN_14",
-                "country": null,
-                "regionName": null
-            }
-        ],
-        "wikipedia": null,
-        "code": "CN-14-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Shanxi Provincial AIC Enterprise Registry",
-        "publicDatabase": null,
-        "url": "http://218.26.1.108/Portal/Default.aspx"
     },
     {
         "former_prefixes": null,
@@ -422,30 +343,37 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
         "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registered address",
+            "Registration Number",
+            "Organisation Name",
+            "Status",
+            "Directors / Trustees / Governors",
+            "Accounts",
+            "Business ID History"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": "Corporation Number -  784899-4 / Business Number: 820336113RC0001",
-        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database which is hosted by the Canadian Government, on a website separate to the Canadian Revenue Agency. The two identifiers available to the user are the Corporate Number and the Business Number. The identifiers will be next to these names, respectively.\n\nPlease note: this registry is incomplete and does not provide results from all companies across Canada",
-        "opencorporates": null,
+        "exampleIdentifiers": "101182509, 820336113",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database which is hosted by the Canadian Government, on a website separate to the Canadian Revenue Agency. Two identifiers are returned: the Corporate Number and the Business Number. The identifiers will be next to these names, respectively. For CA-CRA_ACR the business number should be used.\n\nThe business number is sometimes reported with a Program Account code (e.g. RP0001 to indicate a payroll program account, leading a number such as 123456789RP0001). In constructing an organisation identifier, only the first nine digits should be used. ",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "CA",
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
+        "languages": [
+            "en",
+            "fr"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
-            {
-                "name": "Community Interest Company",
-                "subtypeOf": [
-                    "reciN6k5BN1PawHxI"
-                ]
-            },
             {
                 "name": "Company",
                 "subtypeOf": null
@@ -455,16 +383,16 @@
                 "subtypeOf": null
             }
         ],
-        "licenseDetails": null,
+        "licenseDetails": "http://index.okfn.org/place/canada/companies/",
         "onlineAccessDetails": "Data is available on a website separate to the CRA. The database is incomplete",
-        "licenseStatus": null,
+        "licenseStatus": "Closed License",
         "registerType": "Secondary",
         "sector": null,
         "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "CA-CRA_ACR",
-        "description": "Companies in Canada register with their provincial authority, e.g. British Columbia, and then if they wish be eligible for a number of national services and/or if they wish to do business with the Canadian government, they have to register with the Canada Revenue Agency and receive a Business Number.\n\nNot all companies need a Canadian Business Number. Detailed information can be found here - http://www.cra-arc.gc.ca/tx/bsnss/tpcs/bn-ne/wrks-eng.html\n\nNot all charities need to register with the Canadian Revenue Agency. Detailed information can be found here - http://www.cra-arc.gc.ca/chrts-gvng/chrts/pplyng/rgstrtn/mnd-eng.html\n\nNot all non-profit organisations must register to become a charity. Detailed information can be found here - http://www.cra-arc.gc.ca/chrts-gvng/dnrs/rgltn/dffrnc-rc-np-eng.html\n\nCompanies can be searched by using the Business Number, as assigned by the CRA, on this incomplete registry hosted by the Canadian govt - https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA\n\n\n\"Your Business Number is a nine-digit account number that identifies your business to federal, provincial, and municipal governments. You can open several different accounts for your business through a single registration. The accounts include:\n\nGST/HST\nPayroll deductions\nCorporate income tax\nImport/export\" [1] \n\n[1] http://www.canadabusiness.ca/programs/business-number-bn-1/",
+        "description": "Companies in Canada register with their provincial authority, e.g. British Columbia, and then they register with the Canadian Revenue Agency in order to pay corporate income tax and receive a Business Number.\n\nThe code CA-CRA_ACR is used for Canadian Business Numbers. \n\nNon-profits and other kinds of legal entities may also have a Canadian Business Number. \n\nThe business number is sometimes reported with a Program Account code (e.g. RP0001 to indicate a payroll program account, leading a number such as 123456789RP0001). In constructing an organisation identifier, only the first nine digits should be used. \n\nCompanies can be searched by using the Business Number, as assigned by the CRA, on this incomplete registry hosted by the Canadian govt - https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA\n\n## More detail:\n\nNot all companies need a Canadian Business Number. Detailed information can be found here - http://www.cra-arc.gc.ca/tx/bsnss/tpcs/bn-ne/wrks-eng.html\n\nNot all charities need to register with the Canadian Revenue Agency. Detailed information can be found here - http://www.cra-arc.gc.ca/chrts-gvng/chrts/pplyng/rgstrtn/mnd-eng.html\n\nNot all non-profit organisations must register to become a charity. Detailed information can be found here - http://www.cra-arc.gc.ca/chrts-gvng/dnrs/rgltn/dffrnc-rc-np-eng.html\n\n\"Your Business Number is a nine-digit account number that identifies your business to federal, provincial, and municipal governments.\"[1]\n\n[1] http://www.canadabusiness.ca/programs/business-number-bn-1/",
         "name": "Canadian Revenue Agency / Agence du revenu du Canada",
         "publicDatabase": "https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA",
         "url": "http://www.cra-arc.gc.ca/"
@@ -591,6 +519,45 @@
         "name": "Ministry of Justice - Unified State Register of Legal Entities and Individual Entrepreneurs",
         "publicDatabase": null,
         "url": "http://egr.gov.by/egrn/index.jsp?content=findname"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "CN",
+                "country": "China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "No License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "CN-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "State Administration for Industry and Commerce (AIC), Enterprise Registry",
+        "publicDatabase": null,
+        "url": "http://gsxt.saic.gov.cn/zjgs/"
     },
     {
         "former_prefixes": null,
@@ -995,6 +962,51 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
+        "availableOnline": null,
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "CN",
+                "country": "China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "Closed License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": [
+            {
+                "regionCode": "CN_92",
+                "country": null,
+                "regionName": null
+            }
+        ],
+        "wikipedia": null,
+        "code": "CN-92-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Services Bureau of Justice Affairs - Commercial Register",
+        "publicDatabase": null,
+        "url": "http://www.dsaj.gov.mo/"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
         "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
@@ -1191,8 +1203,8 @@
             "Registered address"
         ],
         "deprecated": null,
-        "exampleIdentifiers": "Corporation Number - 784899-4 / Business Number (BN) - 820336113RC0001",
-        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database which is hosted by the Canadian Government, on a website separate to the Canadian Revenue Agency. The two identifiers available to the user are the Corporate Number and the Business Number. The identifiers will be next to these names, respectively.\n\nPlease note: this registry is incomplete and does not provide results from all companies across Canada",
+        "exampleIdentifiers": "784899-4",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database which is hosted by the Canadian Government, on a website separate to the Canadian Revenue Agency. The two identifiers available to the user are the Corporate Number and the Business Number. The identifiers will be next to these names, respectively.\n\nUsers should note that results that have been pulled from Ontario's registry will not successfully link to corporate information, but will take the user to the homepage for the public record search.",
         "opencorporates": true,
         "jurisdiction": [
             {
@@ -1214,13 +1226,13 @@
         "licenseDetails": "http://index.okfn.org/place/canada/companies/",
         "onlineAccessDetails": "Limited details from an incomplete database",
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Secondary",
         "sector": null,
         "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
-        "code": "CA-CR",
-        "description": "Companies in Canada register with their provincial authority, e.g. British Columbia. While there is currently no complete national database for companies in Canada, Corporations Canada are piloting a Business Search Registry, which allows for the search of multiple jurisdictions at once, but not all - https://www.ic.gc.ca/app/scr/ccbr/search-chercher?lang=eng\n\nCorporations Canada also provides a Federal Corporation search - https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA\n\nA number of jurisdictions provide their own registry, a list can be found here under 'Provincial and Territorial Registration' - http://www.canadabusiness.ca/government/registering-your-business/\n\nA Business Search Registry is currently being piloted by the Canadian govt, which allows for the search of multiple jurisdictions at once, but not all - https://www.ic.gc.ca/app/scr/ccbr/search-chercher?lang=eng\n\nThis entry was imported from the Open Corporates Jurisdiction List.",
+        "code": "CA-CC",
+        "description": "Corporations Canada are the federal company register. \n\nCA-CC should be used for the Canada Corporation Number\n\nCompanies in Canada register with their provincial authority, e.g. British Columbia. While there is currently no complete national database for companies in Canada, Corporations Canada are piloting a Business Search Registry, which allows for the search of multiple jurisdictions at once, but not all - https://www.ic.gc.ca/app/scr/ccbr/search-chercher?lang=eng\n\nCorporations Canada also provides a Federal Corporation search - https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA\n\nThis entry was imported from the Open Corporates Jurisdiction List.",
         "name": "Corporations Canada",
         "publicDatabase": "https://www.ic.gc.ca/app/scr/ccbr/search-chercher?lang=eng , https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpSrch.html?locale=en_CA",
         "url": "http://www.ic.gc.ca/eic/site/cd-dgc.nsf/eng/home"
@@ -1263,77 +1275,6 @@
         "name": "Office of the Registrar of Joint Stock Companies and Firms",
         "publicDatabase": null,
         "url": "http://www.roc.gov.bd:7781/psp/rjschome"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": [
-            "Bulk download",
-            "API"
-        ],
-        "availableOnline": "Yes",
-        "confirmed": true,
-        "dataAccessDetails": "An API is available at https://developer.companieshouse.gov.uk/api/docs/ and bulk data is provided at http://download.companieshouse.gov.uk/en_output.html",
-        "datasetFeatures": [
-            "Registered address",
-            "Directors / Trustees / Governors"
-        ],
-        "deprecated": null,
-        "exampleIdentifiers": "09506232, 07444723",
-        "guidanceOnLocatingIds": null,
-        "opencorporates": true,
-        "jurisdiction": [
-            {
-                "countryCode": "GB",
-                "country": "United Kingdom"
-            }
-        ],
-        "languages": [
-            "en"
-        ],
-        "lastUpdated": "2016-09-17",
-        "structure": [
-            {
-                "name": "Listed company",
-                "subtypeOf": [
-                    "reciN6k5BN1PawHxI"
-                ]
-            },
-            {
-                "name": "Community Interest Company",
-                "subtypeOf": [
-                    "reciN6k5BN1PawHxI"
-                ]
-            },
-            {
-                "name": "Partnership",
-                "subtypeOf": [
-                    "reciN6k5BN1PawHxI"
-                ]
-            },
-            {
-                "name": "Limited Company",
-                "subtypeOf": [
-                    "reciN6k5BN1PawHxI"
-                ]
-            },
-            {
-                "name": "Charity",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": "\u201cSupplied under section 47 and 50 of the Copyright, Designs and Patents Act 1988 and Schedule 1 of the Database Regulations (SI 1997/3032)\u201d",
-        "onlineAccessDetails": null,
-        "licenseStatus": "Open License",
-        "registerType": "Primary",
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "GB-COH",
-        "description": "Companies House is the United Kingdom's register of companies.\n\nIt contains entries for many kinds of companies, including:\n\n* Public limited company (PLC)\n* Private company limited by shares (Ltd, Limited)\n* Private company limited by guarantee, typically a non-commercial membership body such as a charity\n* Private unlimited company (either with or without a share capital)\n* Limited liability partnership (LLP)\n* Limited partnership (LP)\n* Societas Europaea (SE): European Union-wide company structure\n* Companies incorporated by Royal Charter (RC)\n* Community interest company",
-        "name": "Companies House",
-        "publicDatabase": null,
-        "url": "http://www.companieshouse.gov.uk/"
     },
     {
         "former_prefixes": null,
@@ -1553,64 +1494,6 @@
         "name": "Registry of Companies, Department of Government Services",
         "publicDatabase": null,
         "url": "http://www.servicenl.gov.nl.ca/registries/companies.html"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": [
-            "Bulk download"
-        ],
-        "availableOnline": "Yes",
-        "confirmed": true,
-        "dataAccessDetails": "Bulk download available at http://data.charitycommission.gov.uk/",
-        "datasetFeatures": [
-            "Registered address"
-        ],
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "GB",
-                "country": "United Kingdom"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-17",
-        "structure": [
-            {
-                "name": "Charity",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": "Open Government Licence v2.0",
-        "onlineAccessDetails": "Online search is available at https://www.gov.uk/government/organisations/charity-commission",
-        "licenseStatus": "Open License",
-        "registerType": "Primary",
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "GB-WLS",
-                "country": [
-                    "recbO0TnMgfxNbDxe"
-                ],
-                "regionName": "Wales"
-            },
-            {
-                "regionCode": "GB-ENG",
-                "country": [
-                    "recbO0TnMgfxNbDxe"
-                ],
-                "regionName": "England"
-            }
-        ],
-        "wikipedia": null,
-        "code": "GB-CHC",
-        "description": "There are four main types of charity structure in the UK: \n\n(1) Charitable incorporated organisation (CIO) \n(2) charitable company (limited by guarantee) \n(3) unincorporated association \n(4) trust\n\n\n",
-        "name": "Charity Commission",
-        "publicDatabase": null,
-        "url": "http://www.charity-commission.gov.uk/"
     },
     {
         "former_prefixes": null,
@@ -2013,7 +1896,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": "Yes",
-        "confirmed": true,
+        "confirmed": null,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -2022,31 +1905,37 @@
         "opencorporates": null,
         "jurisdiction": [
             {
-                "countryCode": "GB",
-                "country": "United Kingdom"
+                "countryCode": "CN",
+                "country": "China"
             }
         ],
         "languages": null,
-        "lastUpdated": null,
+        "lastUpdated": "2016-09-07",
         "structure": [
             {
-                "name": "Government Agency",
+                "name": "Company",
                 "subtypeOf": null
             }
         ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": "Secondary",
+        "licenseStatus": "No License",
+        "registerType": null,
         "sector": null,
         "source": null,
-        "subnational": null,
+        "subnational": [
+            {
+                "regionCode": "CN_64",
+                "country": null,
+                "regionName": null
+            }
+        ],
         "wikipedia": null,
-        "code": "GB-GOVUK",
-        "description": "Use the final segment of the url (below /organisations) as the \"registration number\", converting all \"-\" to \"_\". Keep \"registration number\" portion all lowercase.",
-        "name": "UK Government Departments, Agencies & Public Bodies",
+        "code": "CN-64-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Ningxia Hui Autonomous Region AIC Enterprise Registry",
         "publicDatabase": null,
-        "url": "https://www.gov.uk/government/organisations"
+        "url": "http://gsxt.ngsh.gov.cn/ECPS/ecps.jsp"
     },
     {
         "former_prefixes": null,
@@ -2125,6 +2014,51 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "CN",
+                "country": "China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "No License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": [
+            {
+                "regionCode": "CN_61",
+                "country": null,
+                "regionName": null
+            }
+        ],
+        "wikipedia": null,
+        "code": "CN-61-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Shaanxi Provincial AIC Enterprise Registry",
+        "publicDatabase": null,
+        "url": "http://117.22.252.219:8002/p/ent2"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
         "availableOnline": null,
         "confirmed": null,
         "dataAccessDetails": null,
@@ -2194,6 +2128,51 @@
         "source": null,
         "subnational": [
             {
+                "regionCode": "CN_63",
+                "country": null,
+                "regionName": null
+            }
+        ],
+        "wikipedia": null,
+        "code": "CN-63-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Qinghai Provincial AIC Enterprise Registry",
+        "publicDatabase": null,
+        "url": "http://gsxt.qhaic.gov.cn/search.jspx"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "CN",
+                "country": "China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "No License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": [
+            {
                 "regionCode": "CN_21",
                 "country": null,
                 "regionName": null
@@ -2205,6 +2184,51 @@
         "name": "Liaoning Provincial AIC Enterprise Registry",
         "publicDatabase": null,
         "url": "http://gsxt.lngs.gov.cn/saicpub/"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "CN",
+                "country": "China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "No License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": [
+            {
+                "regionCode": "CN_62",
+                "country": null,
+                "regionName": null
+            }
+        ],
+        "wikipedia": null,
+        "code": "CN-62-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Gansu Provincial AIC Enterprise Registry",
+        "publicDatabase": null,
+        "url": "http://xygs.gsaic.gov.cn/gsxygs/"
     },
     {
         "former_prefixes": null,
@@ -2476,6 +2500,51 @@
         "name": "Saskatchewan Corporate Registry, Information Services Corporation",
         "publicDatabase": null,
         "url": "http://www.isc.ca/CorporateRegistry/"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "CN",
+                "country": "China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "No License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": [
+            {
+                "regionCode": "CN_54",
+                "country": null,
+                "regionName": null
+            }
+        ],
+        "wikipedia": null,
+        "code": "CN-54-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Tibet Autonomous Region AIC Enterprise Registry",
+        "publicDatabase": null,
+        "url": "http://gsxt.xzaic.gov.cn/search.jspx"
     },
     {
         "former_prefixes": null,
@@ -3214,51 +3283,6 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "CN_43",
-                "country": null,
-                "regionName": null
-            }
-        ],
-        "wikipedia": null,
-        "code": "CN-43-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Hunan Provincial AIC Enterprise Registry",
-        "publicDatabase": null,
-        "url": "http://gsxt.hnaic.gov.cn/"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
         "availableOnline": null,
         "confirmed": null,
         "dataAccessDetails": null,
@@ -3372,53 +3396,6 @@
         "name": "Aruba Chamber of Commerce Registry",
         "publicDatabase": null,
         "url": "http://www.kvk.aw/registers"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": true,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "GB",
-                "country": "United Kingdom"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": [
-            {
-                "name": "Charity",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": "Primary",
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "GB-NIR",
-                "country": [
-                    "recbO0TnMgfxNbDxe"
-                ],
-                "regionName": "Northern Ireland"
-            }
-        ],
-        "wikipedia": null,
-        "code": "GB-NIC",
-        "description": null,
-        "name": "The Charity Commission for Northern Ireland",
-        "publicDatabase": null,
-        "url": "http://www.charitycommissionni.org.uk/"
     },
     {
         "former_prefixes": null,
@@ -3812,53 +3789,11 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": "No",
+        "availableOnline": null,
         "confirmed": true,
         "dataAccessDetails": null,
-        "datasetFeatures": [
-            "Registered address",
-            "Website",
-            "E-mail address"
-        ],
-        "deprecated": null,
-        "exampleIdentifiers": "10000346, 10010014",
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "GB",
-                "country": "United Kingdom"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": "Requests for data must state the intended re-use. ",
-        "onlineAccessDetails": "Requests for data can be made to the UK Register of Learning Providers by e-mail.",
-        "licenseStatus": "Closed License",
-        "registerType": "Secondary",
-        "sector": [
-            {
-                "name": "Education"
-            }
-        ],
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "GB-UKPRN",
-        "description": "A UKPRN is a unique number allocated to a provider on successful registration on the UK Register of Learning Providers. ",
-        "name": "UK Register of Learning Providers",
-        "publicDatabase": null,
-        "url": "https://www.ukrlp.co.uk/"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
         "datasetFeatures": null,
-        "deprecated": null,
+        "deprecated": true,
         "exampleIdentifiers": null,
         "guidanceOnLocatingIds": null,
         "opencorporates": null,
@@ -3874,13 +3809,13 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": null,
-        "registerType": null,
+        "registerType": "Deprecated",
         "sector": null,
         "source": null,
         "subnational": null,
         "wikipedia": null,
         "code": "BE-GTCF",
-        "description": "The Registry of the Francophone Brussels Commercial Court",
+        "description": "'The Registry of the Francophone Brussels Commercial Court' does not appear to be an organisation registration agency.\n\nThe one identifier we have found in use for this list appears to be derived instead from the BE-BCE_KBO register. ",
         "name": "Au Greffe du Tribunal de Commerce Francophone de Bruxelles",
         "publicDatabase": null,
         "url": "http://www.juridat.be/tribunal_commerce/bruxelles/index.htm"
@@ -4014,7 +3949,7 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-NB-CR",
+        "code": "CA_NB-",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
         "name": "Corporate Registry",
         "publicDatabase": null,
@@ -4234,6 +4169,51 @@
     },
     {
         "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "CN",
+                "country": "China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "No License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": [
+            {
+                "regionCode": "CN_65",
+                "country": null,
+                "regionName": null
+            }
+        ],
+        "wikipedia": null,
+        "code": "CN-65-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Xinjiang Uyghur Autonomous Region AIC Enterprise Registry",
+        "publicDatabase": null,
+        "url": "http://gsxt.xjaic.gov.cn:7001/ztxy.do?method=index&random=1423496833401"
+    },
+    {
+        "former_prefixes": null,
         "dataAccessProperties": [
             "PDF"
         ],
@@ -4265,7 +4245,20 @@
             "nl"
         ],
         "lastUpdated": "2016-11-18",
-        "structure": null,
+        "structure": [
+            {
+                "name": "Unincorporated body",
+                "subtypeOf": null
+            },
+            {
+                "name": "Company",
+                "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": "Bulk access is only available for a fee http://economie.fgov.be/fr/entreprises/BCE/pub/reutilisation/",
         "licenseStatus": "Closed License",
@@ -4279,6 +4272,40 @@
         "name": "Crossroads Bank for Enterprises / Banque Carrefour des entreprises / Kruispuntbank van ondernemingen",
         "publicDatabase": "http://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?lang=en&nummer=&actionLu=Research",
         "url": "http://economie.fgov.be/fr/entreprises/BCE "
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": null,
+        "confirmed": true,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "CN",
+                "country": "China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-11-21",
+        "structure": null,
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": null,
+        "registerType": "Primary",
+        "sector": null,
+        "source": "Desk research",
+        "subnational": null,
+        "wikipedia": null,
+        "code": "CN-SAIC",
+        "description": "The SAIC is the national body which ensures business rights in China, for both domestic and foreign enterprises. Businesses must register with the SAIC. The Enterprise Registration Bureau is the department responsible for enterprise registration.\n\nFor further details on the procedure for starting a business entity, see this WikiProcedure - https://www.wikiprocedure.com/index.php/China_-_Start_a_Business_Entity\n\nThe database is only available in Chinese language\n\n\"The State Administration for Industry & Commerce (SAIC) of the People\u2019s Republic of China is the competent authority of ministerial level directly under the State Council in charge of market supervision/regulation and related law enforcement through administrative means.\n\nWith creating a regulated and harmonized market environment of fairness, justice and faithfulness for the coordinated socioeconomic development as its objective, SAIC functions in maintaining market order and protecting the legitimate rights and interests of businesses and consumers by carrying out regulations in the fields of enterprise registration, competition, consumer protection, trademark protection and combating economic illegalities.\" [1] \n\n\"Our responsibilities:\n2.     Carry out and administer registration of enterprises (including foreign-invested enterprises), agricultural cooperatives, entities or individuals engaged in business operation and resident representative offices of foreign companies; and take charge of the investigation and ban on unlicensed business operation according to law.\" [2]\n\n\"Enterprise Registration Bureau\n-        Draft measures and practice directions regarding enterprise registration;\n-        Coordinate and guide enterprise registration nationwide; \n-        Take charge of registration of certain enterprises and supervises the registrants\u2019 registration practices; \n-        Organize and guide credit rating of businesses; \n-        Establish and maintain the national database of enterprise registration information, and analyze and publish registration information of domestic enterprises.\" [3]\n\n[1][2] http://www.saic.gov.cn/english/aboutus/Mission/index.html\n[3] http://www.saic.gov.cn/english/aboutus/Departments/",
+        "name": "State Administration for Industry and Commerce (SAIC)",
+        "publicDatabase": null,
+        "url": "http://gsxt.saic.gov.cn/"
     },
     {
         "former_prefixes": null,
@@ -4322,7 +4349,7 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": null,
+        "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
         "datasetFeatures": null,
@@ -4332,8 +4359,8 @@
         "opencorporates": null,
         "jurisdiction": [
             {
-                "countryCode": "JE",
-                "country": "Jersey"
+                "countryCode": "CN",
+                "country": "China"
             }
         ],
         "languages": null,
@@ -4346,17 +4373,23 @@
         ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": "Closed License",
+        "licenseStatus": "No License",
         "registerType": null,
         "sector": null,
         "source": null,
-        "subnational": null,
+        "subnational": [
+            {
+                "regionCode": "CN_14",
+                "country": null,
+                "regionName": null
+            }
+        ],
         "wikipedia": null,
-        "code": "JE-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.Jersey public company identifiers are not unique - specifically there are instances of companies (even of the same type) having the same company number. Because of that, OpenCorporates uses the Jersey company register uid (the identifier used on URLs), which is not publicly described anywhere, but we believe to be unique. A further description of our approach to company numbers for Jersey can be found at <a href=\"https://wiki.opencorporates.com/qa/qa_public/migrating_company_numbers/jersey\">https://wiki.opencorporates.com/qa/qa_public/migrating_company_numbers/jersey</a>",
-        "name": "JFSC Companies Registry",
+        "code": "CN-14-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Shanxi Provincial AIC Enterprise Registry",
         "publicDatabase": null,
-        "url": "http://www.jerseyfsc.org/registry/"
+        "url": "http://218.26.1.108/Portal/Default.aspx"
     },
     {
         "former_prefixes": null,
@@ -4902,6 +4935,111 @@
     },
     {
         "former_prefixes": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": null,
+        "datasetFeatures": [
+            "Organisation Name",
+            "Website",
+            "Registered address",
+            "E-mail address",
+            "Phone Number",
+            "Objectives/Purpose",
+            "Organisation Type",
+            "Activities/Sector Code"
+        ],
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": "Organisation identifiers are not provided as part of this database",
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "ID",
+                "country": "Indonesia"
+            }
+        ],
+        "languages": [
+            "en",
+            "id"
+        ],
+        "lastUpdated": "2016-11-29",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": "Users can search an NGO by name, province or sector. Ornop - NGO / Provinsi - Province / Sektor kegiatan - Sector activity / Kata kunci lain - Other keywords",
+        "licenseStatus": "No License",
+        "registerType": "Third-party",
+        "sector": null,
+        "source": "Desk research",
+        "subnational": null,
+        "wikipedia": null,
+        "code": "ID-SMR",
+        "description": "The SMERU Research Institute is an independent body which conducts research on social issues in Indonesia. They also maintains a database of NGOs working in Indonesia.\n\n\"The SMERU Research Institute is an independent institution for research and public policy studies. We professionally and proactively provide accurate and timely information, as well as objective analyses, on various socioeconomic and poverty issues considered most urgent and relevant for the people of Indonesia.\" [1]\n\n\"SMERU manages Indonesia's most comprehensive online database of national and regional non-governmental organizations (NGOs). Currently, there are almost 3,000 NGOs in the database, which provides information on the NGOs\u2019 name, address, contact person, vision, mission, legal form, activities, and sector.\" [2]\n\n[1] http://www.smeru.or.id/en/about\n[2] http://www.smeru.or.id/en/content/ngo-database",
+        "name": "The SMERU Research Institute",
+        "publicDatabase": "http://www.smeru.or.id/en/content/ngo-database",
+        "url": "http://www.smeru.or.id/en"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": null,
+        "datasetFeatures": [
+            "Registered address",
+            "Registration Number",
+            "Organisation Name",
+            "Organisation Type",
+            "Date of registration",
+            "Status"
+        ],
+        "deprecated": null,
+        "exampleIdentifiers": "RC_119821, RC_87846, RBN_94687",
+        "guidanceOnLocatingIds": "Users can find company identifiers by using the simple, searchable online database. Identifiers will be under the column heading 'Number'. Users can find more information by clicking on one of the search results.\n\nUsers should be aware that the identifier numbers are not unique, as there are multiple types of companies and identifiers can be repeated. For example, there are two companies with the number '1381' - an LP (limited partnership) and an RC (Registered Private Company)\n\nIt is recommended that those creating identifiers for JSFC use the business codes as part of the identifier. For example, the limited partnership company described above should have the identifier:\n\nJE-FSC-LP_1381\n\nOpen Corporates adopt a slightly different approach, using the URL of the company register entry to generate an identifier. See https://wiki.opencorporates.com/qa/qa_public/migrating_company_numbers/jersey ",
+        "opencorporates": true,
+        "jurisdiction": [
+            {
+                "countryCode": "JE",
+                "country": "Jersey"
+            }
+        ],
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-02",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "http://index.okfn.org/place/jersey/companies/ , https://opencorporates.com/registers/295",
+        "onlineAccessDetails": "Data is available for search for free, and records are available for download for a fee",
+        "licenseStatus": "Closed License",
+        "registerType": "Primary",
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "JE-FSC",
+        "description": "Companies and Non Profit Organisations operating in Jersey register with the Financial Services Commission (JFSC). A search of company information is freely available on the Commission website. There was no search available for NPOs at the time of last checks.\n\nUsers should be aware that the identifier numbers are not unique, as there are multiple types of companies and identifiers can be repeated. For example, there are two companies with the number '1381' - an LP (limited partnership) and an RC (Registered Private Company)\n\nIt is recommended that those creating identifiers for JSFC use the business codes as part of the identifier. For example, the limited partnership company described above should have the identifier:\n\nJE-FSC-LP_1381\n\n\n\"The Non-Profit Organizations (Jersey) Law 2008 (the \u201cNPO Law\u201d) was registered by the Royal Court on 25 July 2008 and came into effect on 8 August 2008.  This legislation requires NPOs to register with the Commission in certain circumstances.  The definition of an NPO, as provided by Article 1 of the NPO Law, is given below:\n\n\u201cAn organization is a non-profit organization for the purposes of this Law if \u2013 \n(a) it is established solely or primarily for charitable, religious, cultural, educational, social,\n    or fraternal purposes with the intention of benefiting the public or a section of the public; and\n(b) it raises or disburses funds in pursuance of those purposes.\u201d \" [1]\n\n[1] http://www.jerseyfsc.org/anti-money_laundering/forms/NPO/index.asp",
+        "name": "Jersey Financial Services Commission (JFSC)",
+        "publicDatabase": "https://www.jerseyfsc.org/registry/documentsearch/",
+        "url": "http://www.jerseyfsc.org/index.asp"
+    },
+    {
+        "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
         "confirmed": null,
@@ -5097,45 +5235,6 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "CN-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "State Administration for Industry and Commerce (AIC), Enterprise Registry",
-        "publicDatabase": null,
-        "url": "http://gsxt.saic.gov.cn/zjgs/"
-    },
-    {
-        "former_prefixes": null,
         "dataAccessProperties": [
             "API",
             "HTML"
@@ -5284,51 +5383,6 @@
         "name": "Companies Registration Office - Company Register",
         "publicDatabase": null,
         "url": "http://www.president.ir/en/"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "Closed License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "CN_92",
-                "country": null,
-                "regionName": null
-            }
-        ],
-        "wikipedia": null,
-        "code": "CN-92-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Services Bureau of Justice Affairs - Commercial Register",
-        "publicDatabase": null,
-        "url": "http://www.dsaj.gov.mo/"
     },
     {
         "former_prefixes": null,
@@ -5526,6 +5580,77 @@
         "name": "Isle of Man Index of Registered Charities / Isle of Man General Registry",
         "publicDatabase": "https://www.gov.im/lib/docs/registries/courts/publicindex_latest.pdf",
         "url": "http://www.gov.im/registries/courts/charities/"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": [
+            "Bulk download",
+            "API"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "An API is available at https://developer.companieshouse.gov.uk/api/docs/ and bulk data is provided at http://download.companieshouse.gov.uk/en_output.html",
+        "datasetFeatures": [
+            "Registered address",
+            "Directors / Trustees / Governors"
+        ],
+        "deprecated": null,
+        "exampleIdentifiers": "09506232, 07444723",
+        "guidanceOnLocatingIds": null,
+        "opencorporates": true,
+        "jurisdiction": [
+            {
+                "countryCode": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-09-17",
+        "structure": [
+            {
+                "name": "Listed company",
+                "subtypeOf": [
+                    "reciN6k5BN1PawHxI"
+                ]
+            },
+            {
+                "name": "Community Interest Company",
+                "subtypeOf": [
+                    "reciN6k5BN1PawHxI"
+                ]
+            },
+            {
+                "name": "Partnership",
+                "subtypeOf": [
+                    "reciN6k5BN1PawHxI"
+                ]
+            },
+            {
+                "name": "Limited Company",
+                "subtypeOf": [
+                    "reciN6k5BN1PawHxI"
+                ]
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "\u201cSupplied under section 47 and 50 of the Copyright, Designs and Patents Act 1988 and Schedule 1 of the Database Regulations (SI 1997/3032)\u201d",
+        "onlineAccessDetails": null,
+        "licenseStatus": "Open License",
+        "registerType": "Primary",
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "GB-COH",
+        "description": "Companies House is the United Kingdom's register of companies.\n\nIt contains entries for many kinds of companies, including:\n\n* Public limited company (PLC)\n* Private company limited by shares (Ltd, Limited)\n* Private company limited by guarantee, typically a non-commercial membership body such as a charity\n* Private unlimited company (either with or without a share capital)\n* Limited liability partnership (LLP)\n* Limited partnership (LP)\n* Societas Europaea (SE): European Union-wide company structure\n* Companies incorporated by Royal Charter (RC)\n* Community interest company",
+        "name": "Companies House",
+        "publicDatabase": null,
+        "url": "http://www.companieshouse.gov.uk/"
     },
     {
         "former_prefixes": null,
@@ -5886,6 +6011,64 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": [
+            "Bulk download"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "Bulk download available at http://data.charitycommission.gov.uk/",
+        "datasetFeatures": [
+            "Registered address"
+        ],
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-17",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "Open Government Licence v2.0",
+        "onlineAccessDetails": "Online search is available at https://www.gov.uk/government/organisations/charity-commission",
+        "licenseStatus": "Open License",
+        "registerType": "Primary",
+        "sector": null,
+        "source": null,
+        "subnational": [
+            {
+                "regionCode": "GB-WLS",
+                "country": [
+                    "recbO0TnMgfxNbDxe"
+                ],
+                "regionName": "Wales"
+            },
+            {
+                "regionCode": "GB-ENG",
+                "country": [
+                    "recbO0TnMgfxNbDxe"
+                ],
+                "regionName": "England"
+            }
+        ],
+        "wikipedia": null,
+        "code": "GB-CHC",
+        "description": "There are four main types of charity structure in the UK: \n\n(1) Charitable incorporated organisation (CIO) \n(2) charitable company (limited by guarantee) \n(3) unincorporated association \n(4) trust\n\n\n",
+        "name": "Charity Commission",
+        "publicDatabase": null,
+        "url": "http://www.charity-commission.gov.uk/"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": [
             "Bulk download",
             "csv",
             "Excel",
@@ -6195,6 +6378,45 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": null,
+        "structure": [
+            {
+                "name": "Government Agency",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": null,
+        "registerType": "Secondary",
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "GB-GOVUK",
+        "description": "Use the final segment of the url (below /organisations) as the \"registration number\", converting all \"-\" to \"_\". Keep \"registration number\" portion all lowercase.",
+        "name": "UK Government Departments, Agencies & Public Bodies",
+        "publicDatabase": null,
+        "url": "https://www.gov.uk/government/organisations"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
         "availableOnline": "No",
         "confirmed": null,
         "dataAccessDetails": null,
@@ -6283,51 +6505,6 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "CN_64",
-                "country": null,
-                "regionName": null
-            }
-        ],
-        "wikipedia": null,
-        "code": "CN-64-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Ningxia Hui Autonomous Region AIC Enterprise Registry",
-        "publicDatabase": null,
-        "url": "http://gsxt.ngsh.gov.cn/ECPS/ecps.jsp"
-    },
-    {
-        "former_prefixes": null,
         "dataAccessProperties": [
             "Data not available"
         ],
@@ -6368,96 +6545,6 @@
         "name": "NGO's Coordination Board",
         "publicDatabase": "None available",
         "url": "http://www.ngobureau.or.ke/"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "CN_61",
-                "country": null,
-                "regionName": null
-            }
-        ],
-        "wikipedia": null,
-        "code": "CN-61-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Shaanxi Provincial AIC Enterprise Registry",
-        "publicDatabase": null,
-        "url": "http://117.22.252.219:8002/p/ent2"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "CN_63",
-                "country": null,
-                "regionName": null
-            }
-        ],
-        "wikipedia": null,
-        "code": "CN-63-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Qinghai Provincial AIC Enterprise Registry",
-        "publicDatabase": null,
-        "url": "http://gsxt.qhaic.gov.cn/search.jspx"
     },
     {
         "former_prefixes": null,
@@ -6583,7 +6670,7 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": "Yes",
+        "availableOnline": null,
         "confirmed": null,
         "dataAccessDetails": null,
         "datasetFeatures": null,
@@ -6593,98 +6680,8 @@
         "opencorporates": null,
         "jurisdiction": [
             {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "CN_62",
-                "country": null,
-                "regionName": null
-            }
-        ],
-        "wikipedia": null,
-        "code": "CN-62-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Gansu Provincial AIC Enterprise Registry",
-        "publicDatabase": null,
-        "url": "http://xygs.gsaic.gov.cn/gsxygs/"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "CN_54",
-                "country": null,
-                "regionName": null
-            }
-        ],
-        "wikipedia": null,
-        "code": "CN-54-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Tibet Autonomous Region AIC Enterprise Registry",
-        "publicDatabase": null,
-        "url": "http://gsxt.xzaic.gov.cn/search.jspx"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "FR",
-                "country": "France"
+                "countryCode": "KZ",
+                "country": "Kazakhstan"
             }
         ],
         "languages": null,
@@ -6703,11 +6700,11 @@
         "source": null,
         "subnational": null,
         "wikipedia": null,
-        "code": "FR-CR",
+        "code": "KZ-CR",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "LES GREFFES DES TRIBUNAUX DE COMMERCE",
+        "name": "Ministry of Justice - Database of legal entities",
         "publicDatabase": null,
-        "url": "http://www.infogreffe.fr"
+        "url": "http://www.adilet.gov.kz/en/baza_zt"
     },
     {
         "former_prefixes": null,
@@ -7357,13 +7354,13 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "availableOnline": "No",
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "GB-REV-X6243",
+        "guidanceOnLocatingIds": "HMRC do not publish a list of these numbers. ",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -7371,19 +7368,26 @@
                 "country": "United Kingdom"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-14",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "No License",
+        "registerType": "Secondary",
         "sector": null,
         "source": null,
         "subnational": null,
         "wikipedia": null,
         "code": "GB-REV",
-        "description": null,
+        "description": "Some UK charitable organisations are exempt or excepted from registering with the Charity Commission. This may be due to the nature of the organisation, it's historical status, or income threshold.\n\nHowever, these organisations can register for tax purposes with HM Revenue and Customs, and receive a registration number.\n\nThis may be reported prefixed with XC (for eXempt Charity).",
         "name": "HM Revenue and Customs",
         "publicDatabase": null,
         "url": "http://www.hmrc.gov.uk/"
@@ -7476,6 +7480,51 @@
         "name": "Common Directory of Organizational Units and Offices - DIR3",
         "publicDatabase": "http://administracionelectronica.gob.es/ctt/resources/Soluciones/238/Area%20descargas/Listado%20Oficinas%20AGE.xlsx?idIniciativa=238&idElemento=2745",
         "url": "http://administracionelectronica.gob.es/ctt/dir3/descargas"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "CN",
+                "country": "China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "No License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": [
+            {
+                "regionCode": "CN_43",
+                "country": null,
+                "regionName": null
+            }
+        ],
+        "wikipedia": null,
+        "code": "CN-43-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Hunan Provincial AIC Enterprise Registry",
+        "publicDatabase": null,
+        "url": "http://gsxt.hnaic.gov.cn/"
     },
     {
         "former_prefixes": null,
@@ -7704,6 +7753,53 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
+        "confirmed": true,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": null,
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": null,
+        "registerType": "Primary",
+        "sector": null,
+        "source": null,
+        "subnational": [
+            {
+                "regionCode": "GB-NIR",
+                "country": [
+                    "recbO0TnMgfxNbDxe"
+                ],
+                "regionName": "Northern Ireland"
+            }
+        ],
+        "wikipedia": null,
+        "code": "GB-NIC",
+        "description": null,
+        "name": "The Charity Commission for Northern Ireland",
+        "publicDatabase": null,
+        "url": "http://www.charitycommissionni.org.uk/"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": null,
         "confirmed": null,
         "dataAccessDetails": null,
         "datasetFeatures": null,
@@ -7898,6 +7994,48 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
+        "availableOnline": "No",
+        "confirmed": true,
+        "dataAccessDetails": null,
+        "datasetFeatures": [
+            "Registered address",
+            "Website",
+            "E-mail address"
+        ],
+        "deprecated": null,
+        "exampleIdentifiers": "10000346, 10010014",
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "GB",
+                "country": "United Kingdom"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": null,
+        "structure": null,
+        "licenseDetails": "Requests for data must state the intended re-use. ",
+        "onlineAccessDetails": "Requests for data can be made to the UK Register of Learning Providers by e-mail.",
+        "licenseStatus": "Closed License",
+        "registerType": "Secondary",
+        "sector": [
+            {
+                "name": "Education"
+            }
+        ],
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "GB-UKPRN",
+        "description": "A UKPRN is a unique number allocated to a provider on successful registration on the UK Register of Learning Providers. ",
+        "name": "UK Register of Learning Providers",
+        "publicDatabase": null,
+        "url": "https://www.ukrlp.co.uk/"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
         "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
@@ -7972,56 +8110,6 @@
         "name": "Ministry of Economy, Trade and Industry",
         "publicDatabase": null,
         "url": "http://www1.touki.or.jp/gateway.html"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": [
-            "Bulk download",
-            "HTML"
-        ],
-        "availableOnline": "Yes",
-        "confirmed": true,
-        "dataAccessDetails": null,
-        "datasetFeatures": [
-            "Registered address",
-            "Date of registration",
-            "Registration Number",
-            "Organisation Name",
-            "Status"
-        ],
-        "deprecated": null,
-        "exampleIdentifiers": "119821, 87846, 1270",
-        "guidanceOnLocatingIds": "Users can find identifiers by using this simple, searchable webpage - https://www.jerseyfsc.org/registry/documentsearch/\n\nThe identifier will be under the column header 'Number'",
-        "opencorporates": true,
-        "jurisdiction": [
-            {
-                "countryCode": "JE",
-                "country": "Jersey"
-            }
-        ],
-        "languages": [
-            "en"
-        ],
-        "lastUpdated": "2016-11-25",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": "https://opencorporates.com/registers/295 , http://index.okfn.org/place/jersey/companies/",
-        "onlineAccessDetails": "Data available through simple search engine, or documents can be downloaded at request for a fee",
-        "licenseStatus": "Closed License",
-        "registerType": "Primary",
-        "sector": null,
-        "source": "Desk research",
-        "subnational": null,
-        "wikipedia": null,
-        "code": "JE-CR",
-        "description": "Companies in Jersey register with the Jersey Companies Registry. This information is maintained in a database and can be searched by users for free, and bulk data and more detailed documents can be accessed for a fee",
-        "name": "Jersey Companies Registry",
-        "publicDatabase": "https://www.jerseyfsc.org/registry/documentsearch/",
-        "url": "http://www.jerseyfsc.org/registry/"
     },
     {
         "former_prefixes": null,
@@ -8368,7 +8456,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": [
             "Registered address"
@@ -8445,51 +8533,6 @@
         "name": "Ministry of Commerce, Commercial Registry",
         "publicDatabase": null,
         "url": "http://www.guineaecuatorialpress.com/index.php"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "CN",
-                "country": "China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": [
-            {
-                "regionCode": "CN_65",
-                "country": null,
-                "regionName": null
-            }
-        ],
-        "wikipedia": null,
-        "code": "CN-65-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Xinjiang Uyghur Autonomous Region AIC Enterprise Registry",
-        "publicDatabase": null,
-        "url": "http://gsxt.xjaic.gov.cn:7001/ztxy.do?method=index&random=1423496833401"
     },
     {
         "former_prefixes": null,
@@ -8766,14 +8809,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": "Public search is currently unavailable, the link does not work.\n\nOIPA ",
+        "guidanceOnLocatingIds": "Public search is currently unavailable, the link does not work.",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -8782,7 +8827,7 @@
             }
         ],
         "languages": null,
-        "lastUpdated": null,
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -8793,12 +8838,12 @@
                 "subtypeOf": null
             }
         ],
-        "licenseDetails": null,
+        "licenseDetails": "http://index.okfn.org/place/nigeria/companies/",
         "onlineAccessDetails": null,
-        "licenseStatus": null,
+        "licenseStatus": "Closed License",
         "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "NG-CAC",
@@ -9165,36 +9210,51 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registration Number",
+            "Organisation Name",
+            "Objectives/Purpose",
+            "Status",
+            "Organisation Type"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "556698-6849, 769611-2163, 969698-3833",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database. This database is presented in Swedish.\n\nIn the search results, the identifiers can be found under the column heading 'Organisations-nummer' or 'Corporate registration number' in English.\n\n",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "SE",
                 "country": "Sweden"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "languages": [
+            "sv"
+        ],
+        "lastUpdated": "2016-12-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "https://opencorporates.com/registers/249",
+        "onlineAccessDetails": "Data available in online database. Default language is Swedish",
+        "licenseStatus": "Open License",
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "SE-BLV",
-        "description": null,
+        "description": "The Swedish Companies Registration Office (Bolagsverket) registers all business operating in Sweden, except for sole traders. This registry is available to search online. All entities are given an organisation number that can be used as an identifer.\n\n\"All forms of business enterprise except for sole traders have to be registered with the Swedish Companies Registration Office before starting to operate.\" [1]\n\n[1] https://www.verksamt.se/en/web/international/starting/get-started-business-registration-and-tax",
         "name": "Bolagsverket / Swedish Companies Registration Office",
-        "publicDatabase": null,
+        "publicDatabase": "https://www.verksamt.se/sok-foretagsnamn",
         "url": "http://www.bolagsverket.se/"
     },
     {
@@ -9518,37 +9578,50 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registered address",
+            "Registration Number",
+            "Date of registration",
+            "Directors / Trustees / Governors",
+            "Organisation Type",
+            "Accounts",
+            "Objectives/Purpose"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "35919043, 47364319, 36781673",
+        "guidanceOnLocatingIds": "Users can find identifiers using the simple, searchable online database. Users will have to click on the link for 'Aktu\u00e1lny' or '\u00dapln\u00fd' under the column heading V\u00fdpis - or in English,  for 'Actual' or 'Full' under the column heading 'Extract' - of one of the companies in the search results in order to see company details.\n\nIdentifiers will be next to the heading 'I\u010cO' or 'Identification' in English",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "SK",
                 "country": "Slovakia"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
+        "languages": [
+            "en",
+            "sk"
+        ],
+        "lastUpdated": "2016-12-07",
         "structure": null,
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
+        "licenseDetails": "https://opencorporates.com/registers/234",
+        "onlineAccessDetails": "Database can be searched using the simple search. ",
+        "licenseStatus": "Closed License",
         "registerType": null,
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "SK-ZRSR",
-        "description": "Most organisations (including NGOs) have to be registered with the Ministry of Interior for the Trade Register Of The Slovak Republic (\u017divnostensky Register Slovenskej Republiky) and are allocated a unique registration number",
+        "description": null,
         "name": "Slovakia Ministry Of Interior Trade Register",
-        "publicDatabase": null,
-        "url": "http://www.zrsr.sk/default.aspx?LANG=en"
+        "publicDatabase": "http://www.orsr.sk/search_subjekt.asp?lan=en",
+        "url": "http://www.orsr.sk/search_subjekt.asp?lan=en"
     },
     {
         "former_prefixes": null,
@@ -9829,14 +9902,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "45995, 34774, 105299",
+        "guidanceOnLocatingIds": "Users can search for identifiers using the simple, searchable database on the Office website. Identifiers will be under the column heading 'Registration No' on the search results.\n\nCompany numbers are sometimes reported in the format: 45995-063-064\n\nThis is made up of two parts. A CRO number and a registration year.\n\nFor example:\n\nSearching for 45995 in the Registrar database returns Young Innovations. This is their CRO number.\n\n063-064 refers to the financial year that Young Innovations was registered. When included within the identifier, this could be reported with a dash-separator, and not slash. ",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -9844,21 +9919,29 @@
                 "country": "Nepal"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "languages": [
+            "en",
+            "ne"
+        ],
+        "lastUpdated": "2016-12-02",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "http://index.okfn.org/place/nepal/companies/",
+        "onlineAccessDetails": "Data available for free from search on Office website homepage",
+        "licenseStatus": "Closed License",
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "NP-CRO",
-        "description": null,
+        "description": "All companies operating in Nepal must register with the Office of the Company Registrar Office. This database is available for search on the Office homepage.\n\n\"To register a company, the promoter must submit an application as prescribed by the Ministry of Industry, Commerce, and Supplies. Online filing of the required documents has been introduced and made mandatory. After the online filing, entrepreneurs are required to visit the Office of Company Registrar and submit all the original documents for further verification.\" [1]\n\n[1] http://www.doingbusiness.org/data/exploreeconomies/nepal#starting-a-business",
         "name": "Company Registrar Office",
-        "publicDatabase": null,
+        "publicDatabase": "http://www.ocr.gov.np/index.php/en/",
         "url": "http://www.cro.gov.np/"
     },
     {
@@ -9902,14 +9985,23 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registered address",
+            "Organisation Name",
+            "AKAs",
+            "Tax ID Number",
+            "Organisation Type",
+            "Status"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "06115403, 20203641, 29500258",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database. The database is provided in Serbian.\n\nIn the search results, identifiers will be under the column heading '\u041c\u0430\u0442\u0438\u0447\u043d\u0438 \u0431\u0440\u043e\u0458' or 'Identification Number' in English.\n\nCompanies of different types appear to have similar identification structure.",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -9917,21 +10009,28 @@
                 "country": "Serbia"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "sr"
+        ],
+        "lastUpdated": "2016-12-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "onlineAccessDetails": "Data available through simple, searchable database. Search terms and results are in Serbian, so English speakers will need to use translation service",
+        "licenseStatus": "Closed License",
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "RS-APR",
-        "description": "The SBRA runs business registers as single, centralized, public electronic databases.",
-        "name": "Serbian Business Registrations Agency (APR)",
-        "publicDatabase": null,
+        "description": "The Serbian Business Registrations Agency (APR) provides a single place of registration for all companies and individuals - domestic and foreign - operating in Serbia. Each entity is given an identification number and a tax number. The \u041c\u0430\u0442\u0438\u0447\u043d\u0438 \u0431\u0440\u043e\u0458 / identification number should be used for identifiers.\n\nA database of these registries is available online.\n\n\"The SBRA runs business registers as single, centralized, public electronic databases:\n\nThe Business Register, in accordance with the Law on Business Entities Registration (operative as of 1/1/2005):\n\n *Register of Companies (in effect as of 1 January 2005)\n* Register of Entrepreneurs (in effect as of 1 January 2006)\n* Register of foreign parties (in effect as of 1 January 2006)\" [1]\n\n\"Serbian term or phrase:\tmati\u010dni broj / identification number\nThis is the identification number contained in the Company Register \" [2]\n\n[1] http://www.apr.gov.rs/eng/AboutAgency/AllRegistersatOnePlace.aspx\n[2] http://www.proz.com/kudoz/serbian_to_english/law_contracts/2614508-maticni_broj.html",
+        "name": "Serbian Business Registrations Agency / \u0410\u0433\u0435\u043d\u0446\u0438\u0458\u0430 \u0437\u0430 \u0441\u0440\u043f\u0441\u043a\u0438 \u043f\u043e\u0441\u043b\u043e\u0432\u043d\u0438 \u041f\u0440\u0438\u0458\u0430\u0432\u0435",
+        "publicDatabase": "http://pretraga2.apr.gov.rs/ObjedinjenePretrage/Search/Search",
         "url": "http://www.apr.gov.rs/eng/Home.aspx"
     },
     {
@@ -10061,14 +10160,22 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registered address",
+            "Organisation Name",
+            "Phone Number",
+            "Registration Number",
+            "Activities/Sector Code"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "37625, 14902, 28632",
+        "guidanceOnLocatingIds": "Users can find identifiers on the simple, searchable database on the SWC website. Identifiers will be under the column heading 'Swc Aff No'",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -10076,21 +10183,29 @@
                 "country": "Nepal"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en",
+            "ne"
+        ],
+        "lastUpdated": "2016-12-02",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "onlineAccessDetails": "Data available in simple, searchable databse",
+        "licenseStatus": "Closed License",
+        "registerType": "Secondary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "NP-SWC",
-        "description": null,
-        "name": "NGO registration",
-        "publicDatabase": null,
+        "description": "International NGOs wishing to operate in Nepal must register with the Social Welfare Council. Upon registration, these INGOs receive an Affiliation Certificate and an SWC Affiliation Number. This database can be searched on the website.\n\nLocal NGOs do not need to be associated with the SWC, but may register with their local District Administration Office (DAO). The SWC list is thus not a complete list of all NGOs working in Nepal.\n\n\"1. As laid down in article 12, Section 1, of the Social Welfare Act 2049, the international non-governmental organizations (INGOs) seeking to work in the Kingdom of Nepal must apply to the Social Welfare Council and seek permission prior to starting work.\" [1] \n\n[1] Document available for download at - http://www.swc.org.np/?page_id=47",
+        "name": "Social Welfare Council Nepal",
+        "publicDatabase": "http://www.swc.org.np/?p=228",
         "url": "http://www.swc.org.np/"
     },
     {
@@ -10260,45 +10375,6 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "KZ",
-                "country": "Kazakhstan"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "Closed License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "KZ-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Ministry of Justice - Database of legal entities",
-        "publicDatabase": null,
-        "url": "http://www.adilet.gov.kz/en/baza_zt"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
         "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
@@ -10420,36 +10496,50 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "Basic information is searchable for fee, more detailed company information can be downloaded for a fee",
+        "datasetFeatures": [
+            "Registration Number",
+            "Registered address",
+            "Status",
+            "Organisation Name"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "199100421C, 201528336R, 52813269E",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database hosted on a third-party website. Users will have to complete a Captcha box in order to see search results.\n\nThe identifiers will be under the column heading 'UEN'.\n\n",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "SG",
                 "country": "Singapore"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "https://opencorporates.com/registers/233",
+        "onlineAccessDetails": "Users can be directed to the third-party website from the ACRA homepage. They will need to follow a link from the box 'SEARCH Directory of Registered Entities'",
+        "licenseStatus": "Closed License",
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "SG-ACRA",
-        "description": "The Accounting and Corporate Regulatory Authority (ACRA) is the national regulator of business entities, public accountants and corporate service providers in Singapore",
+        "description": "The Accounting and Corporate Regulatory Authority (ACRA) is the national regulator of business entities, public accountants and corporate service providers in Singapore. Each corporate entity receives a Unique Entity Number (UEN), which should be used as the identifier.\n\n\"Registering or setting up a company in Singapore is accomplished through contacting Accounting and Corporate Regulatory Authority (ACRA).\" [1] \n\n\"From 1 January 2009, all entities that are registered in Singapore, such as\nbusinesses, local companies, limited liability partnerships (LLPs), societies,\nrepresentative offices, healthcare institutions and trade unions, will have a\nUnique Entity Number (UEN) as its identification number. \" [2] \n\n[1] https://www.wikiprocedure.com/index.php/Singapore_-_Registering_or_Setting_up_Local_Company\n[2] https://www.ipos.gov.sg/Portals/0/about%20IP/copyrights/UENFAQs2.pdf",
         "name": "Accounting and Corporate Regulatory Authority (ACRA)",
-        "publicDatabase": null,
+        "publicDatabase": "https://www.bizfile.gov.sg/ngbbizfileinternet/faces/oracle/webcenter/portalapp/pages/BizfileHomepage.jspx?_afrLoop=335483016357989&_afrWindowMode=0&_afrWindowId=null#%40%3F_afrWindowId%3Dnull%26_afrLoop%3D335483016357989%26_afrWindowMode%3D0%26_adf.ctrl-state%3D13fqtwn2la_4",
         "url": "http://www.acra.gov.sg/"
     },
     {
@@ -10803,7 +10893,7 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": "Yes",
+        "availableOnline": null,
         "confirmed": null,
         "dataAccessDetails": null,
         "datasetFeatures": null,
@@ -10813,8 +10903,8 @@
         "opencorporates": null,
         "jurisdiction": [
             {
-                "countryCode": "NL",
-                "country": "Netherlands"
+                "countryCode": "TZ",
+                "country": "Tanzania, United Republic of"
             }
         ],
         "languages": null,
@@ -10833,11 +10923,11 @@
         "source": null,
         "subnational": null,
         "wikipedia": null,
-        "code": "NL-CR",
+        "code": "TZ-CR",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Trade Register",
+        "name": "Business Registrations and Licensing Agency (BRELA)",
         "publicDatabase": null,
-        "url": "http://www.kvk.nl/"
+        "url": "http://www.brela-tz.org/"
     },
     {
         "former_prefixes": null,
@@ -11275,10 +11365,14 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": [
-            "HTML"
+            "HTML",
+            "csv",
+            "JSON",
+            "XML",
+            "API"
         ],
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": "There is an option to translate the home page into English, but this feature does not move to other pages. ",
         "datasetFeatures": [
             "Registered address",
@@ -11291,7 +11385,7 @@
         ],
         "deprecated": null,
         "exampleIdentifiers": "972417920, 894961902, 968253980",
-        "guidanceOnLocatingIds": "Users can find identifiers by searching on the homepage of the Br\u00f8nn\u00f8ysundregistren. Identifiers will be under the column heading 'Orgnr.'. If the user clicks on the result for more details, the identifier will be next to 'Organisasjonsnummer' , or 'Organisation number' in English.\n\nOIPA search return with participating organisation Norwegian Ministry of Foreign Affairs : NO-BRC-972417920\n\n972417920 was used to search the Br\u00f8nn\u00f8ysundregistren database and it returned 'FOREIGN MINISTRY'",
+        "guidanceOnLocatingIds": "Users can find identifiers by searching on the homepage of the Br\u00f8nn\u00f8ysundregistren. Identifiers will be under the column heading 'Orgnr.'. If the user clicks on the result for more details, the identifier will be next to 'Organisasjonsnummer' , or 'Organisation number' in English.\n\nUsers can also search the database before downloading extracts (or the entire dataset). The identifiers will be under the column heading 'Organisasjonsnummer' , or 'Organisation number' in English.",
         "opencorporates": true,
         "jurisdiction": [
             {
@@ -11305,13 +11399,11 @@
         "lastUpdated": "2016-11-30",
         "structure": [
             {
-                "name": "Community Interest Company",
-                "subtypeOf": [
-                    "reciN6k5BN1PawHxI"
-                ]
+                "name": "Company",
+                "subtypeOf": null
             },
             {
-                "name": "Company",
+                "name": "Government Agency",
                 "subtypeOf": null
             },
             {
@@ -11322,15 +11414,15 @@
         "licenseDetails": "https://opencorporates.com/registers/191",
         "onlineAccessDetails": "Data is available to search for free",
         "licenseStatus": "Open License",
-        "registerType": "Secondary",
+        "registerType": "Primary",
         "sector": null,
         "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "NO-BRC",
-        "description": "Companies in Norway must be Registered with the Register of Business Enterprises. Non-profits are eligible for registry with the Register of Non-Profit Organizations. These registries are maintained by the Br\u00f8nn\u00f8ysundregistrene. This database can be searched by the public for free from the organisation homepage.\n\n\"The Register of Business Enterprises registers all Norwegian and foreign businesses in Norway, ensuring legal protection and financial overview.\" [1] \n\n\"Non-profit organizations that run voluntary activities not motivated by profit are eligible to register. Examples of such organizations are:\n\n- associations\n- non-commercial foundations that do not distribute funds, or that only - distribute funds to non-profit activities\n- commercial foundations that only distribute funds to non-profit activities\n- limited liability companies that only distribute funds to non-profit activities.\" [2] \n\n\"Br\u00f8nn\u00f8ysund Register Centre (Norwegian Bokm\u00e5l: Br\u00f8nn\u00f8ysundregistrene, Norwegian Nynorsk: Br\u00f8nn\u00f8ysundregistra) is a Norwegian government agency that is responsible for the management of numerous public registers for Norway, and governmental systems for digital exchange of information.\" [3]\n\n[1][2] https://www.brreg.no/home/about-us/the-registers-and-their-timeline/\n[3] https://en.wikipedia.org/wiki/Br%C3%B8nn%C3%B8ysund_Register_Centre",
+        "description": "Companies in Norway must be Registered with the Register of Business Enterprises. Non-profits are eligible for registry with the Register of Non-Profit Organizations. \n\nThese registries are maintained by the Br\u00f8nn\u00f8ysundregistrene.  Businesses can be incorporated by applying to the online 'coordinated register notification' - Altinn, which is also maintained by Br\u00f8nn\u00f8ysundregistrene.  \n\nThis database can be searched by the public for free from the organisation homepage, and can be downloaded in various data format.\n\n\"The Register of Business Enterprises registers all Norwegian and foreign businesses in Norway, ensuring legal protection and financial overview.\" [1] \n\n\"Non-profit organizations that run voluntary activities not motivated by profit are eligible to register. Examples of such organizations are:\n\n- associations\n- non-commercial foundations that do not distribute funds, or that only - distribute funds to non-profit activities\n- commercial foundations that only distribute funds to non-profit activities\n- limited liability companies that only distribute funds to non-profit activities.\" [2] \n\n\"Br\u00f8nn\u00f8ysund Register Centre (Norwegian Bokm\u00e5l: Br\u00f8nn\u00f8ysundregistrene, Norwegian Nynorsk: Br\u00f8nn\u00f8ysundregistra) is a Norwegian government agency that is responsible for the management of numerous public registers for Norway, and governmental systems for digital exchange of information.\" [3]\n\n[1][2] https://www.brreg.no/home/about-us/the-registers-and-their-timeline/\n[3] https://en.wikipedia.org/wiki/Br%C3%B8nn%C3%B8ysund_Register_Centre",
         "name": "Br\u00f8nn\u00f8ysundregistrene",
-        "publicDatabase": "https://www.brreg.no/home/",
+        "publicDatabase": "https://www.brreg.no/home/ , https://www.brreg.no/produkter-og-tjenester/apne-data/",
         "url": "http://www.brreg.no/"
     },
     {
@@ -11415,14 +11507,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
         "confirmed": null,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "None available",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -11431,21 +11525,26 @@
             }
         ],
         "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "lastUpdated": "2016-12-02",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
+        "licenseStatus": "No License",
         "registerType": null,
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "MZ-MOJ",
-        "description": "The Mozambique Ministry of Justice does not appear to be associated with the registration process for companies. There is also no website for the Ministry by which this could be confirmed or denied.\n\nCompany registration takes place with the Conservatory of Legal Entities (Conservat\u00f3ria do Registo das Entidades Legais)\n\n\"The registration process comprises the following steps:\n\u2022 Company name reservation at the Conservatory of Legal Entities Registration\" [1]\n\n[1] http://www.mozambiquehighcommission.org.uk/?id_w=7&id_w1=33",
+        "description": "Local NGOs in Mozambique must register with the Ministry of Justice.\n\n\"Domestic NGOs are required to register with the Ministry of Justice.\" [1]\n\n[1] http://www.commonwealthofnations.org/sectors-mozambique/civil_society/national_ngos_civil_society/\n",
         "name": "Mozambique Ministry of Justice",
-        "publicDatabase": null,
-        "url": null
+        "publicDatabase": "None available",
+        "url": "None available"
     },
     {
         "former_prefixes": null,
@@ -11683,14 +11782,26 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
+        "dataAccessProperties": [
+            "HTML",
+            "Google Drive"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "Data is available through simple online search, and also as Google Drive link. For the latter, users may need a Google Drive account",
+        "datasetFeatures": [
+            "Organisation Name",
+            "Organisation Type",
+            "Directors / Trustees / Governors",
+            "Date of registration",
+            "Objectives/Purpose",
+            "Registered address",
+            "E-mail address",
+            "Phone Number"
+        ],
+        "deprecated": true,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "NGOs do not receive an identifier after being certified by the PCP. Unique identifiers are not available on the CSO list.",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -11698,22 +11809,29 @@
                 "country": "Pakistan"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-01",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "onlineAccessDetails": "A bulk dataset is available at https://drive.google.com/file/d/0B67B7u-xqLazZFhHTkUtUVVRWXc/view although it is not clear how far this is kept updated",
+        "licenseStatus": "Closed License",
+        "registerType": "Third-party",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "PK-PCP",
-        "description": "The PCP Certification Programme seeks to bring transparency, accountability and good governance in the nonprofit sector in Pakistan. The first initiative of its kind in South Asia; it involves the evaluation of a nonprofit organisation on standardised parameters of internal governance, financial management and programme delivery.",
+        "description": "The Pakistan Centre for Philanthropy provides certification for NGOs working in Pakistan. Registration with the PCP is not obligatory for working in Pakistan and therefore not all NGOs will be recorded on the 'PCP Certified CSO List'. However, this list can be searched online.\n\nAll NGOs are required to register with their local Voluntary Social Welfare department. \n\n\"This voluntary assessment aims to enhance a CSOs' credibility and resultantly its access to funding. Through the allied activities of this programme, PCP promotes certified CSOs in an annual directory and on its website and also builds capacities of civil society organisations for greater effectiveness.\" [1]\n\n[1] http://pcp.org.pk/page.php?pid=19",
         "name": "Pakistan Centre for Philanthropy",
-        "publicDatabase": null,
-        "url": "https://drive.google.com/file/d/0B67B7u-xqLazZFhHTkUtUVVRWXc/view"
+        "publicDatabase": "http://pcp.org.pk/index.php",
+        "url": "http://pcp.org.pk/index.php"
     },
     {
         "former_prefixes": null,
@@ -12165,7 +12283,48 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
-        "availableOnline": null,
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "TW",
+                "country": "Taiwan, Province of China"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-09-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "No License",
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "TW-CR",
+        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
+        "name": "Ministry of Economic Affairs, R.O.C - Commerce Industrial Services Portal",
+        "publicDatabase": null,
+        "url": "http://gcis.nat.gov.tw/pub/cmpy/cmpyInfoListAction.do"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
         "confirmed": null,
         "dataAccessDetails": null,
         "datasetFeatures": null,
@@ -12179,22 +12338,29 @@
                 "country": "Pakistan"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-05",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "No License",
+        "registerType": "Primary",
         "sector": null,
         "source": null,
         "subnational": null,
         "wikipedia": null,
         "code": "PK-VSWA",
-        "description": "All NGOs are required to register with their local Voluntary Social Welfare department",
+        "description": "All NGOs are required to register with their local Voluntary Social Welfare department.\n\n\"Any person intending to establish an agency, and any person\nintending that an agency already in existence should be\ncontinued as such, shall, in the prescribed form, and on payment\nof the prescribed fee, make an application to the Registration\nAuthority\" [1] \n\n\"9.Registration, professional guidance and financial assistance to voluntary Social Welfare agencies for strengthening, improving and promoting their activities, coordination amongst NGOs / Donors and concerned government departments.\" [2] \n\n[1] http://www.ilo.org/dyn/natlex/docs/ELECTRONIC/81785/88956/F1282834913/PAK81785.pdf\n[2] http://www.swkpk.gov.pk/",
         "name": "Pakistan Voluntary Social Welfare Agency",
         "publicDatabase": null,
-        "url": "No Website available"
+        "url": "http://www.swkpk.gov.pk/ , http://social_welfare.kp.gov.pk/"
     },
     {
         "former_prefixes": null,
@@ -13030,55 +13196,47 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": [
-            "HTML"
+            "API"
         ],
         "availableOnline": "Yes",
         "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": [
-            "Organisation Name",
-            "Website",
-            "Registered address",
-            "E-mail address",
-            "Phone Number",
-            "Objectives/Purpose",
-            "Organisation Type",
-            "Activities/Sector Code"
+            "AKAs"
         ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": "Organisation identifiers are not provided as part of this database",
+        "exampleIdentifiers": "rfmcie, 's-Graveland_(gemeente)",
+        "guidanceOnLocatingIds": "Look for the list of values for the kind of organisation you wish to identify [1].\n\nA full list of government entieis can  be accessed at http://standaarden.overheid.nl/owms/terms/Overheidsorganisatie.html\n\nEach organisation is assigned a URL in the list. Use the last portion of this URL as the identifier. \n\nFor example: \"http://standaarden.overheid.nl/owms/terms/rfmcie\" is the identifier given for the 'Referendum Commission'. To construct an identifier from this, use 'NL-OWMS-rfmcie'.\n\nNote: some identifiers may contain ' and ( and other similar characters. \n\n[1]: http://standaarden.overheid.nl/owms/4.0/doc/waardelijsten",
         "opencorporates": null,
         "jurisdiction": [
             {
-                "countryCode": "ID",
-                "country": "Indonesia"
+                "countryCode": "NL",
+                "country": "Netherlands"
             }
         ],
         "languages": [
-            "en",
-            "id"
+            "nl"
         ],
-        "lastUpdated": "2016-11-29",
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
-                "name": "Charity",
+                "name": "Government Agency",
                 "subtypeOf": null
             }
         ],
-        "licenseDetails": null,
-        "onlineAccessDetails": "Users can search an NGO by name, province or sector. Ornop - NGO / Provinsi - Province / Sektor kegiatan - Sector activity / Kata kunci lain - Other keywords",
+        "licenseDetails": "No license information given",
+        "onlineAccessDetails": "Linked data available",
         "licenseStatus": "No License",
-        "registerType": "Third-party",
+        "registerType": "Secondary",
         "sector": null,
         "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
-        "code": "ID-SMR",
-        "description": "The SMERU Research Institute is an independent body which conducts research on social issues in Indonesia. They also maintains a database of NGOs working in Indonesia.\n\n\"The SMERU Research Institute is an independent institution for research and public policy studies. We professionally and proactively provide accurate and timely information, as well as objective analyses, on various socioeconomic and poverty issues considered most urgent and relevant for the people of Indonesia.\" [1]\n\n\"SMERU manages Indonesia's most comprehensive online database of national and regional non-governmental organizations (NGOs). Currently, there are almost 3,000 NGOs in the database, which provides information on the NGOs\u2019 name, address, contact person, vision, mission, legal form, activities, and sector.\" [2]\n\n[1] http://www.smeru.or.id/en/about\n[2] http://www.smeru.or.id/en/content/ngo-database",
-        "name": "The SMERU Research Institute",
-        "publicDatabase": "http://www.smeru.or.id/en/content/ngo-database",
-        "url": "http://www.smeru.or.id/en"
+        "code": "NL-OWMS",
+        "description": "Overheid.nl is the central access point to all information about government organisations of the Netherlands.\n\nThe Overheid.nl Web Metadata Standard ( OWMS ) is the metadata standard for information from the Dutch government on the Internet.\n\nIt contains URIs for a wide range of government bodies, including national, local and regional government and water boards.\n\nIt provides a linked open dataset which contains ontological information about the relationship between those organisations (e.g. listing parent agencies, or noting organisations that succeed previous organisations).\n\nA management plan is in place for updating of the information [1].\n\n\n[1]: http://standaarden.overheid.nl/owms/beheer ",
+        "name": "Overheid.nl Web Metadata Standard / Overheid.nl Web Metadata Standaard",
+        "publicDatabase": "http://standaarden.overheid.nl/owms/beheer",
+        "url": "http://standaarden.overheid.nl/owms/4.0/doc/waardelijsten"
     },
     {
         "former_prefixes": null,
@@ -13808,36 +13966,46 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
         "confirmed": null,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "guidanceOnLocatingIds": "None available",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "TZ",
                 "country": "Tanzania, United Republic of"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
+        "languages": [
+            "en",
+            "sw"
+        ],
+        "lastUpdated": "2016-12-07",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "https://opencorporates.com/registers/255",
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "Closed License",
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "TZ-BRLA",
-        "description": null,
+        "description": "The Business Registrations and Licensing Agency (BRELA) registers companies in Tanzania. Following registration, companies must apply to the Tanzanian Revenue Agency (TRA) to receive a tax identification number (TIN). \n\nCompany information is not freely searchable or available online. Users must sign up for a fee to search company names.\n\n\"The Business Registrations and Licensing Agency (BRELA) is an Executive Agency under the Ministry of Industry and Trade responsible for business administration and regulation of the laws; namely Companies Registration, Business Names Registration, Trade and Service Marks Registration, granting of Patents and issuing of Industrial License.\" [1] \n\n\"The Business Registrations and Licencing Agency (BRELA) is the government agency that has started recently to list registered companies in Tanzania. (http://www.brela.go.tz/) Previously there was a company name search feature available on its website, but this appears to have gone, and there is no other form of company data in evidence.\" [2] \n\n[1] http://www.brela.go.tz/index.php/about/introduction\n[2] http://index.okfn.org/place/tanzania/companies/",
         "name": "Tanzania Business Registrations and Licensing Agency",
-        "publicDatabase": null,
+        "publicDatabase": "https://ors.brela.go.tz/login / https://opencorporates.com/companies/tz/",
         "url": "http://www.brela.go.tz/"
     },
     {
@@ -14614,42 +14782,55 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
         "confirmed": null,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registered address",
+            "Date of registration",
+            "Registration Number",
+            "Directors / Trustees / Governors",
+            "Accounts",
+            "Organisation Type",
+            "Objectives/Purpose"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "35919043, 47364319, 36781673",
+        "guidanceOnLocatingIds": "Users can find identifiers using the simple, searchable online database. Users will have to click on the link for 'Aktu\u00e1lny' or '\u00dapln\u00fd' under the column heading V\u00fdpis - or in English,  for 'Actual' or 'Full' under the column heading 'Extract' - of one of the companies in the search results in order to see company details.\n\nIdentifiers will be next to the heading 'I\u010cO' or 'Identification' in English",
+        "opencorporates": true,
         "jurisdiction": [
             {
-                "countryCode": "TZ",
-                "country": "Tanzania, United Republic of"
+                "countryCode": "SK",
+                "country": "Slovakia"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en",
+            "sk"
+        ],
+        "lastUpdated": "2016-12-07",
         "structure": [
             {
                 "name": "Company",
                 "subtypeOf": null
             }
         ],
-        "licenseDetails": null,
+        "licenseDetails": "https://opencorporates.com/registers/234",
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
-        "code": "TZ-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Business Registrations and Licensing Agency (BRELA)",
-        "publicDatabase": null,
-        "url": "http://www.brela-tz.org/"
+        "code": "SK-ORSR",
+        "description": "\"The companies register is administered by the Ministry of Justice. Entry to the register is obligatory for companies, cooperatives and for some specific physical entities stated by law. Information in the register is searchable by trade name, identification number, registered office, registration number and name of a person.\" [1]\n\n\"The Obchodn\u00fd register (commercial register) is a public list containing statutory data concerning entrepreneurs, companies and other legal entities, where this is laid down by separate legislation.\nThe list is administered by the Ministry of Justice of the Slovak Republic.\" [2]\n\n[1] http://www.company-registers.info/en/european-union/slovakia.html\n[2] https://e-justice.europa.eu/content_business_registers_in_member_states-106-sk-en.do?member=1",
+        "name": "Ministry of Justice Business Register",
+        "publicDatabase": "http://www.orsr.sk/search_subjekt.asp?lan=en",
+        "url": "http://www.orsr.sk/search_subjekt.asp?lan=en"
     },
     {
         "former_prefixes": null,
@@ -15252,6 +15433,40 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
+        "availableOnline": "No",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": "None available",
+        "opencorporates": null,
+        "jurisdiction": [
+            {
+                "countryCode": "TZ",
+                "country": "Tanzania, United Republic of"
+            }
+        ],
+        "languages": null,
+        "lastUpdated": "2016-12-07",
+        "structure": null,
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": "Closed License",
+        "registerType": "Secondary",
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "TZ-TRA",
+        "description": "Following company registration with the Business Registrations and Licensing Agency (BRELA), all corporate entities must register for a tax identification number (TIN) from the Tanzania Revenue Agency (TRA). This TIN appears to be the only unique identifier available for companies in Tanzania. \n\nA search for company information/TIN is not available.\n\n\"The Tanzania Revenue Authority (TRA) has recently introduced the requirement for all taxpayers registered with the Authority to immediately verify their Tax Identification Numbers (TIN). All taxpayers are to receive a new TIN certificate. Failure to register will lead to the revocation of taxpayer\u2019s TIN certificate.\" [1] \n\n[1] http://www.ey.com/gl/en/services/tax/international-tax/alert--tanzania-tax-authorities-introduce-requirement-to-verify-tax-identification-numbers",
+        "name": "Tanzania Revenue Agency",
+        "publicDatabase": "None available",
+        "url": "http://www.tra.go.tz/"
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
         "availableOnline": null,
         "confirmed": null,
         "dataAccessDetails": null,
@@ -15657,14 +15872,14 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": null,
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
         "source": null,
         "subnational": null,
         "wikipedia": null,
         "code": "UA-EDR",
-        "description": null,
-        "name": "United State Register, Ukraine",
+        "description": "The Ministry of Justice hosts the United State Register for all corporate entities, individuals and community groups who are registered in Ukraine. ",
+        "name": "United State Register / \u0404\u0434\u0438\u043d\u043e\u0433\u043e \u0434\u0435\u0440\u0436\u0430\u0432\u043d\u043e\u0433\u043e \u0440\u0435\u0454\u0441\u0442\u0440\u0443 \u044e\u0440\u0438\u0434\u0438\u0447\u043d\u0438\u0445 \u043e\u0441\u0456\u0431",
         "publicDatabase": null,
         "url": "http://irc.gov.ua/ua/Poshuk-v-YeDR.html"
     },
@@ -15751,45 +15966,6 @@
         "name": "Commerce and Intellectual Property Office, Commercial Registry",
         "publicDatabase": null,
         "url": "http://www.cipo.gov.vc/"
-    },
-    {
-        "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": "Yes",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
-        "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
-        "jurisdiction": [
-            {
-                "countryCode": "TW",
-                "country": "Taiwan, Province of China"
-            }
-        ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
-        "structure": [
-            {
-                "name": "Company",
-                "subtypeOf": null
-            }
-        ],
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": "No License",
-        "registerType": null,
-        "sector": null,
-        "source": null,
-        "subnational": null,
-        "wikipedia": null,
-        "code": "TW-CR",
-        "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Ministry of Economic Affairs, R.O.C - Commerce Industrial Services Portal",
-        "publicDatabase": null,
-        "url": "http://gcis.nat.gov.tw/pub/cmpy/cmpyInfoListAction.do"
     },
     {
         "former_prefixes": null,
