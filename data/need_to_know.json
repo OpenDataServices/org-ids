@@ -1,5 +1,28 @@
 [
     {
+        "text": "A number of jurisdictions provide their own registry, a list can be found here under 'Provincial and Territorial Registration' - http://www.canadabusiness.ca/government/registering-your-business/",
+        "prefix": [
+            {
+                "code": "CA-CC",
+                "name": "Corporations Canada"
+            }
+        ],
+        "jurisdiction": [
+            {
+                "countryCode": "CA",
+                "country": "Canada"
+            }
+        ],
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "sector": null,
+        "title": "Canada & Company - Provincial Registration"
+    },
+    {
         "text": "Prior to IATI v2.x, the IATI Standard used codes relevant to IATI v1.x. These were codes for the same government agencies, but in a slightly different formation.\n\nE.g. GB-GOV-1 was previously GB-1",
         "prefix": [
             {
@@ -64,8 +87,26 @@
         "title": "Colombia Business Registration"
     },
     {
+        "text": null,
+        "prefix": [
+            {
+                "code": "JE-FSC",
+                "name": "Jersey Financial Services Commission (JFSC)"
+            }
+        ],
+        "jurisdiction": null,
+        "structure": null,
+        "sector": null,
+        "title": null
+    },
+    {
         "text": "Whilst some UK charities are incorporated as companies with charitable status, others are Charitable Incorporated Organisations (CIOs) or unincorporated charities and trusts.\n\nThere are also organisations who are recognised as charitable organisations by HM Revenue and Customs (the tax authority) but who are not registered with the Charity Commission, as the are exempt or small charities (with income below a \u00a35,000 threshold). These organisations may have charity numbers beginning with 'X'.\n\nNo public list of these organisations is currently available. ",
-        "prefix": null,
+        "prefix": [
+            {
+                "code": "GB-REV",
+                "name": "HM Revenue and Customs"
+            }
+        ],
         "jurisdiction": [
             {
                 "countryCode": "GB",
@@ -80,6 +121,32 @@
         ],
         "sector": null,
         "title": "Charities in the United Kingdom"
+    },
+    {
+        "text": "* Corporate entities may be categorised into business type groupings, and identifier numbers may be repeated between these groups, and the numbers would therefore not be unique without the relevant business type code\n* Identifiers from a dissolved company may be re-used;\n* As a result, users should check the dates of the company they are looking at, and ensure it matches with what they are expecting;",
+        "prefix": [
+            {
+                "code": "JE-FSC",
+                "name": "Jersey Financial Services Commission (JFSC)"
+            }
+        ],
+        "jurisdiction": null,
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            },
+            {
+                "name": "Government Agency",
+                "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "sector": null,
+        "title": "Non-unique / Duplicated Identifiers"
     },
     {
         "text": "The EU use the code 'UK' to refer to the 'United Kingdom of Great Britain and Northern Ireland', where the ISO country code list uses GB. \n\nThe EU use EL to refer to Greece (based on it's official name of tje 'Hellenic Republic') where the ISO country code list uses GR.",
