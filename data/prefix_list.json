@@ -169,9 +169,11 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -184,7 +186,10 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
+        "languages": [
+            "en",
+            "fr"
+        ],
         "lastUpdated": "2016-09-07",
         "structure": [
             {
@@ -195,9 +200,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_NS",
@@ -206,11 +211,11 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-NS-CR",
+        "code": "CA_NS-NVS_NVE",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Nova Scotia Registry of Joint Stock Companies",
-        "publicDatabase": null,
-        "url": "https://rjsc.gov.ns.ca/rjsc/"
+        "name": "Nova Scotia Registry of Joint Stock Companies / Registre des soci\u00e9t\u00e9s de capitaux",
+        "publicDatabase": "https://rjsc.gov.ns.ca/rjsc/search/doSearch.do",
+        "url": "http://novascotia.ca/sns/access/business/registry-joint-stock-companies.asp"
     },
     {
         "former_prefixes": null,
@@ -253,14 +258,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
+        "dataAccessProperties": [
+            "Available: stated as available, but unable to access"
+        ],
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "Log-in required for business search",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -268,8 +275,11 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en",
+            "fr"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -279,9 +289,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_NT",
@@ -290,17 +300,17 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-NT-CR",
+        "code": "CA_NT-NWT_TNO",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Corporate Registries Online System (CROS), Department of Justice",
-        "publicDatabase": null,
-        "url": "http://www.justice.gov.nt.ca/CorporateRegistry/CR_BCA_ETReg.shtml"
+        "name": "Canadian Provincial Corporate Registration - Northwest Territories / Territoires du Nord-Ouest",
+        "publicDatabase": "https://www.justice.gov.nt.ca/en/corporate-registry-searches/",
+        "url": "https://www.justice.gov.nt.ca/en/divisions/legal-registries-division/corporate-registries/"
     },
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -313,8 +323,11 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en",
+            "fr"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -324,9 +337,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_ON",
@@ -335,11 +348,11 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-ON-CR",
+        "code": "CA_ON-ONT",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "ServiceOntario, Ministry of Government Services",
+        "name": "ServiceOntario, Ministry of Government Services / Minist\u00e8re des Services gouvernementaux",
         "publicDatabase": null,
-        "url": "http://www.ontario.ca/en/business/STEL02_163367"
+        "url": "https://www.ontario.ca/page/business-and-economy"
     },
     {
         "former_prefixes": null,
@@ -347,7 +360,7 @@
             "HTML"
         ],
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": [
             "Registered address",
@@ -641,7 +654,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -654,8 +667,10 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -665,9 +680,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_AB",
@@ -676,9 +691,9 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-AB-CR",
+        "code": "CA_AB-ABT",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Corporate Registry Office",
+        "name": "Corporate Registry Office / Bureau d'enregistrement des soci\u00e9t\u00e9s",
         "publicDatabase": null,
         "url": "http://www.servicealberta.ca/Corporate_Registry.cfm"
     },
@@ -842,31 +857,51 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "dataAccessProperties": [
+            "Excel"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "Data is available in Excel file that contains much formatting.",
+        "datasetFeatures": [
+            "Organisation Name"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "7, 104, 914, 1312",
+        "guidanceOnLocatingIds": "Users can download an Excel file of the DAC and CRS codes from the OECD website. Organisation identifiers can be found in the tabs 'See Donor', 'Agency' and 'Delivery Channel' codes. Identifiers will be under 'Donor code' and 'Channel ID' respectively.\n\nUsers should not that the data is available in a Excel file that contains much formatting.",
         "opencorporates": null,
         "jurisdiction": null,
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en",
+            "fr"
+        ],
+        "lastUpdated": "2016-12-27",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            },
+            {
+                "name": "Government Agency",
+                "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "No License",
+        "registerType": "Third-party",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "XM-DAC",
-        "description": "See Donor, Agency, and Delivery Channel codes",
+        "description": "The Organisation for Economic Co-operation and Development (OECD) Development Assistance Committee (DAC) has created a list of organisations whom are involved in the transfer of financial flows within the work of the OECD DAC. A list of all the Donors, Agencies and Recipients can be downloaded from the OECD website. This list is updated every three years.\n\nSee Donor, Agency and Delivery Channel codes.\n\n\"The overarching objective of the DAC for 2011-2015  is to promote development co-operation and other policies so as to contribute to sustainable development, including pro-poor economic growth, poverty reduction, improvement of living standards in developing countries, and to a future in which no country will depend on aid.\" [1]\n\n\"The DAC revises the list every three years. Countries that have exceeded the high-income threshold for three consecutive years at the time of the review are removed.\" [2] \n\n[1] http://www.oecd.org/dac/thedevelopmentassistancecommitteesmandate.htm\n[2] http://www.oecd.org/dac/stats/daclist.htm",
         "name": "OECD Development Assistance Committee",
-        "publicDatabase": null,
+        "publicDatabase": "http://www.oecd.org/dac/stats/dacandcrscodelists.htm / http://www.oecd.org/dac/stats/documentupload/Codelist_July_2016.xls",
         "url": "http://www.oecd.org/dac/stats/dacandcrscodelists.htm"
     },
     {
@@ -1190,7 +1225,7 @@
             "HTML"
         ],
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": [
             "Directors / Trustees / Governors",
@@ -1203,8 +1238,8 @@
             "Registered address"
         ],
         "deprecated": null,
-        "exampleIdentifiers": "784899-4",
-        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database which is hosted by the Canadian Government, on a website separate to the Canadian Revenue Agency. The two identifiers available to the user are the Corporate Number and the Business Number. The identifiers will be next to these names, respectively.\n\nUsers should note that results that have been pulled from Ontario's registry will not successfully link to corporate information, but will take the user to the homepage for the public record search.",
+        "exampleIdentifiers": "784899-4 , 2212809, 260354410, 7541724",
+        "guidanceOnLocatingIds": "Federal Corporation Search:\nUsers can find identifiers by using the simple, searchable database which is hosted by the Canadian Government, on a website separate to the Canadian Revenue Agency. The two identifiers available to the user are the Corporate Number and the Business Number. The identifiers will be next to these names, respectively.\n\nBusiness Search Registry\n\nUsers can find identifiers by using this incomplete database. To find identifiers, click on the hyperlinked name or the 'More' drop-down menu to the right of the name.\n\nUsers should note that results that have been pulled from Ontario's registry will not successfully link to corporate information, but will take the user to the homepage for the public record search. But clicking 'More' will reveal the identifer'\n\nWhen using the Business Search Registry, identifiers from different state registration authorities are provided. This means they use different formats.",
         "opencorporates": true,
         "jurisdiction": [
             {
@@ -1216,7 +1251,7 @@
             "en",
             "fr"
         ],
-        "lastUpdated": "2016-11-29",
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -1454,7 +1489,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -1467,8 +1502,10 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -1478,9 +1515,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_NL",
@@ -1489,7 +1526,7 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-NL-CR",
+        "code": "CA_NL-NFL_TNL",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
         "name": "Registry of Companies, Department of Government Services",
         "publicDatabase": null,
@@ -1632,7 +1669,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -1645,8 +1682,11 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en",
+            "fr"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -1656,9 +1696,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_MB",
@@ -1667,9 +1707,9 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-MB-CR",
+        "code": "CA_MB-MTB",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Companies Office, Department of Entrepreneurship, Training and Trade",
+        "name": "Manitoba Companies Office, Department of Entrepreneurship, Training and Trade / Bureau des entreprises du Manitoba, minist\u00e8re de l'Entrepreneuriat, de la Formation et du Commerce",
         "publicDatabase": null,
         "url": "https://direct.gov.mb.ca/mbohtml/html/internet/en/mb_online.html"
     },
@@ -1761,7 +1801,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -1774,8 +1814,11 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en",
+            "fr"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -1785,9 +1828,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_YT",
@@ -1796,9 +1839,9 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-YT-CR",
+        "code": "CA_YT-YKT",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Corporate Affairs, Department of Community Services",
+        "name": "Yukon Corporate Affairs / Direction des entreprises, associations et coop\u00e9ratives",
         "publicDatabase": null,
         "url": "http://www.community.gov.yk.ca/corp/index.html"
     },
@@ -1851,7 +1894,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -1864,8 +1907,11 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en",
+            "fr"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -1875,9 +1921,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "No License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_QC",
@@ -1886,9 +1932,9 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-QC-CR",
+        "code": "CA_QC-QBC",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Quebec Registraire des entreprises",
+        "name": "Quebec Business Registrar / Registraire des entreprises",
         "publicDatabase": null,
         "url": "http://www.registreentreprises.gouv.qc.ca/"
     },
@@ -1984,31 +2030,43 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "dataAccessProperties": [
+            "XML",
+            "API"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "A list of identifiers is available via an XML API. ",
+        "datasetFeatures": [
+            "AKAs",
+            "Organisation Name"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "FTS8908, FTS5191",
+        "guidanceOnLocatingIds": "A list of identifiers is available in XML form from the UN OCHA Financial Tracking Service API [1] at http://fts.unocha.org/api/v1/Organization.xml\n\nThe identifier, following the UNOCHA pattern of usage, is made up of the id field from the XML, prefixed with 'FTS' to give identifiers of the form:\n\n> XM-OCHA-FTS8908\n\n[1]: http://fts.unocha.org/api/Files/APIUserdocumentation.htm",
         "opencorporates": null,
         "jurisdiction": null,
-        "languages": null,
-        "lastUpdated": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-27",
         "structure": null,
-        "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
-        "sector": null,
-        "source": null,
+        "licenseDetails": "No explicit license is given, though the terms and conditions encourage attribution (https://fts.unocha.org/pageloader.aspx?page=contact-ContactUs&select=3) and note that the data may contain contributions from multiple sources.",
+        "onlineAccessDetails": "A list of identifiers is available via an XML API. ",
+        "licenseStatus": "No License",
+        "registerType": "Local",
+        "sector": [
+            {
+                "name": "Humanitarian Relief"
+            }
+        ],
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "XM-OCHA",
-        "description": "OCHA is the part of the United Nations Secretariat responsible for bringing together humanitarian actors to ensure a coherent response to emergencies.",
-        "name": "United Nations Office for the Coordination of Humanitarian Affairs",
-        "publicDatabase": null,
+        "description": "OCHA (Office for the Coordination of Humanitarian Affairs) is the part of the United Nations Secretariat responsible for bringing together humanitarian actors to ensure a coherent response to emergencies.  \n\nThe Financial Tracking Service assigns it's own organisation identifiers to parties involved in funding or delivery of humanitarian work, which are used in UN OCHA data, and may be used by some third-parties.\n\n",
+        "name": "United Nations Office for the Coordination of Humanitarian Affairs - Financial Tracking Services Identifiers",
+        "publicDatabase": "https://fts.unocha.org/",
         "url": "http://www.unocha.org"
     },
     {
@@ -2460,7 +2518,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -2473,8 +2531,10 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -2484,9 +2544,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_SK",
@@ -2495,9 +2555,9 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-SK-CR",
+        "code": "CA_SK-SKN",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Saskatchewan Corporate Registry, Information Services Corporation",
+        "name": "Saskatchewan Corporate Registry / Registre des soci\u00e9t\u00e9s",
         "publicDatabase": null,
         "url": "http://www.isc.ca/CorporateRegistry/"
     },
@@ -2757,31 +2817,57 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "csv",
+            "HTML",
+            "JSON",
+            "XML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registration Number",
+            "Organisation Name",
+            "Objectives/Purpose",
+            "Organisation Type",
+            "Website"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "XI-IATI-IADB, XI-IATI-WAI, XI-IATI-1001",
+        "guidanceOnLocatingIds": "Users can find the codelist in three formats - CSV, JSON and XML - from the IATI Organisation Identifier website. The codelist is also available in the three different versions of the IATI Standard.\n\nOnce users have downloaded the file, the identifiers will be under the column header/tag \"code\"",
         "opencorporates": null,
         "jurisdiction": null,
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-27",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            },
+            {
+                "name": "Government Agency",
+                "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "http://iatistandard.org/202/license/",
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": "Local",
+        "licenseStatus": "Open License",
+        "registerType": "Third-party",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "XI-IATI",
-        "description": "XI-IATI is a list of organisation identifiers that is maintained by the IATI Secretariat. Any publisher may apply to the IATI Technical Team for an identifier to be generated.",
+        "description": "XI-IATI is a list of organisation identifiers that is maintained by the IATI Secretariat. Any publisher may apply to the IATI Technical Team for an identifier to be generated.\n\n\"If a bona fide organisation is not registered with any recognised or appropriate registration agency (http://iatistandard.org/202/codelists/OrganisationRegistrationAgency/) they should contact the IATI Technical Team who will exceptionally allocate an organisation identifier using the XI-IATI prefix.\n\nWhile some of these identifiers have been derived from DAC codes, this \u2018meaning\u2019 is not carried forward. i.e. IATI generated identifiers have no intrinsic meaning.\n\nFor general guidance about constructing Organisation Identifiers, please see http://iatistandard.org/organisation-identifiers/\" [1]\n\n[1] http://iatistandard.org/202/codelists/IATIOrganisationIdentifier/",
         "name": "International Aid Transparency Initiative Organisation Identifier",
-        "publicDatabase": null,
+        "publicDatabase": "http://iatistandard.org/202/codelists/IATIOrganisationIdentifier/",
         "url": "http://iatistandard.org/codelists/IATIOrganisationIdentifier/"
     },
     {
@@ -3401,7 +3487,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -3415,7 +3501,7 @@
             }
         ],
         "languages": null,
-        "lastUpdated": "2016-09-07",
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -3425,9 +3511,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "No License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_PE",
@@ -3436,10 +3522,10 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-PE-CR",
+        "code": "CA_PE-PEI_IPE",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
         "name": "Prince Edward Island Corporate/Business Names Registry",
-        "publicDatabase": null,
+        "publicDatabase": "https://www.registreentreprises.gouv.qc.ca/RQAnonymeGR/GR/GR03/GR03A2_19A_PIU_RechEnt_PC/PageRechSimple.aspx?T1.CodeService=S00436&Clng=F&WT.co_f=2c711dfd08c3696dc2c1481744819355",
         "url": "http://www.gov.pe.ca/corporations/index.php"
     },
     {
@@ -3490,42 +3576,82 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": [
-            "csv"
+            "csv",
+            "HTML",
+            "JSON"
         ],
-        "availableOnline": null,
-        "confirmed": null,
+        "availableOnline": "Yes",
+        "confirmed": true,
         "dataAccessDetails": "http://publicbodies.org/ - CSV download available for Brazil, European Union, Germany, Greece, New Zealand, Switzerland, United Kingdom and United States",
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registration Number",
+            "Organisation Name",
+            "Objectives/Purpose",
+            "Organisation Type",
+            "Registered address",
+            "Website",
+            "Date of foundation",
+            "E-mail address"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "gb/aberdeen-city-council, de/14-panzergrenadierdivision-hanse, ch/bundesrat-eidgenoessisches-departement-fuer-auswaertige-angelegenheiten-direktion-fuer-ressourcen-logistik-eda-bundesreisezentrale-pool-2-evd-edi-uvek-vbs-ejpd",
+        "guidanceOnLocatingIds": "Users can click on the link for a country profile to access a webpage with a list of public bodies from that country. Once they open a link to a specific body, the data is available in JSON format. Identifiers will be under the tag 'id'.\n\nUsers can also download a CSV file which contains information on each public body. Identifiers will be under the column header 'id'.",
         "opencorporates": null,
-        "jurisdiction": null,
+        "jurisdiction": [
+            {
+                "countryCode": "BR",
+                "country": "Brazil"
+            },
+            {
+                "countryCode": "CH",
+                "country": "Switzerland"
+            },
+            {
+                "countryCode": "GR",
+                "country": "Greece"
+            },
+            {
+                "countryCode": "US",
+                "country": "United States"
+            },
+            {
+                "countryCode": "DE",
+                "country": "Germany"
+            },
+            {
+                "countryCode": "GB",
+                "country": "United Kingdom"
+            },
+            {
+                "countryCode": "NZ",
+                "country": "New Zealand"
+            }
+        ],
         "languages": [
             "pt",
             "de",
             "el",
             "en"
         ],
-        "lastUpdated": null,
+        "lastUpdated": "2016-12-28",
         "structure": [
             {
                 "name": "Government Agency",
                 "subtypeOf": null
             }
         ],
-        "licenseDetails": null,
+        "licenseDetails": "http://opendatacommons.org/licenses/pddl/1.0/",
         "onlineAccessDetails": null,
-        "licenseStatus": null,
+        "licenseStatus": "Open License",
         "registerType": "Third-party",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "XI-PB",
-        "description": "Public Bodies aims to provide a unique ID for every part of every government.",
-        "name": "Public Bodies",
-        "publicDatabase": null,
+        "description": "Public Bodies is an Open Knowledge Foundation (OKF) project that aims to provide a unique ID for every part of every government. The main website is a portal for linking to profile pages for countries whose public bodies OKF has recorded. There are also links to directly download CSVs of this information.\n\nData available on the following countries/regions - Brazil, European Union, Germany, Greece, New Zealand, Switzerland, United Kingdom, United States ",
+        "name": "Public Bodies - Open Knowledge Foundation ",
+        "publicDatabase": "http://publicbodies.org/",
         "url": "http://publicbodies.org/"
     },
     {
@@ -3655,7 +3781,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -3668,8 +3794,10 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -3679,9 +3807,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_BC",
@@ -3690,9 +3818,9 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-BC-CR",
+        "code": "CA_BC-BRC_CBR",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "British Columbia Corporate Registry",
+        "name": "British Columbia Corporate Registry / Registre des soci\u00e9t\u00e9s",
         "publicDatabase": null,
         "url": "http://www.bcregistryservices.gov.bc.ca/bcreg/corppg/index.page"
     },
@@ -3824,7 +3952,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -3837,8 +3965,10 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -3848,9 +3978,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_NU",
@@ -3859,9 +3989,9 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA-NU-CR",
+        "code": "CA_NU-NNV",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Department of Justice - Corporate Registries",
+        "name": "Nunavut Department of Justice - Corporate Registries",
         "publicDatabase": null,
         "url": "http://nunavutlegalregistries.ca/cr_index_en.shtml"
     },
@@ -3914,7 +4044,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -3927,8 +4057,11 @@
                 "country": "Canada"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-09-07",
+        "languages": [
+            "en",
+            "fr"
+        ],
+        "lastUpdated": "2016-12-14",
         "structure": [
             {
                 "name": "Company",
@@ -3938,9 +4071,9 @@
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CA_NB",
@@ -3949,10 +4082,10 @@
             }
         ],
         "wikipedia": null,
-        "code": "CA_NB-",
+        "code": "CA_NB-NWB_NOB",
         "description": "This entry was imported from the Open Corporates Jurisdiction List.",
-        "name": "Corporate Registry",
-        "publicDatabase": null,
+        "name": "Corporate Registry / Registre corporatif",
+        "publicDatabase": "http://www.snb.ca/e/6000/6600e.asp",
         "url": "https://www.pxw1.snb.ca/snb7001/e/2000/2500e.asp"
     },
     {
@@ -4634,7 +4767,7 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": [
             "Industry classifications",
@@ -4643,8 +4776,8 @@
             "Legal representatives"
         ],
         "deprecated": null,
-        "exampleIdentifiers": "900876653, 900620562",
-        "guidanceOnLocatingIds": "Search through the online interface. \n\nSome identifiers are provided with a checksum (e.g. 900876653-3). ",
+        "exampleIdentifiers": "830093516, 900563742",
+        "guidanceOnLocatingIds": "Users can find identifiers by searching the simple database. The identifier will be under the column header 'N\u00famero Identificaci\u00f3n'. The database is available in Spanish.\n\nUsers should note that some identifiers are provided with a checksum (e.g. 900876653-3).  Details on how this number is formed can be found in Spanish on Wikipedia - https://es.wikipedia.org/wiki/N%C3%BAmero_de_Identificaci%C3%B3n_Tributaria\n\nYou should provide the identifier without the checksum. ",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -4655,14 +4788,8 @@
         "languages": [
             "es"
         ],
-        "lastUpdated": "2016-09-02",
+        "lastUpdated": "2016-12-19",
         "structure": [
-            {
-                "name": "Sole trader",
-                "subtypeOf": [
-                    "reciN6k5BN1PawHxI"
-                ]
-            },
             {
                 "name": "Company",
                 "subtypeOf": null
@@ -4677,12 +4804,12 @@
         "licenseStatus": "No License",
         "registerType": "Secondary",
         "sector": null,
-        "source": "Primary research",
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "CO-RUE",
-        "description": "The Single Business Registration (RUE) was created by Article 11 of Law 590 of 2000, in November 2013, and integrates the Commercial Register and the National Register of Bidders, and will also incorporate and integrate the following records:\n\n* Registration of Non-Profit Institutions\n* Public National Register of vendors Games of chance\n* Public Registry of citizen oversight\n* National Tourism Registry\n* Register of Foreign Entities of Private Law Non-Profit\n* Registration Solidarity Economy\n* Unified Offeror Registry (RUP)\n\nThe Single Business Registration and Social (RUES) is administered by the Chambers of Commerce. ",
-        "name": "Single Business Register / Al Registro \u00danico Empresarial",
+        "description": "The Unified Commercial and Social Registry (RUES) integrates multiple commercial registries, including the NIT (N\u00famero de Identificaci\u00f3n Tributaria) which can be used as the unique identifier. \n\nThis database can be searched online for free.\n\n\"The CCB hereby informs that, in accordance with Resolution 71029 issued by the Superintendence of Industry and Commerce, starting as of November 13, 2013, entrepreneurs must fill out the new Unified Commercial and Social Registry (RUES), a form that integrates the information from the following forms and records:\n\n* Merchant's Certificate.\n* Unified Offeror Registry.\n* Non-For-Profit Organizations Registry.\n* Common Regime (Associations, Foundations and Corporations) and * Solidary Economy Institutions (Cooperatives, Precooperatives, Employee Funds and Mutual Associations).\n* Activity, games and gambling Registry.\n* Citizen Oversight Associations Registry (applicable only when registering or signing-up).\n* Solidarity Economy Registry.\" [1]\n\n[1] http://www.ccb.org.co/en/Registrations-and-renewals/Merchant-s-certificate/Unified-Commercial-and-Social-Registry-RUES",
+        "name": "Unified Commercial and Social Registry (RUES) / Registro \u00danico Empresarial y Social",
         "publicDatabase": "http://www.rues.org.co/RUES_Web/",
         "url": "http://www.rues.org.co/RUES_Web/"
     },
@@ -6249,14 +6376,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": true,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "None available",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -6264,22 +6393,24 @@
                 "country": "Indonesia"
             }
         ],
-        "languages": null,
-        "lastUpdated": "2016-11-24",
+        "languages": [
+            "id"
+        ],
+        "lastUpdated": "2016-12-28",
         "structure": null,
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
+        "licenseStatus": "No License",
         "registerType": "Deprecated",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "ID-KDN",
-        "description": "Unable to find any link between Ministry of Home Affairs and NGO/company registration. It appears that NGOs must register with the Ministry of Foreign Affairs.\n\n\"The Ministry of Home Affairs has the task of conducting government affairs in the country to assist the President in running the state government. \n\nThe Ministry of Interior has the functions:\n\n1. formulation, determination and implementation of policies in the field of politics and public governance, decentralization, development of the regional administration, coaching village government, formation of government affairs and regional development, development of local finance, as well as the population and civil registration, in accordance with the provisions of the legislation;\n2. coordinating the implementation of tasks, coaching, and providing administrative support to all elements of the organization within the Ministry of the Interior;\n3. management of property / wealth of the country is the responsibility of the Ministry of the Interior;\n4. supervise the execution of duties in the Ministry of the Interior;\n5. implementation of the technical guidance and supervision over the implementation of the affairs of the Interior Ministry in the area;\n6. coordinating, coaching and general supervision, facilitation, and evaluation of the regional administration in accordance with the provisions of the legislation;\n7. implementation of research and development in the field of governance in the country;\n8. implementation of human resource development in the field of governance in the country;\n9. implementation of the technical activities of the center to the regions; and\n10. the implementation of a substantial support to all elements of the organization within the Ministry of Interior.\" [1]\n\n[1] http://www.kemendagri.go.id/profil/tugas-dan-fungsi (use Google Chrome to translate)\n\nNGO registration can also be done through Ministry Home affairs/ Kementerian Dalam Negeri",
-        "name": "Ministry Home affairs/ Kementerian Dalam Negeri",
-        "publicDatabase": null,
-        "url": "http://www.kemendagri.go.id/media/filemanager/2011/02/22/d/a/daf.ormas___lsm_2010.pdf"
+        "description": "The Ministry of Home Affairs conducts a series of tasks in relation to legal practice and administration within Indonesia. However, no link has been found between the Ministry of Home Affairs and NGO/company registration. \n\nAs a result, this code has been deprecated. \n\nUsers can refer to ID-KLN (Ministry of Foreign Affairs) and ID-PRO for the registration of NGOs.\n\nUsers can refer to ID-SMR (SMERU) for an independent body that maintains a database of NGOs.\n\n\"The Ministry of Home Affairs has the task of conducting government affairs in the country to assist the President in running the state government. \n\nThe Ministry of Interior has the functions:\n\n1. formulation, determination and implementation of policies in the field of politics and public governance, decentralization, development of the regional administration, coaching village government, formation of government affairs and regional development, development of local finance, as well as the population and civil registration, in accordance with the provisions of the legislation;\n2. coordinating the implementation of tasks, coaching, and providing administrative support to all elements of the organization within the Ministry of the Interior;\n3. management of property / wealth of the country is the responsibility of the Ministry of the Interior;\n4. supervise the execution of duties in the Ministry of the Interior;\n5. implementation of the technical guidance and supervision over the implementation of the affairs of the Interior Ministry in the area;\n6. coordinating, coaching and general supervision, facilitation, and evaluation of the regional administration in accordance with the provisions of the legislation;\n7. implementation of research and development in the field of governance in the country;\n8. implementation of human resource development in the field of governance in the country;\n9. implementation of the technical activities of the center to the regions; and\n10. the implementation of a substantial support to all elements of the organization within the Ministry of Interior.\" [1]\n\n[1] http://www.kemendagri.go.id/profil/tugas-dan-fungsi \n\nNGO registration can also be done through Ministry Home affairs/ Kementerian Dalam Negeri",
+        "name": "Ministry of Home Affairs / Kementerian Dalam Negeri",
+        "publicDatabase": "None available",
+        "url": "http://www.kemendagri.go.id/"
     },
     {
         "former_prefixes": null,
@@ -6416,9 +6547,11 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
         "availableOnline": "No",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
@@ -6435,7 +6568,7 @@
             "en",
             "es"
         ],
-        "lastUpdated": null,
+        "lastUpdated": "2016-12-19",
         "structure": [
             {
                 "name": "Company",
@@ -6444,10 +6577,10 @@
         ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
+        "licenseStatus": "Closed License",
         "registerType": "Deprecated",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": [
             {
                 "regionCode": "CO-DC",
@@ -6459,8 +6592,8 @@
         ],
         "wikipedia": null,
         "code": "CO-CCB",
-        "description": "The Bogota Chamber of Commerce is one of the main places for registering a company in Colombia. If an enterprise wishes to receive a N\n\nThe Bogota Chamber of Commerce is a private, non-for-profit organization whose goal is to foster a sustainable Bogota-Region in the long term, by promoting its residents' prosperity, through services which enhance and strengthen the enterprise capabilities present in the region, and which improve the business environment with an impact over public policies.",
-        "name": "Bogota Chamber of Commerce",
+        "description": "Each region of Colombia has a Chamber of Commerce to which all corporate entities must register. Bogota Chamber of Commerce (CCB) is responsible for Bogota.\n\nUsers should refer to CO-RUE for unique identifiers for Colombia. CO-CCB has ben deprecated in favour of CO-RUE.\n \n\"We are a private, non-for-profit organization whose goal is to foster a sustainable Bogota-Region in the long term, by promoting its residents' prosperity, through services which enhance and strengthen the enterprise capabilities present in the region, and which improve the business environment with an impact over public policies.\" [1]\n\n[1] http://www.ccb.org.co/en/Clusters/20th-TCI-Global-Conference-Bogota-Colombia/Bogota-Chamber-of-Commerce",
+        "name": "Bogota Chamber of Commerce / C\u00e1mara de Comercio de Bogota",
         "publicDatabase": "None located",
         "url": "http://www.ccb.org.co/"
     },
@@ -6509,12 +6642,12 @@
             "Data not available"
         ],
         "availableOnline": "No",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": "None available",
+        "guidanceOnLocatingIds": "A unified registry list of NGO identifiers not found. But other organisations have referred to NGO identifiers.\n\nAn OIPA search returns example ID KE-NCB-200201282375. Searching on the second part of that finds http://www.idealist.org/view/nonprofit/kCM3mWt8k6W4/ . Which has a slightly different format of ID: OP.218/051/2002/0128/2375. \n\nThere are also some IDs in the dataset with the OP component such as KE-NCB-OP-218-051-9399-80\n\nIt is possible that the government issues them with slashes, but people are replacing that with different characters, and stripping some parts off in cases.\n\nWe recommend following the pattern of stripping out the slashes, and removing the preceding OP component. ",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -6525,7 +6658,7 @@
         "languages": [
             "en"
         ],
-        "lastUpdated": "2016-11-25",
+        "lastUpdated": "2016-12-27",
         "structure": [
             {
                 "name": "Charity",
@@ -6541,7 +6674,7 @@
         "subnational": null,
         "wikipedia": null,
         "code": "KE-NCB",
-        "description": "The NGO Coordination Board of Kenya registers NGOs and maintains a registry of organisation information. This information can be accessed by through request and after paying a fee.\n\n\"The Board has the responsibility of regulating and enabling the NGO sector in Kenya.\n\nOur Mandate:\n\nTo maintain the register of National and International NGOs operating in Kenya, with the precise sectors, affiliations and locations of their activities.\" [1]\n\n\"Under section 31 of the NGOs Regulations 1992, any member of the public is allowed to inspect the files and the documents therein of any registered organization during normal working hours. They can also obtain copies of documents in the files.\n\n\nTo conduct a records search a letter should be written to the ED of the NGOB stating the name of the applicant as well as the organization whose details they wish to search and the information they seek.\n\nThe applicant can decide whether to carry out the records search themselves or have the Board conduct it on their behalf. This will be upon a requisite payment of Kenya Shillings Three Thousand (KES 3000)\" [2]\n\n[1] http://www.ngobureau.or.ke/\n[2] http://www.ngobureau.or.ke/?page_id=408",
+        "description": "The NGO Coordination Board of Kenya registers NGOs and maintains a registry of organisation information. This information can be accessed by through request and after paying a fee.\n\n\"The Board has the responsibility of regulating and enabling the NGO sector in Kenya.\n\nOur Mandate:\n\nTo maintain the register of National and International NGOs operating in Kenya, with the precise sectors, affiliations and locations of their activities.\" [1]\n\n\"Under section 31 of the NGOs Regulations 1992, any member of the public is allowed to inspect the files and the documents therein of any registered organization during normal working hours. They can also obtain copies of documents in the files.\n\nTo conduct a records search a letter should be written to the ED of the NGOB stating the name of the applicant as well as the organization whose details they wish to search and the information they seek.\n\nThe applicant can decide whether to carry out the records search themselves or have the Board conduct it on their behalf. This will be upon a requisite payment of Kenya Shillings Three Thousand (KES 3000)\" [2]\n\n[1] http://www.ngobureau.or.ke/\n[2] http://www.ngobureau.or.ke/?page_id=408",
         "name": "NGO's Coordination Board",
         "publicDatabase": "None available",
         "url": "http://www.ngobureau.or.ke/"
@@ -6747,14 +6880,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
-        "deprecated": null,
+        "deprecated": true,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "None available",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -6763,20 +6898,25 @@
             }
         ],
         "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "lastUpdated": "2016-12-19",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "Closed License",
+        "registerType": "Deprecated",
         "sector": null,
-        "source": null,
+        "source": "Desk researching",
         "subnational": null,
         "wikipedia": null,
         "code": "ID-PRO",
-        "description": "Registration for NGO in Indonesia can be done at the provincial level. Because there is regional autonomy, each provincial has different requirements. Website is just one example",
-        "name": "NGOs registered at Provinicial Level",
-        "publicDatabase": null,
+        "description": "Registration for NGO in Indonesia can be done at the provincial level. Because there is regional autonomy, each provincial has different requirements.\n\nThis list was in the original IATI list, but current research has not been able to identify any publicly accessible registries nor lists of unique identifiers. A search of the IATI database finds no instances of use of ID-PRO as part of an identifier. For these reasons the list has been deprecated.",
+        "name": "Indonesia - NGOs registered at Provinicial Level",
+        "publicDatabase": "None available",
         "url": "http://www.satulayanan.net/layanan/pendaftaran-lsm-atau-ormas/perizinan-lsm-atau-ormas-baru"
     },
     {
@@ -7056,14 +7196,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
-        "deprecated": null,
+        "deprecated": true,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "None available",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -7071,29 +7213,42 @@
                 "country": "Kenya"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-27",
+        "structure": [
+            {
+                "name": "Unincorporated body",
+                "subtypeOf": null
+            },
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "No License",
+        "registerType": "Deprecated",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "KE-RSO",
-        "description": null,
+        "description": "The Registrar of Societies is held under the Office of the Attorney General and Department of Justice. Interest groups in Kenya apply to the Registrar of Societies for both registration and exemption from registration of being a 'society'. But there is no indication that societies have legal/corporate foundation. There is also no publicly available database of the Registrar of Societies.\n\nFor Kenya's NGO registry list, users should look to KE-NCB. Please note there is currently no publicly available dataset for this registry.\n\n\"In summary, State Law Office and Department of Justice is mandated to promote the rule of law and public participation; support Government\u2019s investment in socio-economic development; promote transparency, accountability, ethics and integrity; spearhead policy, legal and institutional reforms; promote economic governance and empowerment; promotion, fulfillment and protection of human rights; undertake administrative management; capacity building; and enhance access to justice.\" [1]\n\n[1] http://www.statelaw.go.ke/about-office-of-the-attorney-general-and-department-of-justice/",
         "name": "Registrar of Societies",
-        "publicDatabase": null,
+        "publicDatabase": "None available",
         "url": "http://www.attorney-general.go.ke/"
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
+        "confirmed": true,
+        "dataAccessDetails": "The DSW website does not refer to NGO registration",
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
@@ -7105,21 +7260,28 @@
                 "country": "Ghana"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-27",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "Closed License",
+        "registerType": "Secondary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "GH-DSW",
-        "description": null,
+        "description": "All NGOs wishing to operate in Ghana must first register with the General Registrar's Office, and then apply for NGO status from the Department of Social Welfare (DSW).\n\nThere is no database available for search.\n\n\"The Social Welfare Department is the regulator of NGOs in Ghana and is therefore mandated to issue certificates of\nrecognition to organizations to operate as NGOs. \" [1]\n\n[1] http://g-lishfoundation.org/wp-content/uploads/2011/02/HOW-TO-START-AN-NGO-IN-GHANA.pdf",
         "name": "Department of Social Welfare",
-        "publicDatabase": null,
+        "publicDatabase": "None available",
         "url": null
     },
     {
@@ -7319,14 +7481,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": true,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "None available ",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -7334,21 +7498,28 @@
                 "country": "Jersey"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-27",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "No License",
+        "registerType": "Deprecated",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "JE-OAC",
-        "description": null,
+        "description": "The Jersey Overseas Aid Commission is responsible for distributing international development funds from Jersey. But they are not responsible for registration of NGOs. No database for organisation identifiers has been found.\n\n\"Jersey has been funding international aid and development since 1968, but the current \u2018Jersey Overseas Aid Commission\u2019 was established by law in 2005. It is an independent body within the responsibilities of the Chief Minister. It is governed by three States Commissioners and three non-States Commissioners, all of whom are appointed by the States of Jersey.\" [1]\n\n\"The Non-Profit Organizations (Jersey) Law 2008 (the \u201cNPO Law\u201d) was registered by the Royal Court on 25 July 2008 and came into effect on 8 August 2008. This legislation requires NPOs to register with the Commission in certain circumstances. \" [2]\n\n[1] https://www.joa.je/the-commission/\n[2] http://www.jerseyfsc.org/anti-money_laundering/forms/NPO/index.asp",
         "name": "Jersey Overseas Aid Commission",
-        "publicDatabase": null,
+        "publicDatabase": "None available ",
         "url": "http://www.jerseyoverseasaid.org.je/"
     },
     {
@@ -9582,7 +9753,7 @@
             "HTML"
         ],
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": [
             "Registered address",
@@ -9593,7 +9764,7 @@
             "Accounts",
             "Objectives/Purpose"
         ],
-        "deprecated": null,
+        "deprecated": true,
         "exampleIdentifiers": "35919043, 47364319, 36781673",
         "guidanceOnLocatingIds": "Users can find identifiers using the simple, searchable online database. Users will have to click on the link for 'Aktu\u00e1lny' or '\u00dapln\u00fd' under the column heading V\u00fdpis - or in English,  for 'Actual' or 'Full' under the column heading 'Extract' - of one of the companies in the search results in order to see company details.\n\nIdentifiers will be next to the heading 'I\u010cO' or 'Identification' in English",
         "opencorporates": true,
@@ -9608,17 +9779,22 @@
             "sk"
         ],
         "lastUpdated": "2016-12-07",
-        "structure": null,
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": "https://opencorporates.com/registers/234",
         "onlineAccessDetails": "Database can be searched using the simple search. ",
         "licenseStatus": "Closed License",
-        "registerType": null,
+        "registerType": "Deprecated",
         "sector": null,
         "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "SK-ZRSR",
-        "description": null,
+        "description": "The Ministry of Interior Trade Register does have a database of companies, but users should refer to the Ministry of Justice Business Register in SK-ORSR for the unique identifier list for Slovakia. \n\nThe Ministry of Justice has been shown to be the organisation responsible for company registration, and thus SK-ZRSR has been deprecated in favour of SK-ORSR.",
         "name": "Slovakia Ministry Of Interior Trade Register",
         "publicDatabase": "http://www.orsr.sk/search_subjekt.asp?lan=en",
         "url": "http://www.orsr.sk/search_subjekt.asp?lan=en"
@@ -12325,12 +12501,12 @@
             "Data not available"
         ],
         "availableOnline": "No",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "The VSWA number should be used as a unique identifier, but users should be aware that the entire sequence is needed (number and year), as it is possible that the number is unique to the year of registration, but is repeated for other years, i.e, 511-2007 is ASFP, but there may be another org with 511-1998.",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -12341,7 +12517,7 @@
         "languages": [
             "en"
         ],
-        "lastUpdated": "2016-12-05",
+        "lastUpdated": "2016-12-16",
         "structure": [
             {
                 "name": "Charity",
@@ -12353,11 +12529,11 @@
         "licenseStatus": "No License",
         "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "PK-VSWA",
-        "description": "All NGOs are required to register with their local Voluntary Social Welfare department.\n\n\"Any person intending to establish an agency, and any person\nintending that an agency already in existence should be\ncontinued as such, shall, in the prescribed form, and on payment\nof the prescribed fee, make an application to the Registration\nAuthority\" [1] \n\n\"9.Registration, professional guidance and financial assistance to voluntary Social Welfare agencies for strengthening, improving and promoting their activities, coordination amongst NGOs / Donors and concerned government departments.\" [2] \n\n[1] http://www.ilo.org/dyn/natlex/docs/ELECTRONIC/81785/88956/F1282834913/PAK81785.pdf\n[2] http://www.swkpk.gov.pk/",
+        "description": "All NGOs are required to register with their local Voluntary Social Welfare (VSWA) department. The VSWA assigns each organisation with an organisation identifier that is made up of a number and the year of registration. There is no searchable database.\n\nThe VSWA number should be used as a unique identifier, but users should be aware that the entire sequence is needed (number and year), as it is possible that the number is unique to the year of registration, but is repeated for other years, i.e, 511-2007 is ASFP, but there may be another org with 511-1998.\n\n\"Any person intending to establish an agency, and any person\nintending that an agency already in existence should be\ncontinued as such, shall, in the prescribed form, and on payment\nof the prescribed fee, make an application to the Registration\nAuthority\" [1] \n\n\"9.Registration, professional guidance and financial assistance to voluntary Social Welfare agencies for strengthening, improving and promoting their activities, coordination amongst NGOs / Donors and concerned government departments.\" [2] \n\n[1] http://www.ilo.org/dyn/natlex/docs/ELECTRONIC/81785/88956/F1282834913/PAK81785.pdf\n[2] http://www.swkpk.gov.pk/",
         "name": "Pakistan Voluntary Social Welfare Agency",
         "publicDatabase": null,
         "url": "http://www.swkpk.gov.pk/ , http://social_welfare.kp.gov.pk/"
@@ -12676,36 +12852,48 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "Data available is very basic, and searches can only be completed when the exact name of the corporate entity is known",
+        "datasetFeatures": [
+            "Organisation Name",
+            "Registration Number"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "6713-713839-07, 2007-031592-07 , 1994-010680-07",
+        "guidanceOnLocatingIds": "Users can search for identifiers using the Cipro name. Identifiers will be under the Column header 'Enterprise number'.\n\nUsers should note that this is a very basic search function, and current research finds that only Search Option 1 works, thus users must have the exact name of the corporate entity to find an identifier number. The resulting data is very basic.\n\nUsers can also search the OpenCorporates database.",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "ZA",
                 "country": "South Africa"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-21",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "https://opencorporates.com/registers/237",
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "Closed License",
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "ZA-CIP",
-        "description": null,
+        "description": "The Companies and Intellectual Property Commission (CIPC) is responsible for company registration in South Africa. There is a basic free database search, or users can subscribe to the CIPC website.\n\n\"Functions of the Commission\n\nRegistration of Companies, Co-operatives and Intellectual Property Rights (trade marks, patents, designs and copyright) and maintenance thereof\nDisclosure of Information on its business registers\" [1] \n\n[1] http://www.cipc.co.za/index.php/about/our-functions/",
         "name": "Companies and Intellectual Property Commission (CIPC)",
-        "publicDatabase": null,
+        "publicDatabase": "http://www.cipro.co.za/products_services/name_search.asp, https://eservices.cipc.co.za/ , https://opencorporates.com/companies/za?page=1",
         "url": "http://www.cipro.gov.za/"
     },
     {
@@ -13469,6 +13657,53 @@
     },
     {
         "former_prefixes": null,
+        "dataAccessProperties": [
+            "Bulk download",
+            "API"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": [
+            "Contact address",
+            "Website",
+            "Organisation Type",
+            "Date of foundation",
+            "AKAs"
+        ],
+        "deprecated": null,
+        "exampleIdentifiers": "grid.17063.33, grid.419696.5, grid.1957.a",
+        "guidanceOnLocatingIds": "A search of identifiers is available at https://www.grid.ac/institutes\n\nIdentifier numbers should be presented in their full form:\n\nE.g. XI-GRID-grid.17063.33",
+        "opencorporates": null,
+        "jurisdiction": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-30",
+        "structure": null,
+        "licenseDetails": "The dataset is accessible under Creative Commons Attribution 4.0 International licence. API access is a premium service.",
+        "onlineAccessDetails": "An online search and database download are both available. ",
+        "licenseStatus": "Open License",
+        "registerType": "Third-party",
+        "sector": [
+            {
+                "name": "Education"
+            },
+            {
+                "name": "Research"
+            }
+        ],
+        "source": "Desk research",
+        "subnational": null,
+        "wikipedia": null,
+        "code": "XI-GRID",
+        "description": "The Global Research Identifiers Database collects information on research institutions and assigns them a unique identifier.\n\nIt draws on information from funding datasets, and claims over 90% coverage of institutions. \n\nIt records information on the nature of the research organisation, covering companies, education establishments, healthcare, non-profits, government and other entity types. \n\nGRID also records parent-child relationships between entities, and 'related relationships' for cross-linkages. \n\nIt includes cross-linkages to a range of other identifier sources. ",
+        "name": "Global Research Identifiers Database",
+        "publicDatabase": "https://www.grid.ac/downloads",
+        "url": "https://www.grid.ac/"
+    },
+    {
+        "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": "Yes",
         "confirmed": null,
@@ -13807,7 +14042,7 @@
         "subnational": null,
         "wikipedia": null,
         "code": "ZM-NRB",
-        "description": null,
+        "description": "The NGO Registration Board is held under the Department of Registrar for NGOs, in the Ministry of Community Development, Mother and Child Health. This board registers all NGOs (local and international) in Zambia. \n\n\n\"NGO REGISTRATION BOARD FUNCTIONS\n\nThe NGO Registration Board functions are as outlined below;\n\ni. Register Non Governmental Organisations; \nii. Approve the area of work of NGOs operating in Zambia; \niii. Maintain a register of national and international NGOs operating in Zambia, the sectors, affiliations and location of their activities; \" [1] \n\n[1] http://www.mcdmch.gov.zm/documentation-section",
         "name": "Non Governmental Organisation Registration Board",
         "publicDatabase": null,
         "url": null
@@ -13880,7 +14115,7 @@
         "subnational": null,
         "wikipedia": null,
         "code": "ZW-PVO",
-        "description": null,
+        "description": "\"NGOs in Zimbabwe are mainly registered under the Private Voluntary Organization Act (PVO Act). Registration is done through the Department of Social Welfare under the Ministry of Public Service Labour and Social Welfare.\" [1]\n\n[1] http://www.kanokangalawfirm.net/setting-ngo-zimbabwe/",
         "name": "Private Voluntary Organisations Council",
         "publicDatabase": null,
         "url": null
@@ -13930,6 +14165,35 @@
         "exampleIdentifiers": null,
         "guidanceOnLocatingIds": null,
         "opencorporates": null,
+        "jurisdiction": null,
+        "languages": null,
+        "lastUpdated": null,
+        "structure": null,
+        "licenseDetails": null,
+        "onlineAccessDetails": null,
+        "licenseStatus": null,
+        "registerType": null,
+        "sector": null,
+        "source": null,
+        "subnational": null,
+        "wikipedia": null,
+        "code": "XI-WIKIDATA",
+        "description": "Research required. ",
+        "name": "Wikidata",
+        "publicDatabase": null,
+        "url": null
+    },
+    {
+        "former_prefixes": null,
+        "dataAccessProperties": null,
+        "availableOnline": null,
+        "confirmed": null,
+        "dataAccessDetails": null,
+        "datasetFeatures": null,
+        "deprecated": null,
+        "exampleIdentifiers": null,
+        "guidanceOnLocatingIds": null,
+        "opencorporates": null,
         "jurisdiction": [
             {
                 "countryCode": "US",
@@ -13967,15 +14231,20 @@
     {
         "former_prefixes": null,
         "dataAccessProperties": [
-            "Data not available"
+            "HTML"
         ],
         "availableOnline": "No",
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "confirmed": true,
+        "dataAccessDetails": "Data has not been updates since August 2015, and is held on a third-party website - OpenCorporates",
+        "datasetFeatures": [
+            "Registration Number",
+            "Status",
+            "Date of registration",
+            "Organisation Type"
+        ],
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": "None available",
+        "guidanceOnLocatingIds": "Users can find identifiers by searching the OpenCorporates list of companies in Tanzania. The identifier will be next to the header 'Company Number'\n\nUsers should note that this dataset has not been updated since August 2015 when BRELA starting charging \u00a38 per search.",
         "opencorporates": true,
         "jurisdiction": [
             {
@@ -13987,7 +14256,7 @@
             "en",
             "sw"
         ],
-        "lastUpdated": "2016-12-07",
+        "lastUpdated": "2016-12-19",
         "structure": [
             {
                 "name": "Company",
@@ -14003,7 +14272,7 @@
         "subnational": null,
         "wikipedia": null,
         "code": "TZ-BRLA",
-        "description": "The Business Registrations and Licensing Agency (BRELA) registers companies in Tanzania. Following registration, companies must apply to the Tanzanian Revenue Agency (TRA) to receive a tax identification number (TIN). \n\nCompany information is not freely searchable or available online. Users must sign up for a fee to search company names.\n\n\"The Business Registrations and Licensing Agency (BRELA) is an Executive Agency under the Ministry of Industry and Trade responsible for business administration and regulation of the laws; namely Companies Registration, Business Names Registration, Trade and Service Marks Registration, granting of Patents and issuing of Industrial License.\" [1] \n\n\"The Business Registrations and Licencing Agency (BRELA) is the government agency that has started recently to list registered companies in Tanzania. (http://www.brela.go.tz/) Previously there was a company name search feature available on its website, but this appears to have gone, and there is no other form of company data in evidence.\" [2] \n\n[1] http://www.brela.go.tz/index.php/about/introduction\n[2] http://index.okfn.org/place/tanzania/companies/",
+        "description": "The Business Registrations and Licensing Agency (BRELA) registers companies in Tanzania. Based on the data available on Open Corporates, it appears that BRELA assigns each organisation with a unique identifier .\n\nCompany information is not freely searchable or available online. Users must sign up for a fee to search company names.\n\n\"The Business Registrations and Licensing Agency (BRELA) is an Executive Agency under the Ministry of Industry and Trade responsible for business administration and regulation of the laws; namely Companies Registration, Business Names Registration, Trade and Service Marks Registration, granting of Patents and issuing of Industrial License.\" [1] \n\n\"The Business Registrations and Licencing Agency (BRELA) is the government agency that has started recently to list registered companies in Tanzania. (http://www.brela.go.tz/) Previously there was a company name search feature available on its website, but this appears to have gone, and there is no other form of company data in evidence.\" [2] \n\n[1] http://www.brela.go.tz/index.php/about/introduction\n[2] http://index.okfn.org/place/tanzania/companies/",
         "name": "Tanzania Business Registrations and Licensing Agency",
         "publicDatabase": "https://ors.brela.go.tz/login / https://opencorporates.com/companies/tz/",
         "url": "http://www.brela.go.tz/"
@@ -14055,14 +14324,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "Data not available"
+        ],
+        "availableOnline": "No",
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
-        "deprecated": null,
+        "deprecated": true,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "None available",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -14070,21 +14341,28 @@
                 "country": "South Africa"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-21",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "No License",
+        "registerType": "Deprecated",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "ZA-PBO",
-        "description": null,
+        "description": "Non-profit organisations (NPOs) can apply for Public Benefit Organisation (PBO) status from the South Africa Revenue Service in order to become tax exempt. However, not all NPOs will be awarded this status, therefore the ZA-PBO should not be referred to as the Primary list of unique identifiers for NPOs in South Africa.\n\nNo searchable database of PBOs has been found.\n\n\"The mere fact that an organisation has a non-profit motive or is established or registered as an NPO registered under the NPO Act, or is established as an NPC, does not mean that it automatically qualifies for preferential tax treatment or approval as a PBO.\n\nAn organisation will enjoy preferential tax treatment only after it has applied for and been granted approval as a PBO by the Commissioner, and continues to comply with the relevant prescribed requirements. \" [1] \n\n[1] http://www.sars.gov.za/AllDocs/OpsDocs/Guides/LAPD-IT-G16%20-%20Basic%20Guide%20to%20Income%20Tax%20for%20Public%20Benefit%20Organisations%20-%20External%20Guide.pdf",
         "name": "SA Revenue Service Tax Exemption Unit / Public Benefit Organisations",
-        "publicDatabase": null,
+        "publicDatabase": "None available",
         "url": "http://www.sars.gov.za/home.asp?pid=170"
     },
     {
@@ -14304,14 +14582,23 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "No",
         "confirmed": null,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registered address",
+            "E-mail address",
+            "Phone Number",
+            "Website",
+            "Organisation Name",
+            "Organisation Type"
+        ],
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "Use the final segment of the url (below /federal and excluding the extension) as the \u201cregistration number\u201d, converting all \u201c-\u201d to \u201c_\u201d. Keep \u201cregistration number\u201d portion all lowercase.\n\nADD EXAMPLE",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -14319,22 +14606,30 @@
                 "country": "United States"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en",
+            "es"
+        ],
+        "lastUpdated": "2016-12-27",
+        "structure": [
+            {
+                "name": "Government Agency",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "No License",
+        "registerType": "Third-party",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "US-USAGOV",
-        "description": "Use the final segment of the url (below /federal and excluding the extension) as the \"registration number\", converting all \"-\" to \"_\". Keep \"registration number\" portion all lowercase.",
+        "description": "The U.S. Government website has an index of departments and agencies. This index can be searched, and the URL paths for agencies used to construct government agency identifiers. \n\n",
         "name": "Index of U.S. Government Departments and Agencies",
-        "publicDatabase": null,
-        "url": "http://www.usa.gov/directory/federal/index.shtml"
+        "publicDatabase": "http://www.usa.gov/directory/federal/index.shtml",
+        "url": "https://www.usa.gov/"
     },
     {
         "former_prefixes": null,
@@ -14383,14 +14678,25 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Date of registration",
+            "Registration Number",
+            "Organisation Name",
+            "Organisation Type",
+            "Registered address",
+            "Directors / Trustees / Governors",
+            "Phone Number",
+            "E-mail address"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "181-465, 015-712, 56-058",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the simple, searchable database. Identifiers will be under the column header 'Registration No.'\n\nUsers should note that they do not need to attach \"NPO\" to the end of the identifier.",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -14398,21 +14704,28 @@
                 "country": "South Africa"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-21",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "No License",
+        "registerType": "Secondary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "ZA-NPO",
-        "description": null,
-        "name": "Association for Non-Profit Organisations",
-        "publicDatabase": null,
+        "description": "The Nonprofit Organisation Directorate is held under the South African Department of Social Development. NPOs register with the Nonprofit Organisation Directorate and are assigned a registration number. Users can refer to ZA-NPO for unique identifiers for NGOs in South Africa. The database can be searched for free.\n\nUsers should note that they should not include \"NPO\" to the end of the identifier.\n\n\"The Nonprofit Organisations Directorate was established in terms of the Nonprofit Organisations Act 71 of 1997 to essentially administer the Register of Nonprofit Organisations in South Africa.  \n\nThe Register of Nonprofit Organisations (NPOs) is a voluntary registration facility that enhances the credibility of the registered NPO as it reports to a public office. The NPO Directorate, as a public office, holds information about registered NPOs for the public to access. \" [1]\n\n[1] http://www.dsd.gov.za/npo/",
+        "name": "Nonprofit Organisation Directorate - South African Department of Social Development",
+        "publicDatabase": "http://www.npo.gov.za/PublicNpo/Npo",
         "url": "http://www.npo.gov.za/"
     },
     {
@@ -14462,14 +14775,16 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
+        "dataAccessProperties": [
+            "Available: stated as available, but unable to access"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "Currently unavailable due to website maintenance",
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "It is stated on the government website that there is a database which can be search for company names, but this is currently unavailable and results in Error 404. It is possible this is because the PACRA website is undergoing maintenance.\n\n\"The System is under going maintenace. Please note that online services will not be available during this time. We regret the inconvinience caused.\" [1]\n\n[1] https://www.pacra.org.zm/#/",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -14477,21 +14792,28 @@
                 "country": "Zambia"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-21",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
-        "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "onlineAccessDetails": "Currently unavailable due to website maintenance",
+        "licenseStatus": "No License",
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "ZM-PCR",
-        "description": null,
+        "description": "The Patents and Companies Registration Agency (PACRA) is responsible for company registration in Zambia. \n\n\"The Patents and Companies Registration Agency (PACRA) is a semi-autonomous executive agency of the Zambian Ministry of Commerce, Trade and Industry. Its principal functions are to operate a legal system for registration and protection of commercial and industrial property and to serve as a legal depository of the information tendered for registration..\" [1] \n\n[1] https://www.pacra.org.zm/#/html/About/",
         "name": "Patents and Companies Registration Agency",
-        "publicDatabase": null,
+        "publicDatabase": "http://www.onlinepacra.org.zm/pacranc/default.aspx?UR=http://www.pacra.org.zm/index.php?option=com_content&view=article&id=95&Itemid=136",
         "url": "http://www.pacra.org.zm/"
     },
     {
@@ -14543,12 +14865,12 @@
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": "No",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "Users should refer to individual state databases in order to find identifiers. Alternatively, organisations often have their EIN on a public webpage, and these can be found by using a search engine. For example, search for 'American Red Cross EIN' returns a page with their EIN.\n\nhttps://www.google.com.co/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=american+red+cross+ein\n\nhttp://www.redcross.org/local/california/san-diego/ways-to-donate",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -14595,8 +14917,8 @@
         "subnational": null,
         "wikipedia": null,
         "code": "US-EIN",
-        "description": null,
-        "name": "Internal Revenue Service / Employer Identification Number",
+        "description": "The Internal Revenue Service (IRS) assigns companies an Employer Identification Number (EIN) upon application. However, not all corporate entities are required to have an EIN. Corporate registration is done at the state level. There is no national database for searching unique identifiers. \n\nUsers should refer to individual state databases in order to find identifiers. Alternatively, organisations often have their EIN on a public webpage, and these can be found by using a search engine. For example, search for 'American Red Cross EIN' returns a page with their EIN.\n\nhttps://www.google.com.co/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=american+red+cross+ein\n\nhttp://www.redcross.org/local/california/san-diego/ways-to-donate\n\n\"An Employer Identification Number (EIN) is also known as a Federal Tax Identification Number, and is used to identify a business entity. Generally, businesses need an EIN. \" [1]\n\n\"An employer identification number (EIN), also called a tax ID number or taxpayer ID, is required for most business entities... A tax ID number is not required if you operate a sole proprietorship or an LLC with no employees, in which case you would simply use your own Social Security Number as a tax ID.\" [2]\n\n\"In the US, corporate registration happens at the state level. The timeliness, availability, and licensing of this data varies among all 50 states. There is no federal dataset that contains all corporate registrations. It would be possible to create a unified open registry for all US corporations (even if only via aggregation from state ones) but this does not exist at this time.\n\nAcross those states performance varies widely and in many cases data is not available in bulk, is not machine readable, is not openly licensed etc. For more detail, see the per state summary on Open Corporates.\" [3]\n\n\"The Employer Identification Number (EIN), also known as the Federal Employer Identification Number (FEIN) or the Federal Tax Identification Number, is a unique nine-digit number assigned by the Internal Revenue Service (IRS) to business entities operating in the United States for the purposes of identification. When the number is used for identification rather than employment tax reporting, it is usually referred to as a Taxpayer Identification Number (TIN), and when used for the purposes of reporting employment taxes, it is usually referred to as an EIN. [4] \n\n[1] https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers-eins\n[2] http://tax.findlaw.com/federal-taxes/is-a-tax-id-required-for-my-business-.html\n[3] https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers-eins\n[4] https://en.wikipedia.org/wiki/Employer_Identification_Number",
+        "name": "Employer Identification Number - Internal Revenue Service",
         "publicDatabase": null,
         "url": "http://www.irs.gov/businesses/small/article/0,,id=98350,00.html"
     },
@@ -14786,7 +15108,7 @@
             "HTML"
         ],
         "availableOnline": "Yes",
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": [
             "Registered address",
@@ -15466,14 +15788,22 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "Users must complete Captcha puzzle in order to search",
+        "datasetFeatures": [
+            "Date of registration",
+            "Registration Number",
+            "Organisation Name",
+            "Status",
+            "Expiry Date"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "80010001803086 / BN-55471 , R1000000336259 , 80010003208981 / 101303A",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the database on the bureau website. Users must complete a Captcha puzzle in order to search. The identifiers will be under the column header 'Nr'.\n\nUsers should be aware that identifiers are not formed in a uniform manner, and use slashes and hyphens.",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -15481,33 +15811,35 @@
                 "country": "Uganda"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-16",
         "structure": null,
         "licenseDetails": null,
         "onlineAccessDetails": null,
         "licenseStatus": null,
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "UG-RSB",
-        "description": null,
+        "description": "Businesses and NGOs register with the Registration Services Bureau and receive an identification number. This number can be used as an identifier. A publicly available database can be search on the Bureau website.",
         "name": "Registration Services Bureau",
-        "publicDatabase": null,
+        "publicDatabase": "http://brs.ursb.go.ug/brs/pro/bnr/searchname#SearchNamePub",
         "url": "http://www.ursb.go.ug/"
     },
     {
         "former_prefixes": null,
         "dataAccessProperties": null,
         "availableOnline": null,
-        "confirmed": null,
+        "confirmed": true,
         "dataAccessDetails": null,
         "datasetFeatures": null,
         "deprecated": null,
         "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "guidanceOnLocatingIds": "All Zimbabwe government websites are unavailable at time of research.",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -15516,21 +15848,26 @@
             }
         ],
         "languages": null,
-        "lastUpdated": null,
-        "structure": null,
+        "lastUpdated": "2016-12-21",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
         "licenseDetails": null,
-        "onlineAccessDetails": null,
+        "onlineAccessDetails": "All Zimbabwe government websites are unavailable at time of research.",
         "licenseStatus": null,
-        "registerType": null,
+        "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "ZW-ROD",
-        "description": null,
+        "description": "Companies in Zimbabwe must register with the Registrar of Deeds. \n\nCurrently, all Zimbabwe government websites appear not to be working.\n\n\"Reserve the company name with the Chief Registrar of Companies\n\nAgency: Chief Registrar of Companies\n\nForms are available online but all documents must be physically lodged at Companies and Deeds Registry. The reservation is valid for 30 days and can be extended for another 30 days for an additional fee.\" [1] \n\n[1] http://www.doingbusiness.org/data/exploreeconomies/zimbabwe#starting-a-business",
         "name": "Registrar of Deeds",
         "publicDatabase": null,
-        "url": null
+        "url": "http://www.dcip.gov.zw/"
     },
     {
         "former_prefixes": null,
@@ -15851,14 +16188,22 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
-        "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "dataAccessProperties": [
+            "HTML"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
+        "dataAccessDetails": "Users must complete a Captcha puzzle in order to search",
+        "datasetFeatures": [
+            "Registered address",
+            "Registration Number",
+            "Organisation Name",
+            "Status",
+            "Directors / Trustees / Governors"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
+        "exampleIdentifiers": "38422948, 19280108",
+        "guidanceOnLocatingIds": "Users can find identifiers by using the database on the Ministry website. Users will need to complete a Captcha puzzle in order to search, and the identifiers will be under the column header '\u0406\u0434\u0435\u043d\u0442\u0438\u0444\u0456\u043a\u0430- \u0446\u0456\u0439\u043d\u0438\u0439 \u043a\u043e\u0434 \u044e\u0440\u0438\u0434\u0438\u0447\u043d\u043e\u0457 \u043e\u0441\u043e\u0431\u0438' .This website is in Ukrainian.\n\nUsers can find identifiers using the third-party website, Papir. The Identifiers will be next to the column header '\u041a\u043e\u0434 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438'. This website is in Russian.",
         "opencorporates": null,
         "jurisdiction": [
             {
@@ -15866,22 +16211,30 @@
                 "country": "Ukraine"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
+        "languages": [
+            "uk",
+            "ru"
+        ],
+        "lastUpdated": "2016-12-16",
+        "structure": [
+            {
+                "name": "Company",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "http://index.okfn.org/place/ukraine/companies/",
         "onlineAccessDetails": null,
-        "licenseStatus": null,
+        "licenseStatus": "Closed License",
         "registerType": "Primary",
         "sector": null,
-        "source": null,
+        "source": "Desk research",
         "subnational": null,
         "wikipedia": null,
         "code": "UA-EDR",
-        "description": "The Ministry of Justice hosts the United State Register for all corporate entities, individuals and community groups who are registered in Ukraine. ",
+        "description": "The Ministry of Justice hosts the United State Register for all corporate entities, individuals and community groups who are registered in Ukraine. Each corporate entity is assigned an identification code which can be used as a unique identifier.\n\nThe is a free search and a paid search of the database, and there is a third party search in Russian.\n\n\"The Ministry of Justice of Ukraine introduced online service to obtain information from the Unified State Register of Legal Entities, individual entrepreneurs and community groups\" [1]\n\n[1] https://usr.minjust.gov.ua/ua/home",
         "name": "United State Register / \u0404\u0434\u0438\u043d\u043e\u0433\u043e \u0434\u0435\u0440\u0436\u0430\u0432\u043d\u043e\u0433\u043e \u0440\u0435\u0454\u0441\u0442\u0440\u0443 \u044e\u0440\u0438\u0434\u0438\u0447\u043d\u0438\u0445 \u043e\u0441\u0456\u0431",
-        "publicDatabase": null,
-        "url": "http://irc.gov.ua/ua/Poshuk-v-YeDR.html"
+        "publicDatabase": "Ministry - https://usr.minjust.gov.ua/ua/freesearch Third-party - http://askpapir.com/",
+        "url": "https://usr.minjust.gov.ua/ua/home"
     },
     {
         "former_prefixes": null,
@@ -15969,36 +16322,51 @@
     },
     {
         "former_prefixes": null,
-        "dataAccessProperties": null,
-        "availableOnline": null,
-        "confirmed": null,
+        "dataAccessProperties": [
+            "Available: stated as available, but unable to access"
+        ],
+        "availableOnline": "Yes",
+        "confirmed": true,
         "dataAccessDetails": null,
-        "datasetFeatures": null,
+        "datasetFeatures": [
+            "Registration Number",
+            "Organisation Name",
+            "Date of registration",
+            "Expiry Date",
+            "Status"
+        ],
         "deprecated": null,
-        "exampleIdentifiers": null,
-        "guidanceOnLocatingIds": null,
-        "opencorporates": null,
+        "exampleIdentifiers": "80010001803086/BN-55471 , R1000000336259 , 80010003208981/101303A",
+        "guidanceOnLocatingIds": "Users can search for NGO identifiers on the Uganda Registration Services Bureau database.\n\nUsers should note that current research has not found this database to work when selecting 'NGO' on the 'Business type' drop-down menu. It is possible to search for NGO names and find results.\n\nUsers should be aware that identifiers are not formed in a uniform manner, and use slashes and hyphens.",
+        "opencorporates": true,
         "jurisdiction": [
             {
                 "countryCode": "UG",
                 "country": "Uganda"
             }
         ],
-        "languages": null,
-        "lastUpdated": null,
-        "structure": null,
-        "licenseDetails": null,
+        "languages": [
+            "en"
+        ],
+        "lastUpdated": "2016-12-19",
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "licenseDetails": "https://opencorporates.com/registers/267",
         "onlineAccessDetails": null,
-        "licenseStatus": null,
-        "registerType": null,
+        "licenseStatus": "Closed License",
+        "registerType": "Secondary",
         "sector": null,
         "source": null,
         "subnational": null,
         "wikipedia": null,
         "code": "UG-NGB",
-        "description": null,
+        "description": "All NGOs wishing to operate in Uganda must register with the NGO Board of the Ministry of Internal Affairs. \n\n\"The National NGO Board under the Ministry of Internal Affairs, which is the lead Ministry, is legally mandated to register, regulate, coordinate and monitor NGOs in Uganda.\"",
         "name": "NGO Board, Ministry of Internal Affairs",
-        "publicDatabase": null,
+        "publicDatabase": "http://brs.ursb.go.ug/brs/pro/bnr/searchname#SearchNamePub",
         "url": "http://www.mia.go.ug/?page_id=62"
     },
     {

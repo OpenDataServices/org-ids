@@ -1,5 +1,41 @@
 [
     {
+        "text": "Emails sent to Kenyan NGOs to try and gather information on how identifiers are formed and reused ",
+        "prefix": [
+            {
+                "code": "KE-NCB",
+                "name": "NGO's Coordination Board"
+            }
+        ],
+        "jurisdiction": [
+            {
+                "countryCode": "KE",
+                "country": "Kenya"
+            }
+        ],
+        "structure": [
+            {
+                "name": "Charity",
+                "subtypeOf": null
+            }
+        ],
+        "sector": null,
+        "title": "Emails sent to Kenyan NGOs regarding the formation of identifiers"
+    },
+    {
+        "text": null,
+        "prefix": [
+            {
+                "code": "GH-DSW",
+                "name": "Department of Social Welfare"
+            }
+        ],
+        "jurisdiction": null,
+        "structure": null,
+        "sector": null,
+        "title": "Emails sent to Ghana NGOs with DSW in IATI identifier"
+    },
+    {
         "text": "A number of jurisdictions provide their own registry, a list can be found here under 'Provincial and Territorial Registration' - http://www.canadabusiness.ca/government/registering-your-business/",
         "prefix": [
             {
@@ -73,7 +109,7 @@
         "prefix": [
             {
                 "code": "CO-RUE",
-                "name": "Single Business Register / Al Registro \u00danico Empresarial"
+                "name": "Unified Commercial and Social Registry (RUES) / Registro \u00danico Empresarial y Social"
             }
         ],
         "jurisdiction": [
