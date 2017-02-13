@@ -31,7 +31,9 @@
           <select name="sector" class="selectpicker" data-live-search="true" data-width="300px">
             <option value = "">Any Sector</option>
             {% for sector in lists.sectors %}
-               <option {% if query.sector == sector.name %} selected {% endif %} value="{{sector.name}}">{{sector.name}}</option>
+               {% if sector.name %}
+                 <option {% if query.sector == sector.name %} selected {% endif %} value="{{sector.name}}">{{sector.name}}</option>
+               {% endif %}
             {% endfor %}
           </select>
           </br>
