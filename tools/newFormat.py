@@ -31,8 +31,8 @@ for prefix_file_name in glob.glob(codes_dir + '/*/*.json'):
             "code":old['code'],
             "url":old['url'],
             "registerType":create_tag(old['registerType']),
-            "jurisdiction":[list(map(lambda x: x['countryCode'],old['jurisdiction'])) if old['jurisdiction'] else None],
-            "subnationalJurisdiction":[list(map(lambda x: x['regionCode'],old['subnational'])) if old['subnational'] else None],
+            "coverage":list(map(lambda x: x['countryCode'],old['jurisdiction'])) if old['jurisdiction'] else None,
+            "subnationalCoverage":list(map(lambda x: x['regionCode'],old['subnational'])) if old['subnational'] else None,
             "sector":list(map(lambda x: create_tag(x['name']),old['sector'])) if old['sector'] else None,
             "structure":list(map(lambda x: struct_map[create_tag(x['name'])],old['structure'])) if old['structure'] else None,
             "access": {
