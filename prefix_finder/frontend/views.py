@@ -50,21 +50,18 @@ for prefix in lists['prefix_list']:
 def filter_and_score_results(query):
     indexed = {prefix['code']: prefix.copy() for prefix in lists['prefix_list']}
     for prefix in list(indexed.values()):
+        prefix['quality'] = 1
+        prefix['relevence'] = 0
         register_type = prefix.get('registerType')
-        if register_type:
-            if register_type == 'Primary':
-                prefix['weight'] = 4
-            else:
-                prefix['weight'] = 1
-        else:
-            prefix['weight'] = 1
+        if register_type and register_type == 'Primary':
+            prefix['quality'] = 2
 
     jurisdiction = query.get('jurisdiction')
     if jurisdiction:
         for prefix in list(indexed.values()):
             if prefix['jurisdiction_flat']:
                 if jurisdiction in prefix['jurisdiction_flat']:
-                    prefix['weight'] = prefix['weight'] * 10
+                    prefix['relevence'] = prefix['relevence'] + 1
                 else:
                     indexed.pop(prefix['code'])
 
@@ -73,7 +70,7 @@ def filter_and_score_results(query):
         for prefix in list(indexed.values()):
             if prefix['structure_flat']:
                 if organisation_type in prefix['structure_flat']:
-                    prefix['weight'] = prefix['weight'] * 10
+                    prefix['relevence'] = prefix['relevence'] + 1
                 else:
                     indexed.pop(prefix['code'])
             else:
@@ -83,12 +80,30 @@ def filter_and_score_results(query):
     if sector:
         for prefix in list(indexed.values()):
             if prefix['sector']:
-                if sector == prefix['structure_flat']:
-                    prefix['weight'] = prefix['weight'] * 10
+                if sector == prefix.get('sector'):
+                    prefix['relevence'] = prefix['relevence'] + 1
             else:
                 indexed.pop(prefix['code'])
 
-    return sorted(indexed.values(), key=lambda k: -k['weight'])
+
+    all_results = {"suggested": [],
+                   "recommended": [],
+                   "other": []}
+
+    if not indexed:
+        return all_results
+
+    top_relevence = max(prefix['relevence'] for prefix in indexed.values())
+                   
+    for value in sorted(indexed.values(), key=lambda k: -(k['relevence'] * 100 + k['quality'])):
+        if value['relevence'] == top_relevence:
+            all_results['suggested'].append(value)
+        elif value['relevence'] == 0:
+            all_results['other'].append(value)
+        else:
+            all_results['recommended'].append(value)
+
+    return all_results
 
 
 def home(request):
@@ -99,6 +114,6 @@ def home(request):
         "query": query
     }
     if query:
-        context['results'] = filter_and_score_results(query)
+        context['all_results'] = filter_and_score_results(query)
          
     return render(request, "home.html", context=context)
