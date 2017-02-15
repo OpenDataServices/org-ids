@@ -31,7 +31,9 @@
           <select name="sector" class="selectpicker" data-live-search="true" data-width="300px">
             <option value = "">Any Sector</option>
             {% for sector in lists.sectors %}
-               <option {% if query.sector == sector.name %} selected {% endif %} value="{{sector.name}}">{{sector.name}}</option>
+               {% if sector.name %}
+                 <option {% if query.sector == sector.name %} selected {% endif %} value="{{sector.name}}">{{sector.name}}</option>
+               {% endif %}
             {% endfor %}
           </select>
           </br>
@@ -40,43 +42,37 @@
         </form>
           </br>
           {% if query %}
-            {% if results %}
-              <h1 id="results" class="text-center">Results </br> <small>Consider the top prefixes first.</small> </h1>
-              </br>
-              {% for result in results %}
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <ul class="list-inline clear-margin-bottom">
-                      <li>
-                        <h4>Prefix: <b>{{result.code}}</b></h4>
-                      </li>
-                      <li>
-                        <h4>Name: <a href="{{result.url}}">{{result.name}}</a></h4>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="panel-body">
-                    <dl class="dl-horizontal">
-                      {% for key, value in result|tidy_results %}
-                         {% if value %}
-                           <dt> {{key}} </dt>
-                           <dd> 
-                             {% if value|slice:":4" == "http" %}
-                               <a href="{{value}}">{{value}}</a>
-                             {% else %}
-                               {{value}} 
-                             {% endif %}
-                           </dd>
-                         {% endif %}
-                      {% endfor %}
-                    </dl>
-                  </div>
-                </div>
-              {% endfor %}
 
+            {% if all_results.suggested %}
+              {% with all_results.suggested as results %}
+                <h1 id="results" class="text-center">Suggested Results </br></h1>
+                </br>
+                {% include 'results.html' %}
+              {% endwith %}
             {% else %}
-              <h1 id="results" class="text-center">No Results</h1>
+              <h1 id="results" class="text-center">No Suggested Results</h1>
             {% endif %}
+
+            {% if all_results.recommended %}
+              {% with all_results.recommended as results %}
+              <h1 id="results" class="text-center">Recommended Results </br></h1>
+              </br>
+              {% include 'results.html' %}
+              {% endwith %}
+            {% else %}
+              <h1 id="results" class="text-center">No Recommended Results</h1>
+            {% endif %}
+
+            {% if all_results.other %}
+              {% with all_results.other as results %}
+              <h1 id="results" class="text-center">Other Results </br></h1>
+              </br>
+              {% include 'results.html' %}
+              {% endwith %}
+            {% else %}
+              <h1 id="results" class="text-center">No Other Results</h1>
+            {% endif %}
+
           {% endif %}
 
       </div>
