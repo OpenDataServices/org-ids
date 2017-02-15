@@ -3,6 +3,7 @@ import json
 import glob
 
 from django.shortcuts import render
+from django.http import HttpResponse
 
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
@@ -122,10 +123,9 @@ def filter_and_score_results(query):
     return all_results
 
 
-def update(request):
+def update_lists(request):
     refresh_data()
-
-
+    return HttpResponse("List Refreshed")
 
 
 def home(request):
