@@ -7,6 +7,10 @@ from django.shortcuts import render
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
+##globals
+lookups = None
+org_id_lists = None
+
 
 def load_files():
     schema_dir = os.path.join(current_dir, '../../schema')
@@ -17,7 +21,6 @@ def load_files():
 
     return schemas
 
-schemas = load_files()
 
 
 def create_codelist_lookups(schemas):
@@ -34,7 +37,6 @@ def create_codelist_lookups(schemas):
 
     return lookups
 
-lookups = create_codelist_lookups(schemas)
 
 
 def load_org_id_lists():
@@ -47,26 +49,15 @@ def load_org_id_lists():
 
     return org_id_lists
 
-org_id_lists = load_org_id_lists()
 
-#import pprint; pprint.pprint(org_id_lists)
+def refresh_data():
+    global lookups 
+    global org_id_lists 
 
-#def flatten_structure(structure):
-    #if isinstance(structure, dict):
-        #for key, value in structure.items():
-            #if key == 'name':
-                #yield value
-            #if isinstance(value, dict):
-                #yield from flatten_structure(value)
+    lookups = create_codelist_lookups(load_files())
+    org_id_lists = load_org_id_lists()
 
-##make_prefix_list_more_searchable by flattening some fields
-#for prefix in lists['prefix_list']:
-    #structure_flat = []
-    #for item in prefix['structure'] or []:
-        #structure_flat.extend(list(flatten_structure(item)))
-    #prefix['structure_flat'] = structure_flat
-    #prefix['jurisdiction_flat'] = [jurisdiction['countryCode'] for jurisdiction in prefix.get('jurisdiction') or []]
-
+refresh_data()
 
 def filter_and_score_results(query):
     indexed = {org_id_list['code']: org_id_list.copy() for org_id_list in org_id_lists}
@@ -85,6 +76,10 @@ def filter_and_score_results(query):
                     prefix['relevence'] = prefix['relevence'] + 1
                 else:
                     indexed.pop(prefix['code'])
+    else:
+        if not prefix['coverage']:
+            prefix['relevence'] = prefix['relevence'] + 0.25
+
 
     structure = query.get('structure')
     if structure:
@@ -125,6 +120,12 @@ def filter_and_score_results(query):
             all_results['recommended'].append(value)
 
     return all_results
+
+
+def update(request):
+    refresh_data()
+
+
 
 
 def home(request):

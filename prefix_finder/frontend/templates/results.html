@@ -1,0 +1,33 @@
+{% load static %}
+{% load results %}
+
+{% for result in results %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ul class="list-inline clear-margin-bottom">
+        <li>
+          <h4>Prefix: <b>{{result.code}}</b></h4>
+        </li>
+        <li>
+          <h4>Name: <a href="{{result.url}}">{{result.name}}</a></h4>
+        </li>
+      </ul>
+    </div>
+    <div class="panel-body">
+      <dl class="dl-horizontal">
+        {% for key, value in result|tidy_results %}
+           {% if value %}
+             <dt> {{key}} </dt>
+             <dd> 
+               {% if value|slice:":4" == "http" %}
+                 <a href="{{value}}">{{value}}</a>
+               {% else %}
+                 {{value}} 
+               {% endif %}
+             </dd>
+           {% endif %}
+        {% endfor %}
+      </dl>
+    </div>
+  </div>
+{% endfor %}
