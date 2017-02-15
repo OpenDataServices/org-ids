@@ -12,28 +12,24 @@
         <br/>
         <h3>What country is the organization registered in?</h3>
         <form>
-          <select name="jurisdiction" class="selectpicker" data-live-search="true" data-width="300px">
+          <select name="coverage" class="selectpicker" data-live-search="true" data-width="300px">
             <option value="">Any country</option>
-            {% for country in lists.jurisdictions %}
-            <option {% if query.jurisdiction == country.countryCode %} selected {% endif %}  value="{{country.countryCode}}">{{country.country}}</option>
+            {% for code, title  in lookups.coverage %}
+            <option {% if query.coverage == code %} selected {% endif %}  value="{{code}}">{{title}}</option>
             {% endfor %}
           </select>
           <h3>What type of organization is it?</h3>
-          <select name="organisation_type" class="selectpicker" data-live-search="true" data-width="300px">
+          <select name="structure" class="selectpicker" data-live-search="true" data-width="300px">
             <option value = "">Any type</option>
-            {% for org_type in lists.organisation_types %}
-              {% if not org_type.subtypeOf and org_type.name %}
-                <option {% if query.organisation_type == org_type.name %} selected {% endif %} value="{{org_type.name}}">{{org_type.name}}</option>
-              {% endif %}
+            {% for code, title in lookups.structure %}
+              <option {% if query.structure == code %} selected {% endif %} value="{{code}}">{{title}}</option>
             {% endfor %}
           </select>
           <h3>What sector is the organization in?</h3>
           <select name="sector" class="selectpicker" data-live-search="true" data-width="300px">
             <option value = "">Any Sector</option>
-            {% for sector in lists.sectors %}
-               {% if sector.name %}
-                 <option {% if query.sector == sector.name %} selected {% endif %} value="{{sector.name}}">{{sector.name}}</option>
-               {% endif %}
+            {% for code, title in lookups.sector %}
+               <option {% if query.sector == code %} selected {% endif %} value="{{code}}">{{title}}</option>
             {% endfor %}
           </select>
           </br>

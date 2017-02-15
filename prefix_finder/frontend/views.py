@@ -77,20 +77,20 @@ def filter_and_score_results(query):
         if register_type and register_type == 'primary':
             prefix['quality'] = 2
 
-    jurisdiction = query.get('jurisdiction')
-    if jurisdiction:
+    coverage = query.get('coverage')
+    if coverage:
         for prefix in list(indexed.values()):
-            if prefix['jurisdiction_flat']:
-                if jurisdiction in prefix['jurisdiction_flat']:
+            if prefix['coverage']:
+                if coverage in prefix['coverage']:
                     prefix['relevence'] = prefix['relevence'] + 1
                 else:
                     indexed.pop(prefix['code'])
 
-    organisation_type = query.get('organisation_type')
-    if organisation_type:
+    structure = query.get('structure')
+    if structure:
         for prefix in list(indexed.values()):
-            if prefix['structure_flat']:
-                if organisation_type in prefix['structure_flat']:
+            if prefix['structure']:
+                if structure in prefix['structure']:
                     prefix['relevence'] = prefix['relevence'] + 1
                 else:
                     indexed.pop(prefix['code'])
@@ -101,7 +101,7 @@ def filter_and_score_results(query):
     if sector:
         for prefix in list(indexed.values()):
             if prefix['sector']:
-                if sector == prefix.get('sector'):
+                if sector in prefix['sector']:
                     prefix['relevence'] = prefix['relevence'] + 1
             else:
                 indexed.pop(prefix['code'])
@@ -129,9 +129,10 @@ def filter_and_score_results(query):
 
 def home(request):
     query = {key: value[0] for key, value in dict(request.GET).items()
-             if key in ['jurisdiction', 'organisation_type', 'sector']}
+             if key in ['coverage', 'structure', 'sector']}
     context = {
-        "lists": lists,
+        "org_id_lists": org_id_lists,
+        "lookups": lookups,
         "query": query
     }
     if query:

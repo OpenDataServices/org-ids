@@ -56,8 +56,5 @@ def tidy_results(results):
             if key == 'subnational':
                 tidied_results[key_name] = ", ".join('{regionName} ({regionCode})'.format(**item) for item in value)
                 continue
-            if key == 'sector':
-                tidied_results[key_name] = ", ".join(item['name'] for item in value)
-                continue
         tidied_results[key_name] = value
     return sorted(tidied_results.items())
