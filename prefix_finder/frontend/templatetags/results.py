@@ -1,60 +1,66 @@
+from collections import OrderedDict
 from django import template
 
 register = template.Library()
 
-SKIP_KEYS = '''name url code structure
-               jurisdiction_flat structure_flat'''.split()
-
-name_to_identifier = {"code": "code",
-                      "name": "name",
-                      "Description": "description",
-                      "Jurisdiction": "jurisdiction",
-                      "url": "url",
-                      "Public Database": "publicDatabase",
-                      "Legal Structure": "structure",
-                      "Example identifier(s)": "exampleIdentifiers",
-                      "Register Type": "registerType",
-                      "Available online?": "availableOnline",
-                      "Finding the identifiers": "guidanceOnLocatingIds",
-                      "Openly licensed": "licenseStatus",
-                      "License details": "licenseDetails",
-                      "Online availability": "onlineAccessDetails",
-                      "Access to data": "dataAccessProperties",
-                      "Data access details": "dataAccessDetails",
-                      "Data features": "datasetFeatures",
-                      "In OpenCorporates?": "opencorporates",
-                      "Languages supported": "languages",
-                      "Sector": "sector",
-                      "Sub-national": "subnational",
-                      "Wikipedia page": "wikipedia",
-                      "Confirmed?": "confirmed",
-                      "Last Updated": "lastUpdated",
-                      "Deprecated": "deprecated",
-                      "AKA": "formerPrefixes",
-                      "Source": "source",
-                      "Weight": "weight"}
-
-identifier_to_name = dict((value, key) for key, value in name_to_identifier.items())
+# SKIP_KEYS = 'name url code structure'.split()
+paths_display_name = OrderedDict((
+    (('description', ), 'Description'),
+    (('coverage', ), 'Coverage'),
+    (('access', 'languages'), 'Languages'),
+    (('registerType', ), 'Register type'),
+    (('data', 'licenseStatus'), 'Data license Status'),
+    (('data', 'licenseDetails'), 'Data license details'),
+    (('data', 'dataAccessDetails'), 'Data access'),
+    (('data', 'availability'), 'Data availability'),
+    (('data', 'features'), 'Data features'),
+    (('access', 'availableOnline'), 'Available online'),
+    (('access', 'onlineAccessDetails'), 'Online Access Details'),
+    (('access', 'publicDatabase'), 'Public Database'),
+    (('access', 'guidanceOnLocatingIds'), 'Finding the identifiers'),
+    (('access', 'exampleIdentifiers'), 'Example identifier(s)'),
+    (('links', 'opencorporates'), 'Open Corporates page'),
+    (('links', 'wikipedia'), 'Wikipedia page'),
+    (('confirmed', ), 'Confirmed?'),
+    (('sector', ), 'Sector'),
+    (('subnationalCoverage', ), 'Sub-national'),
+    (('meta', 'lastUpdated'), 'Last Updated'),
+    (('deprecated', ), 'Deprecated'),
+    (('formerPrefixes', ), 'AKA'),
+    (('meta', 'source'), 'Source'),
+    (('quality', ), 'Quality'),
+    (('relevence', ), 'Relevance')
+))
 
 
 @register.filter(name='tidy_results')
 def tidy_results(results):
-    tidied_results = {}
-    for key, value in results.items():
-        key_name = identifier_to_name.get(key, key)
-        if key == 'structure_flat':
-            tidied_results[identifier_to_name['structure']] = ", ".join(value)
-        if key in SKIP_KEYS:
+    tidied_results = OrderedDict()
+    for paths, display in paths_display_name.items():
+        key_name = display
+        info = results
+        for path in paths:
+            info = info[path]
+
+        if not info:
             continue
-        if value and isinstance(value, list):
-            if isinstance(value[0], str):
-                tidied_results[key_name] = ", ".join(value)
-                continue
-            if key == 'jurisdiction':
-                tidied_results[key_name] = ", ".join('{country} ({countryCode})'.format(**item) for item in value)
-                continue
-            if key == 'subnational':
-                tidied_results[key_name] = ", ".join('{regionName} ({regionCode})'.format(**item) for item in value)
-                continue
-        tidied_results[key_name] = value
-    return sorted(tidied_results.items())
+
+        if isinstance(info, list):
+            tidied_results[key_name] = ", ".join(info).replace('_', ' ')
+        elif isinstance(info, dict):
+            if 'en' in info:
+                info = info['en']
+                tidied_results[key_name] = info
+            else:
+                for field_name, details in info.items():
+                    if isinstance(details, list):
+                        details = ", ".join(details).join(info).replace('_', ' ')
+                    tidied_results[field_name] = details
+        else:
+            if isinstance(info, bool):
+                info = 'Yes' if info else 'No'
+            if isinstance(info, str) and '_' in info:
+                info = info.replace('_', ' ')
+            tidied_results[key_name] = info
+
+    return tidied_results.items()

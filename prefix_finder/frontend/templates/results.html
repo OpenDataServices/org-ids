@@ -9,7 +9,7 @@
           <h4>Prefix: <b>{{result.code}}</b></h4>
         </li>
         <li>
-          <h4>Name: <a href="{{result.url}}">{{result.name}}</a></h4>
+          <h4>Name: <a href="{{result.url}}">{{result.name.en}}</a></h4>
         </li>
       </ul>
     </div>
@@ -17,12 +17,12 @@
       <dl class="dl-horizontal">
         {% for key, value in result|tidy_results %}
            {% if value %}
-             <dt> {{key}} </dt>
+             <dt> {{key|capfirst}} </dt>
              <dd> 
                {% if value|slice:":4" == "http" %}
                  <a href="{{value}}">{{value}}</a>
                {% else %}
-                 {{value}} 
+                 {{value|capfirst}} 
                {% endif %}
              </dd>
            {% endif %}
