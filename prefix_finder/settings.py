@@ -31,12 +31,15 @@ env = environ.Env(  # set default values and casting
     ALLOWED_HOSTS=(list, []),
     SECRET_KEY=(str, secret_key),
     DB_NAME=(str, os.path.join(BASE_DIR, 'db.sqlite3')),
+    LOCAL_DATA=(bool, True),
 )
 
 PIWIK = {
     'url': env('PIWIK_URL'),
     'site_id': env('PIWIK_SITE_ID'),
 }
+
+LOCAL_DATA = env('LOCAL_DATA')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/

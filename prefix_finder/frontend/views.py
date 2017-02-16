@@ -7,6 +7,7 @@ import warnings
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.conf import settings
 import requests
 
 
@@ -93,6 +94,9 @@ def refresh_data():
     except Exception:
         using_github = False
 
+    if settings.LOCAL_DATA:
+        using_github = False
+
     if using_github:
         try:
             schemas  = load_schemas_from_github()
@@ -135,37 +139,46 @@ def filter_and_score_results(query):
             prefix['quality'] = 2
 
     coverage = query.get('coverage')
-    if coverage:
-        for prefix in list(indexed.values()):
+    structure = query.get('structure')
+    sector = query.get('sector')
+
+    for prefix in list(indexed.values()):
+        if coverage:
             if prefix['coverage']:
                 if coverage in prefix['coverage']:
-                    prefix['relevence'] = prefix['relevence'] + 1
+                    prefix['relevence'] = prefix['relevence'] + 10
+                    if len(prefix['coverage']) == 1:
+                        prefix['relevence'] = prefix['relevence'] + 1
                 else:
-                    indexed.pop(prefix['code'])
-    else:
-        if not prefix['coverage']:
-            prefix['relevence'] = prefix['relevence'] + 0.25
+                    indexed.pop(prefix['code'], None)
+        else:
+            if not prefix['coverage']:
+                prefix['relevence'] = prefix['relevence'] + 2
 
 
-    structure = query.get('structure')
-    if structure:
-        for prefix in list(indexed.values()):
+        if structure:
             if prefix['structure']:
                 if structure in prefix['structure']:
-                    prefix['relevence'] = prefix['relevence'] + 1
+                    prefix['relevence'] = prefix['relevence'] + 10
+                    if len(prefix['structure']) == 1:
+                        prefix['relevence'] = prefix['relevence'] + 1
                 else:
-                    indexed.pop(prefix['code'])
-            else:
-                indexed.pop(prefix['code'])
+                    indexed.pop(prefix['code'], None)
+        else:
+            if not prefix['structure']:
+                prefix['relevence'] = prefix['relevence'] + 2
             
-    sector = query.get('sector')
-    if sector:
-        for prefix in list(indexed.values()):
+        if sector:
             if prefix['sector']:
                 if sector in prefix['sector']:
-                    prefix['relevence'] = prefix['relevence'] + 1
-            else:
-                indexed.pop(prefix['code'])
+                    prefix['relevence'] = prefix['relevence'] + 10
+                    if len(prefix['sector']) == 1:
+                        prefix['relevence'] = prefix['relevence'] + 1
+                else:
+                    indexed.pop(prefix['code'], None)
+        else:
+            if not prefix['sector']:
+                prefix['relevence'] = prefix['relevence'] + 2
 
 
     all_results = {"suggested": [],
@@ -177,13 +190,13 @@ def filter_and_score_results(query):
 
     top_relevence = max(prefix['relevence'] for prefix in indexed.values())
                    
-    for value in sorted(indexed.values(), key=lambda k: -(k['relevence'] * 100 + k['quality'])):
-        if value['relevence'] == top_relevence:
+    for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevence'] * 100 + k['quality']))):
+        if num == 0:
             all_results['suggested'].append(value)
-        elif value['relevence'] == 0:
-            all_results['other'].append(value)
-        else:
+        elif value['relevence'] > 4:
             all_results['recommended'].append(value)
+        else:
+            all_results['other'].append(value)
 
     return all_results
 
