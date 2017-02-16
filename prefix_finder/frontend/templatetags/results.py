@@ -45,7 +45,7 @@ def tidy_results(results, length=None):
         key_name = display
         info = results
         for path in paths:
-            info = info[path]
+            info = info.get(path)
 
         if not info:
             continue

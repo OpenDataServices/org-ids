@@ -217,3 +217,15 @@ def home(request):
         context['all_results'] = filter_and_score_results(query)
          
     return render(request, "home.html", context=context)
+
+
+def list_details(request, prefix):
+    prefix_low = prefix.lower()
+    prefix_dir = prefix_low.split('-')[0]
+    filepath = '{}/{}.json'.format(prefix_dir, prefix_low)
+    codes_dir = os.path.join(current_dir, '../../codes')
+
+    with open(os.path.join(codes_dir, filepath)) as data:
+        org_list = json.load(data)
+
+    return render(request, 'list.html', context={'org_list': org_list})
