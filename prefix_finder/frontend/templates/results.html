@@ -4,14 +4,7 @@
 {% for result in results %}
   <div class="panel panel-default">
     <div class="panel-heading">
-      <ul class="list-inline clear-margin-bottom">
-        <li>
-          <h4>Prefix: <b>{{result.code}}</b></h4>
-        </li>
-        <li>
-          <h4>Name: <a href="{{result.url}}">{{result.name.en}}</a></h4>
-        </li>
-      </ul>
+      <h4><a href="#">{{result.name.en}} ({{result.code}})</a></h4>
     </div>
     <div class="panel-body">
       <dl class="dl-horizontal">
@@ -27,6 +20,10 @@
              </dd>
            {% endif %}
         {% endfor %}
+      <dt>URL</dt>
+      <dd>
+        <a href="{{result.url}}">{{result.url}}</a>
+      </dd>
       </dl>
     </div>
   </div>
