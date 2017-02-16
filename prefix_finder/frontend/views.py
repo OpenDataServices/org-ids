@@ -6,7 +6,7 @@ import io
 import warnings
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.conf import settings
 import requests
 
@@ -221,12 +221,8 @@ def home(request):
 
 
 def list_details(request, prefix):
-    prefix_low = prefix.lower()
-    prefix_dir = prefix_low.split('-')[0]
-    filepath = '{}/{}.json'.format(prefix_dir, prefix_low)
-    codes_dir = os.path.join(current_dir, '../../codes')
-
-    with open(os.path.join(codes_dir, filepath)) as data:
-        org_list = json.load(data)
-
+    try:
+        org_list = org_id_dict[prefix]
+    except KeyError:
+        raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list})
