@@ -133,7 +133,7 @@ def filter_and_score_results(query):
     indexed = {org_id_list['code']: org_id_list.copy() for org_id_list in org_id_lists}
     for prefix in list(indexed.values()):
         prefix['quality'] = 1
-        prefix['relevence'] = 0
+        prefix['relevance'] = 0
         register_type = prefix.get('registerType')
         if register_type and register_type == 'primary':
             prefix['quality'] = 2
@@ -146,39 +146,39 @@ def filter_and_score_results(query):
         if coverage:
             if prefix['coverage']:
                 if coverage in prefix['coverage']:
-                    prefix['relevence'] = prefix['relevence'] + 10
+                    prefix['relevance'] = prefix['relevance'] + 10
                     if len(prefix['coverage']) == 1:
-                        prefix['relevence'] = prefix['relevence'] + 1
+                        prefix['relevance'] = prefix['relevance'] + 1
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix['coverage']:
-                prefix['relevence'] = prefix['relevence'] + 2
+                prefix['relevance'] = prefix['relevance'] + 2
 
 
         if structure:
             if prefix['structure']:
                 if structure in prefix['structure']:
-                    prefix['relevence'] = prefix['relevence'] + 10
+                    prefix['relevance'] = prefix['relevance'] + 10
                     if len(prefix['structure']) == 1:
-                        prefix['relevence'] = prefix['relevence'] + 1
+                        prefix['relevance'] = prefix['relevance'] + 1
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix['structure']:
-                prefix['relevence'] = prefix['relevence'] + 2
+                prefix['relevance'] = prefix['relevance'] + 2
             
         if sector:
             if prefix['sector']:
                 if sector in prefix['sector']:
-                    prefix['relevence'] = prefix['relevence'] + 10
+                    prefix['relevance'] = prefix['relevance'] + 10
                     if len(prefix['sector']) == 1:
-                        prefix['relevence'] = prefix['relevence'] + 1
+                        prefix['relevance'] = prefix['relevance'] + 1
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix['sector']:
-                prefix['relevence'] = prefix['relevence'] + 2
+                prefix['relevance'] = prefix['relevance'] + 2
 
 
     all_results = {"suggested": [],
@@ -188,12 +188,12 @@ def filter_and_score_results(query):
     if not indexed:
         return all_results
 
-    top_relevence = max(prefix['relevence'] for prefix in indexed.values())
+    top_relevence = max(prefix['relevance'] for prefix in indexed.values())
                    
-    for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevence'] * 100 + k['quality']))):
+    for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
         if num == 0:
             all_results['suggested'].append(value)
-        elif value['relevence'] > 4:
+        elif value['relevance'] > 4:
             all_results['recommended'].append(value)
         else:
             all_results['other'].append(value)
