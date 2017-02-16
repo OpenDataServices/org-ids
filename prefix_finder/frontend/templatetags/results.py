@@ -8,7 +8,7 @@ paths_display_name = OrderedDict((
     (('description', ), 'Description'),
     (('coverage', ), 'Coverage'),
     (('access', 'languages'), 'Languages'),
-    (('registerType', ), 'Register type'),
+    (('listType', ), 'Register type'),
     (('data', 'licenseStatus'), 'Data license Status')
 ))
 

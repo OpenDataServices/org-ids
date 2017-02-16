@@ -134,8 +134,8 @@ def filter_and_score_results(query):
     for prefix in list(indexed.values()):
         prefix['quality'] = 1
         prefix['relevance'] = 0
-        register_type = prefix.get('registerType')
-        if register_type and register_type == 'primary':
+        list_type = prefix.get('listType')
+        if list_type and list_type == 'primary':
             prefix['quality'] = 2
 
     coverage = query.get('coverage')
