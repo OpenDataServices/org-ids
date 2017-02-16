@@ -4,7 +4,7 @@
 {% for result in results %}
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4><a href="{% url 'list' result.code %}">{{result.name.en}} ({{result.code}})</a></h4>
+      <h4><a href="{% url 'list' result.code %}" data-toggle="tooltip" data-placement="top" title="More info">{{result.name.en}} ({{result.code}})</a></h4>
     </div>
     <div class="panel-body">
       <dl class="dl-horizontal">
