@@ -21,7 +21,7 @@ git_commit_ref = ''
 
 def load_schemas_from_github():
     schemas = {}
-    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/new-schema-frontend.zip")
+    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/master.zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
         for filename in ziped_repo.namelist():
             filename_split = filename.split("/")[1:]
@@ -59,7 +59,7 @@ def create_codelist_lookups(schemas):
 
 def load_org_id_lists_from_github():
     org_id_lists = []
-    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/new-schema-frontend.zip")
+    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/master.zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
         for filename in ziped_repo.namelist():
             filename_split = filename.split("/")[1:]
@@ -86,7 +86,7 @@ def refresh_data():
 
     try:
         sha = requests.get(
-            'https://api.github.com/repos/opendataservices/org-ids/branches/new-schema-frontend'
+            'https://api.github.com/repos/opendataservices/org-ids/branches/master'
         ).json()['commit']['sha']
         using_github = True
         if sha == git_commit_ref:
