@@ -31,7 +31,7 @@ env = environ.Env(  # set default values and casting
     ALLOWED_HOSTS=(list, []),
     SECRET_KEY=(str, secret_key),
     DB_NAME=(str, os.path.join(BASE_DIR, 'db.sqlite3')),
-    LOCAL_DATA=(bool, True),
+    LOCAL_DATA=(bool, False),
 )
 
 PIWIK = {
