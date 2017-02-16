@@ -1,9 +1,13 @@
 import os
 import json
 import glob
+import zipfile
+import io
+import warnings
 
 from django.shortcuts import render
 from django.http import HttpResponse
+import requests
 
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
@@ -11,11 +15,23 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 ##globals
 lookups = None
 org_id_lists = None
+git_commit_ref = ''
 
 
-def load_files():
-    schema_dir = os.path.join(current_dir, '../../schema')
+def load_schemas_from_github():
     schemas = {}
+    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/new-schema-frontend.zip")
+    with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
+        for filename in ziped_repo.namelist():
+            filename_split = filename.split("/")[1:]
+            if len(filename_split) == 2 and filename_split[0] == "schema" and filename_split[-1].endswith(".json"):
+                with ziped_repo.open(filename) as schema_file:
+                    schemas[filename_split[-1].split(".")[0]] = json.loads(schema_file.read().decode('utf-8'))
+    return schemas
+
+def load_schemas_from_disk():
+    schemas = {}
+    schema_dir = os.path.join(current_dir, '../../schema')
     for file_path in glob.glob(schema_dir + '/*.json'):
         with open(file_path) as data:
             schemas[file_path.split('/')[-1].split(".")[0]] = json.load(data)
@@ -40,9 +56,20 @@ def create_codelist_lookups(schemas):
 
 
 
-def load_org_id_lists():
-    codes_dir = os.path.join(current_dir, '../../codes')
+def load_org_id_lists_from_github():
+    org_id_lists = []
+    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/new-schema-frontend.zip")
+    with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
+        for filename in ziped_repo.namelist():
+            filename_split = filename.split("/")[1:]
+            if len(filename_split) == 3 and filename_split[0] == "codes" and filename_split[-1].endswith(".json"):
+                with ziped_repo.open(filename) as schema_file:
+                    org_id_lists.append(json.loads(schema_file.read().decode('utf-8')))
+    return org_id_lists
 
+
+def load_org_id_lists_from_disk():
+    codes_dir = os.path.join(current_dir, '../../codes')
     org_id_lists = []
     for org_id_list_file in glob.glob(codes_dir + '/*/*.json'):
         with open(org_id_list_file) as org_id_list:
@@ -54,9 +81,47 @@ def load_org_id_lists():
 def refresh_data():
     global lookups 
     global org_id_lists 
+    global git_commit_ref
 
-    lookups = create_codelist_lookups(load_files())
-    org_id_lists = load_org_id_lists()
+    try:
+        sha = requests.get(
+            'https://api.github.com/repos/opendataservices/org-ids/branches/new-schema-frontend'
+        ).json()['commit']['sha']
+        using_github = True
+        if sha == git_commit_ref:
+            return "Not updating as sha has not changed: {}".format(sha)
+    except Exception:
+        using_github = False
+
+    if using_github:
+        try:
+            schemas  = load_schemas_from_github()
+        except Exception as e:
+            raise
+            using_github = False
+            schemas = load_schemas_from_disk()
+    else:
+        schemas = load_schemas_from_disk()
+
+    lookups = create_codelist_lookups(schemas)
+    
+    if using_github:
+        try:
+            org_id_lists = load_org_id_lists_from_github()
+        except:
+            raise
+            using_github = False
+            org_id_lists = load_org_id_lists_from_disk()
+    else:
+        org_id_lists = load_org_id_lists_from_disk()
+
+    if using_github:
+        git_commit_ref = sha
+        return "Loaded from github: {}".format(sha)
+    else:
+        return "Loaded from disk"
+
+
 
 refresh_data()
 
@@ -124,8 +189,7 @@ def filter_and_score_results(query):
 
 
 def update_lists(request):
-    refresh_data()
-    return HttpResponse("List Refreshed")
+    return HttpResponse(refresh_data())
 
 
 def home(request):

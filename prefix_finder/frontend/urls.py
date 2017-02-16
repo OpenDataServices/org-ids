@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^update_lists$', views.update_lists, name='update_lists'),
+    url(r'^_update_lists$', views.update_lists, name='update_lists'),
     url(r'^terms', TemplateView.as_view(template_name='terms.html'), name='terms'),
     url(r'^about', TemplateView.as_view(template_name='about.html'), name='about'),
 ]
