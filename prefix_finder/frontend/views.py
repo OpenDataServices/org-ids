@@ -15,7 +15,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 
 ##globals
 lookups = None
-org_id_lists = None
+org_id_dict = None
 git_commit_ref = ''
 
 
@@ -81,7 +81,7 @@ def load_org_id_lists_from_disk():
 
 def refresh_data():
     global lookups 
-    global org_id_lists 
+    global org_id_dict
     global git_commit_ref
 
     try:
@@ -119,6 +119,8 @@ def refresh_data():
     else:
         org_id_lists = load_org_id_lists_from_disk()
 
+    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
+
     if using_github:
         git_commit_ref = sha
         return "Loaded from github: {}".format(sha)
@@ -130,7 +132,7 @@ def refresh_data():
 refresh_data()
 
 def filter_and_score_results(query):
-    indexed = {org_id_list['code']: org_id_list.copy() for org_id_list in org_id_lists}
+    indexed = {key: value.copy() for key, value in org_id_dict.items()}
     for prefix in list(indexed.values()):
         prefix['quality'] = 1
         prefix['relevance'] = 0
@@ -209,7 +211,6 @@ def home(request):
     query = {key: value[0] for key, value in dict(request.GET).items()
              if key in ['coverage', 'structure', 'sector']}
     context = {
-        "org_id_lists": org_id_lists,
         "lookups": lookups,
         "query": query
     }
