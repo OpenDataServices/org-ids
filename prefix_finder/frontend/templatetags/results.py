@@ -9,7 +9,10 @@ paths_display_name = OrderedDict((
     (('coverage', ), 'Coverage'),
     (('access', 'languages'), 'Languages'),
     (('registerType', ), 'Register type'),
-    (('data', 'licenseStatus'), 'Data license Status'),
+    (('data', 'licenseStatus'), 'Data license Status')
+))
+
+paths_display_name_long = OrderedDict((
     (('data', 'licenseDetails'), 'Data license details'),
     (('data', 'dataAccessDetails'), 'Data access'),
     (('data', 'availability'), 'Data availability'),
@@ -34,7 +37,9 @@ paths_display_name = OrderedDict((
 
 
 @register.filter(name='tidy_results')
-def tidy_results(results):
+def tidy_results(results, length=None):
+    if length == 'long':
+        paths_display_name.update(paths_display_name_long)
     tidied_results = OrderedDict()
     for paths, display in paths_display_name.items():
         key_name = display
@@ -50,7 +55,10 @@ def tidy_results(results):
         elif isinstance(info, dict):
             if 'en' in info:
                 info = info['en']
-                tidied_results[key_name] = info
+                if info:
+                    if key_name == 'Description' and length != 'long':
+                        info = info.split('.')[0]  # (naively) shorten description
+                    tidied_results[key_name] = '{}.'.format(info)
             else:
                 for field_name, details in info.items():
                     if isinstance(details, list):
