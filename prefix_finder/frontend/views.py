@@ -10,6 +10,14 @@ from django.http import HttpResponse
 from django.conf import settings
 import requests
 
+RELEVANCE = {
+    "MATCH_DROPDOWN": 10,
+    "MATCH_DROPDOWN_ONLY_VALUE": 1,
+    "MATCH_EMPTY": 2,
+    "RECOMENDED_THRESHOLD": 5
+}
+
+
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -148,39 +156,39 @@ def filter_and_score_results(query):
         if coverage:
             if prefix['coverage']:
                 if coverage in prefix['coverage']:
-                    prefix['relevance'] = prefix['relevance'] + 10
+                    prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['coverage']) == 1:
-                        prefix['relevance'] = prefix['relevance'] + 1
+                        prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix['coverage']:
-                prefix['relevance'] = prefix['relevance'] + 2
+                prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_EMPTY"]
 
 
         if structure:
             if prefix['structure']:
                 if structure in prefix['structure']:
-                    prefix['relevance'] = prefix['relevance'] + 10
+                    prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['structure']) == 1:
-                        prefix['relevance'] = prefix['relevance'] + 1
+                        prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix['structure']:
-                prefix['relevance'] = prefix['relevance'] + 2
+                prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_EMPTY"]
             
         if sector:
             if prefix['sector']:
                 if sector in prefix['sector']:
-                    prefix['relevance'] = prefix['relevance'] + 10
+                    prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['sector']) == 1:
-                        prefix['relevance'] = prefix['relevance'] + 1
+                        prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix['sector']:
-                prefix['relevance'] = prefix['relevance'] + 2
+                prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_EMPTY"]
 
 
     all_results = {"suggested": [],
@@ -195,7 +203,7 @@ def filter_and_score_results(query):
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
         if num == 0:
             all_results['suggested'].append(value)
-        elif value['relevance'] > 4:
+        elif value['relevance'] >= RELEVANCE["RECOMENDED_THRESHOLD"]:
             all_results['recommended'].append(value)
         else:
             all_results['other'].append(value)
