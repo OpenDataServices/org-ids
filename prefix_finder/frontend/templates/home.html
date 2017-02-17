@@ -25,7 +25,7 @@
                 <div><small>Subnational coverage</small></div>
                 <select name="subnational" class="selectpicker" data-live-search="true" data-width="280px" onchange="this.form.submit()">
                 <option value="">Any subnational location</option>
-                {% for code, title in lookups.subnational.items %}
+                {% for code, title in lookups.subnational %}
                   <option {% if query.subnational == code %} selected {% endif %} value="{{code}}">{{title}}</option>
                 {% endfor %}
                 </select>

@@ -17,7 +17,6 @@ RELEVANCE = {
 }
 
 
-
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
 ##globals
@@ -37,6 +36,7 @@ def load_schemas_from_github():
                     schemas[filename_split[-1].split(".")[0]] = json.loads(schema_file.read().decode('utf-8'))
     return schemas
 
+
 def load_schemas_from_disk():
     schemas = {}
     schema_dir = os.path.join(current_dir, '../../schema')
@@ -47,17 +47,18 @@ def load_schemas_from_disk():
     return schemas
 
 
-
 def create_codelist_lookups(schemas):
-
     lookups = {}
-
     lookups['coverage'] = [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']]
-    lookups['subnational'] = {item['code']: item['title']['en'] for item in schemas['codelist-coverage']['subnationalCoverage']}
-
     lookups['structure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if not item['parent']]
-
     lookups['sector'] = [(item['code'], item['title']['en']) for item in schemas['codelist-sector']['sector']]
+
+    lookups['subnational'] = {}
+    for item in schemas['codelist-coverage']['subnationalCoverage']:
+        if lookups['subnational'].get(item['countryCode']):
+            lookups['subnational'][item['countryCode']].append((item['code'], item['title']['en']))
+        else:
+            lookups['subnational'][item['countryCode']] = [(item['code'], item['title']['en'])]
 
     lookups['substructure'] = {}
     for item in schemas['codelist-structure']['structure']:
@@ -68,7 +69,6 @@ def create_codelist_lookups(schemas):
                 lookups['substructure'][item['parent']] = [(item['code'], item['title']['en'])]
 
     return lookups
-
 
 
 def load_org_id_lists_from_github():
@@ -143,8 +143,8 @@ def refresh_data():
         return "Loaded from disk"
 
 
-
 refresh_data()
+
 
 def filter_and_score_results(query):
     indexed = {key: value.copy() for key, value in org_id_dict.items()}
@@ -172,7 +172,6 @@ def filter_and_score_results(query):
             if not prefix['coverage']:
                 prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_EMPTY"]
 
-
         if structure:
             if prefix['structure']:
                 if structure in prefix['structure']:
@@ -196,7 +195,6 @@ def filter_and_score_results(query):
         else:
             if not prefix['sector']:
                 prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_EMPTY"]
-
 
     all_results = {"suggested": [],
                    "recommended": [],
@@ -223,11 +221,12 @@ def update_lists(request):
 
 
 def home(request):
+    print(lookups['subnational']['GB'])
     query = {key: value for key, value in request.GET.items() if value}
     context = {
         "lookups": {
             'coverage': lookups['coverage'],
-            'subnational': {},
+            'subnational': [],
             'structure': lookups['structure'],
             'substructure': [],
             'sector': lookups['sector']
@@ -238,15 +237,12 @@ def home(request):
     if query:
         # Check for subnational coverage
         if 'coverage' in query:
-            for code in org_id_dict.keys():
-                if code.startswith(query['coverage']):
-                    subnational_codes = org_id_dict[code]['subnationalCoverage']
-                    if subnational_codes:
-                        for sub_code in subnational_codes:
-                            context['lookups']['subnational'][sub_code] = lookups['subnational'][sub_code]
+            subnational = lookups['subnational'].get(query['coverage'])
+            context['lookups']['subnational'] = subnational and sorted(subnational) or []
+        # Check for sustructures
         if 'structure' in query:
             substructures = lookups['substructure'].get(query['structure'])
-            context['lookups']['substructure'] = substructures or []
+            context['lookups']['substructure'] = substructures and sorted(substructures) or []
         context['all_results'] = filter_and_score_results(query)
 
     return render(request, "home.html", context=context)
