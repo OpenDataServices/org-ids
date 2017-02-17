@@ -7,65 +7,71 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h1 class="text-center">Find an Organization Prefix </h1>
-        <br/>
-        <h3>What country is the organization registered in?</h3>
+        <h2 class="text-center">Find a List of Organization Identifiers </h2>
+        <br>
+        <br>
         <form>
-          <select name="coverage" class="selectpicker" data-live-search="true" data-width="300px">
-            <option value="">Any country</option>
-            {% for code, title  in lookups.coverage %}
-            <option {% if query.coverage == code %} selected {% endif %}  value="{{code}}">{{title}}</option>
-            {% endfor %}
-          </select>
-          <h3>What type of organization is it?</h3>
-          <select name="structure" class="selectpicker" data-live-search="true" data-width="300px">
-            <option value = "">Any type</option>
-            {% for code, title in lookups.structure %}
-              <option {% if query.structure == code %} selected {% endif %} value="{{code}}">{{title}}</option>
-            {% endfor %}
-          </select>
-          <h3>What sector is the organization in?</h3>
-          <select name="sector" class="selectpicker" data-live-search="true" data-width="300px">
-            <option value = "">Any Sector</option>
-            {% for code, title in lookups.sector %}
-               <option {% if query.sector == code %} selected {% endif %} value="{{code}}">{{title}}</option>
-            {% endfor %}
-          </select>
-          </br>
-          </br>
+          <div class="form-group col-md-4">
+            <div>Geographical Coverage </div>
+            <select name="coverage" class="selectpicker" data-live-search="true" data-width="300px">
+              <option value="">Any country</option>
+              {% for code, title  in lookups.coverage %}
+              <option {% if query.coverage == code %} selected {% endif %}  value="{{code}}">{{title}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <div>Organization Type</div>
+            <select name="structure" class="selectpicker" data-live-search="true" data-width="300px">
+              <option value = "">Any type</option>
+              {% for code, title in lookups.structure %}
+                <option {% if query.structure == code %} selected {% endif %} value="{{code}}">{{title}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <div>Organisation Sector</div>
+            <select name="sector" class="selectpicker" data-live-search="true" data-width="300px">
+              <option value = "">Any Sector</option>
+              {% for code, title in lookups.sector %}
+                 <option {% if query.sector == code %} selected {% endif %} value="{{code}}">{{title}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <br>
           <button type="submit" class="btn-primary btn">Find Prefixes</button>
         </form>
-          </br>
+          <br>
           {% if query %}
 
             {% if all_results.suggested %}
               {% with all_results.suggested as results %}
-                <h1 id="results" class="text-center">Suggested Results </br></h1>
-                </br>
+                <h3 id="results" class="text-center">Suggested Results</h3>
+                <br>
                 {% include 'results.html' %}
               {% endwith %}
             {% else %}
-              <h1 id="results" class="text-center">No Suggested Results</h1>
+              <h3 id="results" class="text-center">No Suggested Results</h3>
             {% endif %}
 
             {% if all_results.recommended %}
               {% with all_results.recommended as results %}
-              <h1 id="results" class="text-center">Recommended Results </br></h1>
-              </br>
+              <h3 id="results" class="text-center">Recommended Results</h3>
+              <br>
               {% include 'results.html' %}
               {% endwith %}
             {% else %}
-              <h1 id="results" class="text-center">No Recommended Results</h1>
+              <h3 id="results" class="text-center">No Recommended Results</h3>
             {% endif %}
 
             {% if all_results.other %}
               {% with all_results.other as results %}
-              <h1 id="results" class="text-center">Other Results </br></h1>
-              </br>
+              <h3 id="results" class="text-center">Other Results </h3>
+              <br>
               {% include 'results.html' %}
               {% endwith %}
             {% else %}
-              <h1 id="results" class="text-center">No Other Results</h1>
+              <h3 id="results" class="text-center">No Other Results</h3>
             {% endif %}
 
           {% endif %}
