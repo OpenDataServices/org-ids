@@ -13,18 +13,27 @@
         <br>
         <form>
           <div class="form-group col-md-4">
-            <div>Geographical Coverage </div>
+            <div><small>GEOGRAPHICAL COVERAGE</small></div>
             <select name="coverage" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
               <option value="">Any country</option>
               {% for code, title  in lookups.coverage %}
               <option {% if query.coverage == code %} selected {% endif %}  value="{{code}}">{{title}}</option>
               {% endfor %}
             </select>
-            {% if subnational %}
+            {% if lookups.subnational %}
+              <div style="margin-left:20px;margin-top:10px;">
+                <div><small>SUBNATIONAL COVERAGE</small></div>
+                <select name="subnational" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
+                <option value="">Any subnational location</option>
+                {% for code, title in lookups.subnational.items %}
+                  <option {% if query.subnational == code %} selected {% endif %}  value="{{code}}">{{title}}</option>
+                {% endfor %}
+                </select>
+              </div>
             {% endif %}
           </div>
           <div class="form-group col-md-4">
-            <div>Organization Type</div>
+            <div><small>ORGANIZATION TYPE</small></div>
             <select name="structure" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
               <option value = "">Any type</option>
               {% for code, title in lookups.structure %}
@@ -33,7 +42,7 @@
             </select>
           </div>
           <div class="form-group col-md-4">
-            <div>Organisation Sector</div>
+            <div><small>ORGANISATION SECTOR</small></div>
             <select name="sector" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
               <option value = "">Any sector</option>
               {% for code, title in lookups.sector %}
@@ -42,9 +51,8 @@
             </select>
           </div>
           <br>
-          <button type="submit" class="btn-primary btn">Find Prefixes</button>
+          <div style="clear:both"></div>
         </form>
-          <br>
           {% if query %}
             {% if all_results.suggested %}
               {% with all_results.suggested as results %}

@@ -3,7 +3,6 @@ import json
 import glob
 import zipfile
 import io
-import warnings
 
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
@@ -54,7 +53,7 @@ def create_codelist_lookups(schemas):
     lookups = {}
 
     lookups['coverage'] = [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']] 
-    lookups['subnationalCoverage'] = [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['subnationalCoverage']] 
+    lookups['subnational'] = {item['code']: item['title']['en'] for item in schemas['codelist-coverage']['subnationalCoverage']}
 
     lookups['structure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if not item['parent']] 
     lookups['substructure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if item['parent']] 
@@ -88,7 +87,7 @@ def load_org_id_lists_from_disk():
 
 
 def refresh_data():
-    global lookups 
+    global lookups
     global org_id_dict
     global git_commit_ref
 
@@ -127,7 +126,8 @@ def refresh_data():
     else:
         org_id_lists = load_org_id_lists_from_disk()
 
-    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
+    # org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
+    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists}
 
     if using_github:
         git_commit_ref = sha
@@ -216,13 +216,25 @@ def update_lists(request):
 
 
 def home(request):
-    query = {key: value[0] for key, value in dict(request.GET).items()
-             if key in ['coverage', 'structure', 'sector']}
+    query = {key: value for key, value in request.GET.items() if value}
     context = {
-        "lookups": lookups,
+        "lookups": {
+            'coverage': lookups['coverage'],
+            'subnational': {},
+            'structure': lookups['structure'],
+            'sector': lookups['sector']
+        },
         "query": query
     }
     if query:
+        # Check for subnational coverage
+        if 'coverage' in query:
+            for code in org_id_dict.keys():
+                if code.startswith(query['coverage']):
+                    subnational_codes = org_id_dict[code]['subnationalCoverage']
+                    if subnational_codes:
+                        for sub_code in subnational_codes:
+                            context['lookups']['subnational'][sub_code] = lookups['subnational'][sub_code]
         context['all_results'] = filter_and_score_results(query)
          
     return render(request, "home.html", context=context)

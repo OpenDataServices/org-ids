@@ -9,7 +9,7 @@ paths_display_name = OrderedDict((
     (('coverage', ), 'Coverage'),
     (('access', 'languages'), 'Languages'),
     (('listType', ), 'List Type'),
-    (('data', 'licenseStatus'), 'Data license Status'),
+    (('data', 'licenseStatus'), 'Data license status'),
     (('relevance', ), 'Relevance')
 ))
 
@@ -19,7 +19,7 @@ paths_display_name_long = OrderedDict((
     (('data', 'availability'), 'Data availability'),
     (('data', 'features'), 'Data features'),
     (('access', 'availableOnline'), 'Available online'),
-    (('access', 'onlineAccessDetails'), 'Online Access Details'),
+    (('access', 'onlineAccessDetails'), 'Online access'),
     (('access', 'publicDatabase'), 'Public Database'),
     (('access', 'guidanceOnLocatingIds'), 'Finding the identifiers'),
     (('access', 'exampleIdentifiers'), 'Example identifier(s)'),
@@ -27,8 +27,8 @@ paths_display_name_long = OrderedDict((
     (('links', 'wikipedia'), 'Wikipedia page'),
     (('confirmed', ), 'Confirmed?'),
     (('sector', ), 'Sector'),
-    (('subnationalCoverage', ), 'Sub-national'),
-    (('meta', 'lastUpdated'), 'Last Updated'),
+    (('subnationalCoverage', ), 'Subnational'),
+    (('meta', 'lastUpdated'), 'Last updated'),
     (('deprecated', ), 'Deprecated'),
     (('formerPrefixes', ), 'AKA'),
     (('meta', 'source'), 'Source'),
