@@ -13,7 +13,7 @@
         <br>
         <form>
           <div class="form-group col-md-4">
-            <div><small>Geographical coverage</small></div>
+            <div class="select-label">Geographical coverage</div>
             <select name="coverage" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
               <option value="">Any country</option>
               {% for code, title  in lookups.coverage %}
@@ -21,8 +21,8 @@
               {% endfor %}
             </select>
             {% if lookups.subnational %}
-              <div style="margin-left:20px;margin-top:10px;">
-                <div><small>Subnational coverage</small></div>
+              <div class="indented-option">
+                <div class="select-label">Subnational coverage</div>
                 <select name="subnational" class="selectpicker" data-live-search="true" data-width="280px" onchange="this.form.submit()">
                 <option value="">Any subnational location</option>
                 {% for code, title in lookups.subnational %}
@@ -33,16 +33,16 @@
             {% endif %}
           </div>
           <div class="form-group col-md-4">
-            <div><small>Organization type</small></div>
+            <div class="select-label">Organization type</div>
             <select name="structure" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
-              <option value = "">Any type</option>
+              <option value="">Any type</option>
               {% for code, title in lookups.structure %}
                 <option {% if query.structure == code %} selected {% endif %} value="{{code}}">{{title}}</option>
               {% endfor %}
             </select>
             {% if lookups.substructure %}
-              <div style="margin-left:20px;margin-top:10px;">
-                <div><small>Organisation subtype</small></div>
+              <div class="indented-option">
+                <div class="select-label">Organisation subtype</div>
                 <select name="substructure" class="selectpicker" data-live-search="true" data-width="280px" onchange="this.form.submit()">
                 <option value="">Any subtype</option>
                 {% for code, title in lookups.substructure %}
@@ -53,9 +53,9 @@
             {% endif %}
           </div>
           <div class="form-group col-md-4">
-            <div><small>Organisation sector</small></div>
+            <div class="select-label">Organisation sector</div>
             <select name="sector" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
-              <option value = "">Any sector</option>
+              <option value="">Any sector</option>
               {% for code, title in lookups.sector %}
                  <option {% if query.sector == code %} selected {% endif %} value="{{code}}">{{title}}</option>
               {% endfor %}

@@ -6,6 +6,17 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.select-label {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase
+}
+
+.indented-option {
+  margin:12px 20px 0;
+}
+
 .indent {
   margin-left: 15px
 }
