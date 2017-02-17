@@ -38,7 +38,7 @@ paths_display_name_long = OrderedDict((
 
 @register.filter(name='tidy_results')
 def tidy_results(results, length=None):
-    paths_display = dict(paths_display_name)
+    paths_display = OrderedDict(paths_display_name)
     if length == 'long':
         paths_display.update(paths_display_name_long)
     tidied_results = OrderedDict()
