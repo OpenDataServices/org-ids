@@ -52,13 +52,20 @@ def create_codelist_lookups(schemas):
 
     lookups = {}
 
-    lookups['coverage'] = [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']] 
+    lookups['coverage'] = [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']]
     lookups['subnational'] = {item['code']: item['title']['en'] for item in schemas['codelist-coverage']['subnationalCoverage']}
 
-    lookups['structure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if not item['parent']] 
-    lookups['substructure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if item['parent']] 
+    lookups['structure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if not item['parent']]
 
-    lookups['sector'] = [(item['code'], item['title']['en']) for item in schemas['codelist-sector']['sector']] 
+    lookups['sector'] = [(item['code'], item['title']['en']) for item in schemas['codelist-sector']['sector']]
+
+    lookups['substructure'] = {}
+    for item in schemas['codelist-structure']['structure']:
+        if item['parent']:
+            if lookups['substructure'].get(item['parent']):
+                lookups['substructure'][item['parent']].append((item['code'], item['title']['en']))
+            else:
+                lookups['substructure'][item['parent']] = [(item['code'], item['title']['en'])]
 
     return lookups
 
@@ -222,10 +229,12 @@ def home(request):
             'coverage': lookups['coverage'],
             'subnational': {},
             'structure': lookups['structure'],
+            'substructure': [],
             'sector': lookups['sector']
         },
         "query": query
     }
+
     if query:
         # Check for subnational coverage
         if 'coverage' in query:
@@ -235,8 +244,11 @@ def home(request):
                     if subnational_codes:
                         for sub_code in subnational_codes:
                             context['lookups']['subnational'][sub_code] = lookups['subnational'][sub_code]
+        if 'structure' in query:
+            substructures = lookups['substructure'].get(query['structure'])
+            context['lookups']['substructure'] = substructures or []
         context['all_results'] = filter_and_score_results(query)
-         
+
     return render(request, "home.html", context=context)
 
 
