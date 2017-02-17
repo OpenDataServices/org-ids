@@ -33,7 +33,6 @@ paths_display_name_long = OrderedDict((
     (('formerPrefixes', ), 'AKA'),
     (('meta', 'source'), 'Source'),
     (('quality', ), 'Quality'),
-    (('relevence', ), 'Relevance')
 ))
 
 
