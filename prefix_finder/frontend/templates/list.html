@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load results %}
+{% load i18n %}
+{% block main_content %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="list-inline clear-margin-bottom">
+      <h4><a href="{{org_list.url}}" data-toggle="tooltip" data-placement="top" title="{{org_list.url}}">{{org_list.name.en}} ({{org_list.code}})</a></h4>
+    </ul>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      {% for key, value in org_list|tidy_results:'long' %}
+         {% if value %}
+           <dt> {{key|capfirst}} </dt>
+           <dd> 
+             {% if value|slice:":4" == "http" %}
+               <a href="{{value}}">{{value}}</a>
+             {% else %}
+               {{value|capfirst}}
+             {% endif %}
+           </dd>
+         {% endif %}
+      {% endfor %}
+      <dt>URL</dt>
+      <dd>
+        <a href="{{org_list.url}}">{{org_list.url}}</a>
+      </dd>
+    </dl>
+  </div>
+</div>
+{% endblock %}

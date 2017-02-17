@@ -6,7 +6,7 @@ import io
 import warnings
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.conf import settings
 import requests
 
@@ -226,3 +226,11 @@ def home(request):
         context['all_results'] = filter_and_score_results(query)
          
     return render(request, "home.html", context=context)
+
+
+def list_details(request, prefix):
+    try:
+        org_list = org_id_dict[prefix]
+    except KeyError:
+        raise Http404('Organisation list {} does not exist'.format(prefix))
+    return render(request, 'list.html', context={'org_list': org_list})

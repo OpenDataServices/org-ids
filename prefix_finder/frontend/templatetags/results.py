@@ -39,14 +39,15 @@ paths_display_name_long = OrderedDict((
 
 @register.filter(name='tidy_results')
 def tidy_results(results, length=None):
+    paths_display = OrderedDict(paths_display_name)
     if length == 'long':
-        paths_display_name.update(paths_display_name_long)
+        paths_display.update(paths_display_name_long)
     tidied_results = OrderedDict()
-    for paths, display in paths_display_name.items():
+    for paths, display in paths_display.items():
         key_name = display
         info = results
         for path in paths:
-            info = info[path]
+            info = info.get(path)
 
         if not info:
             continue
