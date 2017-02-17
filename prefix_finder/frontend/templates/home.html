@@ -10,6 +10,7 @@
         <h2 class="text-center">Find a List of Organization Identifiers </h2>
         <br>
         <br>
+        <br>
         <form>
           <div class="form-group col-md-4">
             <div>Geographical Coverage </div>
@@ -32,7 +33,7 @@
           <div class="form-group col-md-4">
             <div>Organisation Sector</div>
             <select name="sector" class="selectpicker" data-live-search="true" data-width="300px">
-              <option value = "">Any Sector</option>
+              <option value = "">Any sector</option>
               {% for code, title in lookups.sector %}
                  <option {% if query.sector == code %} selected {% endif %} value="{{code}}">{{title}}</option>
               {% endfor %}
@@ -46,7 +47,7 @@
 
             {% if all_results.suggested %}
               {% with all_results.suggested as results %}
-                <h3 id="results" class="text-center">Suggested Results</h3>
+                <h3 id="results" class="text-center">Suggested Result</h3>
                 <br>
                 {% include 'results.html' %}
               {% endwith %}
