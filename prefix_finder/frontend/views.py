@@ -134,8 +134,7 @@ def refresh_data():
     else:
         org_id_lists = load_org_id_lists_from_disk()
 
-    # org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
-    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists}
+    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
 
     if using_github:
         git_commit_ref = sha
@@ -222,7 +221,6 @@ def update_lists(request):
 
 
 def home(request):
-    print(lookups['subnational']['GB'])
     query = {key: value for key, value in request.GET.items() if value}
     context = {
         "lookups": {
@@ -231,10 +229,8 @@ def home(request):
             'structure': lookups['structure'],
             'substructure': [],
             'sector': lookups['sector']
-        },
-        "query": query
+        }
     }
-
     if query:
         # Check for subnational coverage
         if 'coverage' in query:
@@ -244,7 +240,11 @@ def home(request):
         if 'structure' in query:
             substructures = lookups['substructure'].get(query['structure'])
             context['lookups']['substructure'] = substructures and sorted(substructures) or []
-        context['all_results'] = filter_and_score_results(query)
+    else:
+        query = {'coverage': '', 'structure': '', 'sector': ''}
+
+    context['query'] = query
+    context['all_results'] = filter_and_score_results(query)
 
     return render(request, "home.html", context=context)
 
