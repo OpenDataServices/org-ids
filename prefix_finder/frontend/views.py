@@ -63,10 +63,11 @@ def create_codelist_lookups(schemas):
     lookups['substructure'] = {}
     for item in schemas['codelist-structure']['structure']:
         if item['parent']:
+            code_title = (item['code'], item['title']['en'].split(' > ')[1])
             if lookups['substructure'].get(item['parent']):
-                lookups['substructure'][item['parent']].append((item['code'], item['title']['en']))
+                lookups['substructure'][item['parent']].append(code_title)
             else:
-                lookups['substructure'][item['parent']] = [(item['code'], item['title']['en'])]
+                lookups['substructure'][item['parent']] = [code_title]
 
     return lookups
 
@@ -239,7 +240,7 @@ def home(request):
         if 'coverage' in query:
             subnational = lookups['subnational'].get(query['coverage'])
             context['lookups']['subnational'] = subnational and sorted(subnational) or []
-        # Check for sustructures
+        # Check for substructures
         if 'structure' in query:
             substructures = lookups['substructure'].get(query['structure'])
             context['lookups']['substructure'] = substructures and sorted(substructures) or []
