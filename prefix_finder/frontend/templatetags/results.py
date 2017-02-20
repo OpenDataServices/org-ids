@@ -21,7 +21,7 @@ paths_display_name_long = OrderedDict((
     (('access', 'availableOnline'), 'Available online'),
     (('access', 'onlineAccessDetails'), 'Online access'),
     (('access', 'publicDatabase'), 'Public Database'),
-    (('access', 'guidanceOnLocatingIds'), 'Finding the identifiers'),
+    (('access', 'guidanceOnLocatingIds'), 'Finding identifiers'),
     (('access', 'exampleIdentifiers'), 'Example identifier(s)'),
     (('links', 'opencorporates'), 'Open Corporates page'),
     (('links', 'wikipedia'), 'Wikipedia page'),
