@@ -16,7 +16,6 @@ RELEVANCE = {
     "RECOMENDED_THRESHOLD": 5
 }
 
-
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
 ##globals
@@ -134,7 +133,8 @@ def refresh_data():
     else:
         org_id_lists = load_org_id_lists_from_disk()
 
-    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
+    # org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
+    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists}
 
     if using_github:
         git_commit_ref = sha
@@ -156,7 +156,9 @@ def filter_and_score_results(query):
             prefix['quality'] = 2
 
     coverage = query.get('coverage')
+    subnational = query.get('subnational')
     structure = query.get('structure')
+    substructure = query.get('substructure')
     sector = query.get('sector')
 
     for prefix in list(indexed.values()):
@@ -166,8 +168,14 @@ def filter_and_score_results(query):
                     prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['coverage']) == 1:
                         prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                    if subnational:
+                        if prefix['subnationalCoverage'] and subnational in prefix['subnationalCoverage']:
+                            prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
+                            if len(prefix['subnationalCoverage']) == 1:
+                                prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
                 else:
                     indexed.pop(prefix['code'], None)
+
         else:
             if not prefix['coverage']:
                 prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_EMPTY"]
@@ -178,12 +186,18 @@ def filter_and_score_results(query):
                     prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['structure']) == 1:
                         prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                    elif substructure:
+                            # TODO: this logic for assigning substructure relevance may need
+                            # to be revisited. At the moment it assumes that substructures
+                            # always include the parent structure in the array of structures.
+                            if substructure in prefix['structure']:
+                                prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix['structure']:
                 prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_EMPTY"]
-            
+
         if sector:
             if prefix['sector']:
                 if sector in prefix['sector']:
@@ -222,6 +236,7 @@ def update_lists(request):
 
 def home(request):
     query = {key: value for key, value in request.GET.items() if value}
+    print(query)
     context = {
         "lookups": {
             'coverage': lookups['coverage'],
