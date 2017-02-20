@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^terms', TemplateView.as_view(template_name='terms.html'), name='terms'),
     url(r'^about', TemplateView.as_view(template_name='about.html'), name='about'),
     url(r'^list/(.+)$', views.list_details, name='list'),
+    url(r'^edit/(.+)$', views.edit_details, name='edit'),
 ]

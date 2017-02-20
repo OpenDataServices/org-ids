@@ -255,3 +255,10 @@ def list_details(request, prefix):
     except KeyError:
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list})
+
+def edit_details(request, prefix):
+    try:
+        org_list = org_id_dict[prefix]
+    except KeyError:
+        raise Http404('Organisation list {} does not exist'.format(prefix))
+    return render(request, 'edit.html', context={'org_list': org_list, 'org_json': json.dumps(org_list)})

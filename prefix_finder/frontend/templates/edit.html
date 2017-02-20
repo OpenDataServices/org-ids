@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load results %}
+{% load i18n %}
+{% block main_content %}
+<script type="text/javascript" src="{% static 'js/jsoneditor.min.js'%}"></script>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="list-inline clear-margin-bottom">
+      <h4>EDIT IT: <a href="{{org_list.url}}" data-toggle="tooltip" data-placement="top" title="{{org_list.url}}">{{org_list.name.en}} ({{org_list.code}})</a></h4>
+    </ul>
+  </div>
+  <div class="panel-body">
+    <div id='editor_container'>
+
+    </div>
+
+    <script><!--
+        var element = document.getElementById('editor_container');
+        var editor = new JSONEditor(element,{ajax:true, schema:{"$ref":"{% static 'js/list-schema.json'%}"},startval:{{org_json|safe}},theme:'bootstrap3' })
+        editor.on('change',function() {
+             document.getElementById('json_data').value = JSON.stringify(editor.getValue(),space=2) // Do something
+        }) ;
+    --></script>
+  
+    <textarea id="json_data" style="width:100%; height:300px;" READONLY></textarea>  
+
+  </div>
+</div>
+{% endblock %}
