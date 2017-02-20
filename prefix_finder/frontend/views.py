@@ -3,7 +3,6 @@ import json
 import glob
 import zipfile
 import io
-import warnings
 
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
@@ -16,7 +15,6 @@ RELEVANCE = {
     "MATCH_EMPTY": 2,
     "RECOMENDED_THRESHOLD": 5
 }
-
 
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
@@ -38,6 +36,7 @@ def load_schemas_from_github():
                     schemas[filename_split[-1].split(".")[0]] = json.loads(schema_file.read().decode('utf-8'))
     return schemas
 
+
 def load_schemas_from_disk():
     schemas = {}
     schema_dir = os.path.join(current_dir, '../../schema')
@@ -48,21 +47,29 @@ def load_schemas_from_disk():
     return schemas
 
 
-
 def create_codelist_lookups(schemas):
-
     lookups = {}
+    lookups['coverage'] = [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']]
+    lookups['structure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if not item['parent']]
+    lookups['sector'] = [(item['code'], item['title']['en']) for item in schemas['codelist-sector']['sector']]
 
-    lookups['coverage'] = [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']] 
-    lookups['subnationalCoverage'] = [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['subnationalCoverage']] 
+    lookups['subnational'] = {}
+    for item in schemas['codelist-coverage']['subnationalCoverage']:
+        if lookups['subnational'].get(item['countryCode']):
+            lookups['subnational'][item['countryCode']].append((item['code'], item['title']['en']))
+        else:
+            lookups['subnational'][item['countryCode']] = [(item['code'], item['title']['en'])]
 
-    lookups['structure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if not item['parent']] 
-    lookups['substructure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if item['parent']] 
-
-    lookups['sector'] = [(item['code'], item['title']['en']) for item in schemas['codelist-sector']['sector']] 
+    lookups['substructure'] = {}
+    for item in schemas['codelist-structure']['structure']:
+        if item['parent']:
+            code_title = (item['code'], item['title']['en'].split(' > ')[1])
+            if lookups['substructure'].get(item['parent']):
+                lookups['substructure'][item['parent']].append(code_title)
+            else:
+                lookups['substructure'][item['parent']] = [code_title]
 
     return lookups
-
 
 
 def load_org_id_lists_from_github():
@@ -88,7 +95,7 @@ def load_org_id_lists_from_disk():
 
 
 def refresh_data():
-    global lookups 
+    global lookups
     global org_id_dict
     global git_commit_ref
 
@@ -136,8 +143,8 @@ def refresh_data():
         return "Loaded from disk"
 
 
-
 refresh_data()
+
 
 def filter_and_score_results(query):
     indexed = {key: value.copy() for key, value in org_id_dict.items()}
@@ -165,7 +172,6 @@ def filter_and_score_results(query):
             if not prefix['coverage']:
                 prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_EMPTY"]
 
-
         if structure:
             if prefix['structure']:
                 if structure in prefix['structure']:
@@ -189,7 +195,6 @@ def filter_and_score_results(query):
         else:
             if not prefix['sector']:
                 prefix['relevance'] = prefix['relevance'] + RELEVANCE["MATCH_EMPTY"]
-
 
     all_results = {"suggested": [],
                    "recommended": [],
@@ -216,15 +221,31 @@ def update_lists(request):
 
 
 def home(request):
-    query = {key: value[0] for key, value in dict(request.GET).items()
-             if key in ['coverage', 'structure', 'sector']}
+    query = {key: value for key, value in request.GET.items() if value}
     context = {
-        "lookups": lookups,
-        "query": query
+        "lookups": {
+            'coverage': lookups['coverage'],
+            'subnational': [],
+            'structure': lookups['structure'],
+            'substructure': [],
+            'sector': lookups['sector']
+        }
     }
     if query:
-        context['all_results'] = filter_and_score_results(query)
-         
+        # Check for subnational coverage
+        if 'coverage' in query:
+            subnational = lookups['subnational'].get(query['coverage'])
+            context['lookups']['subnational'] = subnational and sorted(subnational) or []
+        # Check for substructures
+        if 'structure' in query:
+            substructures = lookups['substructure'].get(query['structure'])
+            context['lookups']['substructure'] = substructures and sorted(substructures) or []
+    else:
+        query = {'coverage': '', 'structure': '', 'sector': ''}
+
+    context['query'] = query
+    context['all_results'] = filter_and_score_results(query)
+
     return render(request, "home.html", context=context)
 
 
