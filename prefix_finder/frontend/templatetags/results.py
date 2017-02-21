@@ -7,6 +7,7 @@ register = template.Library()
 paths_display_name = OrderedDict((
     (('description', ), 'Description'),
     (('coverage', ), 'Coverage'),
+    (('subnationalCoverage', ), 'Subnational'),
     (('access', 'languages'), 'Languages'),
     (('listType', ), 'List type'),
     (('data', 'licenseStatus'), 'Data license status'),
@@ -27,7 +28,6 @@ paths_display_name_long = OrderedDict((
     (('links', 'wikipedia'), 'Wikipedia page'),
     (('confirmed', ), 'Confirmed?'),
     (('sector', ), 'Sector'),
-    (('subnationalCoverage', ), 'Subnational'),
     (('meta', 'lastUpdated'), 'Last updated'),
     (('deprecated', ), 'Deprecated'),
     (('formerPrefixes', ), 'AKA'),
@@ -38,6 +38,7 @@ paths_display_name_long = OrderedDict((
 
 @register.filter(name='tidy_results')
 def tidy_results(results, length=None):
+    print(results)
     paths_display = OrderedDict(paths_display_name)
     if length == 'long':
         paths_display.update(paths_display_name_long)

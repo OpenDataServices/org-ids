@@ -113,8 +113,8 @@ def refresh_data():
 
     if using_github:
         try:
-            schemas  = load_schemas_from_github()
-        except Exception as e:
+            schemas = load_schemas_from_github()
+        except Exception:
             raise
             using_github = False
             schemas = load_schemas_from_disk()
@@ -133,8 +133,7 @@ def refresh_data():
     else:
         org_id_lists = load_org_id_lists_from_disk()
 
-    # org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
-    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists}
+    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
 
     if using_github:
         git_commit_ref = sha
@@ -230,13 +229,25 @@ def filter_and_score_results(query):
     return all_results
 
 
+def add_coverage_titles(org_list):
+    '''Replace national and subnational coverage codes with titles'''
+    coverage_codes = org_list.get('coverage')
+    if coverage_codes:
+        org_list['coverage'] = [tup[1] for tup in lookups['coverage'] if tup[0] in coverage_codes]
+    subnational_codes = org_list.get('subnationalCoverage')
+    if subnational_codes:
+        subnational_coverage = []
+        for country in coverage_codes:
+            subnational_coverage.extend(lookups['subnational'][country])
+        org_list['subnationalCoverage'] = [tup[1] for tup in subnational_coverage if tup[0] in subnational_codes]
+
+
 def update_lists(request):
     return HttpResponse(refresh_data())
 
 
 def home(request):
     query = {key: value for key, value in request.GET.items() if value}
-    print(query)
     context = {
         "lookups": {
             'coverage': lookups['coverage'],
@@ -260,6 +271,11 @@ def home(request):
 
     context['query'] = query
     context['all_results'] = filter_and_score_results(query)
+    
+    # Show the title instead of the code for the national and subnational coverage
+    for result_list in context['all_results'].values():
+        for result in result_list:
+            add_coverage_titles(result)
 
     return render(request, "home.html", context=context)
 
@@ -267,6 +283,7 @@ def home(request):
 def list_details(request, prefix):
     try:
         org_list = org_id_dict[prefix]
+        add_coverage_titles(org_list)
     except KeyError:
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list})
