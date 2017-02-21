@@ -6,8 +6,8 @@ register = template.Library()
 # SKIP_KEYS = 'name url code structure'.split()
 paths_display_name = OrderedDict((
     (('description', ), 'Description'),
-    (('coverage', ), 'Coverage'),
-    (('subnationalCoverage', ), 'Subnational'),
+    (('coverage_titles', ), 'Coverage'),
+    (('subnationalCoverage_titles', ), 'Subnational'),
     (('access', 'languages'), 'Languages'),
     (('listType', ), 'List type'),
     (('data', 'licenseStatus'), 'Data license status'),

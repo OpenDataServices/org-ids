@@ -233,13 +233,13 @@ def add_coverage_titles(org_list):
     '''Replace national and subnational coverage codes with titles'''
     coverage_codes = org_list.get('coverage')
     if coverage_codes:
-        org_list['coverage'] = [tup[1] for tup in lookups['coverage'] if tup[0] in coverage_codes]
+        org_list['coverage_titles'] = [tup[1] for tup in lookups['coverage'] if tup[0] in coverage_codes]
     subnational_codes = org_list.get('subnationalCoverage')
     if subnational_codes:
         subnational_coverage = []
         for country in coverage_codes:
             subnational_coverage.extend(lookups['subnational'][country])
-        org_list['subnationalCoverage'] = [tup[1] for tup in subnational_coverage if tup[0] in subnational_codes]
+        org_list['subnationalCoverage_titles'] = [tup[1] for tup in subnational_coverage if tup[0] in subnational_codes]
 
 
 def update_lists(request):
