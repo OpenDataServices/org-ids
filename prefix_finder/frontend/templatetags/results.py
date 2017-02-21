@@ -11,7 +11,8 @@ paths_display_name = OrderedDict((
     (('access', 'languages'), 'Languages'),
     (('listType', ), 'List type'),
     (('data', 'licenseStatus'), 'Data license status'),
-    (('relevance', ), 'Relevance')
+    (('relevance', ), 'Relevance'),
+    (('quality', ), 'Quality'),
 ))
 
 paths_display_name_long = OrderedDict((
@@ -32,13 +33,11 @@ paths_display_name_long = OrderedDict((
     (('deprecated', ), 'Deprecated'),
     (('formerPrefixes', ), 'AKA'),
     (('meta', 'source'), 'Source'),
-    (('quality', ), 'Quality'),
 ))
 
 
 @register.filter(name='tidy_results')
 def tidy_results(results, length=None):
-    print(results)
     paths_display = OrderedDict(paths_display_name)
     if length == 'long':
         paths_display.update(paths_display_name_long)
