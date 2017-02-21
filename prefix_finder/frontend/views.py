@@ -168,17 +168,19 @@ def filter_and_score_results(query):
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['coverage']) == 1:
                         prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
-                    if subnational:
-                        if prefix['subnationalCoverage'] and subnational in prefix['subnationalCoverage']:
-                            prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
-                            if len(prefix['subnationalCoverage']) == 1:
-                                prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
                 else:
                     indexed.pop(prefix['code'], None)
-
         else:
             if not prefix['coverage']:
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
+
+        if subnational:
+            if prefix['subnationalCoverage'] and subnational in prefix['subnationalCoverage']:
+                prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
+                if len(prefix['subnationalCoverage']) == 1:
+                    prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+            else:
+                indexed.pop(prefix['code'], None)
 
         if structure:
             if prefix['structure']:
@@ -186,17 +188,17 @@ def filter_and_score_results(query):
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['structure']) == 1:
                         prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
-                    elif substructure:
-                            # TODO: this logic for assigning substructure relevance may need
-                            # to be revisited. At the moment it assumes that substructures
-                            # always include the parent structure in the array of structures.
-                            if substructure in prefix['structure']:
-                                prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix['structure']:
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
+
+        if substructure:
+            if prefix['structure'] and substructure in prefix['structure']:
+                    prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
+            else:
+                indexed.pop(prefix['code'], None)
 
         if sector:
             if prefix['sector']:
@@ -217,8 +219,6 @@ def filter_and_score_results(query):
     if not indexed:
         return all_results
 
-    top_relevence = max(prefix['relevance'] for prefix in indexed.values())
-                   
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
         if num == 0:
             all_results['suggested'].append(value)
