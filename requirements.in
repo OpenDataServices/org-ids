@@ -9,3 +9,4 @@ titlecase
 dealer
 ratelimit
 django-super-favicon
+jsonschema
