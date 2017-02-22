@@ -92,6 +92,43 @@ def load_org_id_lists_from_disk():
 
     return org_id_lists
 
+def augment_quality(schemas, org_id_lists):
+    availiabilty_score = {item['code']: item['quality_score'] for item in schemas['codelist-availability']['availability']}
+    license_score = {item['code']: item['quality_score'] for item in schemas['codelist-licenseStatus']['licenseStatus']}
+    listtype_score = {item['code']: item['quality_score'] for item in schemas['codelist-listType']['listType']}
+
+    for prefix in org_id_lists:
+        quality = 0
+        for item in (prefix['data']['availability'] or []):
+            value = availiabilty_score.get(item)
+            if value:
+                quality += value
+            else:
+                print('No availiablity type {}. Found in code {}'.format(item, prefix['code']))
+
+        if prefix['data']['licenseStatus']:
+            quality += license_score[prefix['data']['licenseStatus']]
+
+        if prefix['listType']:
+            value = listtype_score.get(prefix['listType'])
+            if value:
+                quality += value
+            else:
+                print('No licenseStatus for {}. Found in code {}'.format(prefix['listType'], prefix['code']))
+
+
+
+        prefix['quality'] = min(quality, 100)
+
+def augment_structure(org_id_lists):
+    for prefix in org_id_lists:
+        if not prefix['structure']:
+            continue
+        for structure in prefix['structure']:
+            split = structure.split("/")
+            if split[0] not in prefix['structure']:
+                prefix['structure'].append(split[0])
+
 
 def add_coverage_titles(org_lists):
     '''Add coverage_titles and subnationalCoverage_titles to organisation lists'''
@@ -148,6 +185,9 @@ def refresh_data():
         org_id_lists = load_org_id_lists_from_disk()
 
     add_coverage_titles(org_id_lists)
+    augment_quality(schemas, org_id_lists)
+    augment_structure(org_id_lists)
+
     org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
 
     if using_github:
@@ -163,11 +203,7 @@ refresh_data()
 def filter_and_score_results(query):
     indexed = {key: value.copy() for key, value in org_id_dict.items()}
     for prefix in list(indexed.values()):
-        prefix['quality'] = 1
         prefix['relevance'] = 0
-        list_type = prefix.get('listType')
-        if list_type and list_type == 'primary':
-            prefix['quality'] = 2
 
     coverage = query.get('coverage')
     subnational = query.get('subnational')

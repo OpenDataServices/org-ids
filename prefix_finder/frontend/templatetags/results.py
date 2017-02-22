@@ -12,7 +12,7 @@ paths_display_name = OrderedDict((
     (('listType', ), 'List type'),
     (('data', 'licenseStatus'), 'Data license status'),
     (('relevance', ), 'Relevance'),
-    (('quality', ), 'Quality'),
+    (('quality', ), 'Quality')
 ))
 
 paths_display_name_long = OrderedDict((
