@@ -3,11 +3,14 @@ import json
 import glob
 import zipfile
 import io
+import csv
+from collections import OrderedDict
 
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from django.conf import settings
 import requests
+import datetime
 
 RELEVANCE = {
     "MATCH_DROPDOWN": 10,
@@ -323,3 +326,52 @@ def list_details(request, prefix):
     except KeyError:
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list})
+
+def _get_filename():
+    if git_commit_ref:
+        return git_commit_ref[:10]
+    else:
+        return datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+
+def json_download(request):
+    response = HttpResponse(json.dumps({"lists": list(org_id_dict.values())}, indent=2), content_type='text/json')
+    response['Content-Disposition'] = 'attachment; filename="org-id-{0}.json"'.format(_get_filename())
+    return response
+
+
+def _flatten_list(obj, path=''):
+    # probably use flattentool but only when schema data validates
+    for key, value in obj.items():
+        if isinstance(value, dict):
+            yield from _flatten_list(value, path + "/" + key)
+        elif isinstance(value, list):
+            yield (path + "/" + key).lstrip("/"), ", ".join(value)
+        else:
+            yield (path + "/" + key).lstrip("/"), value
+
+
+def csv_download(request):
+    all_keys = set()
+    all_rows = []
+    for item in org_id_dict.values():
+        row = dict(_flatten_list(item))
+        all_keys.update(row.keys())
+        all_rows.append(row)
+
+    all_keys.remove("code")
+    all_keys.remove("description/en")
+
+    headers = ["code", "description/en"] + sorted(list(all_keys))
+
+    output = io.StringIO()
+
+    writer = csv.DictWriter(output, headers)
+    writer.writeheader()
+    writer.writerows(all_rows)
+
+    response = HttpResponse(output.getvalue(), content_type='text/csv')
+
+    response['Content-Disposition'] = 'attachment; filename="org-id-{0}.csv"'.format(_get_filename())
+    return response
+
+
