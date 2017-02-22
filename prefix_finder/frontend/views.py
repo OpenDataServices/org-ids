@@ -135,18 +135,17 @@ def augment_structure(org_id_lists):
                 prefix['structure'].append(split[0])
 
 
-def add_coverage_titles(org_lists):
+def add_coverage_title(org_list):
     '''Add coverage_titles and subnationalCoverage_titles to organisation lists'''
-    for org_list in org_lists:
-        coverage_codes = org_list.get('coverage')
-        if coverage_codes:
-            org_list['coverage_titles'] = [tup[1] for tup in lookups['coverage'] if tup[0] in coverage_codes]
-        subnational_codes = org_list.get('subnationalCoverage')
-        if subnational_codes:
-            subnational_coverage = []
-            for country in coverage_codes:
-                subnational_coverage.extend(lookups['subnational'][country])
-            org_list['subnationalCoverage_titles'] = [tup[1] for tup in subnational_coverage if tup[0] in subnational_codes]
+    coverage_codes = org_list.get('coverage')
+    if coverage_codes:
+        org_list['coverage_titles'] = [tup[1] for tup in lookups['coverage'] if tup[0] in coverage_codes]
+    subnational_codes = org_list.get('subnationalCoverage')
+    if subnational_codes:
+        subnational_coverage = []
+        for country in coverage_codes:
+            subnational_coverage.extend(lookups['subnational'][country])
+        org_list['subnationalCoverage_titles'] = [tup[1] for tup in subnational_coverage if tup[0] in subnational_codes]
 
 
 def refresh_data():
@@ -189,7 +188,6 @@ def refresh_data():
     else:
         org_id_lists = load_org_id_lists_from_disk()
 
-    add_coverage_titles(org_id_lists)
     augment_quality(schemas, org_id_lists)
     augment_structure(org_id_lists)
 
@@ -275,6 +273,7 @@ def filter_and_score_results(query):
         return all_results
 
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
+        add_coverage_title(value)
         if (value['relevance'] >= RELEVANCE["SUGGESTED_THRESHOLD"]
             and value['quality'] > RELEVANCE["SUGGESTED_QUALITY_THRESHOLD"]
             and not all_results['suggested']):
@@ -322,7 +321,8 @@ def home(request):
 
 def list_details(request, prefix):
     try:
-        org_list = org_id_dict[prefix]
+        org_list = org_id_dict[prefix].copy()
+        add_coverage_title(org_list)
     except KeyError:
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list})
