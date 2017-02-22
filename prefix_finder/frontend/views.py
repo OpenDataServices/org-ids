@@ -13,7 +13,8 @@ RELEVANCE = {
     "MATCH_DROPDOWN": 10,
     "MATCH_DROPDOWN_ONLY_VALUE": 1,
     "MATCH_EMPTY": 2,
-    "RECOMENDED_THRESHOLD": 5
+    "RECOMENDED_THRESHOLD": 5,
+    "SUGGESTED_THRESHOLD": 5
 }
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
@@ -270,7 +271,7 @@ def filter_and_score_results(query):
         return all_results
 
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
-        if num == 0:
+        if value['relevance'] >= RELEVANCE["SUGGESTED_THRESHOLD"] and value['quality'] > 60 and not all_results['suggested']:
             all_results['suggested'].append(value)
         elif value['relevance'] >= RELEVANCE["RECOMENDED_THRESHOLD"]:
             all_results['recommended'].append(value)
