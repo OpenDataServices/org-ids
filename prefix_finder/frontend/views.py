@@ -254,22 +254,29 @@ def get_lookups(query):
     subnational = query.get('subnational')
     substructure = query.get('substructure')
 
-    coverage_lookups, coverage_all = [], False
-    structure_lookups, structure_all = [], False
-    sector_lookups, sector_all = [], False
+    coverage_lookups = [[], False]
+    structure_lookups = [[], False]
+    sector_lookups = [[], False]
     subnational_lookups = []
     substructure_lookups = []
 
     valid_lookups = {}
 
-    queries = [{"coverage": '', 'structure': structure, 'sector': sector, 'subnationalCoverage': subnational, 'substructure': substructure, 'lookups': 'coverage'},
-               {"coverage": coverage, 'structure': '', 'sector': sector, 'subnationalCoverage': subnational, 'substructure': substructure, 'lookups': 'structure'},
-               {"coverage": coverage, 'structure': structure, 'sector': sector, 'subnationalCoverage': subnational, 'substructure': substructure, 'lookups': 'sector'},
-               {"coverage": coverage, 'structure': structure, 'sector': sector, 'subnationalCoverage': '', 'substructure': substructure, 'lookups': 'subnationalCoverage'},
-               {"coverage": coverage, 'structure': structure, 'sector': sector, 'subnationalCoverage': subnational, 'substructure': '', 'lookups': 'substructure'}]
+    queries = [
+        {'coverage': '', 'structure': structure, 'sector': sector, 'subnationalCoverage': subnational,
+         'substructure': substructure, 'lookups': ('coverage', coverage_lookups)},
+        {'coverage': coverage, 'structure': '', 'sector': sector, 'subnationalCoverage': subnational,
+         'substructure': substructure, 'lookups': ('structure', structure_lookups)},
+        {'coverage': coverage, 'structure': structure, 'sector': sector, 'subnationalCoverage': subnational,
+         'substructure': substructure, 'lookups': ('sector', sector_lookups)},
+        {'coverage': coverage, 'structure': structure, 'sector': sector, 'subnationalCoverage': '',
+         'substructure': substructure, 'lookups': 'subnationalCoverage'},
+        {'coverage': coverage, 'structure': structure, 'sector': sector, 'subnationalCoverage': subnational,
+         'substructure': '', 'lookups': 'substructure'}
+    ]
 
     for q in queries:
-        indexed = {key: value.copy() for key, value in org_id_dict.items()}
+        indexed = {key: value for key, value in org_id_dict.items()}
         for org_list in list(indexed.values()):
 
             for key, value in q.items():
@@ -283,33 +290,17 @@ def get_lookups(query):
                         if org_list[key] and value not in org_list[key]:
                             indexed.pop(org_list['code'], None)
 
-        if q['lookups'] == 'coverage':
+        if isinstance(q['lookups'], tuple):
+            field, field_lookup = q['lookups']
             for result in indexed.values():
-                if result['coverage']:
-                    coverage_lookups.extend([country for country in result['coverage']])
+                if result[field]:
+                    field_lookup[0].extend([item for item in result[field]])
                 else:
-                    coverage_all = True
+                    field_lookup[1] = True
                     break
             else:
-                coverage_lookups = set(coverage_lookups)
-        elif q['lookups'] == 'structure':
-            for result in indexed.values():
-                if result['structure']:
-                    structure_lookups.extend([structure for structure in result['structure']])
-                else:
-                    structure_all = True
-                    break
-            else:
-                structure_lookups = set(structure_lookups)
-        elif q['lookups'] == 'sector':
-            for result in indexed.values():
-                if result['sector']:
-                    sector_lookups.extend([sector for sector in result['sector']])
-                else:
-                    sector_all = True
-                    break
-            else:
-                sector_lookups = set(sector_lookups)
+                field_lookup[0] = set(field_lookup[0])
+
         elif q['lookups'] == 'subnationalCoverage' and coverage:
             for result in indexed.values():
                 if result['subnationalCoverage']:
@@ -321,27 +312,16 @@ def get_lookups(query):
                     substructure_lookups.extend([structure for structure in result['structure']])
             substructure_lookups = set(substructure_lookups)
 
-    if coverage_all:
-        valid_lookups['coverage'] = lookups['coverage']
-    else:
-        valid_lookups['coverage'] = [tup for tup in lookups['coverage'] if tup[0] in coverage_lookups]
-
-    if structure_all:
-        valid_lookups['structure'] = lookups['structure']
-    else:
-        valid_lookups['structure'] = [tup for tup in lookups['structure'] if tup[0] in structure_lookups]
-
-    if sector_all:
-        valid_lookups['sector'] = lookups['sector']
-    else:
-        valid_lookups['sector'] = [tup for tup in lookups['sector'] if tup[0] in sector_lookups]
+    valid_lookups['coverage'] = [tup for tup in lookups['coverage'] if tup[0] in coverage_lookups[0]] if not coverage_lookups[1] else lookups['coverage']
+    valid_lookups['structure'] = [tup for tup in lookups['structure'] if tup[0] in structure_lookups[0]] if not structure_lookups[1] else lookups['structure']
+    valid_lookups['sector'] = [tup for tup in lookups['sector'] if tup[0] in sector_lookups[0]] if not sector_lookups[1] else lookups['sector']
 
     if subnational_lookups and lookups['subnational'].get(coverage):
         valid_lookups['subnational'] = [tup for tup in lookups['subnational'][coverage] if tup[0] in subnational_lookups]
     else:
         valid_lookups['subnational'] = []
 
-    if substructure_lookups and lookups['subnational'].get(structure):
+    if substructure_lookups and lookups['substructure'].get(structure):
         valid_lookups['substructure'] = [tup for tup in lookups['substructure'][structure] if tup[0] in substructure_lookups]
     else:
         valid_lookups['substructure'] = []
