@@ -18,7 +18,17 @@ for org_id_list_file in glob.glob(codes_dir + '/*/*.json'):
 
 
 with open(os.path.join(current_dir, '../schema/list-schema.json')) as list_schema_file:
-    list_schema = json.load(list_schema_file, object_pairs_hook=OrderedDict)
+    list_schema = json.load(list_schema_file)
+
+keep_properties = ["code", "description"]
+
+for key, value in list(list_schema['properties'].items()):
+    if key not in keep_properties:
+        list_schema['properties'].pop(key)
+
+list_schema['properties']['description']['properties']['en']['minLength'] = 10
+list_schema['properties']['description']['properties']['en']['type'] = ['string', 'null']
+
 
 @pytest.mark.parametrize("list_name,list_data", org_id_lists)
 def test_valid(list_name,list_data):
@@ -26,7 +36,7 @@ def test_valid(list_name,list_data):
     errors = []
 
     for error in validator.iter_errors(list_data):
-        errors.append(error)
+        errors.append("{} at {}".format(error.message, "/".join(error.path)))
 
     assert errors == []
 
