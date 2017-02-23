@@ -247,6 +247,117 @@ def filter_and_score_results(query):
     return all_results
 
 
+def get_lookups(query):
+    coverage = query.get('coverage')
+    structure = query.get('structure',)
+    sector = query.get('sector')
+    subnational = query.get('subnational')
+    substructure = query.get('substructure')
+
+    coverage_lookups, coverage_all = [], False
+    structure_lookups, structure_all = [], False
+    sector_lookups, sector_all = [], False
+    subnational_lookups = []
+    substructure_lookups = []
+
+    valid_lookups = {}
+
+    queries = [{"coverage": '', 'structure': structure, 'sector': sector, 'subnational': subnational, 'substructure': substructure, 'lookups': 'coverage'},
+               {"coverage": coverage, 'structure': '', 'sector': sector, 'subnational': subnational, 'substructure': substructure, 'lookups': 'structure'},
+               {"coverage": coverage, 'structure': structure, 'sector': sector, 'subnational': subnational, 'substructure': substructure, 'lookups': 'sector'},
+               {"coverage": coverage, 'structure': structure, 'sector': sector, 'subnational': '', 'substructure': substructure, 'lookups': 'subnational'},
+               {"coverage": coverage, 'structure': structure, 'sector': sector, 'subnational': subnational, 'substructure': '', 'lookups': 'substructure'}]
+
+    for q in queries:
+        indexed = {key: value.copy() for key, value in org_id_dict.items()}
+        for org_list in list(indexed.values()):
+
+            if q['coverage']:
+                if org_list['coverage'] and q['coverage'] not in org_list['coverage']:
+                    indexed.pop(org_list['code'], None)
+            if q['structure']:
+                if org_list['structure'] and q['structure'] not in org_list['structure']:
+                    indexed.pop(org_list['code'], None)
+            if q['sector']:
+                if org_list['sector'] and q['sector'] not in org_list['sector']:
+                    indexed.pop(org_list['code'], None)
+            if q['subnational']:
+                if org_list['subnationalCoverage'] and q['subnational'] not in org_list['subnationalCoverage']:
+                    indexed.pop(org_list['code'], None)
+            if q['substructure']:
+                if org_list['structure'] and q['substructure'] not in org_list['structure']:
+                    indexed.pop(org_list['code'], None)
+
+        if q['lookups'] == 'coverage':
+            for result in indexed.values():
+                if result['coverage']:
+                    coverage_lookups.extend([country for country in result['coverage']])
+                else:
+                    coverage_all = True
+                    break
+            else:
+                coverage_lookups = set(coverage_lookups)
+        elif q['lookups'] == 'structure':
+            for result in indexed.values():
+                if result['structure']:
+                    structure_lookups.extend([structure for structure in result['structure']])
+                else:
+                    structure_all = True
+                    break
+            else:
+                structure_lookups = set(structure_lookups)
+        elif q['lookups'] == 'sector':
+            for result in indexed.values():
+                if result['sector']:
+                    sector_lookups.extend([sector for sector in result['sector']])
+                else:
+                    sector_all = True
+                    break
+            else:
+                sector_lookups = set(sector_lookups)
+        elif q['lookups'] == 'subnational' and coverage:
+            for result in indexed.values():
+                if result['subnationalCoverage']:
+                    subnational_lookups.extend([region for region in result['subnationalCoverage']])
+            subnational_lookups = set(subnational_lookups)
+        elif q['lookups'] == 'substructure' and structure:
+            for result in indexed.values():
+                if result['structure']:
+                    substructure_lookups.extend([structure for structure in result['structure']])
+            substructure_lookups = set(substructure_lookups)
+
+    if coverage_all:
+        valid_lookups['coverage'] = lookups['coverage']
+    else:
+        valid_lookups['coverage'] = [tup for tup in lookups['coverage'] if tup[0] in coverage_lookups]
+
+    if structure_all:
+        valid_lookups['structure'] = lookups['structure']
+    else:
+        valid_lookups['structure'] = [tup for tup in lookups['structure'] if tup[0] in structure_lookups]
+
+    if sector_all:
+        valid_lookups['sector'] = lookups['sector']
+    else:
+        valid_lookups['sector'] = [tup for tup in lookups['sector'] if tup[0] in sector_lookups]
+
+    if subnational_lookups and lookups['subnational'].get(coverage):
+        valid_lookups['subnational'] = [tup for tup in lookups['subnational'][coverage] if tup[0] in subnational_lookups]
+    else:
+        valid_lookups['subnational'] = []
+
+    if substructure_lookups and lookups['subnational'].get(structure):
+        valid_lookups['substructure'] = [tup for tup in lookups['substructure'][structure] if tup[0] in substructure_lookups]
+    else:
+        valid_lookups['substructure'] = []
+
+    print(valid_lookups['coverage'])
+    print(valid_lookups['structure'])
+    print(valid_lookups['sector'])
+    print(valid_lookups['subnational'])
+    print(valid_lookups['substructure'])
+
+
 def update_lists(request):
     return HttpResponse(refresh_data())
 
@@ -271,11 +382,14 @@ def home(request):
         if 'structure' in query:
             substructures = lookups['substructure'].get(query['structure'])
             context['lookups']['substructure'] = substructures and sorted(substructures) or []
+        pass
     else:
         query = {'coverage': '', 'structure': '', 'sector': ''}
 
     context['query'] = query
     context['all_results'] = filter_and_score_results(query)
+
+    get_lookups(query)
 
     return render(request, "home.html", context=context)
 
