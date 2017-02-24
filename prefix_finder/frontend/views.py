@@ -322,7 +322,7 @@ def get_lookups(query_dict):
             if field_lookup[1]:
                 valid_lookups[field] = lookups[field]
             else:
-                valid_lookups[field] = [tup for tup in lookups[field] if tup[0] in field_lookup[0]] if not field_lookup[1] else lookups[field]
+                valid_lookups[field] = [tup for tup in lookups[field] if tup[0] in field_lookup[0]]
 
     if subnational_lookups and lookups['subnational'].get(coverage):
         valid_lookups['subnational'] = [tup for tup in lookups['subnational'][coverage] if tup[0] in subnational_lookups]
@@ -346,28 +346,17 @@ def home(request):
     context = {
         "lookups": {
             'coverage': lookups['coverage'],
-            'subnational': [],
             'structure': lookups['structure'],
-            'substructure': [],
             'sector': lookups['sector']
         }
     }
     if query:
-        # Check for subnational coverage
-        if 'coverage' in query:
-            subnational = lookups['subnational'].get(query['coverage'])
-            context['lookups']['subnational'] = subnational and sorted(subnational) or []
-        # Check for substructures
-        if 'structure' in query:
-            substructures = lookups['substructure'].get(query['structure'])
-            context['lookups']['substructure'] = substructures and sorted(substructures) or []
+        context['lookups'] = get_lookups(query)
     else:
         query = {'coverage': '', 'structure': '', 'sector': ''}
 
     context['query'] = query
     context['all_results'] = filter_and_score_results(query)
-
-    get_lookups(query)
 
     return render(request, "home.html", context=context)
 
