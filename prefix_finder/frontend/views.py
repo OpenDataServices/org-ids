@@ -283,8 +283,9 @@ def get_lookups(query):
                 if key == 'lookups':
                     continue
                 if value:
-                    if key == 'substructure':
-                        if org_list['structure'] and value not in org_list['structure']:
+                    if key == 'substructure' or key == 'subnationalCoverage':
+                        key = 'structure' if key == 'substructure' else key
+                        if org_list[key] and value not in org_list[key] or not org_list[key]:
                             indexed.pop(org_list['code'], None)
                     else:
                         if org_list[key] and value not in org_list[key]:
