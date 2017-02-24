@@ -1,14 +1,19 @@
-Django==1.8.14 # rq.filter: <1.9
-django-bootstrap3==7.0.1
-requests==2.11.1
-django-environ==0.4.0
-raven==5.26.0
-python-dateutil==2.5.3
-titlecase==0.8.1
+Django==1.8.17 # rq.filter: <1.9
+django-bootstrap3==8.2.1
+requests==2.13.0
+django-environ==0.4.1
+raven==6.0.0
+python-dateutil==2.6.0
+titlecase==0.8.2
 dealer==2.0.5
-ratelimit==1.1.0
+ratelimit==1.2.0
 django-super-favicon==0.6.0
-## The following requirements were added by pip --freeze:
-Pillow==3.3.1
+jsonschema==2.6.0
+## The following requirements were added by pip freeze:
+appdirs==1.4.1
 contextlib2==0.5.4
+olefile==0.44
+packaging==16.8
+Pillow==4.0.0
+pyparsing==2.1.10
 six==1.10.0

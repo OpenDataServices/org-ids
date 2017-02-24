@@ -6,11 +6,13 @@ register = template.Library()
 # SKIP_KEYS = 'name url code structure'.split()
 paths_display_name = OrderedDict((
     (('description', ), 'Description'),
-    (('coverage', ), 'Coverage'),
+    (('coverage_titles', ), 'Coverage'),
+    (('subnationalCoverage_titles', ), 'Subnational'),
     (('access', 'languages'), 'Languages'),
-    (('listType', ), 'List Type'),
+    (('listType', ), 'List type'),
     (('data', 'licenseStatus'), 'Data license status'),
-    (('relevance', ), 'Relevance')
+    (('relevance', ), 'Relevance'),
+    (('quality', ), 'Quality')
 ))
 
 paths_display_name_long = OrderedDict((
@@ -27,12 +29,10 @@ paths_display_name_long = OrderedDict((
     (('links', 'wikipedia'), 'Wikipedia page'),
     (('confirmed', ), 'Confirmed?'),
     (('sector', ), 'Sector'),
-    (('subnationalCoverage', ), 'Subnational'),
     (('meta', 'lastUpdated'), 'Last updated'),
     (('deprecated', ), 'Deprecated'),
     (('formerPrefixes', ), 'AKA'),
     (('meta', 'source'), 'Source'),
-    (('quality', ), 'Quality'),
 ))
 
 
