@@ -5,14 +5,9 @@ python:
 before_script:
     - sleep 10
 
-before_install:
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
-
 install: 
     - "pip install -r requirements_dev.txt"
 
 script:
-    - "flake8 ."
-    - "py.test"
-
+    - "BROWSER=PhantomJS py.test"
+    - "py.test tests/*"

@@ -43,6 +43,17 @@ a.anchor {
     visibility: hidden;
 }
 
+a .btn:hover {
+  color: #77b7ef;
+}
+
+.dropdown-toggle.bs-placeholder,
+.dropdown-toggle.bs-placeholder:active,
+.dropdown-toggle.bs-placeholder:focus,
+.dropdown-toggle.bs-placeholder:hover {
+  color: #bbb !important;
+}
+
 .heading-in-panel {
     margin-top:0px;
 }

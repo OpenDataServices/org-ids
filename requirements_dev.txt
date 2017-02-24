@@ -1,34 +1,37 @@
-Django==1.8.14 # rq.filter: <1.9
-django-bootstrap3==7.0.1
-requests==2.11.1
-django-environ==0.4.0
-raven==5.26.0
-python-dateutil==2.5.3
-titlecase==0.8.1
+Django==1.8.17 # rq.filter: <1.9
+django-bootstrap3==8.2.1
+requests==2.13.0
+django-environ==0.4.1
+raven==6.0.0
+python-dateutil==2.6.0
+titlecase==0.8.2
 dealer==2.0.5
-ratelimit==1.1.0
+ratelimit==1.2.0
 django-super-favicon==0.6.0
+jsonschema==2.6.0
 
 
-flake8==3.0.4
+flake8==3.3.0
 # flake8 requires pyflakes <1.1
 pyflakes==1.0.0 # rq.filter: <1.1
-
 # pytest and plugins
-pytest==3.0.2
-pytest-django==3.0.0
-pytest-cov==2.3.1
+pytest==3.0.6
+pytest-django==3.1.2
+pytest-cov==2.4.0
 pytest-localserver==0.3.6
-
 coveralls==1.1
-selenium==2.53.6
-## The following requirements were added by pip --freeze:
-Pillow==3.3.1
-Werkzeug==0.11.11
+selenium==3.0.2
+## The following requirements were added by pip freeze:
+appdirs==1.4.1
 contextlib2==0.5.4
-coverage==4.2
+coverage==4.3.4
 docopt==0.6.2
-mccabe==0.5.2
-py==1.4.31
-pycodestyle==2.0.0
+mccabe==0.6.1
+olefile==0.44
+packaging==16.8
+Pillow==4.0.0
+py==1.4.32
+pycodestyle==2.3.1
+pyparsing==2.1.10
 six==1.10.0
+Werkzeug==0.11.15

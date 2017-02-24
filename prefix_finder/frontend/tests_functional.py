@@ -37,7 +37,7 @@ def server_url(request, live_server):
 
 def test_home(server_url, browser):
     browser.get(server_url)
-    assert "About" in browser.find_element_by_id("footer").text
+    assert "AGPLv3" in browser.find_element_by_id("footer").text
     browser.find_element_by_link_text('Terms & Conditions')
 
 
