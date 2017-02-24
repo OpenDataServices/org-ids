@@ -100,6 +100,7 @@ def load_org_id_lists_from_disk():
 
     return org_id_lists
 
+
 def augment_quality(schemas, org_id_lists):
     availiabilty_score = {item['code']: item['quality_score'] for item in schemas['codelist-availability']['availability']}
     license_score = {item['code']: item['quality_score'] for item in schemas['codelist-licenseStatus']['licenseStatus']}
@@ -124,9 +125,8 @@ def augment_quality(schemas, org_id_lists):
             else:
                 print('No licenseStatus for {}. Found in code {}'.format(prefix['listType'], prefix['code']))
 
-
-
         prefix['quality'] = min(quality, 100)
+
 
 def augment_structure(org_id_lists):
     for prefix in org_id_lists:
@@ -290,6 +290,7 @@ def filter_and_score_results(query):
 
 
 def get_lookups(query_dict):
+    ''' Get only those lookup combinations returning some result'''
     valid_lookups = {
         'coverage': None,
         'structure': None,
@@ -307,6 +308,7 @@ def get_lookups(query_dict):
     queries = []
     fields = ('coverage', 'structure', 'sector', 'subnational', 'substructure')
 
+    # Build queries, one per search dropdown
     for field in fields:
         if field == 'subnational' or field == 'substructure':
             single_query = {'lookups': field}
@@ -320,6 +322,8 @@ def get_lookups(query_dict):
                 single_query[key] = value
         queries.append(single_query)
 
+    # Run the queries popping those lists that won't be returned
+    # from a dict (list_code:list_data) of id lists.
     for q in queries:
         indexed = {key: value for key, value in org_id_dict.items()}
         for org_list in list(indexed.values()):
@@ -358,6 +362,7 @@ def get_lookups(query_dict):
                     substructure_lookups.extend([structure for structure in result['structure']])
             substructure_lookups = set(substructure_lookups)
 
+    # Filter valid lookups out of all (global) lookups
     for q in queries:
         if isinstance(q['lookups'], tuple):
             field, field_lookup = q['lookups']
@@ -411,11 +416,13 @@ def list_details(request, prefix):
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list})
 
+
 def _get_filename():
     if git_commit_ref:
         return git_commit_ref[:10]
     else:
         return datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+
 
 def json_download(request):
     response = HttpResponse(json.dumps({"lists": list(org_id_dict.values())}, indent=2), content_type='text/json')
@@ -457,5 +464,3 @@ def csv_download(request):
 
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.csv"'.format(_get_filename())
     return response
-
-
