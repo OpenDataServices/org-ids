@@ -14,7 +14,7 @@
         <form>
           <div class="form-group col-md-4">
             <div class="select-label">Geographical coverage</div>
-            <select name="coverage" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
+            <select name="coverage" class="selectpicker has-suboption" data-live-search="true" data-width="300px">
               <option value="">Any country</option>
               {% for code, title  in lookups.coverage %}
               <option {% if query.coverage == code %} selected {% endif %} value="{{code}}">{{title}}</option>
@@ -34,7 +34,7 @@
           </div>
           <div class="form-group col-md-4">
             <div class="select-label">Organization type</div>
-            <select name="structure" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
+            <select name="structure" class="selectpicker has-suboption" data-live-search="true" data-width="300px">
               <option value="">Any type</option>
               {% for code, title in lookups.structure %}
                 <option {% if query.structure == code %} selected {% endif %} value="{{code}}">{{title}}</option>
@@ -103,9 +103,15 @@
 {% endblock %}
 
 {% block extra_scripts %}
-<!-- <script>
-$(function() {
-  $("html, body").animate({ scrollTop: $('#results').offset().top + 100 }, 1000);
-})
-</script> -->
+<script>
+$( ".has-suboption" ).change(function() {
+  if (this.name === 'coverage') {
+    $('select[name=subnational]').val('');
+  }
+  if (this.name === 'structure') {
+    $('select[name=substructure]').val('');
+  }
+  this.form.submit()
+});
+</script>
 {% endblock %}

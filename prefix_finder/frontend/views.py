@@ -354,14 +354,10 @@ def home(request):
         if 'coverage' in query:
             subnational = lookups['subnational'].get(query['coverage'])
             context['lookups']['subnational'] = subnational and sorted(subnational) or []
-            if not context['lookups']['subnational']:
-                query['subnational'] = None
         # Check for substructures
         if 'structure' in query:
             substructures = lookups['substructure'].get(query['structure'])
             context['lookups']['substructure'] = substructures and sorted(substructures) or []
-            if not context['lookups']['substructure']:
-                query['substructure'] = None
     else:
         query = {'coverage': '', 'structure': '', 'sector': ''}
 
