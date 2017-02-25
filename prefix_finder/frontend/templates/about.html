@@ -10,9 +10,10 @@
 
 <p>This is a prototype developed as part of the <a href="http://identify-org.net">Identify-org.net</a> joined up organisation identifiers project. You can read more about the whole project at <a href="http://identify-org.net">http://identify-org.net</a></p>
 
-<p>We’re building <strong>a register of organisation identifier lists</strong> to help join up data on organisations across different datasets. </p>
+<p>We’re building <strong>a list of organisation identifier lists</strong> to help join up data on organisations across different datasets.</p>
 
-<p>This is the <strong>alpha</strong> version of a tool to explore that register - developed as a proof-of-concept to test out new research methods to populate the register, and to weight results.</p>
+<p>This is the <strong>alpha</strong> version of a tool to explore that list of lists - developed as a proof-of-concept to test out new research methods to populate the list, and to weight results.</p>
+
 
 <h2 id="why">Why?</h2>
 
@@ -24,7 +25,7 @@
 
 <p>These identifiers may be drawn from official registers, or might be maintained by a single organisation. The quality of lists varies in terms of their coverage, quality and the depth of information they provide.</p>
 
-<p>With org.prefix.codes you can:</p>
+<p>With org-id.guide you can:</p>
 
 <ul>
 <li><p>Say which list an identifier is taken from - increasing data interoperability;</p></li>
@@ -35,7 +36,8 @@
 
 <h2 id="why">Is it ready for production use?</h2>
 
-<p>Not yet! Right now this platform includes identifier lists we have not fully reviewed, and the prefix codes given are not finalised. We hope to have something ready for production use by the end of the year.</p>
+<p>Almost: by default you will only see list that have been reviewed through our research process - so you can start using them. The algorithms for ranking the recommended and suggested lists are still under development, so we're not yet quite ready to point everyone at the site. </p>
+
 
 <h2 id="how-do-i-use-it">How do I use it?</h2>
 
@@ -47,15 +49,16 @@
 
 <p><strong>First</strong>, make sure you are collecting an identifier for each organisation, as well as a name. You can lookup the best identifier list to use based on the country, organisation type, or sector you are managing data for.</p>
 
-<p><strong>Second</strong>, when you store and publish data about an organisation, use the prefix code for the organisation identifier list so that data users know which list the identifier is from.</p>
+<p><strong>Second</strong>, when you store and publish data about an organisation, use the list code code for the organisation identifier list so that data users know which list the identifier is from.</p>
 
-<p>You can do this by combining the prefix and identifier in a single string:</p>
+
+<p>You can do this by combining the list code and identifier in a single string:</p>
 
 <blockquote>
   <p>E.g. <code>GB-COH-09506232</code></p>
 </blockquote>
 
-<p>Or separating out the prefix into it’s own field:</p>
+<p>Or separating out the list code into it’s own field:</p>
 
 <blockquote>
   <p>E.g. </p>
@@ -68,7 +71,8 @@
 
 <h3 id="data-users">Data users</h3>
 
-<p>If you’ve come across an organisation identifier, you can use org.prefix.codes to find out more about it and where to locate related open data.</p>
+<p>If you’ve come across an organisation identifier, you can use org-id.guide to find out more about it and where to locate related open data.</p>
+
 
 
 
@@ -100,21 +104,22 @@
 
 
 
-<h2 id="how-is-orgprefixcodes-populated">How is org.prefix.codes populated?</h2>
+<h2 id="how-is-orgprefixcodes-populated">How is org-id.guide populated?</h2>
 
 <p>We started out with the <a href="http://iatistandard.org/202/codelists/OrganisationRegistrationAgency/">IATI Registration Agency codelist</a>, and we have been working to add to this through detailed research - keeping our research <a href="https://airtable.com/shrsA8pTLjBiR6SVs">in AirTable here</a>.</p>
 
 <p>We are developing a <a href="https://docs.google.com/document/d/1lkLjHxXaH9GuAR_g-pv9Qru28f1EeOMZtwXduVboMa4/edit?usp=drive_web">research handbook</a> to guide population of the register.</p>
 
-<h2 id="who-is-responsible-for-orgprefixcodes">Who is responsible for org.prefix.codes?</h2>
+<h2 id="who-is-responsible-for-orgprefixcodes">Who is responsible for org-id.guide?</h2>
+
 
 <p>The proof-of-concept is being developed by <a href="http://www.opendataservices.coop">Open Data Services Co-operative</a> for a group of partners including: <a href="http://juds.joinedupdata.org/">Joined Up Data Standards</a>, the <a href="http://www.iatistandard.org">International Aid Transparency Initiative</a>, <a href="http://www.resourcegovernance.org/">Natural Resource Governance Institute</a>, <a href="http://www.threesixtygiving.org">360Giving</a>, the <a href="https://www.interaction.org/project/open-ag-funding/overview">Initiative for Open Ag Funding</a> and <a href="http://www.open-contracting.org">Open Contracting</a>. </p>
 
-<p>We plan to open up this group to wider participation, and to develop an ongoing governance model for the project over late 2016. </p>
+<p>We plan to open up this group to wider participation, and to develop an ongoing governance model for the project over early 2017.</p>
+
 
 <p>For more information contact <a href="mailto:tim.davies@opendataservices.coop">tim.davies@opendataservices.coop</a></p>
 
 </div>
 
 {% endblock %}
-
