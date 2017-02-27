@@ -3,12 +3,10 @@ from django import template
 
 register = template.Library()
 
-# SKIP_KEYS = 'name url code structure'.split()
 paths_display_name = OrderedDict((
     (('description', ), 'Description'),
     (('coverage_titles', ), 'Coverage'),
     (('subnationalCoverage_titles', ), 'Subnational'),
-    (('access', 'languages'), 'Languages'),
     (('listType', ), 'List type'),
     (('data', 'licenseStatus'), 'Data license status'),
     (('relevance', ), 'Relevance'),
@@ -17,10 +15,11 @@ paths_display_name = OrderedDict((
 
 paths_display_name_long = OrderedDict((
     (('data', 'licenseDetails'), 'Data license details'),
-    (('data', 'dataAccessDetails'), 'Data access'),
+    # (('data', 'dataAccessDetails'), 'Data access'),
     (('data', 'availability'), 'Data availability'),
     (('data', 'features'), 'Data features'),
     (('access', 'availableOnline'), 'Available online'),
+    (('access', 'languages'), 'Languages'),
     (('access', 'onlineAccessDetails'), 'Online access'),
     (('access', 'publicDatabase'), 'Public Database'),
     (('access', 'guidanceOnLocatingIds'), 'Finding identifiers'),
@@ -57,8 +56,11 @@ def tidy_results(results, length=None):
             if 'en' in info:
                 info = info['en']
                 if info:
-                    if key_name == 'Description' and length != 'long':
-                        info = info.split('.')[0]  # (naively) shorten description
+                    if key_name == 'Description':
+                        if length == 'long':
+                            continue
+                        else:
+                            info = info.split('.')[0]  # (naively) shorten description
                     tidied_results[key_name] = '{}.'.format(info)
             else:
                 for field_name, details in info.items():

@@ -9,7 +9,7 @@
       <div class="col-xs-12">
         <h2 class="text-center">Find a List of Organization Identifiers </h2>
         <br>
-        <br>
+        <h5 class="indent">Describe the organization(s) you want to provide identifiers for:</h5>
         <br>
         <form>
           <div class="form-group col-md-4">
@@ -68,9 +68,11 @@
           {% if query %}
             {% if all_results.suggested %}
               {% with all_results.suggested as results %}
-                <h3 id="results" class="text-center">Suggested Result</h3>
+                <h3 id="results" class="text-center">We suggest that you look first at:</h3>
                 <br>
                 {% include 'results.html' %}
+                <br>
+                <h5 class="text-center">Not relevant? Narrow your search from the options above</h5>
               {% endwith %}
             {% else %}
               <h3 id="results" class="text-center">No Suggested Results</h3>
@@ -78,7 +80,7 @@
 
             {% if all_results.recommended %}
               {% with all_results.recommended as results %}
-              <h3 id="results" class="text-center">Recommended Results</h3>
+              <h3 id="results" class="text-center">Other recommended lists include:</h3>
               <br>
               {% include 'results.html' %}
               {% endwith %}
@@ -88,7 +90,7 @@
 
             {% if all_results.other %}
               {% with all_results.other as results %}
-              <h3 id="results" class="text-center">Other Results </h3>
+              <h3 id="results" class="text-center">Alternative identifier sources:</h3>
               <br>
               {% include 'results.html' %}
               {% endwith %}
