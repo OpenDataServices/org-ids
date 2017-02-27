@@ -369,15 +369,27 @@ def get_lookups(query_dict):
             if field_lookup[1]:
                 valid_lookups[field] = lookups[field]
             else:
-                valid_lookups[field] = [tup for tup in lookups[field] if tup[0] in field_lookup[0]]
+                valid_lookups[field] = [tup + (False, ) if tup[0] in field_lookup[0] else tup + (True, ) for tup in lookups[field]]
 
-    if subnational_lookups and lookups['subnational'].get(coverage):
-        valid_lookups['subnational'] = [tup for tup in lookups['subnational'][coverage] if tup[0] in subnational_lookups]
+    if lookups['subnational'].get(coverage):
+        if subnational_lookups:
+            valid_lookups['subnational'] = [
+                tup + (False, ) if tup[0] in subnational_lookups else tup + (True, )
+                for tup in lookups['subnational'][coverage]
+            ]
+        else:
+            valid_lookups['subnational'] = [tup + (True, ) for tup in lookups['subnational'][coverage]]
     else:
         valid_lookups['subnational'] = []
 
-    if substructure_lookups and lookups['substructure'].get(structure):
-        valid_lookups['substructure'] = [tup for tup in lookups['substructure'][structure] if tup[0] in substructure_lookups]
+    if lookups['substructure'].get(structure):
+        if substructure_lookups:
+            valid_lookups['substructure'] = [
+                tup + (False,) if tup[0] in substructure_lookups else tup + (True, )
+                for tup in lookups['substructure'][structure]
+            ]
+        else:
+            valid_lookups['substructure'] = [tup + (True, ) for tup in lookups['substructure'][structure]]
     else:
         valid_lookups['substructure'] = []
 
