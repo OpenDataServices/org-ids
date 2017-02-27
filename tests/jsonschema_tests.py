@@ -20,7 +20,7 @@ for org_id_list_file in glob.glob(codes_dir + '/*/*.json'):
 with open(os.path.join(current_dir, '../schema/list-schema.json')) as list_schema_file:
     list_schema = json.load(list_schema_file)
 
-keep_properties = ["code", "description"]
+keep_properties = ["code", "description", "name"]
 
 for key, value in list(list_schema['properties'].items()):
     if key not in keep_properties:

@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3> Download Full Data </h3>
+        <br/>
+
+        <p> <a href="{% url 'json_download' %}">JSON: All data in its orignal format.</a></p>
+        <p> <a href="{% url 'csv_download' %}">CSV: All data in single CSV table.</a></p>
+        <p> <a href="{% url 'xml_download' %}">XML: Subset of data in the same format as an IATI codelist.</a></p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main %}
