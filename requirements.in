@@ -10,3 +10,4 @@ dealer
 ratelimit
 django-super-favicon
 jsonschema
+lxml

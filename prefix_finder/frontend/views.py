@@ -476,3 +476,42 @@ def csv_download(request):
 
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.csv"'.format(_get_filename())
     return response
+
+
+import lxml.etree as ET
+
+
+def make_xml_codelist():
+    root = ET.Element("codelist")
+    meta = ET.SubElement(root, "metadata")
+    ET.SubElement(ET.SubElement(meta, "name"),"narrative").text = "Organization Identifier Lists"
+    ET.SubElement(ET.SubElement(meta, "description"),"narrative").text = "Organisation identifier lists and their code. These can be used as the prefix for an organisation identifier. For general guidance about constructing Organisation Identifiers, please see http://iatistandard.org/organisation-identifiers/  This list was formerly maintained by the IATI Secretariat as the Organization Registration Agency codelist. This version is maintained by the Identify-Org project, of which IATI is a member. New code requests should be made via Identify-org.net"
+    items = ET.SubElement(root, "codelist-items")
+
+    for entry in org_id_dict.values():
+        if entry['access'] and entry['access']['availableOnline']:
+            publicdb = str(1)
+        else:
+            publicdb = str(0)
+    
+        item = ET.SubElement(items, "codelist-item",**{'public-database':publicdb})
+        ET.SubElement(item, "code").text = entry['code']
+
+        name = ET.SubElement(item, "name")
+        ET.SubElement(name, "narrative").text = entry['name']['en']
+
+        description = ET.SubElement(item, "description")
+        ET.SubElement(description, "narrative").text = entry['description']['en']
+        if entry['coverage']:
+            ET.SubElement(item, "category").text = entry['coverage'][0]
+        else:
+            ET.SubElement(item, "category").text = '-'
+        ET.SubElement(item, "url").text = entry['url']
+        
+    return ET.tostring(root, encoding='unicode', pretty_print=True)
+
+
+def xml_download(request):
+    response = HttpResponse(make_xml_codelist(), content_type='text/xml')
+    response['Content-Disposition'] = 'attachment; filename="org-id-{0}.xml"'.format(_get_filename())
+    return response

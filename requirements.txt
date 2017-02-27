@@ -9,8 +9,9 @@ dealer==2.0.5
 ratelimit==1.2.0
 django-super-favicon==0.6.0
 jsonschema==2.6.0
+lxml==3.7.3
 ## The following requirements were added by pip freeze:
-appdirs==1.4.1
+appdirs==1.4.2
 contextlib2==0.5.4
 olefile==0.44
 packaging==16.8
