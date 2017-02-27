@@ -53,7 +53,10 @@ def load_schemas_from_disk():
 
 def create_codelist_lookups(schemas):
     lookups = {}
-    lookups['coverage'] = [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']]
+    lookups['coverage'] = sorted(
+        [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']],
+        key=lambda tup: tup[1]
+    )
     lookups['structure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if not item['parent']]
     lookups['sector'] = [(item['code'], item['title']['en']) for item in schemas['codelist-sector']['sector']]
 
@@ -97,6 +100,7 @@ def load_org_id_lists_from_disk():
 
     return org_id_lists
 
+
 def augment_quality(schemas, org_id_lists):
     availiabilty_score = {item['code']: item['quality_score'] for item in schemas['codelist-availability']['availability']}
     license_score = {item['code']: item['quality_score'] for item in schemas['codelist-licenseStatus']['licenseStatus']}
@@ -121,9 +125,8 @@ def augment_quality(schemas, org_id_lists):
             else:
                 print('No licenseStatus for {}. Found in code {}'.format(prefix['listType'], prefix['code']))
 
-
-
         prefix['quality'] = min(quality, 100)
+
 
 def augment_structure(org_id_lists):
     for prefix in org_id_lists:
@@ -286,6 +289,113 @@ def filter_and_score_results(query):
     return all_results
 
 
+def get_lookups(query_dict):
+    ''' Get only those lookup combinations returning some result'''
+    valid_lookups = {
+        'coverage': None,
+        'structure': None,
+        'sector': None,
+        'subnational': None,
+        'substructure': None
+    }
+
+    # Needed for subcategories
+    coverage = query_dict.get('coverage')
+    structure = query_dict.get('structure')
+    subnational_lookups = []
+    substructure_lookups = []
+
+    queries = []
+    fields = ('coverage', 'structure', 'sector', 'subnational', 'substructure')
+
+    # Build queries, one per search dropdown
+    for field in fields:
+        if field == 'subnational' or field == 'substructure':
+            single_query = {'lookups': field}
+        else:
+            single_query = {'lookups': (field, [[], False])}
+
+        for key, value in query_dict.items():
+            if key == field:
+                single_query[field] = ''
+            else:
+                single_query[key] = value
+        queries.append(single_query)
+
+    # Run the queries popping those lists that won't be returned
+    # from a dict (list_code:list_data) of id lists.
+    for q in queries:
+        indexed = {key: value for key, value in org_id_dict.items()}
+        for org_list in list(indexed.values()):
+
+            for key, value in q.items():
+                if key == 'lookups':
+                    continue
+                if value:
+                    if key == 'subnational' or key == 'substructure':
+                        key = 'subnationalCoverage' if key == 'subnational' else 'structure'
+                        if org_list[key] and value not in org_list[key] or not org_list[key]:
+                            indexed.pop(org_list['code'], None)
+                    else:
+                        if org_list[key] and value not in org_list[key]:
+                            indexed.pop(org_list['code'], None)
+
+        if isinstance(q['lookups'], tuple):
+            field, field_lookup = q['lookups']
+            for result in indexed.values():
+                if result[field]:
+                    field_lookup[0].extend([item for item in result[field]])
+                else:
+                    field_lookup[1] = True
+                    break
+            else:
+                field_lookup[0] = set(field_lookup[0])
+
+        elif q['lookups'] == 'subnational' and coverage:
+            for result in indexed.values():
+                if result['subnationalCoverage']:
+                    subnational_lookups.extend([region for region in result['subnationalCoverage']])
+            subnational_lookups = set(subnational_lookups)
+        elif q['lookups'] == 'substructure' and structure:
+            for result in indexed.values():
+                if result['structure']:
+                    substructure_lookups.extend([structure for structure in result['structure']])
+            substructure_lookups = set(substructure_lookups)
+
+    # Filter valid lookups out of all (global) lookups
+    for q in queries:
+        if isinstance(q['lookups'], tuple):
+            field, field_lookup = q['lookups']
+            if field_lookup[1]:
+                valid_lookups[field] = lookups[field]
+            else:
+                valid_lookups[field] = [tup + (False, ) if tup[0] in field_lookup[0] else tup + (True, ) for tup in lookups[field]]
+
+    if lookups['subnational'].get(coverage):
+        if subnational_lookups:
+            valid_lookups['subnational'] = [
+                tup + (False, ) if tup[0] in subnational_lookups else tup + (True, )
+                for tup in lookups['subnational'][coverage]
+            ]
+        else:
+            valid_lookups['subnational'] = [tup + (True, ) for tup in lookups['subnational'][coverage]]
+    else:
+        valid_lookups['subnational'] = []
+
+    if lookups['substructure'].get(structure):
+        if substructure_lookups:
+            valid_lookups['substructure'] = [
+                tup + (False,) if tup[0] in substructure_lookups else tup + (True, )
+                for tup in lookups['substructure'][structure]
+            ]
+        else:
+            valid_lookups['substructure'] = [tup + (True, ) for tup in lookups['substructure'][structure]]
+    else:
+        valid_lookups['substructure'] = []
+
+    return valid_lookups
+
+
 def update_lists(request):
     return HttpResponse(refresh_data())
 
@@ -295,21 +405,12 @@ def home(request):
     context = {
         "lookups": {
             'coverage': lookups['coverage'],
-            'subnational': [],
             'structure': lookups['structure'],
-            'substructure': [],
             'sector': lookups['sector']
         }
     }
     if query:
-        # Check for subnational coverage
-        if 'coverage' in query:
-            subnational = lookups['subnational'].get(query['coverage'])
-            context['lookups']['subnational'] = subnational and sorted(subnational) or []
-        # Check for substructures
-        if 'structure' in query:
-            substructures = lookups['substructure'].get(query['structure'])
-            context['lookups']['substructure'] = substructures and sorted(substructures) or []
+        context['lookups'] = get_lookups(query)
     else:
         query = {'coverage': '', 'structure': '', 'sector': ''}
 
@@ -327,11 +428,13 @@ def list_details(request, prefix):
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list})
 
+
 def _get_filename():
     if git_commit_ref:
         return git_commit_ref[:10]
     else:
         return datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+
 
 def json_download(request):
     response = HttpResponse(json.dumps({"lists": list(org_id_dict.values())}, indent=2), content_type='text/json')
@@ -374,7 +477,9 @@ def csv_download(request):
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.csv"'.format(_get_filename())
     return response
 
+
 import lxml.etree as ET
+
 
 def make_xml_codelist():
     root = ET.Element("codelist")
@@ -410,6 +515,3 @@ def xml_download(request):
     response = HttpResponse(make_xml_codelist(), content_type='text/xml')
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.xml"'.format(_get_filename())
     return response
-
-
-    
