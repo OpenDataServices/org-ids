@@ -86,25 +86,23 @@
     <script>$(function () {$('[data-toggle="tooltip"]').tooltip()})</script>
 
     {% block extra_scripts %}{% endblock %}
-    <!-- Piwik 
+    {% if piwik.url and piwik.site_id %}
+    <!-- Piwik -->
     <script type="text/javascript">
       var _paq = _paq || [];
       {% block extrapiwik %}{% endblock %}
       _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-      _paq.push(["setCookieDomain", "*.grantnav-dev.default.opendataservices.uk0.bigv.io"]);
-      _paq.push(["setDomains", ["*.grantnav-dev.default.opendataservices.uk0.bigv.io"]]);
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
       (function() {
-        var u="//mon.opendataservices.coop/piwik/";
+        var u="{{ piwik.url }}";
         _paq.push(['setTrackerUrl', u+'piwik.php']);
-        _paq.push(['setSiteId', 6]);
+        _paq.push(['setSiteId', {{ piwik.site_id }}]);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
       })();
     </script>
-    <noscript><p><img src="//mon.opendataservices.coop/piwik/piwik.php?idsite=6" style="border:0;" alt="" /></p></noscript>
-    -->
-    <!-- End Piwik Code -->
+    <noscript><p><img src="{{ piwik.url }}/piwik.php?idsite={{ piwik.site_id }}" style="border:0;" alt="" /></p></noscript>
+    {% endif %}
     </body>
 </html>
