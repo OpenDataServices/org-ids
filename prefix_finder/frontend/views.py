@@ -108,17 +108,17 @@ def augment_quality(schemas, org_id_lists):
 
     for prefix in org_id_lists:
         quality = 0
-        for item in (prefix['data']['availability'] or []):
+        for item in (prefix.get('data', {}).get('availability') or []):
             value = availiabilty_score.get(item)
             if value:
                 quality += value
             else:
                 print('No availiablity type {}. Found in code {}'.format(item, prefix['code']))
 
-        if prefix['data']['licenseStatus']:
+        if prefix['data'].get('licenseStatus'):
             quality += license_score[prefix['data']['licenseStatus']]
 
-        if prefix['listType']:
+        if prefix.get('listType'):
             value = listtype_score.get(prefix['listType'])
             if value:
                 quality += value
@@ -130,7 +130,7 @@ def augment_quality(schemas, org_id_lists):
 
 def augment_structure(org_id_lists):
     for prefix in org_id_lists:
-        if not prefix['structure']:
+        if not prefix.get('structure'):
             continue
         for structure in prefix['structure']:
             split = structure.split("/")
@@ -194,7 +194,7 @@ def refresh_data():
     augment_quality(schemas, org_id_lists)
     augment_structure(org_id_lists)
 
-    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list['confirmed']}
+    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list.get('confirmed')}
 
     if using_github:
         git_commit_ref = sha
@@ -219,7 +219,7 @@ def filter_and_score_results(query):
 
     for prefix in list(indexed.values()):
         if coverage:
-            if prefix['coverage']:
+            if prefix.get('coverage'):
                 if coverage in prefix['coverage']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['coverage']) == 1:
@@ -227,11 +227,11 @@ def filter_and_score_results(query):
                 else:
                     indexed.pop(prefix['code'], None)
         else:
-            if not prefix['coverage']:
+            if not prefix.get('coverage'):
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
 
         if subnational:
-            if prefix['subnationalCoverage'] and subnational in prefix['subnationalCoverage']:
+            if prefix.get('subnationalCoverage') and subnational in prefix['subnationalCoverage']:
                 prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
                 if len(prefix['subnationalCoverage']) == 1:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
@@ -239,7 +239,7 @@ def filter_and_score_results(query):
                 indexed.pop(prefix['code'], None)
 
         if structure:
-            if prefix['structure']:
+            if prefix.get('structure'):
                 if structure in prefix['structure']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['structure']) == 1:
@@ -247,17 +247,17 @@ def filter_and_score_results(query):
                 else:
                     indexed.pop(prefix['code'], None)
         else:
-            if not prefix['structure']:
+            if not prefix.get('structure'):
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
 
         if substructure:
-            if prefix['structure'] and substructure in prefix['structure']:
+            if prefix.get('structure') and substructure in prefix['structure']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
             else:
                 indexed.pop(prefix['code'], None)
 
         if sector:
-            if prefix['sector']:
+            if prefix.get('sector'):
                 if sector in prefix['sector']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
                     if len(prefix['sector']) == 1:
@@ -265,7 +265,7 @@ def filter_and_score_results(query):
                 else:
                     indexed.pop(prefix['code'], None)
         else:
-            if not prefix['sector']:
+            if not prefix.get('sector'):
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
 
     all_results = {"suggested": [],
@@ -334,16 +334,16 @@ def get_lookups(query_dict):
                 if value:
                     if key == 'subnational' or key == 'substructure':
                         key = 'subnationalCoverage' if key == 'subnational' else 'structure'
-                        if org_list[key] and value not in org_list[key] or not org_list[key]:
+                        if org_list.get(key) and value not in org_list[key] or not org_list.get(key):
                             indexed.pop(org_list['code'], None)
                     else:
-                        if org_list[key] and value not in org_list[key]:
+                        if org_list.get(key) and value not in org_list[key]:
                             indexed.pop(org_list['code'], None)
 
         if isinstance(q['lookups'], tuple):
             field, field_lookup = q['lookups']
             for result in indexed.values():
-                if result[field]:
+                if result.get(field):
                     field_lookup[0].extend([item for item in result[field]])
                 else:
                     field_lookup[1] = True
@@ -353,12 +353,12 @@ def get_lookups(query_dict):
 
         elif q['lookups'] == 'subnational' and coverage:
             for result in indexed.values():
-                if result['subnationalCoverage']:
+                if result.get('subnationalCoverage'):
                     subnational_lookups.extend([region for region in result['subnationalCoverage']])
             subnational_lookups = set(subnational_lookups)
         elif q['lookups'] == 'substructure' and structure:
             for result in indexed.values():
-                if result['structure']:
+                if result.get('structure'):
                     substructure_lookups.extend([structure for structure in result['structure']])
             substructure_lookups = set(substructure_lookups)
 
