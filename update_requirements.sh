@@ -19,7 +19,7 @@ else
     dashupgrade="--upgrade"
 fi
 pip install $dashupgrade -r requirements.in
-pip freeze -r requirements.in > requirements.txt
+pip freeze -r requirements.in | grep -v "pkg-resources" > requirements.txt
 
 # Same again for requirements_dev
 if [[ "$1" == "--new-only" ]]; then
@@ -27,7 +27,7 @@ if [[ "$1" == "--new-only" ]]; then
 fi
 pip install $dashupgrade -r requirements_dev.in
 cat requirements.in requirements_dev.in > requirements_combined_tmp.in
-pip freeze -r requirements_combined_tmp.in > requirements_dev.txt
+pip freeze -r requirements_combined_tmp.in | grep -v "pkg-resources" > requirements_dev.txt
 rm requirements_combined_tmp.in
 
 # Put comments back on the same line (mostly for requires.io's benefit)

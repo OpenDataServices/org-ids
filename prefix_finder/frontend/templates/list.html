@@ -6,28 +6,84 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <ul class="list-inline clear-margin-bottom">
-      <h4><a href="{{org_list.url}}" data-toggle="tooltip" data-placement="top" title="{{org_list.url}}">{{org_list.name.en}} ({{org_list.code}})</a></h4>
+      <h4>{{org_list.name.en}} ({{org_list.code}})</h4>
     </ul>
   </div>
   <div class="panel-body">
     <dl class="dl-horizontal">
+
+
+    <dt>Description</dt>
+    <dd>{{org_list.description.en|urlize|linebreaks}}</dd>
+
+    <dt>To find identifiers:</dt>
+    <dd>
+      {% if org_list.access.publicDatabase %}
+        Visit <a href="{{org_list.access.publicDatabase}}" target="_blank">{{org_list.access.publicDatabase}}</a>
+      {% else %}
+        {% if org_list.url %}
+          Visit <a href="{{org_list.url}}" target="_blank">{{org_list.url}}</a>
+        {% else %}
+          Consult the organisation responsible for this list.
+        {%endif %}
+      {% endif %}
+      {% if org_list.access.guidanceOnLocatingIds %}{{org_list.access.guidanceOnLocatingIds|urlize|linebreaks}}{% endif %}
+     The code for this list is <code>{{org_list.code}}</code>. When you can located the organisation you wish to identify in this list, you should either:
+     <div> 
+       <br>
+       <div>
+         <div class="col-md-6">
+           Enter it in an identifier database field prefixed with <code>{{org_list.code}}</code>.
+           <br>
+           <br>
+           <em>For example</em>: <code>{{org_list.code}}</code>-[ IDENTIFIER ]
+         </div>
+         <div class="col-md-6">
+          Or, use it within a two-part identifier, with <code>{{org_list.code}}</code> as the 'scheme', and the identifier you have located as the 'identifier' field. 
+          <br>
+          <br>
+          <em>For example</em>:
+          <pre class="prettyprint">
+           { 
+              "scheme":”{{org_list.code}}”,
+              ”id”:"[ IDENTIFIER ]"
+           }
+          </pre>
+         </div>
+       </div>
+        Remember, if your data model also includes space to record the legal name or address of the organisation, and the list provides this information, this can aid data re-use.
+     </div>
+    </dd>
+     <br>
+     <hr>
+     <h3>List details</h3>
+     <dt>URL</dt>
+     <dd><a href="{{org_list.url}}">{{org_list.url}}</a></dd>
       {% for key, value in org_list|tidy_results:'long' %}
          {% if value %}
            <dt> {{key|capfirst}} </dt>
            <dd> 
              {% if value|slice:":4" == "http" %}
-               <a href="{{value}}">{{value}}</a>
+               {{value|urlize}}
              {% else %}
                {{value|capfirst}}
              {% endif %}
            </dd>
          {% endif %}
       {% endfor %}
-      <dt>URL</dt>
-      <dd>
-        <a href="{{org_list.url}}">{{org_list.url}}</a>
-      </dd>
     </dl>
+    <hr>
+    <h4>Suggest changes</h4>
+    <div>
+      You can suggest an edit to our information about this list by:
+      <br>
+      <ul>
+        <li>Posting <a href="https://github.com/OpenDataServices/org-ids/issues/new?title=Updates%20to%20{{org_list.code}}">to the issue tracker</a></li>
+        <li>Submitting a pull request <a href='https://github.com/OpenDataServices/org-ids/tree/master/codes/{{org_list.code|slice:":2"|lower}}/{{org_list.code|lower}}.json'>against this code</a> with your direct updates and an explanation of your changes</li>
+      </ul>
+      <hr>
+      <h4>Coming soon: user-friendly editing interfaces...</h4>
+    </div>
   </div>
 </div>
 {% endblock %}
