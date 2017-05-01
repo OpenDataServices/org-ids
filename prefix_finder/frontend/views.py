@@ -17,7 +17,7 @@ RELEVANCE = {
     "MATCH_DROPDOWN_ONLY_VALUE": 10,
     "MATCH_EMPTY": 2,
     "RECOMENDED_RELEVANCE_THRESHOLD": 5,
-    "SUGGESTED_RELEVANCE_THRESHOLD": 15,
+    "SUGGESTED_RELEVANCE_THRESHOLD": 25,
     "SUGGESTED_QUALITY_THRESHOLD": 45
 }
 
@@ -138,7 +138,7 @@ def augment_structure(org_id_lists):
                 prefix['structure'].append(split[0])
 
 
-def add_coverage_title(org_list):
+def add_titles(org_list):
     '''Add coverage_titles and subnationalCoverage_titles to organisation lists'''
     coverage_codes = org_list.get('coverage')
     if coverage_codes:
@@ -149,6 +149,14 @@ def add_coverage_title(org_list):
         for country in coverage_codes:
             subnational_coverage.extend(lookups['subnational'][country])
         org_list['subnationalCoverage_titles'] = [tup[1] for tup in subnational_coverage if tup[0] in subnational_codes]
+
+    structure_codes = org_list.get('structure')
+    if structure_codes:
+        org_list['structure_titles'] = [tup[1] for tup in lookups['structure'] if tup[0] in structure_codes]
+
+    sector_codes = org_list.get('sector')
+    if sector_codes:
+        org_list['sector_titles'] = [tup[1] for tup in lookups['sector'] if tup[0] in sector_codes]
 
 
 def refresh_data():
@@ -298,10 +306,11 @@ def filter_and_score_results(query):
         return all_results
 
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
-        add_coverage_title(value)
+        add_titles(value)
+        
         if (value['relevance'] >= RELEVANCE["SUGGESTED_RELEVANCE_THRESHOLD"]
             and value['quality'] > RELEVANCE["SUGGESTED_QUALITY_THRESHOLD"]
-            and not all_results['suggested']) or value['relevance'] == all_results['suggested'][0]['relevance']:
+            and not all_results['suggested'] or (all_results['suggested'] and value['relevance'] == all_results['suggested'][0]['relevance'])):
             all_results['suggested'].append(value)
         elif value['relevance'] >= RELEVANCE["RECOMENDED_RELEVANCE_THRESHOLD"]:
             all_results['recommended'].append(value)
@@ -445,7 +454,8 @@ def home(request):
 def list_details(request, prefix):
     try:
         org_list = org_id_dict[prefix].copy()
-        add_coverage_title(org_list)
+        add_titles(org_list)
+
     except KeyError:
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list})

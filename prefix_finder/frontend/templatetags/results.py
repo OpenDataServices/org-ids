@@ -62,7 +62,7 @@ def tidy_results(results, length=None):
                         if length == 'long':
                             continue
                         else:
-                            info = info.split('.')[0]  # (naively) shorten description
+                            info = info.split(". ")[0]  # (naively) shorten description
                     tidied_results[key_name] = '{}.'.format(info)
             else:
                 for field_name, details in info.items():
@@ -77,3 +77,52 @@ def tidy_results(results, length=None):
             tidied_results[key_name] = info
 
     return tidied_results.items()
+
+
+@register.filter
+def join_or(value,lowercase=False):
+    """Given a list of strings, format them with commas and spaces, but
+    with 'and' at the end.
+
+    >>> join_and(['apples', 'oranges', 'pears'])
+    "apples, oranges, and pears"
+
+    """
+    # convert numbers to strings
+    if(value):
+        if lowercase:
+            value = [str(item).lower() for item in value]
+        else: 
+            value = [str(item) for item in value]
+
+        if len(value) == 1:
+            return value[0]
+
+        # join all but the last element
+        all_but_last = ", ".join(value[:-1])
+        return "%s or %s" % (all_but_last, value[-1])
+    else:
+        return ""
+
+@register.filter
+def join_and(value):
+    """Given a list of strings, format them with commas and spaces, but
+    with 'and' at the end.
+
+    >>> join_and(['apples', 'oranges', 'pears'])
+    "apples, oranges, and pears"
+
+    """
+    # convert numbers to strings
+    if(value):
+
+        value = [str(item) for item in value]
+
+        if len(value) == 1:
+            return value[0]
+
+        # join all but the last element
+        all_but_last = ", ".join(value[:-1])
+        return "%s and %s" % (all_but_last, value[-1])
+    else:
+        return ""
