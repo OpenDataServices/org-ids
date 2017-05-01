@@ -17,7 +17,7 @@ RELEVANCE = {
     "MATCH_DROPDOWN_ONLY_VALUE": 10,
     "MATCH_EMPTY": 2,
     "RECOMENDED_RELEVANCE_THRESHOLD": 5,
-    "SUGGESTED_RELEVANCE_THRESHOLD": 25,
+    "SUGGESTED_RELEVANCE_THRESHOLD": 35,
     "SUGGESTED_QUALITY_THRESHOLD": 45
 }
 
@@ -286,11 +286,11 @@ def filter_and_score_results(query):
         if sector:
             if prefix.get('sector'):
                 if sector in prefix['sector']:
-                    prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
-                    prefix['relevance_debug'].append("Sector matched +" + str(RELEVANCE["MATCH_DROPDOWN"]))
+                    prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]*2
+                    prefix['relevance_debug'].append("Sector matched +" + str(RELEVANCE["MATCH_DROPDOWN"]*2))
                     if len(prefix['sector']) == 1:
-                        prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
-                        prefix['relevance_debug'].append("List only covers this sector +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
+                        prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]*2
+                        prefix['relevance_debug'].append("List only covers this sector +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]*2))
                 else:
                     indexed.pop(prefix['code'], None)
         else:
