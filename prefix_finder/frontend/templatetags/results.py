@@ -10,8 +10,10 @@ paths_display_name = OrderedDict((
     (('listType', ), 'List type'),
     (('data', 'licenseStatus'), 'Data license status'),
     (('relevance', ), 'Relevance'),
-    (('quality', ), 'Quality')
+    (('quality', ), 'Quality'),
+    (('relevance_debug', ), 'Relevance Debug'),
 ))
+
 
 paths_display_name_long = OrderedDict((
     (('data', 'licenseDetails'), 'Data license details'),

@@ -14,11 +14,11 @@ import datetime
 
 RELEVANCE = {
     "MATCH_DROPDOWN": 10,
-    "MATCH_DROPDOWN_ONLY_VALUE": 1,
+    "MATCH_DROPDOWN_ONLY_VALUE": 10,
     "MATCH_EMPTY": 2,
-    "RECOMENDED_THRESHOLD": 5,
-    "SUGGESTED_THRESHOLD": 5,
-    "SUGGESTED_QUALITY_THRESHOLD": 60
+    "RECOMENDED_RELEVANCE_THRESHOLD": 5,
+    "SUGGESTED_RELEVANCE_THRESHOLD": 15,
+    "SUGGESTED_QUALITY_THRESHOLD": 45
 }
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
@@ -210,6 +210,7 @@ def filter_and_score_results(query):
     indexed = {key: value.copy() for key, value in org_id_dict.items()}
     for prefix in list(indexed.values()):
         prefix['relevance'] = 0
+        prefix['relevance_debug'] = []
 
     coverage = query.get('coverage')
     subnational = query.get('subnational')
@@ -218,23 +219,37 @@ def filter_and_score_results(query):
     sector = query.get('sector')
 
     for prefix in list(indexed.values()):
+        if prefix.get('listType') == 'primary':
+            prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
+            prefix['relevance_debug'].append("Primary list +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
+
+
+
         if coverage:
             if prefix.get('coverage'):
                 if coverage in prefix['coverage']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
+                    prefix['relevance_debug'].append("Coverage matched: +" + str(RELEVANCE["MATCH_DROPDOWN"]))
                     if len(prefix['coverage']) == 1:
                         prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                        prefix['relevance_debug'].append("List only covers this country +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
+                    if not subnational and not prefix['subnationalCoverage']:
+                        prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]/2
+                        prefix['relevance_debug'].append("List is only national +" + str(RELEVANCE["MATCH_DROPDOWN"]/2))
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix.get('coverage'):
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
+                prefix['relevance_debug'].append("No coverage value +" + str(RELEVANCE["MATCH_DROPDOWN"]))
 
         if subnational:
             if prefix.get('subnationalCoverage') and subnational in prefix['subnationalCoverage']:
                 prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
+                prefix['relevance_debug'].append("Subnational coverage matched +" + str(RELEVANCE["MATCH_DROPDOWN"]*2))
                 if len(prefix['subnationalCoverage']) == 1:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                    prefix['relevance_debug'].append("List only covers this subnational area +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
             else:
                 indexed.pop(prefix['code'], None)
 
@@ -242,17 +257,21 @@ def filter_and_score_results(query):
             if prefix.get('structure'):
                 if structure in prefix['structure']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
+                    prefix['relevance_debug'].append("Structure matched +" + str(RELEVANCE["MATCH_DROPDOWN"]))
                     if len(prefix['structure']) == 1:
                         prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                        prefix['relevance_debug'].append("List only covers this structure +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix.get('structure'):
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
+                prefix['relevance_debug'].append("No structure value +" + str(RELEVANCE["MATCH_EMPTY"]))
 
         if substructure:
             if prefix.get('structure') and substructure in prefix['structure']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
+                    prefix['relevance_debug'].append("Sub-structure matched +" + str(RELEVANCE["MATCH_DROPDOWN"]*2))
             else:
                 indexed.pop(prefix['code'], None)
 
@@ -260,13 +279,16 @@ def filter_and_score_results(query):
             if prefix.get('sector'):
                 if sector in prefix['sector']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
+                    prefix['relevance_debug'].append("Sector matched +" + str(RELEVANCE["MATCH_DROPDOWN"]))
                     if len(prefix['sector']) == 1:
                         prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                        prefix['relevance_debug'].append("List only covers this sector +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix.get('sector'):
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
+                prefix['relevance_debug'].append("Sector empty +" + str(RELEVANCE["MATCH_EMPTY"]))
 
     all_results = {"suggested": [],
                    "recommended": [],
@@ -277,11 +299,11 @@ def filter_and_score_results(query):
 
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
         add_coverage_title(value)
-        if (value['relevance'] >= RELEVANCE["SUGGESTED_THRESHOLD"]
+        if (value['relevance'] >= RELEVANCE["SUGGESTED_RELEVANCE_THRESHOLD"]
             and value['quality'] > RELEVANCE["SUGGESTED_QUALITY_THRESHOLD"]
-            and not all_results['suggested']):
+            and not all_results['suggested']) or value['relevance'] == all_results['suggested'][0]['relevance']:
             all_results['suggested'].append(value)
-        elif value['relevance'] >= RELEVANCE["RECOMENDED_THRESHOLD"]:
+        elif value['relevance'] >= RELEVANCE["RECOMENDED_RELEVANCE_THRESHOLD"]:
             all_results['recommended'].append(value)
         else:
             all_results['other'].append(value)
