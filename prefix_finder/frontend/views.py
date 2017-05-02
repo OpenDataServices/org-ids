@@ -29,9 +29,9 @@ org_id_dict = None
 git_commit_ref = ''
 
 
-def load_schemas_from_github():
+def load_schemas_from_github(branch="master"):
     schemas = {}
-    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/master.zip")
+    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/"+branch+".zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
         for filename in ziped_repo.namelist():
             filename_split = filename.split("/")[1:]
@@ -102,29 +102,40 @@ def load_org_id_lists_from_disk():
 
 
 def augment_quality(schemas, org_id_lists):
-    availiabilty_score = {item['code']: item['quality_score'] for item in schemas['codelist-availability']['availability']}
+    availabilty_score = {item['code']: item['quality_score'] for item in schemas['codelist-availability']['availability']}
+    availabilty_names = {item['code']: item['title']['en'] for item in schemas['codelist-availability']['availability']}
     license_score = {item['code']: item['quality_score'] for item in schemas['codelist-licenseStatus']['licenseStatus']}
+    license_names = {item['code']: item['title']['en'] for item in schemas['codelist-licenseStatus']['licenseStatus']}
     listtype_score = {item['code']: item['quality_score'] for item in schemas['codelist-listType']['listType']}
+    listtype_names = {item['code']: item['title']['en'] for item in schemas['codelist-listType']['listType']}
+
+    
 
     for prefix in org_id_lists:
         quality = 0
+        quality_explained = {}
         for item in (prefix.get('data', {}).get('availability') or []):
-            value = availiabilty_score.get(item)
+            value = availabilty_score.get(item)
             if value:
                 quality += value
+                quality_explained["Availability: " + availabilty_names[item]] = value
             else:
                 print('No availiablity type {}. Found in code {}'.format(item, prefix['code']))
 
         if prefix['data'].get('licenseStatus'):
             quality += license_score[prefix['data']['licenseStatus']]
+            quality_explained["License: " + license_names[prefix['data']['licenseStatus']]] = license_score[prefix['data']['licenseStatus']]
 
         if prefix.get('listType'):
             value = listtype_score.get(prefix['listType'])
             if value:
                 quality += value
+                quality_explained["List type: "  + listtype_names[prefix['listType']]] = value
             else:
                 print('No licenseStatus for {}. Found in code {}'.format(prefix['listType'], prefix['code']))
 
+        
+        prefix['quality_explained'] = quality_explained
         prefix['quality'] = min(quality, 100)
 
 
