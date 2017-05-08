@@ -51,11 +51,10 @@
     <p>
       <strong>Example identifiers</strong>: {{ result.access.exampleIdentifiers }}
     </p>
+    {% if local %}
     <strong>Debug info</strong>
-    {{ result.relevance }} | {{ result.relevance_debug }}<br/>
-    {{ result.quality }} | {{ result.quality_explained }}
-
-    
+    {{ result.relevance }} | {{ result.relevance_debug }}  
+    {%endif%}
     </div>
   </div>
   </div>

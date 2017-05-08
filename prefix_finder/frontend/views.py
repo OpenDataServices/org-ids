@@ -453,11 +453,16 @@ def home(request):
     }
     if query:
         context['lookups'] = get_lookups(query)
+        context['all_results'] = filter_and_score_results(query)
+        context['query'] = query
     else:
         query = {'coverage': '', 'structure': '', 'sector': ''}
+        context['query'] = False
+        context['all_results'] = {}
 
-    context['query'] = query
-    context['all_results'] = filter_and_score_results(query)
+
+    context['local'] = settings.LOCAL_DATA
+    
 
     return render(request, "home.html", context=context)
 
