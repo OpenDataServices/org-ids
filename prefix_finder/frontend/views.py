@@ -16,7 +16,7 @@ RELEVANCE = {
     "MATCH_DROPDOWN": 10,
     "MATCH_DROPDOWN_ONLY_VALUE": 10,
     "MATCH_EMPTY": 2,
-    "RECOMENDED_RELEVANCE_THRESHOLD": 5,
+    "RECOMMENDED_RELEVANCE_THRESHOLD": 5,
     "SUGGESTED_RELEVANCE_THRESHOLD": 35,
     "SUGGESTED_QUALITY_THRESHOLD": 45
 }
@@ -323,7 +323,7 @@ def filter_and_score_results(query):
             and value['quality'] > RELEVANCE["SUGGESTED_QUALITY_THRESHOLD"]
             and not all_results['suggested'] or (all_results['suggested'] and value['relevance'] == all_results['suggested'][0]['relevance'])):
             all_results['suggested'].append(value)
-        elif value['relevance'] >= RELEVANCE["RECOMENDED_RELEVANCE_THRESHOLD"]:
+        elif value['relevance'] >= RELEVANCE["RECOMMENDED_RELEVANCE_THRESHOLD"]:
             all_results['recommended'].append(value)
         else:
             all_results['other'].append(value)
