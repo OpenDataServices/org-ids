@@ -41,7 +41,7 @@
             </select>
             {% if lookups.subnational %}
               <div class="indented-option">
-                <div class="select-label">In the state of...</div>
+                <div class="select-label">In the state or region of...</div>
                 <select name="subnational" class="selectpicker" data-live-search="true" data-width="280px" onchange="this.form.submit()">
                 <option value="">Any subnational location</option>
                 {% for code, title, disabled in lookups.subnational %}
