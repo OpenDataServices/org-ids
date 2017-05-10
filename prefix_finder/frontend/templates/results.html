@@ -20,15 +20,15 @@
     This is a <strong>{{ result.listType }}</strong> list.  
     {% if result.listType = "primary" %} 
       Organisations are generally entered into this list when they are registered 
-        {% if result.structure %} as a {{ result.structure_titles|join_or:True }} {% endif %}
+        {% if result.structure %} as a {{ result.structure_titles|join_with:'or'|lower }} {% endif %}
         {% if result.subnationalCoverage %}   
-          in {{ result.subnationalCoverage_titles|join_or }}.
+          in {{ result.subnationalCoverage_titles|join_with:'or' }}.
         {% else %} 
-          in {{ result.coverage_titles|join_or }}.
+          in {{ result.coverage_titles|join_with:'or' }}.
         {% endif %}
     {% endif %}
     {% if result.listType = "secondary" %} 
-      {% if result.structure %}{{ result.structure_titles|join_or }} organisations{% else %}{% if result.sector %}{{ result.sector_titles|join_or }} organisations{% else %} Organisations{% endif %}{% endif %} may be entered onto this offical list as a result of a transaction with the list owner. 
+      {% if result.structure %}{{ result.structure_titles|join_with:'or' }} organisations{% else %}{% if result.sector %}{{ result.sector_titles|join_with:'or' }} organisations{% else %} Organisations{% endif %}{% endif %} may be entered onto this offical list as a result of a transaction with the list owner. 
     {% endif %}
     {% if result.listType = "third_party" %} 
       This list is maintained by a third-party who may or may not have had interactions or transactions with the organiastions listed.
@@ -38,13 +38,13 @@
     {% endif %}
     </p>
     {% if result.coverage %}<p>
-    This list covers the following countries: {{ result.coverage_titles|join_and }}
+    This list covers the following countries: {{ result.coverage_titles|join_with:'and' }}.
     </p>{% endif %}
     {% if result.structure %}<p>
-    It includes organisations of the following types: {{ result.structure_titles|join_or }}
+    It includes organisations of the following types: {{ result.structure_titles|join_with:'or' }}.
     </p>{% endif %}
     {% if result.sector %}<p>
-    It includes organisations working in the following sectors: {{ result.sector_titles|join_or }}
+    It includes organisations working in the following sectors: {{ result.sector_titles|join_with:'or' }}
     </p>{% endif %}
     <a class="pull-right" href="{% url 'list' result.code %}"><button class="btn" style="margin-top:25px;">More info</button></a>
     <hr/>
