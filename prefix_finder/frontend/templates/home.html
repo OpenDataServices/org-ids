@@ -7,13 +7,32 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2 class="text-center">Find a List of Organization Identifiers </h2>
-        <br>
-        <h5 class="indent">Describe the organization(s) you want to provide identifiers for:</h5>
+        <h2 class="text-center">Find an organization identifier...</h2>
         <br>
         <form>
           <div class="form-group col-md-4">
-            <div class="select-label">Geographical coverage</div>
+            <div class="select-label">I need identifiers for...</div>
+            <select name="structure" class="selectpicker has-suboption" data-live-search="true" data-width="300px">
+              <option value="">Any type of organisation</option>
+              {% for code, title, disabled in lookups.structure %}
+                <option {% if query.structure == code %} selected {% elif disabled %} disabled {% endif %} value="{{code}}">{% if title|slice:"1" in "A,E,I,O,U"|slice:',' %}An{%else%}A{%endif%} {{title|lower}}</option>
+              {% endfor %}
+            </select>
+            {% if lookups.substructure %}
+              <div class="indented-option">
+                <div class="select-label">In particular...</div>
+                <select name="substructure" class="selectpicker" data-live-search="true" data-width="280px" onchange="this.form.submit()">
+                <option value="">Any type</option>
+                {% for code, title, disabled in lookups.substructure %}
+                  <option {% if query.substructure == code %} selected {% elif disabled %} disabled {% endif %} value="{{code}}">{% if title|slice:"1" in "A,E,I,O,U"|slice:',' %}An{%else%}A{%endif%} {{title|lower}}</option>
+                {% endfor %}
+                </select>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="form-group col-md-4">
+            <div class="select-label">Registered in...</div>
             <select name="coverage" class="selectpicker has-suboption" data-live-search="true" data-width="300px">
               <option value="">Any country</option>
               {% for code, title, disabled in lookups.coverage %}
@@ -22,7 +41,7 @@
             </select>
             {% if lookups.subnational %}
               <div class="indented-option">
-                <div class="select-label">Subnational coverage</div>
+                <div class="select-label">In the state or region of...</div>
                 <select name="subnational" class="selectpicker" data-live-search="true" data-width="280px" onchange="this.form.submit()">
                 <option value="">Any subnational location</option>
                 {% for code, title, disabled in lookups.subnational %}
@@ -32,28 +51,9 @@
               </div>
             {% endif %}
           </div>
+         
           <div class="form-group col-md-4">
-            <div class="select-label">Organization type</div>
-            <select name="structure" class="selectpicker has-suboption" data-live-search="true" data-width="300px">
-              <option value="">Any type</option>
-              {% for code, title, disabled in lookups.structure %}
-                <option {% if query.structure == code %} selected {% elif disabled %} disabled {% endif %} value="{{code}}">{{title}}</option>
-              {% endfor %}
-            </select>
-            {% if lookups.substructure %}
-              <div class="indented-option">
-                <div class="select-label">Organisation subtype</div>
-                <select name="substructure" class="selectpicker" data-live-search="true" data-width="280px" onchange="this.form.submit()">
-                <option value="">Any subtype</option>
-                {% for code, title, disabled in lookups.substructure %}
-                  <option {% if query.substructure == code %} selected {% elif disabled %} disabled {% endif %} value="{{code}}">{{title}}</option>
-                {% endfor %}
-                </select>
-              </div>
-            {% endif %}
-          </div>
-          <div class="form-group col-md-4">
-            <div class="select-label">Organisation sector</div>
+            <div class="select-label">Working in...</div>
             <select name="sector" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
               <option value="">Any sector</option>
               {% for code, title, disabled in lookups.sector %}
@@ -68,35 +68,63 @@
           {% if query %}
             {% if all_results.suggested %}
               {% with all_results.suggested as results %}
-                <h3 id="results" class="text-center">We suggest that you look first at:</h3>
-                <br>
+                <h3 id="results" class="text-center">Suggested lists:</h3>
+                <p>
+                  We think one of the lists below will have a good chance of including the organisation(s) you are looking for...
+                </p>
                 {% include 'results.html' %}
-                <br>
-                <h5 class="text-center">Not relevant? Narrow your search from the options above</h5>
               {% endwith %}
             {% else %}
-              <h3 id="results" class="text-center">No Suggested Results</h3>
+              <p>
+                We can't provide any <strong>suggested results</strong> for your query. Either narrow your query, or move to look at alternative lists below.
+              </p>
             {% endif %}
 
             {% if all_results.recommended %}
               {% with all_results.recommended as results %}
-              <h3 id="results" class="text-center">Other recommended lists include:</h3>
-              <br>
+              <h3 id="results" class="text-center">Possible lists:</h3>
+              <p>
+                  It's possible you will find the organisation(s) you are looking for in one of the lists below...
+              </p>
               {% include 'results.html' %}
               {% endwith %}
             {% else %}
-              <h3 id="results" class="text-center">No Recommended Results</h3>
+              <h3 id="results" class="text-center">No alternative results</h3>
             {% endif %}
 
             {% if all_results.other %}
               {% with all_results.other as results %}
-              <h3 id="results" class="text-center">Alternative identifier sources:</h3>
+              <h3 id="results" class="text-center">Fall back identifier sources:</h3>
+              <p>
+               The following lists provide a fall back option when no other identifier sources are available. 
+              </p>
               <br>
               {% include 'results.html' %}
               {% endwith %}
             {% else %}
               <h3 id="results" class="text-center">No Other Results</h3>
             {% endif %}
+          {% else %}
+
+          <div class="jumbotron">
+          <h1>org-id.guide</h1>
+          <p>
+          Data is more valuable when you include recognised <strong>organisation identifiers</strong>.
+          </p>
+          <p>
+          We'll help you to find the best available source of identifiers for any kind of organisation: so you can provide better quality open data. 
+          </p>
+          <h2>Get started</h2>
+          <p>
+          Start searching above, or find out <a href="/about/">how to integrate org-id.guide into your application</a>.
+          </p>
+          <h2>Get involved</h2>
+          <p>
+          Are we missing a list? <a href="https://github.com/OpenDataServices/org-ids/issues">Get in touch to suggest additions or updates</a>.
+          </p>
+          </div>
+
+
           {% endif %}
       </div>
     </div>

@@ -83,7 +83,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
-    <script>$(function () {$('[data-toggle="tooltip"]').tooltip()})</script>
+    <script>$(function () {$('[data-toggle="tooltip"]').tooltip()})
+    $(function () {  $('[data-toggle="popover"]').popover({
+    container: 'body'})})</script>
 
     {% block extra_scripts %}{% endblock %}
     {% if piwik.url and piwik.site_id %}

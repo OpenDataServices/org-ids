@@ -14,11 +14,11 @@ import datetime
 
 RELEVANCE = {
     "MATCH_DROPDOWN": 10,
-    "MATCH_DROPDOWN_ONLY_VALUE": 1,
+    "MATCH_DROPDOWN_ONLY_VALUE": 10,
     "MATCH_EMPTY": 2,
-    "RECOMENDED_THRESHOLD": 5,
-    "SUGGESTED_THRESHOLD": 5,
-    "SUGGESTED_QUALITY_THRESHOLD": 60
+    "RECOMMENDED_RELEVANCE_THRESHOLD": 5,
+    "SUGGESTED_RELEVANCE_THRESHOLD": 35,
+    "SUGGESTED_QUALITY_THRESHOLD": 45
 }
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
@@ -29,9 +29,9 @@ org_id_dict = None
 git_commit_ref = ''
 
 
-def load_schemas_from_github():
+def load_schemas_from_github(branch="master"):
     schemas = {}
-    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/master.zip")
+    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/"+branch+".zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
         for filename in ziped_repo.namelist():
             filename_split = filename.split("/")[1:]
@@ -102,29 +102,40 @@ def load_org_id_lists_from_disk():
 
 
 def augment_quality(schemas, org_id_lists):
-    availiabilty_score = {item['code']: item['quality_score'] for item in schemas['codelist-availability']['availability']}
+    availabilty_score = {item['code']: item['quality_score'] for item in schemas['codelist-availability']['availability']}
+    availabilty_names = {item['code']: item['title']['en'] for item in schemas['codelist-availability']['availability']}
     license_score = {item['code']: item['quality_score'] for item in schemas['codelist-licenseStatus']['licenseStatus']}
+    license_names = {item['code']: item['title']['en'] for item in schemas['codelist-licenseStatus']['licenseStatus']}
     listtype_score = {item['code']: item['quality_score'] for item in schemas['codelist-listType']['listType']}
+    listtype_names = {item['code']: item['title']['en'] for item in schemas['codelist-listType']['listType']}
+
+    
 
     for prefix in org_id_lists:
         quality = 0
+        quality_explained = {}
         for item in (prefix.get('data', {}).get('availability') or []):
-            value = availiabilty_score.get(item)
+            value = availabilty_score.get(item)
             if value:
                 quality += value
+                quality_explained["Availability: " + availabilty_names[item]] = value
             else:
                 print('No availiablity type {}. Found in code {}'.format(item, prefix['code']))
 
         if prefix['data'].get('licenseStatus'):
             quality += license_score[prefix['data']['licenseStatus']]
+            quality_explained["License: " + license_names[prefix['data']['licenseStatus']]] = license_score[prefix['data']['licenseStatus']]
 
         if prefix.get('listType'):
             value = listtype_score.get(prefix['listType'])
             if value:
                 quality += value
+                quality_explained["List type: "  + listtype_names[prefix['listType']]] = value
             else:
                 print('No licenseStatus for {}. Found in code {}'.format(prefix['listType'], prefix['code']))
 
+        
+        prefix['quality_explained'] = quality_explained
         prefix['quality'] = min(quality, 100)
 
 
@@ -138,7 +149,7 @@ def augment_structure(org_id_lists):
                 prefix['structure'].append(split[0])
 
 
-def add_coverage_title(org_list):
+def add_titles(org_list):
     '''Add coverage_titles and subnationalCoverage_titles to organisation lists'''
     coverage_codes = org_list.get('coverage')
     if coverage_codes:
@@ -149,6 +160,14 @@ def add_coverage_title(org_list):
         for country in coverage_codes:
             subnational_coverage.extend(lookups['subnational'][country])
         org_list['subnationalCoverage_titles'] = [tup[1] for tup in subnational_coverage if tup[0] in subnational_codes]
+
+    structure_codes = org_list.get('structure')
+    if structure_codes:
+        org_list['structure_titles'] = [tup[1] for tup in lookups['structure'] if tup[0] in structure_codes]
+
+    sector_codes = org_list.get('sector')
+    if sector_codes:
+        org_list['sector_titles'] = [tup[1] for tup in lookups['sector'] if tup[0] in sector_codes]
 
 
 def refresh_data():
@@ -210,6 +229,7 @@ def filter_and_score_results(query):
     indexed = {key: value.copy() for key, value in org_id_dict.items()}
     for prefix in list(indexed.values()):
         prefix['relevance'] = 0
+        prefix['relevance_debug'] = []
 
     coverage = query.get('coverage')
     subnational = query.get('subnational')
@@ -218,23 +238,37 @@ def filter_and_score_results(query):
     sector = query.get('sector')
 
     for prefix in list(indexed.values()):
+        if prefix.get('listType') == 'primary':
+            prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
+            prefix['relevance_debug'].append("Primary list +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
+
+
+
         if coverage:
             if prefix.get('coverage'):
                 if coverage in prefix['coverage']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
+                    prefix['relevance_debug'].append("Coverage matched: +" + str(RELEVANCE["MATCH_DROPDOWN"]))
                     if len(prefix['coverage']) == 1:
                         prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                        prefix['relevance_debug'].append("List only covers this country +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
+                    if not subnational and not prefix['subnationalCoverage']:
+                        prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]/2
+                        prefix['relevance_debug'].append("List is only national +" + str(RELEVANCE["MATCH_DROPDOWN"]/2))
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix.get('coverage'):
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
+                prefix['relevance_debug'].append("No coverage value +" + str(RELEVANCE["MATCH_DROPDOWN"]))
 
         if subnational:
             if prefix.get('subnationalCoverage') and subnational in prefix['subnationalCoverage']:
                 prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
+                prefix['relevance_debug'].append("Subnational coverage matched +" + str(RELEVANCE["MATCH_DROPDOWN"]*2))
                 if len(prefix['subnationalCoverage']) == 1:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                    prefix['relevance_debug'].append("List only covers this subnational area +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
             else:
                 indexed.pop(prefix['code'], None)
 
@@ -242,31 +276,38 @@ def filter_and_score_results(query):
             if prefix.get('structure'):
                 if structure in prefix['structure']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
+                    prefix['relevance_debug'].append("Structure matched +" + str(RELEVANCE["MATCH_DROPDOWN"]))
                     if len(prefix['structure']) == 1:
                         prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                        prefix['relevance_debug'].append("List only covers this structure +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix.get('structure'):
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
+                prefix['relevance_debug'].append("No structure value +" + str(RELEVANCE["MATCH_EMPTY"]))
 
         if substructure:
             if prefix.get('structure') and substructure in prefix['structure']:
                     prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"] * 2
+                    prefix['relevance_debug'].append("Sub-structure matched +" + str(RELEVANCE["MATCH_DROPDOWN"]*2))
             else:
                 indexed.pop(prefix['code'], None)
 
         if sector:
             if prefix.get('sector'):
                 if sector in prefix['sector']:
-                    prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
+                    prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]*2
+                    prefix['relevance_debug'].append("Sector matched +" + str(RELEVANCE["MATCH_DROPDOWN"]*2))
                     if len(prefix['sector']) == 1:
-                        prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
+                        prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]*2
+                        prefix['relevance_debug'].append("List only covers this sector +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]*2))
                 else:
                     indexed.pop(prefix['code'], None)
         else:
             if not prefix.get('sector'):
                 prefix['relevance'] += RELEVANCE["MATCH_EMPTY"]
+                prefix['relevance_debug'].append("Sector empty +" + str(RELEVANCE["MATCH_EMPTY"]))
 
     all_results = {"suggested": [],
                    "recommended": [],
@@ -276,12 +317,13 @@ def filter_and_score_results(query):
         return all_results
 
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
-        add_coverage_title(value)
-        if (value['relevance'] >= RELEVANCE["SUGGESTED_THRESHOLD"]
+        add_titles(value)
+        
+        if (value['relevance'] >= RELEVANCE["SUGGESTED_RELEVANCE_THRESHOLD"]
             and value['quality'] > RELEVANCE["SUGGESTED_QUALITY_THRESHOLD"]
-            and not all_results['suggested']):
+            and not all_results['suggested'] or (all_results['suggested'] and value['relevance'] == all_results['suggested'][0]['relevance'])):
             all_results['suggested'].append(value)
-        elif value['relevance'] >= RELEVANCE["RECOMENDED_THRESHOLD"]:
+        elif value['relevance'] >= RELEVANCE["RECOMMENDED_RELEVANCE_THRESHOLD"]:
             all_results['recommended'].append(value)
         else:
             all_results['other'].append(value)
@@ -411,11 +453,16 @@ def home(request):
     }
     if query:
         context['lookups'] = get_lookups(query)
+        context['all_results'] = filter_and_score_results(query)
+        context['query'] = query
     else:
         query = {'coverage': '', 'structure': '', 'sector': ''}
+        context['query'] = False
+        context['all_results'] = {}
 
-    context['query'] = query
-    context['all_results'] = filter_and_score_results(query)
+
+    context['local'] = settings.LOCAL_DATA
+    
 
     return render(request, "home.html", context=context)
 
@@ -423,7 +470,8 @@ def home(request):
 def list_details(request, prefix):
     try:
         org_list = org_id_dict[prefix].copy()
-        add_coverage_title(org_list)
+        add_titles(org_list)
+
     except KeyError:
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list})

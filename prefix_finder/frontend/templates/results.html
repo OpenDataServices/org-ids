@@ -1,31 +1,63 @@
 {% load static %}
 {% load results %}
 
+<div class="row">
 {% for result in results %}
+  <div class="col-xs-12 col-md-6">
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4><a href="{% url 'list' result.code %}" data-toggle="tooltip" data-placement="top" title="More info">{{result.name.en}} ({{result.code}})</a></h4>
+    <div class="panel-heading"><span class="badge pull-right" data-toggle="popover" data-placement="bottom" title="Quality score" data-html="true" data-content="{% for key,value in result.quality_explained.items %}{{ key }} - {{ value }}<br/>{% endfor %} data-trigger="hover">Quality score: {{ result.quality }}</span>
+      <h4><a href="{% url 'list' result.code %}" data-toggle="tooltip" data-placement="top" title="More info">{{ result.name.en }} ({{ result.code }})</a> </h4>
+
     </div>
     <div class="panel-body">
-      <dl class="dl-horizontal">
-        {% for key, value in result|tidy_results %}
-           {% if value %}
-             <dt> {{key|capfirst}} </dt>
-             <dd> 
-               {% if value|slice:":4" == "http" %}
-                 <a href="{{value}}">{{value}}</a>
-               {% else %}
-                 {{value|capfirst}}
-               {% endif %}
-             </dd>
-           {% endif %}
-        {% endfor %}
-      <dt>URL</dt>
-      <dd>
-        <a href="{{result.url}}">{{result.url}}</a>
-      </dd>
-      </dl>
-    <a class="pull-right" href="{% url 'list' result.code %}"><button class="btn">More info</button></a>
+    <p style="font-size:larger;">
+    Use the list code <code>{{ result.code }}</code> and an identifier found at <a href="{{ result.url }}" target="_blank">{{ result.url|truncatechars:100 }}</a>
+    </p>
+    <p>
+    {{ result.description.en|truncatewords_html:50 }} <a href="{% url 'list' result.code %}">Read more</a>
+    </p>
+    <p>
+    This is a <strong>{{ result.listType }}</strong> list.  
+    {% if result.listType = "primary" %} 
+      Organisations are generally entered into this list when they are registered 
+        {% if result.structure %} as a {{ result.structure_titles|join_with:'or'|lower }} {% endif %}
+        {% if result.subnationalCoverage %}   
+          in {{ result.subnationalCoverage_titles|join_with:'or' }}.
+        {% else %} 
+          in {{ result.coverage_titles|join_with:'or' }}.
+        {% endif %}
+    {% endif %}
+    {% if result.listType = "secondary" %} 
+      {% if result.structure %}{{ result.structure_titles|join_with:'or' }} organisations{% else %}{% if result.sector %}{{ result.sector_titles|join_with:'or' }} organisations{% else %} Organisations{% endif %}{% endif %} may be entered onto this offical list as a result of a transaction with the list owner. 
+    {% endif %}
+    {% if result.listType = "third_party" %} 
+      This list is maintained by a third-party who may or may not have had interactions or transactions with the organiastions listed.
+    {% endif %}
+    {% if result.listType = "local" %} 
+      This list is maintained by a single organisation for their own business purpose.
+    {% endif %}
+    </p>
+    {% if result.coverage %}<p>
+    This list covers the following countries: {{ result.coverage_titles|join_with:'and' }}.
+    </p>{% endif %}
+    {% if result.structure %}<p>
+    It includes organisations of the following types: {{ result.structure_titles|join_with:'or' }}.
+    </p>{% endif %}
+    {% if result.sector %}<p>
+    It includes organisations working in the following sectors: {{ result.sector_titles|join_with:'or' }}
+    </p>{% endif %}
+    <a class="pull-right" href="{% url 'list' result.code %}"><button class="btn" style="margin-top:25px;">More info</button></a>
+    <hr/>
+    <p>
+      <strong>Example identifiers</strong>: {{ result.access.exampleIdentifiers }}
+    </p>
+    {% if local %}
+    <strong>Debug info</strong>
+    {{ result.relevance }} | {{ result.relevance_debug }}  
+    {% endif %}
     </div>
   </div>
+  </div>
+  {% if forloop.counter|divisibleby:2 %}</div><div class="row">{% endif %}
 {% endfor %}
+</div>

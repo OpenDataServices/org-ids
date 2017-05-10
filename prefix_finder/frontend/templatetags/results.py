@@ -10,8 +10,10 @@ paths_display_name = OrderedDict((
     (('listType', ), 'List type'),
     (('data', 'licenseStatus'), 'Data license status'),
     (('relevance', ), 'Relevance'),
-    (('quality', ), 'Quality')
+    (('quality', ), 'Quality'),
+    (('relevance_debug', ), 'Relevance Debug'),
 ))
+
 
 paths_display_name_long = OrderedDict((
     (('data', 'licenseDetails'), 'Data license details'),
@@ -60,7 +62,7 @@ def tidy_results(results, length=None):
                         if length == 'long':
                             continue
                         else:
-                            info = info.split('.')[0]  # (naively) shorten description
+                            info = info.split(". ")[0]  # (naively) shorten description
                     tidied_results[key_name] = '{}.'.format(info)
             else:
                 for field_name, details in info.items():
@@ -75,3 +77,24 @@ def tidy_results(results, length=None):
             tidied_results[key_name] = info
 
     return tidied_results.items()
+
+
+@register.filter
+def join_with(value, conj):
+    """Given a list of strings, format them with commas and spaces, but
+    with 'and' or 'or' at the end.
+
+    >>> join_with(['apples', 'oranges', 'pears'], 'and')
+    "apples, oranges, and pears"
+    """
+    if not value:
+        return ""
+    if len(value) == 1:
+        return value[0]
+
+    # convert numbers to strings
+    value = [str(item) for item in value]
+
+    # join all but the last element
+    all_but_last = ", ".join(value[:-1])
+    return "%s %s %s" % (all_but_last, conj, value[-1])
