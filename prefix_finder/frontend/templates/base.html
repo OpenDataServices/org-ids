@@ -43,6 +43,10 @@
       </div>
     </nav>
 
+    {% if branch and branch != 'master' %}
+      <div class="alert alert-warning" role="alert">You are currently previewing branch {{ branch }}. <a href="/_preview_branch/master">Return to master</a> or <a href="https://github.com/OpenDataServices/org-ids/compare/{{ branch }}">view on GitHub</a></div>
+    {% endif %}
+
     {% block main %}
     <div class="main-block">
       <div class="container">
