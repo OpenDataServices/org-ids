@@ -200,7 +200,7 @@ def refresh_data(branch="master"):
         schemas = load_schemas_from_disk()
 
     lookups = create_codelist_lookups(schemas)
-    
+
     if using_github:
         try:
             org_id_lists = load_org_id_lists_from_github(branch)
@@ -318,7 +318,7 @@ def filter_and_score_results(query,use_branch):
 
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
         add_titles(value)
-        
+
         if (value['relevance'] >= RELEVANCE["SUGGESTED_RELEVANCE_THRESHOLD"]
             and value['quality'] > RELEVANCE["SUGGESTED_QUALITY_THRESHOLD"]
             and not all_results['suggested'] or (all_results['suggested'] and value['relevance'] == all_results['suggested'][0]['relevance'])):
@@ -443,9 +443,9 @@ def update_lists(request):
 
 def preview_branch(request,branch_name):
     print("Loading branch "+ branch_name)
+    refresh_data(branch_name)
     request.session['branch'] = branch_name
     return redirect('home')
-    # return HttpResponse(refresh_data(branch_name))
     
 
 def home(request):
@@ -485,6 +485,17 @@ def list_details(request, prefix):
     except KeyError:
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch})
+
+
+def edit_details(request, prefix):
+    use_branch = request.session.get('branch', 'master')
+    try:
+        org_list = org_id_dict[use_branch][prefix]
+        del org_list['quality']
+        del org_list['quality_explained']
+    except KeyError:
+        org_list = {"code":prefix,"name":{"en":"New list"},"confirmed":False}
+    return render(request, 'edit.html', context={'org_list': org_list, 'org_json': json.dumps(org_list)})
 
 
 def _get_filename():
@@ -585,3 +596,4 @@ def xml_download(request):
     response = HttpResponse(make_xml_codelist(use_branch), content_type='text/xml')
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.xml"'.format(_get_filename())
     return response
+

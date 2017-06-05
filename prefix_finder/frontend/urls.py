@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^download.json$', views.json_download, name='json_download'),
     url(r'^download.csv$', views.csv_download, name='csv_download'),
     url(r'^download.xml$', views.xml_download, name='xml_download'),
+    url(r'^edit/(.+)$', views.edit_details, name='edit')
 ]

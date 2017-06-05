@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load results %}
+{% load i18n %}
+{% block main_content %}
+<script type="text/javascript" src="{% static 'js/jsoneditor.min.js'%}"></script>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="list-inline clear-margin-bottom">
+      <h4>Suggested edits for <a href="{{org_list.url}}" data-toggle="tooltip" data-placement="top" title="{{org_list.url}}">{{org_list.name.en}} ({{org_list.code}})</a></h4>
+    </ul>
+  </div>
+  <div class="panel-body">
+    There are two ways to suggest edits:
+    <div>
+         <div class="col-md-6">
+            <h3>1. E-mail suggestions to contact@org-id.guide</h3>
+         </div>
+         <div class="col-md-6">         
+            <h3>2. Make edits below and submit a pull request</h3>
+         </div>
+    </div>
+
+    <hr/>
+
+    <div id='editor_container'>
+
+    </div>
+
+    <script><!--
+        var element = document.getElementById('editor_container');
+        var editor = new JSONEditor(element,{ajax:true, schema:{"$ref":"{% static 'js/list-schema.json'%}"},startval:{{org_json|safe}},theme:'bootstrap3' })
+        editor.on('change',function() {
+             document.getElementById('json_data').value = JSON.stringify(editor.getValue(),null,2) // Do something
+        }) ;
+    --></script>
+  
+    <textarea id="json_data" style="width:100%; height:300px;" READONLY></textarea>  
+
+  </div>
+</div>
+{% endblock %}
