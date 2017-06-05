@@ -541,8 +541,17 @@ def make_xml_codelist():
             publicdb = str(1)
         else:
             publicdb = str(0)
-    
-        item = ET.SubElement(items, "codelist-item",**{'public-database':publicdb})
+
+        if entry['deprecated']:
+            status = 'withdrawn'
+        else:
+            if entry['confirmed']:
+                status = 'active'
+            else:
+                status = 'draft'
+
+
+        item = ET.SubElement(items, "codelist-item",**{'public-database':publicdb,'status':status})
         ET.SubElement(item, "code").text = entry['code']
 
         name = ET.SubElement(item, "name")
