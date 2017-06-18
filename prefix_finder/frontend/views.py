@@ -32,13 +32,14 @@ branch = 'master'
 
 def load_schemas_from_github(branch="master"):
     schemas = {}
-    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/"+branch+".zip")
+    response = requests.get("https://github.com/org-id/register/archive/"+branch+".zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
         for filename in ziped_repo.namelist():
             filename_split = filename.split("/")[1:]
             if len(filename_split) == 2 and filename_split[0] == "schema" and filename_split[-1].endswith(".json"):
                 with ziped_repo.open(filename) as schema_file:
                     schemas[filename_split[-1].split(".")[0]] = json.loads(schema_file.read().decode('utf-8'))
+    print("Loaded schemas from GitHub")
     return schemas
 
 
@@ -82,18 +83,18 @@ def create_codelist_lookups(schemas):
 
 def load_org_id_lists_from_github(branch="master"):
     org_id_lists = []
-    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/"+branch+".zip")
+    response = requests.get("https://github.com/org-id/register/archive/"+branch+".zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
         for filename in ziped_repo.namelist():
             filename_split = filename.split("/")[1:]
-            if len(filename_split) == 3 and filename_split[0] == "codes" and filename_split[-1].endswith(".json"):
+            if len(filename_split) == 3 and filename_split[0] == "lists" and filename_split[-1].endswith(".json"):
                 with ziped_repo.open(filename) as schema_file:
                     org_id_lists.append(json.loads(schema_file.read().decode('utf-8')))
     return org_id_lists
 
 
 def load_org_id_lists_from_disk():
-    codes_dir = os.path.join(current_dir, '../../codes')
+    codes_dir = os.path.join(current_dir, '../../lists')
     org_id_lists = []
     for org_id_list_file in glob.glob(codes_dir + '/*/*.json'):
         with open(org_id_list_file) as org_id_list:
@@ -178,10 +179,10 @@ def refresh_data(branch="master"):
 
     try:
         sha = requests.get(
-            'https://api.github.com/repos/opendataservices/org-ids/branches/'+branch
+            'https://api.github.com/repos/org-id/register/branches/'+branch
         ).json()['commit']['sha']
         using_github = True
-        if sha == git_commit_ref[branch]:
+        if sha == git_commit_ref.get(branch,''):
             return "Not updating as sha has not changed: {}".format(sha)
     except Exception:
         using_github = False
@@ -191,12 +192,14 @@ def refresh_data(branch="master"):
 
     if using_github:
         try:
+            print("Starting schema load from GitHub")
             schemas = load_schemas_from_github(branch)
         except Exception:
             raise
             using_github = False
             schemas = load_schemas_from_disk()
     else:
+        print("Loading from disk")
         schemas = load_schemas_from_disk()
 
     lookups = create_codelist_lookups(schemas)
