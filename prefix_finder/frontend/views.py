@@ -494,67 +494,6 @@ def list_details(request, prefix):
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch})
 
-
-def edit_details(request, prefix):
-    use_branch = request.session.get('branch', 'master')
-    folder = prefix.split("-")[0].lower()
-    sha = ""
-
-    try:
-        json_data = request.POST['json_data']
-    except:
-        json_data = False
-
-    if json_data:
-        payload = {
-            "content":base64.b64encode(bytes(request.POST['json_data'],'utf-8')).decode(),
-            "message":"Updating " + prefix + " from edit tool",
-            "committer":{
-                "name":"org-id.guide user",
-                "email":"contact@org-id.guide"
-            },
-            "branch":prefix
-        }
-        # If we have a SHA, the branch already exists
-        if(request.POST['sha']):
-            # Let's get the current file sha
-            r = requests.get("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json?ref="+prefix.upper()) 
-            file_sha = r.json()['sha']
-            payload['sha'] = file_sha
-        else: 
-            git_create_branch(prefix)
-
-        print(payload)
-        print("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json")
-        print(settings.GITHUB_TOKEN)
-        r = requests.put("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json", 
-            headers={"Authorization":"token "+settings.GITHUB_TOKEN},data=json.dumps(payload))
-
-        print(r.json())
-        ## ToDo: Report back to the user on the updates...
-        ## ToDo: Report back to the user on any errors...
-        ## ToDo: Report on opportunity to make a pull request
-
-    # First we check check for an existing branch for this code with edits on it.
-    try:
-        r = requests.get("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json?ref="+prefix.upper()) 
-        data = r.json()
-        sha = data['sha']
-        org_list = json.loads(base64.b64decode(data['content']).decode())    
-        message = "Existing updates to this entry have been proposed. The latest draft has been loaded below."
-        # ToDO: We should load and display the history of recent changes to the entry from commit logs
-    except Exception:
-        # Then we check for an existing entry in the check-out branch
-        try:
-            org_list = dict(org_id_dict[use_branch][prefix])
-            del org_list['quality']
-            del org_list['quality_explained']
-        except KeyError:
-            org_list={"name":{"en":"Newlist","local":""},"url":"","description":{"en":""},"coverage":[],"subnationalCoverage":[],"structure":[],"sector":[],"code":"","confirmed":False,"deprecated":False,"access":{"onlineAccessDetails":"","publicDatabase":"","guidanceOnLocatingIds":"","exampleIdentifiers":"","languages":[""]},"data":{"availability":[],"dataAccessDetails":"AnAPIisavailableathttps://developer.companieshouse.gov.uk/api/docs/andbulkdataisprovidedathttp://download.companieshouse.gov.uk/en_output.html","features":[],"licenseDetails":""},"meta":{"source":"","lastUpdated":""},"links":{"opencorporates":"","wikipedia":""},"formerPrefixes":[]}
-    
-    return render(request, 'edit.html', context={'sha':sha,'org_list': org_list, 'org_json': json.dumps(org_list), "message":message})
-
-
 def _get_filename():
     if git_commit_ref:
         return git_commit_ref[:10]
@@ -654,20 +593,3 @@ def xml_download(request):
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.xml"'.format(_get_filename())
     return response
 
-
-
-def git_create_branch(branch):
-    # ToDo - Add error handling
-
-    r = requests.get("https://api.github.com/repos/org-id/register/branches/master")
-    master_sha = r.json()['commit']['sha']
-
-    payload = {
-        "ref":"refs/heads/" + branch,
-        "sha":master_sha
-    }
-
-    r = requests.post("https://api.github.com/repos/orgidguide/apitests/git/refs", headers={"Authorization":"token "+access_token},
-    data=json.dumps(payload))
-
-    return r
