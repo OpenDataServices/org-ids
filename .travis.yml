@@ -10,4 +10,3 @@ install:
 
 script:
     - "BROWSER=PhantomJS py.test"
-    - "py.test tests/*"
