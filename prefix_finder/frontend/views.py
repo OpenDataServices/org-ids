@@ -1,3 +1,7 @@
+##ToDo:
+# * Use auth token throughout the application to avoid getting throttled by GitHub
+# * Contine work on edit view to fetch updated list
+
 import os
 import json
 import glob
@@ -6,9 +10,10 @@ import io
 import csv
 from collections import OrderedDict
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from django.conf import settings
+
 import requests
 import datetime
 
@@ -25,19 +30,20 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 
 ##globals
 lookups = None
-org_id_dict = None
-git_commit_ref = ''
-
+org_id_dict = {}
+git_commit_ref = {'master':''}
+branch = 'master'
 
 def load_schemas_from_github(branch="master"):
     schemas = {}
-    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/"+branch+".zip")
+    response = requests.get("https://github.com/org-id/register/archive/"+branch+".zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
         for filename in ziped_repo.namelist():
             filename_split = filename.split("/")[1:]
             if len(filename_split) == 2 and filename_split[0] == "schema" and filename_split[-1].endswith(".json"):
                 with ziped_repo.open(filename) as schema_file:
                     schemas[filename_split[-1].split(".")[0]] = json.loads(schema_file.read().decode('utf-8'))
+    print("Loaded schemas from GitHub")
     return schemas
 
 
@@ -79,20 +85,20 @@ def create_codelist_lookups(schemas):
     return lookups
 
 
-def load_org_id_lists_from_github():
+def load_org_id_lists_from_github(branch="master"):
     org_id_lists = []
-    response = requests.get("https://github.com/OpenDataServices/org-ids/archive/master.zip")
+    response = requests.get("https://github.com/org-id/register/archive/"+branch+".zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
         for filename in ziped_repo.namelist():
             filename_split = filename.split("/")[1:]
-            if len(filename_split) == 3 and filename_split[0] == "codes" and filename_split[-1].endswith(".json"):
+            if len(filename_split) == 3 and filename_split[0] == "lists" and filename_split[-1].endswith(".json"):
                 with ziped_repo.open(filename) as schema_file:
                     org_id_lists.append(json.loads(schema_file.read().decode('utf-8')))
     return org_id_lists
 
 
 def load_org_id_lists_from_disk():
-    codes_dir = os.path.join(current_dir, '../../codes')
+    codes_dir = os.path.join(current_dir, '../../lists')
     org_id_lists = []
     for org_id_list_file in glob.glob(codes_dir + '/*/*.json'):
         with open(org_id_list_file) as org_id_list:
@@ -148,7 +154,7 @@ def augment_structure(org_id_lists):
             if split[0] not in prefix['structure']:
                 prefix['structure'].append(split[0])
 
-
+ 
 def add_titles(org_list):
     '''Add coverage_titles and subnationalCoverage_titles to organisation lists'''
     coverage_codes = org_list.get('coverage')
@@ -170,17 +176,17 @@ def add_titles(org_list):
         org_list['sector_titles'] = [tup[1] for tup in lookups['sector'] if tup[0] in sector_codes]
 
 
-def refresh_data():
+def refresh_data(branch="master"):
     global lookups
     global org_id_dict
     global git_commit_ref
 
     try:
         sha = requests.get(
-            'https://api.github.com/repos/opendataservices/org-ids/branches/master'
+            'https://api.github.com/repos/org-id/register/branches/'+branch
         ).json()['commit']['sha']
         using_github = True
-        if sha == git_commit_ref:
+        if sha == git_commit_ref.get(branch,''):
             return "Not updating as sha has not changed: {}".format(sha)
     except Exception:
         using_github = False
@@ -190,19 +196,21 @@ def refresh_data():
 
     if using_github:
         try:
-            schemas = load_schemas_from_github()
+            print("Starting schema load from GitHub")
+            schemas = load_schemas_from_github(branch)
         except Exception:
             raise
             using_github = False
             schemas = load_schemas_from_disk()
     else:
+        print("Loading from disk")
         schemas = load_schemas_from_disk()
 
     lookups = create_codelist_lookups(schemas)
-    
+
     if using_github:
         try:
-            org_id_lists = load_org_id_lists_from_github()
+            org_id_lists = load_org_id_lists_from_github(branch)
         except:
             raise
             using_github = False
@@ -213,20 +221,19 @@ def refresh_data():
     augment_quality(schemas, org_id_lists)
     augment_structure(org_id_lists)
 
-    org_id_dict = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list.get('confirmed')}
+    org_id_dict[branch] = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list.get('confirmed')}
 
     if using_github:
-        git_commit_ref = sha
+        git_commit_ref[branch] = sha
         return "Loaded from github: {}".format(sha)
     else:
         return "Loaded from disk"
 
+print(refresh_data())
 
-refresh_data()
 
-
-def filter_and_score_results(query):
-    indexed = {key: value.copy() for key, value in org_id_dict.items()}
+def filter_and_score_results(query,use_branch="master"):
+    indexed = {key: value.copy() for key, value in org_id_dict[use_branch].items()}
     for prefix in list(indexed.values()):
         prefix['relevance'] = 0
         prefix['relevance_debug'] = []
@@ -318,7 +325,7 @@ def filter_and_score_results(query):
 
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
         add_titles(value)
-        
+
         if (value['relevance'] >= RELEVANCE["SUGGESTED_RELEVANCE_THRESHOLD"]
             and value['quality'] > RELEVANCE["SUGGESTED_QUALITY_THRESHOLD"]
             and not all_results['suggested'] or (all_results['suggested'] and value['relevance'] == all_results['suggested'][0]['relevance'])):
@@ -441,8 +448,16 @@ def get_lookups(query_dict):
 def update_lists(request):
     return HttpResponse(refresh_data())
 
+def preview_branch(request,branch_name):
+    print("Loading branch "+ branch_name)
+    refresh_data(branch_name)
+    request.session['branch'] = branch_name
+    return redirect('home')
+    
 
 def home(request):
+    use_branch = request.session.get('branch', 'master')
+
     query = {key: value for key, value in request.GET.items() if value}
     context = {
         "lookups": {
@@ -453,7 +468,7 @@ def home(request):
     }
     if query:
         context['lookups'] = get_lookups(query)
-        context['all_results'] = filter_and_score_results(query)
+        context['all_results'] = filter_and_score_results(query,use_branch)
         context['query'] = query
     else:
         query = {'coverage': '', 'structure': '', 'sector': ''}
@@ -462,20 +477,21 @@ def home(request):
 
 
     context['local'] = settings.LOCAL_DATA
-    
+    context['branch'] = use_branch
 
     return render(request, "home.html", context=context)
 
 
 def list_details(request, prefix):
+    use_branch = request.session.get('branch', 'master')
+
     try:
-        org_list = org_id_dict[prefix].copy()
+        org_list = org_id_dict[use_branch][prefix].copy()
         add_titles(org_list)
 
     except KeyError:
         raise Http404('Organisation list {} does not exist'.format(prefix))
-    return render(request, 'list.html', context={'org_list': org_list})
-
+    return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch})
 
 def _get_filename():
     if git_commit_ref:
@@ -485,7 +501,8 @@ def _get_filename():
 
 
 def json_download(request):
-    response = HttpResponse(json.dumps({"lists": list(org_id_dict.values())}, indent=2), content_type='text/json')
+    use_branch = request.session.get('branch', 'master')
+    response = HttpResponse(json.dumps({"lists": list(org_id_dict[use_branch].values())}, indent=2), content_type='text/json')
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.json"'.format(_get_filename())
     return response
 
@@ -502,9 +519,10 @@ def _flatten_list(obj, path=''):
 
 
 def csv_download(request):
+    use_branch = request.session.get('branch', 'master')
     all_keys = set()
     all_rows = []
-    for item in org_id_dict.values():
+    for item in org_id_dict[use_branch].values():
         row = dict(_flatten_list(item))
         all_keys.update(row.keys())
         all_rows.append(row)
@@ -529,14 +547,14 @@ def csv_download(request):
 import lxml.etree as ET
 
 
-def make_xml_codelist():
+def make_xml_codelist(use_branch):
     root = ET.Element("codelist")
     meta = ET.SubElement(root, "metadata")
     ET.SubElement(ET.SubElement(meta, "name"),"narrative").text = "Organization Identifier Lists"
     ET.SubElement(ET.SubElement(meta, "description"),"narrative").text = "Organisation identifier lists and their code. These can be used as the prefix for an organisation identifier. For general guidance about constructing Organisation Identifiers, please see http://iatistandard.org/organisation-identifiers/  This list was formerly maintained by the IATI Secretariat as the Organization Registration Agency codelist. This version is maintained by the Identify-Org project, of which IATI is a member. New code requests should be made via Identify-org.net"
     items = ET.SubElement(root, "codelist-items")
 
-    for entry in org_id_dict.values():
+    for entry in org_id_dict[use_branch].values():
         if entry['access'] and entry['access']['availableOnline']:
             publicdb = str(1)
         else:
@@ -569,6 +587,8 @@ def make_xml_codelist():
 
 
 def xml_download(request):
-    response = HttpResponse(make_xml_codelist(), content_type='text/xml')
+    use_branch = request.session.get('branch', 'master')
+    response = HttpResponse(make_xml_codelist(use_branch), content_type='text/xml')
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.xml"'.format(_get_filename())
     return response
+
