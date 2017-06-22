@@ -547,7 +547,7 @@ def csv_download(request):
 import lxml.etree as ET
 
 
-def make_xml_codelist(use_branch):
+def make_xml_codelist(use_branch="master"):
     root = ET.Element("codelist")
     meta = ET.SubElement(root, "metadata")
     ET.SubElement(ET.SubElement(meta, "name"),"narrative").text = "Organization Identifier Lists"
