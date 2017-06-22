@@ -32,6 +32,7 @@ env = environ.Env(  # set default values and casting
     SECRET_KEY=(str, secret_key),
     DB_NAME=(str, os.path.join(BASE_DIR, 'db.sqlite3')),
     LOCAL_DATA=(bool, False),
+    GITHUB_TOKEN=[str,'']
 )
 
 PIWIK = {
@@ -40,6 +41,8 @@ PIWIK = {
 }
 
 LOCAL_DATA = env('LOCAL_DATA')
+
+GITHUB_TOKEN = env('GITHUB_TOKEN')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
