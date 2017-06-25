@@ -12,12 +12,17 @@
   </div>
   <div class="panel-body">
      {% if existing_edits = True %}
-      There are existing edits for this code. You can:
-      <ul>
-        <li>Make further edits below</li>
-        <li><a href="/_preview_branch/{{ org_list.code }}">Preview the changes</a></li>
-        <li>Submit a <a href="/edit/{{ org_list.code }}?pull_request=true">pull request for these changes to be merged</a></li>
-      </ul>
+
+        {% if pull_request %}
+          Your pull request was made and <a href="{{ pull_request.html_url }}">can be reviewed here</a>.
+        {% else %}
+            There are existing edits for this code. You can:
+            <ul>
+              <li>Make further edits below</li>
+              <li><a href="/_preview_branch/{{ org_list.code }}">Preview the changes</a></li>
+              <li>Submit a <a href="/edit/{{ org_list.code }}?pull_request=true">pull request for these changes to be merged</a></li>
+            </ul>
+        {% endif %}
    {% endif %}
 
     {{ message }}

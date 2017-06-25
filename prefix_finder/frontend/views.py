@@ -696,8 +696,17 @@ def edit_details(request, prefix):
             file_sha = r.json()['sha']
             payload['sha'] = file_sha
         else: 
+            # We need to create the branch
             r = git_create_branch(prefix)
             print(r.json())
+            # We need to check if this file already exists on the master branch to get a SHA
+            try:
+                r = requests.get("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json?ref=master",
+                headers=headers) 
+                file_sha = r.json()['sha']
+                payload['sha'] = file_sha
+            except:
+                pass
 
         r = requests.put("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json", 
             headers=headers,
