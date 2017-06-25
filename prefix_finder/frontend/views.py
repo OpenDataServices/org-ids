@@ -8,11 +8,13 @@ import glob
 import zipfile
 import io
 import csv
+import base64
 from collections import OrderedDict
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from django.conf import settings
+
 
 import requests
 import datetime
@@ -33,6 +35,9 @@ lookups = None
 org_id_dict = {}
 git_commit_ref = {'master':''}
 branch = 'master'
+
+def ready():
+    print("RUNNING READY")
 
 def load_schemas_from_github(branch="master"):
     schemas = {}
@@ -460,7 +465,7 @@ def preview_branch(request,branch_name):
     print("Loading branch "+ branch_name)
     refresh_data(branch_name)
     request.session['branch'] = branch_name
-    return redirect('home')
+    return redirect('/list/' + branch_name)
     
 
 def home(request):
@@ -599,4 +604,116 @@ def xml_download(request):
     response = HttpResponse(make_xml_codelist(use_branch), content_type='text/xml')
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.xml"'.format(_get_filename())
     return response
+
+
+def git_create_branch(branch):
+    # ToDo - Add error handling
+    if(settings.GITHUB_TOKEN):
+        headers={"Authorization":"token "+settings.GITHUB_TOKEN}
+    else:
+        headers={}
+
+    r = requests.get("https://api.github.com/repos/org-id/register/branches/master",
+        headers=headers)
+    master_sha = r.json()['commit']['sha']
+
+    payload = {
+        "ref":"refs/heads/" + branch,
+        "sha":master_sha
+    }
+
+    r = requests.post("https://api.github.com/repos/orgidguide/apitests/git/refs", headers={"Authorization":"token "+access_token},
+    data=json.dumps(payload))
+
+    return r
+
+
+def git_pull_request(branch):
+    if(settings.GITHUB_TOKEN):
+        headers={"Authorization":"token "+settings.GITHUB_TOKEN}
+    else:
+        headers={}
+
+    payload = {
+        "title":"Updated registry entry for " + branch,
+        "body":"Updates are suggested to " + branch,
+        "head":branch,
+        "base":"master"
+    }
+
+    r = requests.post("https://api.github.com/repos/org-id/register/pulls", 
+            headers=headers,
+            data=json.dumps(payload))
+
+    print(r.json())
+
+def edit_details(request, prefix):
+    use_branch = request.session.get('branch', 'master')
+    folder = prefix.split("-")[0].lower()
+    sha = ""
+    message = ""
+    existing_edits = False
+    if(settings.GITHUB_TOKEN):
+        headers={"Authorization":"token "+settings.GITHUB_TOKEN}
+    else:
+        headers={}
+
+    try:
+        json_data = request.POST['json_data']
+    except:
+        json_data = False
+
+    if json_data:
+        payload = {
+            "content":base64.b64encode(bytes(request.POST['json_data'],'utf-8')).decode(),
+            "message":"Updating " + prefix + " from edit tool",
+            "committer":{
+                "name":"org-id.guide user",
+                "email":"contact@org-id.guide"
+            },
+            "branch":prefix
+        }
+        # If we have a SHA, the branch already exists
+        if(request.POST['sha']):
+            # Let's get the current file sha
+            r = requests.get("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json?ref="+prefix.upper(),
+                headers=headers) 
+            file_sha = r.json()['sha']
+            payload['sha'] = file_sha
+        else: 
+            git_create_branch(prefix)
+
+        print("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json")
+        r = requests.put("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json", 
+            headers=headers,
+            data=json.dumps(payload))
+
+        print(r.json())
+        ## ToDo: Report back to the user on the updates...
+        ## ToDo: Report back to the user on any errors...
+        ## ToDo: Report on opportunity to make a pull request
+
+    # First we check check for an existing branch for this code with edits on it.
+    try:
+        r = requests.get("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json?ref="+prefix.upper(),
+            headers=headers) 
+        data = r.json()
+        sha = data['sha']
+        existing_edits = True
+        org_list = json.loads(base64.b64decode(data['content']).decode())    
+        
+        # ToDO: We should load and display the history of recent changes to the entry from commit logs
+        
+    except Exception:
+        # Then we check for an existing entry in the check-out branch
+        try:
+            org_list = dict(org_id_dict[use_branch][prefix])
+            del org_list['quality']
+            del org_list['quality_explained']
+        except KeyError:
+            org_list={"name":{"en":"Newlist","local":""},"code":prefix,"url":"","description":{"en":""},"coverage":[],"subnationalCoverage":[],"structure":[],"sector":[],"code":"","confirmed":False,"deprecated":False,"access":{"onlineAccessDetails":"","publicDatabase":"","guidanceOnLocatingIds":"","exampleIdentifiers":"","languages":[""]},"data":{"availability":[],"dataAccessDetails":"","features":[],"licenseDetails":""},"meta":{"source":"","lastUpdated":""},"links":{"opencorporates":"","wikipedia":""},"formerPrefixes":[]}
+    
+    git_pull_request(prefix)
+
+    return render(request, 'edit.html', context={'sha':sha,'org_list': org_list, 'org_json': json.dumps(org_list), "message":message,"existing_edits":existing_edits})
 
