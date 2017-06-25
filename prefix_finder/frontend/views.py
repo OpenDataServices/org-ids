@@ -181,9 +181,17 @@ def refresh_data(branch="master"):
     global org_id_dict
     global git_commit_ref
 
+    if(settings.GITHUB_TOKEN):
+        headers={"Authorization":"token "+settings.GITHUB_TOKEN}
+    else:
+        headers={}
+
+    print(headers)
+
     try:
         sha = requests.get(
-            'https://api.github.com/repos/org-id/register/branches/'+branch
+            'https://api.github.com/repos/org-id/register/branches/'+branch,
+            headers=headers
         ).json()['commit']['sha']
         using_github = True
         if sha == git_commit_ref.get(branch,''):

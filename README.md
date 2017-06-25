@@ -57,12 +57,15 @@ Steps to installation:
 * Install dependencies
 * Run the development server
 
+To use in editing mode you will need a GitHub Authorisation Token from a user with permission to write to the org-id/register repository. Replace {token} in the commands below with the token you obtain from https://github.com/settings/tokens 
+
 ```
 git clone https://github.com/OpenDataServices/org-ids.git
 cd org-ids
 virtualenv .ve --python=/usr/bin/python3
 source .ve/bin/activate
 pip install -r requirements_dev.txt
+export GITHUB_TOKEN={token}
 python manage.py runserver
 ```
 
