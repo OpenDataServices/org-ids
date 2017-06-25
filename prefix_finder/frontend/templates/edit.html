@@ -30,7 +30,7 @@
 
     <script><!--
         var element = document.getElementById('editor_container');
-        var editor = new JSONEditor(element,{ajax:true, schema:{"$ref":"{% static 'js/list-schema-temp.json'%}"},startval:{{ org_json|safe }},theme:'bootstrap3',disable_edit_json:true,disable_collapse:true,disable_properties:false,iconlib:"bootstrap3",display_required_only:false })
+        var editor = new JSONEditor(element,{ajax:true, schema:{"$ref":"{% static 'js/list-schema-temp.json'%}"},startval:{{ org_json|safe }},theme:'bootstrap3',disable_edit_json:false,disable_collapse:true,disable_properties:false,iconlib:"bootstrap3",display_required_only:false })
         editor.on('change',function() {
              document.getElementById('json_data').value = JSON.stringify(editor.getValue(),null,2) // Do something
         }) ;

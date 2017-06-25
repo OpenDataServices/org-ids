@@ -191,8 +191,6 @@ def refresh_data(branch="master"):
     else:
         headers={}
 
-    print(headers)
-
     try:
         sha = requests.get(
             'https://api.github.com/repos/org-id/register/branches/'+branch,
@@ -622,22 +620,37 @@ def git_create_branch(branch):
         "sha":master_sha
     }
 
-    r = requests.post("https://api.github.com/repos/orgidguide/apitests/git/refs", headers={"Authorization":"token "+access_token},
+    r = requests.post("https://api.github.com/repos/org-id/register/git/refs", headers=headers,
     data=json.dumps(payload))
 
     return r
 
 
-def git_pull_request(branch):
+def git_pull_request(prefix,org_list,new):
     if(settings.GITHUB_TOKEN):
         headers={"Authorization":"token "+settings.GITHUB_TOKEN}
     else:
         headers={}
 
+    if new:
+        message = "A new list has been proposed with the code " + prefix
+        title_context = "New "
+    else:
+        message = "An update to the list with code " + prefix + " has been proposed"
+        title_context = "Updated "
+
+    message = message + "\n\n" + "**List title:** " + org_list['name']['en']
+
+    message = message + "\n\n Preview the platform with this list at [http://org-id.guide/_preview_branch/" + prefix + "](http://org-id.guide/_preview_branch/" + prefix + ") "
+    message = message + " (visiting [http://org-id.guide/list/" + prefix + "](http://org-id.guide/list/" + prefix + ") when the preview is active"
+    message = message + " or check the files changed options above."
+    
+    message = message + "\n\n" + "Unless objections are raised, this update will be merged after 7 days."
+
     payload = {
-        "title":"Updated registry entry for " + branch,
-        "body":"Updates are suggested to " + branch,
-        "head":branch,
+        "title":title_context + " registry entry for '" + org_list['name']['en'] + "' ("+prefix +")",
+        "body":message,
+        "head":prefix,
         "base":"master"
     }
 
@@ -645,7 +658,8 @@ def git_pull_request(branch):
             headers=headers,
             data=json.dumps(payload))
 
-    print(r.json())
+
+    return r
 
 def edit_details(request, prefix):
     use_branch = request.session.get('branch', 'master')
@@ -653,6 +667,7 @@ def edit_details(request, prefix):
     sha = ""
     message = ""
     existing_edits = False
+    pull_request = ""
     if(settings.GITHUB_TOKEN):
         headers={"Authorization":"token "+settings.GITHUB_TOKEN}
     else:
@@ -681,9 +696,9 @@ def edit_details(request, prefix):
             file_sha = r.json()['sha']
             payload['sha'] = file_sha
         else: 
-            git_create_branch(prefix)
+            r = git_create_branch(prefix)
+            print(r.json())
 
-        print("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json")
         r = requests.put("https://api.github.com/repos/org-id/register/contents/lists/"+folder+ "/" + prefix.lower()+".json", 
             headers=headers,
             data=json.dumps(payload))
@@ -691,7 +706,6 @@ def edit_details(request, prefix):
         print(r.json())
         ## ToDo: Report back to the user on the updates...
         ## ToDo: Report back to the user on any errors...
-        ## ToDo: Report on opportunity to make a pull request
 
     # First we check check for an existing branch for this code with edits on it.
     try:
@@ -702,10 +716,27 @@ def edit_details(request, prefix):
         existing_edits = True
         org_list = json.loads(base64.b64decode(data['content']).decode())    
         
+        # Check if we've been asked to make a pull request
+        try:
+            if request.GET["pull_request"]:
+                print("Pull request for " + prefix)
+
+                # Check if this is already on master
+                if org_id_dict['master'].get(prefix):
+                    new = False
+                else:
+                    new = True
+
+                pull_request = git_pull_request(prefix,org_list,new)
+                print(pull_request)
+        except Exception as e:
+            print(e)
+            pass
+
         # ToDO: We should load and display the history of recent changes to the entry from commit logs
         
     except Exception:
-        # Then we check for an existing entry in the check-out branch
+        # Then we check for an existing entry in the checked-out branch
         try:
             org_list = dict(org_id_dict[use_branch][prefix])
             del org_list['quality']
@@ -713,7 +744,7 @@ def edit_details(request, prefix):
         except KeyError:
             org_list={"name":{"en":"Newlist","local":""},"code":prefix,"url":"","description":{"en":""},"coverage":[],"subnationalCoverage":[],"structure":[],"sector":[],"code":"","confirmed":False,"deprecated":False,"access":{"onlineAccessDetails":"","publicDatabase":"","guidanceOnLocatingIds":"","exampleIdentifiers":"","languages":[""]},"data":{"availability":[],"dataAccessDetails":"","features":[],"licenseDetails":""},"meta":{"source":"","lastUpdated":""},"links":{"opencorporates":"","wikipedia":""},"formerPrefixes":[]}
     
-    git_pull_request(prefix)
+    
 
-    return render(request, 'edit.html', context={'sha':sha,'org_list': org_list, 'org_json': json.dumps(org_list), "message":message,"existing_edits":existing_edits})
+    return render(request, 'edit.html', context={'sha':sha,'org_list': org_list, 'org_json': json.dumps(org_list), "message":message,"existing_edits":existing_edits,"pull_request":pull_request})
 
