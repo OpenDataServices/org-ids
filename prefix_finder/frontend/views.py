@@ -121,7 +121,6 @@ def augment_quality(schemas, org_id_lists):
     listtype_names = {item['code']: item['title']['en'] for item in schemas['codelist-listType']['listType']}
 
     
-
     for prefix in org_id_lists:
         quality = 0
         quality_explained = {}
@@ -184,6 +183,7 @@ def add_titles(org_list):
 def refresh_data(branch="master"):
     global lookups
     global org_id_dict
+    global all_org_id_dict
     global git_commit_ref
 
     if(settings.GITHUB_TOKEN):
@@ -232,7 +232,10 @@ def refresh_data(branch="master"):
     augment_quality(schemas, org_id_lists)
     augment_structure(org_id_lists)
 
-    org_id_dict[branch] = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list.get('confirmed')}
+    if(branch=='master'):
+        org_id_dict[branch] = {org_id_list['code']: org_id_list for org_id_list in org_id_lists if org_id_list.get('confirmed')}
+    else:
+        org_id_dict[branch] = {org_id_list['code']: org_id_list for org_id_list in org_id_lists}
 
     if using_github:
         git_commit_ref[branch] = sha
@@ -463,7 +466,10 @@ def preview_branch(request,branch_name):
     print("Loading branch "+ branch_name)
     refresh_data(branch_name)
     request.session['branch'] = branch_name
-    return redirect('/list/' + branch_name)
+    if(branch_name=='master'):
+        return redirect('/')
+    else: 
+        return redirect('/list/' +  branch_name)
     
 
 def home(request):
@@ -727,7 +733,7 @@ def edit_details(request, prefix):
         
         # Check if we've been asked to make a pull request
         try:
-            if request.GET["pull_request"]:
+            if request.GET["pull_request"] == 'true':
                 print("Pull request for " + prefix)
 
                 # Check if this is already on master
@@ -737,7 +743,6 @@ def edit_details(request, prefix):
                     new = True
 
                 pull_request = git_pull_request(prefix,org_list,new)
-                print(pull_request)
         except Exception as e:
             print(e)
             pass
@@ -751,7 +756,7 @@ def edit_details(request, prefix):
             del org_list['quality']
             del org_list['quality_explained']
         except KeyError:
-            org_list={"name":{"en":"Newlist","local":""},"code":prefix,"url":"","description":{"en":""},"coverage":[],"subnationalCoverage":[],"structure":[],"sector":[],"code":"","confirmed":False,"deprecated":False,"access":{"onlineAccessDetails":"","publicDatabase":"","guidanceOnLocatingIds":"","exampleIdentifiers":"","languages":[""]},"data":{"availability":[],"dataAccessDetails":"","features":[],"licenseDetails":""},"meta":{"source":"","lastUpdated":""},"links":{"opencorporates":"","wikipedia":""},"formerPrefixes":[]}
+            org_list={  "name": {    "en": "Newlist",    "local": ""  },  "url": "",  "description": {    "en": ""  },  "coverage": [],  "subnationalCoverage": [],  "structure": [],  "sector": [],  "code": "",  "confirmed": False,  "deprecated": False,  "access": {    "onlineAccessDetails": "",    "publicDatabase": "",    "guidanceOnLocatingIds": "",    "exampleIdentifiers": "",    "languages": [      ""    ],    "availableOnline": False  },  "data": {    "availability": [],    "dataAccessDetails": "",    "features": [],    "licenseDetails": "",    "licenseStatus": "open_license"  },  "meta": {    "source": "",    "lastUpdated": ""  },  "links": {    "opencorporates": "",    "wikipedia": ""  },  "formerPrefixes": [],  "listType": ""}
     
     
 
