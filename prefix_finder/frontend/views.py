@@ -493,9 +493,9 @@ def list_details(request, prefix):
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch})
 
-def _get_filename():
-    if git_commit_ref:
-        return git_commit_ref[:10]
+def _get_filename(use_branch='master'):
+    if git_commit_ref[use_branch]:
+        return git_commit_ref[use_branch][:10]
     else:
         return datetime.datetime.now().strftime("%Y%m%d%H%M%S")
 
@@ -540,7 +540,7 @@ def csv_download(request):
 
     response = HttpResponse(output.getvalue(), content_type='text/csv')
 
-    response['Content-Disposition'] = 'attachment; filename="org-id-{0}.csv"'.format(_get_filename())
+    response['Content-Disposition'] = 'attachment; filename="org-id-{0}.csv"'.format(_get_filename(use_branch))
     return response
 
 
