@@ -551,7 +551,7 @@ def make_xml_codelist(use_branch="master"):
     items = ET.SubElement(root, "codelist-items")
 
     for entry in org_id_dict[use_branch].values():
-        if entry['access'] and entry['access']['availableOnline']:
+        if entry['access'] and entry['access'].get('availableOnline'):
             publicdb = str(1)
         else:
             publicdb = str(0)
