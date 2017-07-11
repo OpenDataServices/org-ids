@@ -551,15 +551,15 @@ def make_xml_codelist(use_branch="master"):
     items = ET.SubElement(root, "codelist-items")
 
     for entry in org_id_dict[use_branch].values():
-        if entry['access'] and entry['access'].get('availableOnline'):
+        if entry.get('access') and entry['access'].get('availableOnline'):
             publicdb = str(1)
         else:
             publicdb = str(0)
 
-        if entry['deprecated']:
+        if entry.get('deprecated'):
             status = 'withdrawn'
         else:
-            if entry['confirmed']:
+            if entry.get('confirmed'):
                 status = 'active'
             else:
                 status = 'draft'
@@ -572,7 +572,7 @@ def make_xml_codelist(use_branch="master"):
 
         description = ET.SubElement(item, "description")
         ET.SubElement(description, "narrative").text = entry['description']['en']
-        if entry['coverage']:
+        if entry.get('coverage'):
             ET.SubElement(item, "category").text = entry['coverage'][0]
         else:
             ET.SubElement(item, "category").text = '-'
