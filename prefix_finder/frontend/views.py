@@ -34,6 +34,7 @@ org_id_dict = {}
 git_commit_ref = {'master':''}
 branch = 'master'
 
+
 def load_schemas_from_github(branch="master"):
     schemas = {}
     response = requests.get("https://github.com/org-id/register/archive/"+branch+".zip")
@@ -115,8 +116,6 @@ def augment_quality(schemas, org_id_lists):
     listtype_score = {item['code']: item['quality_score'] for item in schemas['codelist-listType']['listType']}
     listtype_names = {item['code']: item['title']['en'] for item in schemas['codelist-listType']['listType']}
 
-    
-
     for prefix in org_id_lists:
         quality = 0
         quality_explained = {}
@@ -140,7 +139,6 @@ def augment_quality(schemas, org_id_lists):
             else:
                 print('No licenseStatus for {}. Found in code {}'.format(prefix['listType'], prefix['code']))
 
-        
         prefix['quality_explained'] = quality_explained
         prefix['quality'] = min(quality, 100)
 
@@ -249,8 +247,6 @@ def filter_and_score_results(query,use_branch="master"):
             prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]
             prefix['relevance_debug'].append("Primary list +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
 
-
-
         if coverage:
             if prefix.get('coverage'):
                 if coverage in prefix['coverage']:
@@ -338,7 +334,7 @@ def filter_and_score_results(query,use_branch="master"):
     return all_results
 
 
-def get_lookups(query_dict):
+def get_lookups(query_dict, use_branch='master'):
     ''' Get only those lookup combinations returning some result'''
     valid_lookups = {
         'coverage': None,
@@ -374,9 +370,8 @@ def get_lookups(query_dict):
     # Run the queries popping those lists that won't be returned
     # from a dict (list_code:list_data) of id lists.
     for q in queries:
-        indexed = {key: value for key, value in org_id_dict.items()}
+        indexed = {key: value for key, value in org_id_dict[use_branch].items()}
         for org_list in list(indexed.values()):
-
             for key, value in q.items():
                 if key == 'lookups':
                     continue
@@ -448,6 +443,7 @@ def get_lookups(query_dict):
 def update_lists(request):
     return HttpResponse(refresh_data())
 
+
 def preview_branch(request,branch_name):
     print("Loading branch "+ branch_name)
     refresh_data(branch_name)
@@ -467,14 +463,13 @@ def home(request):
         }
     }
     if query:
-        context['lookups'] = get_lookups(query)
+        context['lookups'] = get_lookups(query, use_branch)
         context['all_results'] = filter_and_score_results(query,use_branch)
         context['query'] = query
     else:
         query = {'coverage': '', 'structure': '', 'sector': ''}
         context['query'] = False
         context['all_results'] = {}
-
 
     context['local'] = settings.LOCAL_DATA
     context['branch'] = use_branch
@@ -492,6 +487,7 @@ def list_details(request, prefix):
     except KeyError:
         raise Http404('Organisation list {} does not exist'.format(prefix))
     return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch})
+
 
 def _get_filename(use_branch='master'):
     if git_commit_ref[use_branch]:
@@ -568,7 +564,6 @@ def make_xml_codelist(use_branch="master"):
             else:
                 status = 'draft'
 
-
         item = ET.SubElement(items, "codelist-item",**{'public-database':publicdb,'status':status})
         ET.SubElement(item, "code").text = entry['code']
 
@@ -591,4 +586,3 @@ def xml_download(request):
     response = HttpResponse(make_xml_codelist(use_branch), content_type='text/xml')
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.xml"'.format(_get_filename())
     return response
-
