@@ -152,9 +152,9 @@ def augment_structure(org_id_lists):
             if split[0] not in prefix['structure']:
                 prefix['structure'].append(split[0])
 
- 
+
 def add_titles(org_list):
-    '''Add coverage_titles and subnationalCoverage_titles to organisation lists'''
+    '''Add coverage_titles and subnationalCoverage_titles to organization lists'''
     coverage_codes = org_list.get('coverage')
     if coverage_codes:
         org_list['coverage_titles'] = [tup[1] for tup in lookups['coverage'] if tup[0] in coverage_codes]
@@ -449,14 +449,13 @@ def preview_branch(request,branch_name):
     refresh_data(branch_name)
     request.session['branch'] = branch_name
     return redirect('home')
-    
+
 
 def home(request):
     use_branch = request.session.get('branch', 'master')
-
     query = {key: value for key, value in request.GET.items() if value}
     context = {
-        "lookups": {
+        'lookups': {
             'coverage': lookups['coverage'],
             'structure': lookups['structure'],
             'sector': lookups['sector']
@@ -464,18 +463,33 @@ def home(request):
     }
     if query:
         context['lookups'] = get_lookups(query, use_branch)
-        context['all_results'] = filter_and_score_results(query,use_branch)
         context['query'] = query
     else:
         query = {'coverage': '', 'structure': '', 'sector': ''}
         context['query'] = False
-        context['all_results'] = {}
 
     context['local'] = settings.LOCAL_DATA
     context['branch'] = use_branch
 
     return render(request, "home.html", context=context)
 
+
+def results(request):
+    branch = request.session.get('branch', 'master')
+    query = {key: value for key, value in request.GET.items() if value}
+    context = {
+        'lookups': {
+            'coverage': lookups['coverage'],
+            'structure': lookups['structure'],
+            'sector': lookups['sector']
+        },
+        'all_results': filter_and_score_results(query, branch)
+    }
+
+    if query:
+        context['lookups'] = get_lookups(query, branch)
+
+    return render(request, 'results.html', context=context)
 
 def list_details(request, prefix):
     use_branch = request.session.get('branch', 'master')
@@ -485,8 +499,8 @@ def list_details(request, prefix):
         add_titles(org_list)
 
     except KeyError:
-        raise Http404('Organisation list {} does not exist'.format(prefix))
-    return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch})
+        raise Http404('Organization list {} does not exist'.format(prefix))
+    return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch, 'hide_sidebar_form': True})
 
 
 def _get_filename(use_branch='master'):
@@ -547,7 +561,7 @@ def make_xml_codelist(use_branch="master"):
     root = ET.Element("codelist")
     meta = ET.SubElement(root, "metadata")
     ET.SubElement(ET.SubElement(meta, "name"),"narrative").text = "Organization Identifier Lists"
-    ET.SubElement(ET.SubElement(meta, "description"),"narrative").text = "Organisation identifier lists and their code. These can be used as the prefix for an organisation identifier. For general guidance about constructing Organisation Identifiers, please see http://iatistandard.org/organisation-identifiers/  This list was formerly maintained by the IATI Secretariat as the Organization Registration Agency codelist. This version is maintained by the Identify-Org project, of which IATI is a member. New code requests should be made via Identify-org.net"
+    ET.SubElement(ET.SubElement(meta, "description"),"narrative").text = "Organization identifier lists and their code. These can be used as the prefix for an organization identifier. For general guidance about constructing Organization Identifiers, please see http://iatistandard.org/organization-identifiers/  This list was formerly maintained by the IATI Secretariat as the Organization Registration Agency codelist. This version is maintained by the Identify-Org project, of which IATI is a member. New code requests should be made via Identify-org.net"
     items = ET.SubElement(root, "codelist-items")
 
     for entry in org_id_dict[use_branch].values():
@@ -577,7 +591,7 @@ def make_xml_codelist(use_branch="master"):
         else:
             ET.SubElement(item, "category").text = '-'
         ET.SubElement(item, "url").text = entry['url']
-        
+
     return ET.tostring(root, encoding='unicode', pretty_print=True)
 
 

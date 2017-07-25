@@ -94,7 +94,7 @@ n2k = api_call("Need%20to%20know")
 country_map = OrderedDict([("Code", "countryCode"), ("Country", "country")])
 
 subnational_map = OrderedDict([("Code", "regionCode"),
-                               ("Jurisdiction", "country"), 
+                               ("Jurisdiction", "country"),
                                ("Title", "regionName")])
 
 subnational_table_map = {"Jurisdiction":
@@ -103,10 +103,10 @@ subnational_table_map = {"Jurisdiction":
 
 sector_map = {"Name": "name"}
 
-orgtype_map = OrderedDict([("Organisation Type", "name"), ("Parent", "subtypeOf")])
+orgtype_map = OrderedDict([("Organization Type", "name"), ("Parent", "subtypeOf")])
 
 orgtype_table_map = {"Parent": {"data": types,
-                                "mapping": {"Organisation Type": "name"}}}
+                                "mapping": {"Organization Type": "name"}}}
 
 identifier_map = OrderedDict(
     [("code", "code"),

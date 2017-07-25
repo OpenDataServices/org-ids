@@ -1,147 +1,98 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load results %}
+{% load i18n %}
 
 {% block main %}
-<div class="container-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2 class="text-center">Find an organization identifier...</h2>
-        <br>
-        <form>
-          <div class="form-group col-md-4">
-            <div class="select-label">I need identifiers for...</div>
-            <select name="structure" class="selectpicker has-suboption" data-live-search="true" data-width="300px">
-              <option value="">Any type of organisation</option>
-              {% for code, title, disabled in lookups.structure %}
-                <option {% if query.structure == code %} selected {% elif disabled %} disabled {% endif %} value="{{code}}">{% if title|slice:"1" in "A,E,I,O,U"|slice:',' %}An{%else%}A{%endif%} {{title|lower}}</option>
+  <main class="main-wrapper homepage" role="main">
+    <div class="homepage__topbar">
+      <a href="/about" class="button button--float-right button--transparent">About</a>
+    </div>
+
+    <img class="homepage__logo" src="/static/org-id-logo-full.png" alt="">
+
+    <form class="homepage__form" action="{% url "results" %}">
+      <label class="homepage__field">
+        I need identifiers for
+        <span class="homepage__select">
+          <select name="structure" class="has-suboption">
+            <option value="">Any type of organization</option>
+            {% for code, title, disabled in lookups.structure %}
+              <option {% if query.structure == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{% if title|slice:"1" in "AEIOU" %}An{%else%}A{%endif%} {{ title|lower }}</option>
+            {% endfor %}
+          </select>
+        </span>
+      </label>
+
+      {% if lookups.substructure %}
+        <label class="homepage__field">
+          In particular
+          <span class="homepage__select">
+            <select name="substructure">
+              <option value="">Any type</option>
+              {% for code, title, disabled in lookups.substructure %}
+                <option {% if query.substructure == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{% if title|slice:"1" in "AEIOU" %}An{%else%}A{%endif%} {{ title|lower }}</option>
               {% endfor %}
             </select>
-            {% if lookups.substructure %}
-              <div class="indented-option">
-                <div class="select-label">In particular...</div>
-                <select name="substructure" class="selectpicker" data-live-search="true" data-width="280px" onchange="this.form.submit()">
-                <option value="">Any type</option>
-                {% for code, title, disabled in lookups.substructure %}
-                  <option {% if query.substructure == code %} selected {% elif disabled %} disabled {% endif %} value="{{code}}">{% if title|slice:"1" in "A,E,I,O,U"|slice:',' %}An{%else%}A{%endif%} {{title|lower}}</option>
-                {% endfor %}
-                </select>
-              </div>
-            {% endif %}
-          </div>
+          </span>
+        </label>
+      {% endif %}
 
-          <div class="form-group col-md-4">
-            <div class="select-label">Registered in...</div>
-            <select name="coverage" class="selectpicker has-suboption" data-live-search="true" data-width="300px">
+      <label class="homepage__field">
+        Registered in
+        <span class="homepage__select">
+          <select name="coverage" class="has-suboption">
               <option value="">Any country</option>
               {% for code, title, disabled in lookups.coverage %}
-              <option {% if query.coverage == code %} selected {% elif disabled %} disabled {% endif %} value="{{code}}">{{title}}</option>
+                <option {% if query.coverage == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
+              {% endfor %}
+          </select>
+        </span>
+      </label>
+
+      {% if lookups.subnational %}
+        <label class="homepage__field">
+          In the state or region of
+          <span class="homepage__select">
+            <select name="subnational">
+              <option value="">Any subnational location</option>
+              {% for code, title, disabled in lookups.subnational %}
+                <option {% if query.subnational == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
               {% endfor %}
             </select>
-            {% if lookups.subnational %}
-              <div class="indented-option">
-                <div class="select-label">In the state or region of...</div>
-                <select name="subnational" class="selectpicker" data-live-search="true" data-width="280px" onchange="this.form.submit()">
-                <option value="">Any subnational location</option>
-                {% for code, title, disabled in lookups.subnational %}
-                  <option {% if query.subnational == code %} selected {% elif disabled %} disabled {% endif %} value="{{code}}">{{title}}</option>
-                {% endfor %}
-                </select>
-              </div>
-            {% endif %}
-          </div>
-         
-          <div class="form-group col-md-4">
-            <div class="select-label">Working in...</div>
-            <select name="sector" class="selectpicker" data-live-search="true" data-width="300px" onchange="this.form.submit()">
-              <option value="">Any sector</option>
-              {% for code, title, disabled in lookups.sector %}
-                 <option {% if query.sector == code %} selected {% elif disabled %} disabled {% endif %} value="{{code}}">{{title}}</option>
-              {% endfor %}
-            </select>
-          </div>
-          <div style="clear:both"></div>
-          <noscript><button type="submit" class="btn-primary btn">Find Prefixes</button></noscript>
-        </form>
-        <br>
-          {% if query %}
-            {% if all_results.suggested %}
-              {% with all_results.suggested as results %}
-                <h3 id="results" class="text-center">Suggested lists:</h3>
-                <p>
-                  We think one of the lists below will have a good chance of including the organisation(s) you are looking for...
-                </p>
-                {% include 'results.html' %}
-              {% endwith %}
-            {% else %}
-              <p>
-                We can't provide any <strong>suggested results</strong> for your query. Either narrow your query, or move to look at alternative lists below.
-              </p>
-            {% endif %}
+          </span>
+        </label>
+      {% endif %}
 
-            {% if all_results.recommended %}
-              {% with all_results.recommended as results %}
-              <h3 id="results" class="text-center">Possible lists:</h3>
-              <p>
-                  It's possible you will find the organisation(s) you are looking for in one of the lists below...
-              </p>
-              {% include 'results.html' %}
-              {% endwith %}
-            {% else %}
-              <h3 id="results" class="text-center">No alternative results</h3>
-            {% endif %}
+      <label class="homepage__field">
+        Working in
+        <span class="homepage__select">
+          <select name="sector" >
+            <option value="">Any sector</option>
+            {% for code, title, disabled in lookups.sector %}
+               <option {% if query.sector == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
+            {% endfor %}
+          </select>
+        </span>
+      </label>
 
-            {% if all_results.other %}
-              {% with all_results.other as results %}
-              <h3 id="results" class="text-center">Fall back identifier sources:</h3>
-              <p>
-               The following lists provide a fall back option when no other identifier sources are available. 
-              </p>
-              <br>
-              {% include 'results.html' %}
-              {% endwith %}
-            {% else %}
-              <h3 id="results" class="text-center">No Other Results</h3>
-            {% endif %}
-          {% else %}
-
-          <div class="jumbotron">
-          <h1>org-id.guide</h1>
-          <p>
-          Data is more valuable when you include recognised <strong>organisation identifiers</strong>.
-          </p>
-          <p>
-          We'll help you to find the best available source of identifiers for any kind of organisation: so you can provide better quality open data. 
-          </p>
-          <h2>Get started</h2>
-          <p>
-          Start searching above, or find out <a href="/about/">how to integrate org-id.guide into your application</a>.
-          </p>
-          <h2>Get involved</h2>
-          <p>
-          Are we missing a list? <a href="https://github.com/OpenDataServices/org-ids/issues">Get in touch to suggest additions or updates</a>.
-          </p>
-          </div>
-
-
-          {% endif %}
+      <div class="homepage__field">
+        <input type="submit" value="See lists" class="homepage__button"></input>
       </div>
-    </div>
-  </div>
-</div>
+    </form>
+
+    <footer>
+      <p>
+        {% trans "Built by" %} <a href="http://opendataservices.coop/">{% trans "Open Data Services" %}</a>.
+        {% trans "The code for this site is available on Github" %}: <a href="https://github.com/OpenDataServices/org-ids/">{%trans "org-ids" %}</a>.
+        {% trans "Licence" %}: <a href="https://www.gnu.org/licenses/agpl-3.0.html">{% trans "AGPLv3" %}</a>.
+        {% trans "Report/View issues" %}: <a href="https://github.com/OpenDataServices/org-ids/issues">{% trans "org-id issues" %}</a>.
+        <a href="{% url 'terms' %}">{% trans "Terms &amp; Conditions" %}</a>.
+        {% blocktrans %}Running version {% endblocktrans %}<a href="https://github.com/OpenDataServices/org-ids/tree/{{ request.tag }}">{{ request.tag }}</a>.
+      </p>
+    </footer>
+  </main>
 {% endblock %}
 
 {% block extra_scripts %}
-<script>
-$( ".has-suboption" ).change(function() {
-  if (this.name === 'coverage') {
-    $('select[name=subnational]').val('');
-  }
-  if (this.name === 'structure') {
-    $('select[name=substructure]').val('');
-  }
-  this.form.submit()
-});
-</script>
+  <script src="{% static 'js/main.js'%}"></script>
 {% endblock %}
