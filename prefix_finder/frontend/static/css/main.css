@@ -577,10 +577,10 @@ fieldset {
   color: rgba(0, 0, 0, 0.6);
 }
 .sidebar__footer .button {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.7);
   text-align: center;
   font-size: .9rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 .sidebar__footer .button:hover {
   border-color: #00a6ab;
