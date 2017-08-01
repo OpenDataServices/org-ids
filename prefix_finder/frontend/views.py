@@ -454,7 +454,7 @@ def preview_branch(request,branch_name):
 
 def home(request):
     use_branch = request.session.get('branch', 'master')
-    query = {key: value for key, value in request.GET.items() if value}
+    query = {key: value for key, value in request.GET.items() if value and value != 'all'}
     context = {
         'lookups': {
             'coverage': lookups['coverage'],
@@ -466,7 +466,6 @@ def home(request):
         context['lookups'] = get_lookups(query, use_branch)
         context['query'] = query
     else:
-        query = {'coverage': '', 'structure': '', 'sector': ''}
         context['query'] = False
 
     context['local'] = settings.LOCAL_DATA
@@ -477,7 +476,7 @@ def home(request):
 
 def results(request):
     branch = request.session.get('branch', 'master')
-    query = {key: value for key, value in request.GET.items() if value}
+    query = {key: value for key, value in request.GET.items() if value and value != 'all'}
     context = {
         'lookups': {
             'coverage': lookups['coverage'],

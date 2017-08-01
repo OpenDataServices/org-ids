@@ -1,6 +1,8 @@
 $(function() {
   // General
   // -------
+  $('select').selectize();
+
   var progressBarConfig = {
     easing: 'easeInOut',
     color: 'white',
@@ -9,26 +11,30 @@ $(function() {
   };
 
   $('.sidebar form select').change(function() {
-    if (this.name === 'coverage') {
-      $('select[name=subnational]').val('');
+    if (this.value) {
+      if (this.name === 'coverage') {
+        $('select[name=subnational]').val('');
+      }
+      if (this.name === 'structure') {
+        $('select[name=substructure]').val('');
+      }
+      this.form.submit();
     }
-    if (this.name === 'structure') {
-      $('select[name=substructure]').val('');
-    }
-    this.form.submit();
   });
 
   // Home
   // ----
   $('.has-suboption').change(function() {
-    if (this.name === 'coverage') {
-      $('select[name=subnational]').val('');
+    if (this.value) {
+      if (this.name === 'coverage') {
+        $('select[name=subnational]').val('');
+      }
+      if (this.name === 'structure') {
+        $('select[name=substructure]').val('');
+      }
+      var params = '?' + $('form').serialize();
+      window.location.href = window.location.pathname + params;
     }
-    if (this.name === 'structure') {
-      $('select[name=substructure]').val('');
-    }
-    var params = '?' + $('form').serialize();
-    window.location.href = window.location.pathname + params;
   });
 
   // Results
