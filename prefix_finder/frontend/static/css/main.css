@@ -1133,6 +1133,7 @@ fieldset {
 }
 .homepage__select:after {
   content: 'keyboard_arrow_down';
+  pointer-events: none;
   font-size: 2rem;
   padding: 5px 0;
   color: #00a6ab;
