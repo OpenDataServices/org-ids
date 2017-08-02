@@ -4,7 +4,13 @@
   </div>
 
   <div class="sidebar__main">
-    {% if not hide_sidebar_form %}
+    {% if request.resolver_match.url_name == "list" %}
+      <a href="{% url "results" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+
+    {% elif request.resolver_match.url_name == "about" %}
+      <a href="{% url "home" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to Home</span></a>
+
+    {% else %}
       <form class="sidebar__filters">
         <fieldset class="filter filter--organizations">
           <label>Identifiers for…</label>
@@ -70,9 +76,6 @@
           </div>
         </fieldset>
       </form>
-
-    {% else %}
-      <a href="{% url "results" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
     {% endif %}
   </div>
 
