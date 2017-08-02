@@ -35,12 +35,14 @@
                   </div>
 
                   <div class="card__sidebar">
-                    <ul class="categories categories--countries">
-                      <h4>Countries</h4>
-                      {% for coverage in result.coverage %}
-                        <li>{{ coverage }}</li>
-                      {% endfor %}
-                    </ul>
+                    {% if result.coverage %}
+                      <ul class="categories categories--countries">
+                        <h4>Countries</h4>
+                        {% for coverage in result.coverage %}
+                          <li>{{ coverage }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
 
                     {% if result.sector %}
                       <ul class="categories categories--sectors">
@@ -92,12 +94,14 @@
                   </div>
 
                   <div class="card__sidebar">
-                    <ul class="categories categories--countries">
-                      <h4>Countries</h4>
-                      {% for coverage in result.coverage %}
-                        <li>{{ coverage }}</li>
-                      {% endfor %}
-                    </ul>
+                    {% if result.coverage %}
+                      <ul class="categories categories--countries">
+                        <h4>Countries</h4>
+                        {% for coverage in result.coverage %}
+                          <li>{{ coverage }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
 
                     {% if result.sector %}
                       <ul class="categories categories--sectors">
@@ -149,12 +153,14 @@
                   </div>
 
                   <div class="card__sidebar">
-                    <ul class="categories categories--countries">
-                      <h4>Countries</h4>
-                      {% for coverage in result.coverage %}
-                        <li>{{ coverage }}</li>
-                      {% endfor %}
-                    </ul>
+                    {% if result.coverage %}
+                      <ul class="categories categories--countries">
+                        <h4>Countries</h4>
+                        {% for coverage in result.coverage %}
+                          <li>{{ coverage }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
 
                     {% if result.sector %}
                       <ul class="categories categories--sectors">
