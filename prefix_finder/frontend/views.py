@@ -501,7 +501,7 @@ def list_details(request, prefix):
 
     except KeyError:
         raise Http404('Organization list {} does not exist'.format(prefix))
-    return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch, 'hide_sidebar_form': True})
+    return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch})
 
 
 def _get_filename(use_branch='master'):
