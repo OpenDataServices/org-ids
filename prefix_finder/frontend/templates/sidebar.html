@@ -72,7 +72,11 @@
       </form>
 
     {% else %}
-      <a href="{% url "results" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+      {% if request.META.HTTP_REFERER %}
+        <a href="{{ request.META.HTTP_REFERER }}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+      {% else %}
+        <a href="{% url "results" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+      {% endif %}
     {% endif %}
   </div>
 
