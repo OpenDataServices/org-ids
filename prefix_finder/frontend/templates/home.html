@@ -23,20 +23,6 @@
         </span>
       </label>
 
-      {% if lookups.substructure %}
-        <label class="homepage__field">
-          In particular
-          <span class="homepage__select">
-            <select name="substructure">
-              <option value="">Any type</option>
-              {% for code, title, disabled in lookups.substructure %}
-                <option {% if query.substructure == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{% if title|slice:"1" in "AEIOU" %}An{%else%}A{%endif%} {{ title|lower }}</option>
-              {% endfor %}
-            </select>
-          </span>
-        </label>
-      {% endif %}
-
       <label class="homepage__field">
         Registered in
         <span class="homepage__select">
@@ -49,27 +35,13 @@
         </span>
       </label>
 
-      {% if lookups.subnational %}
-        <label class="homepage__field">
-          In the state or region of
-          <span class="homepage__select">
-            <select name="subnational">
-              <option value="">Any subnational location</option>
-              {% for code, title, disabled in lookups.subnational %}
-                <option {% if query.subnational == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
-              {% endfor %}
-            </select>
-          </span>
-        </label>
-      {% endif %}
-
       <label class="homepage__field">
         Working in
         <span class="homepage__select">
           <select name="sector" >
             <option value="">Any sector</option>
             {% for code, title, disabled in lookups.sector %}
-               <option {% if query.sector == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
+              <option {% if query.sector == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
             {% endfor %}
           </select>
         </span>
