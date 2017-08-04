@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
 {% load i18n %}
-
 {% block main %}
   <main class="main-wrapper" role="main">
     {% include "sidebar.html" %}
-
     <div class="main-content single-content about-page">
       <div>
         <h1 class="about-page__header">{% trans "About" %}</h1>
@@ -12,92 +10,81 @@
 
       <div class="about-page__half--left">
         <h2>What?</h2>
-
-        <p>This is a prototype developed as part of the <a href="http://identify-org.net">Identify-org.net</a> joined up organization identifiers project. You can read more about the whole project at <a href="http://identify-org.net">http://identify-org.net</a></p>
-        <p>We’re building <strong>a list of organization identifier lists</strong> to help join up data on organizations across different datasets.</p>
-        <p>This is the <strong>alpha</strong> version of a tool to explore that list of lists - developed as a proof-of-concept to test out new research methods to populate the list, and to weight results.</p>
-
-        <h2>Is it ready for production use?</h2>
-        <p>Almost: by default you will only see list that have been reviewed through our research process - so you can start using them. The algorithms for ranking the recommended and suggested lists are still under development, so we're not yet quite ready to point everyone at the site. </p>
+        <p><strong>org-id.guide is the easiest, quickest and most accurate way to locate organisation identifiers.</strong></p>
+        <p>We maintain a register of organization lists. Those lists, in turn, provide unique identifiers for companies, charities, government agencies and other kinds of organizations.</p>
+        <p>We provide a code for each list, so that with the code, plus the identifier, you should be able to uniquely and unambiguously identify any organization in the world.</p>
+        <p>Many of the lists in our register are official identifier sources (such as a couuntry company register); others lists may be maintained by third-parties. When we can, we link out to websites where you can look up a specific organization, although we also include codes for lists that don't provide a public search service.</p>
+        <p>We welcome new additions or updates to the register. We don't pre-judge the kinds of lists that should be included - but we do make sure the register includes good meta-data. We us that meta-data to provide a quality score that indicates how accessible and stable identifiers from the list are likely to be.</p>
       </div>
-
       <div class="about-page__half--right">
         <h2>Why?</h2>
-
-        <p>Because we want to see data that uses <strong>open</strong> and <strong>interoperable</strong> organization identifiers. </p>
-        <p>When creating, publishing or using data about organizations it is important to clearly identify the organizations in question. </p>
-        <p>But there can be hundreds of organizations with the same or similar names. A single name might also be written many different ways. As a result, datasets often include identifying numbers or codes. </p>
-        <p>These identifiers may be drawn from official registers, or might be maintained by a single organization. The quality of lists varies in terms of their coverage, quality and the depth of information they provide.</p>
+        <p>org-id.guide has been created by a partnership of open data standards groups in order to provide a robust, shared approach to the use of <strong>open</strong>, <strong>interoperable</strong> and <strong>unambiguous</strong> organisations identifers.</p>
+        <p>It is a collaborative project, designed to fill a gap in our shared data infrastructure.</p>
         <p>With org-id.guide you can:</p>
-
         <ul>
-          <li><p>Say which list an identifier is taken from - increasing data interoperability;</p></li>
+          <li><p>Declare which list an identifier is taken from - increasing data interoperability;</p></li>
           <li><p>Identify the best lists to use for new datasets - promoting openness;</p></li>
           <li><p>Find out where to look up more information on an organization - improving analysis and data quality; </p></li>
           <li><p>Discover crosswalks between different lists - supporting joined-up data;</p></li>
         </ul>
-      </div><br/><br/><br/>
+        <p>The members of the org-id.guide initiative use the register as a codelist to validate data, and to populate data entry user interfaces so that good quality data is created at source. </p>
+      </p>
+    </div><br/><br/><br/>
 
-      <div>
-        <h1 class="about-page__header">How do I use it?</h1>
-      </div>
 
-      <div class="about-page__half--left">
-        <h2>Data creators</h2>
-
-        <p>Collecting or publishing data about organizations? </p>
-        <p><strong>First</strong>, make sure you are collecting an identifier for each organization, as well as a name. You can lookup the best identifier list to use based on the country, organization type, or sector you are managing data for.</p>
-        <p><strong>Second</strong>, when you store and publish data about an organization, use the list code code for the organization identifier list so that data users know which list the identifier is from.</p>
-        <p>You can do this by combining the list code and identifier in a single string:</p>
-
-        <p>E.g.<p>
-
+    <div>
+      <h1 class="about-page__header">How do I use it?</h1>
+    </div>
+    <div class="about-page__half--left">
+      <h2 id="data-creators">Data creators</h2>
+      <p>Are you collecting or publishing data about organizations? </p>
+      <p><strong>First</strong>, make sure you are collecting an identifier for each organization, as well as a name. You can lookup the best identifier list to use based on the country, organization type, or sector you are managing data for.</p>
+      <p><strong>Second</strong>, when you store and publish data about an organization, use the list code code for the organization identifier list so that data users know which list the identifier is from.</p>
+      <p>You can do this by combining the list code and identifier in a single string:</p>
+      <p>E.g.<p>
         <code class="about-page__code">GB-COH-09506232</code>
-
         <p>Or separating out the list code into it’s own field:</p>
-
         <p>E.g.</p>
-        <pre><code class="about-page__code">{
-  "scheme": "GB-COH",
-  "id": "09506232
-}</code></pre>
-
-        <p><strong>P.S.</strong> The more additional identifying information you can provide for each organization, the better. See our tips on organization information page (forthcoming).</p>
-
-        <h2>Data users</h2>
-
+                <pre><code class="about-page__code">{
+            "scheme": "GB-COH",
+            "id": "09506232
+        }</code></pre>
+        
+      </div>
+      <div class="about-page__half--right">
+        
+        <h2 id="data-users">Data users</h2>
         <p>If you’ve come across an organization identifier, you can use org-id.guide to find out more about it and where to locate related open data.</p>
 
-        <h2>How is org-id.guide populated?</h2>
+        <h2>Data contrbutors</h2>
+        
+        <p>We welcome new submissions to org-id.guide. The <a href="http://docs.org-id.guide">contributors handbook</a> details how you can submit a request or proposal for a new list to be included. New submissions are reviewed by the org-id.guide members</p>  
+        <p>You can:</p>
 
-        <p>We started out with the <a href="http://iatistandard.org/202/codelists/OrganizationRegistrationAgency/">IATI Registration Agency codelist</a>, and we have been working to add to this through detailed research - keeping our research <a href="https://airtable.com/shrsA8pTLjBiR6SVs">in AirTable here</a>.</p>
-        <p>We are developing a <a href="https://docs.google.com/document/d/1lkLjHxXaH9GuAR_g-pv9Qru28f1EeOMZtwXduVboMa4/edit?usp=drive_web">research handbook</a> to guide population of the register.</p>
-
-        <h2 id="who-is-responsible-for-orgprefixcodes">Who is responsible for org-id.guide?</h2>
-        <p>The proof-of-concept is being developed by <a href="http://www.opendataservices.coop">Open Data Services Co-operative</a> for a group of partners including: <a href="http://juds.joinedupdata.org/">Joined Up Data Standards</a>, the <a href="http://www.iatistandard.org">International Aid Transparency Initiative</a>, <a href="http://www.resourcegovernance.org/">Natural Resource Governance Institute</a>, <a href="http://www.threesixtygiving.org">360Giving</a>, the <a href="https://www.interaction.org/project/open-ag-funding/overview">Initiative for Open Ag Funding</a> and <a href="http://www.open-contracting.org">Open Contracting</a>. </p>
-        <p>We plan to open up this group to wider participation, and to develop an ongoing governance model for the project over early 2017.</p>
-        <p>For more information contact <a href="mailto:tim.davies@opendataservices.coop">tim.davies@opendataservices.coop</a></p>
-      </div>
-
-      <div class="about-page__half--right">
-        <h2>What is an organization identifier list?</h2>
-
-        <p>Our register includes any lists which provide at least an identifying number or code and an organization name for any collection of organizations: from companies and charities, to government bodies and unincorporated associations.</p>
-        <p>We collect metadata about each list to describe the kinds of organizations it includes, the jurisdictions it covers, the nature of entries in the list, and whether the list is available as open data.</p>
-        <p>Using this metadata, we encourage data publishers and users to prefer:</p>
         <ul>
-          <li>
-            <strong>Primary over secondary lists</strong>.
-            <p>A primary list is one which directly and unambiguously identifies a particular legal entity. For example, company registration numbers are usually primary identifiers. You cannot be a company without a company number, and you cannot have a company number without being a company.</p>
-            <p>Secondary lists don’t have this constraint. They contain identifiers assigned to organizations, but where it may be possible: (a) for organizations to receive more than one identifier; (b) for organizations to change their status without this being reflected in the list; (c) the list does not comprehensively cover all organizations of a particular type. </p>
-          </li>
-          <li>
-            <strong>Secondary over local lists</strong>.
-            <p>Some data publishers have their own lookup lists of organizations and identifiers. When primary or secondary identifiers are not available, publishing these can be useful to enable more joined up data.</p>
-          </li>
+          <li><p>Request research to identify an appropriate list</p></li>
+          <li><p>Proposa a new list</p></li>
+          <li><p>Propose changes to an existing list in the register</p></li>
         </ul>
-        <p>Note that we only provide a register of the lists: we don’t store or provide the actual organization identifier entries. You will need to follow the links from the register to the websites of each identifier list to find and validate the identifiers these provide.</p>
-        <p>Services like OpenCorporates provide a very useful search across a wide range of official identifier lists, particularly for companies. </p>
+
+        <p>Following a light research process, new entries can be included in the codelist within 7 days. Entries are never removed from the downloadable list, but may be deprecated.</p>
+
+      </div><br/><br/><br/>
+
+
+      <div>
+        <h1 class="about-page__header">More info</h1>
+      </div>
+      <div class="about-page__half--left">
+        <h2 id="who-is-responsible">Who is responsible for org-id.guide?</h2>
+        <p>The register is maintained by <a href="http://www.opendataservices.coop">Open Data Services Co-operative</a> for a group of partners including: <a href="http://juds.joinedupdata.org/">Joined Up Data Standards</a>, the <a href="http://www.iatistandard.org">International Aid Transparency Initiative</a>, <a href="http://www.resourcegovernance.org/">Natural Resource Governance Institute</a>, <a href="http://www.threesixtygiving.org">360Giving</a>, the <a href="https://www.interaction.org/project/open-ag-funding/overview">Initiative for Open Ag Funding</a> and <a href="http://www.open-contracting.org">Open Contracting</a>. These members have a role in the governance of the register.</p>
+        <p>You can find out <a href="http://docs.org-id.guide/en/latest/members/">more about membership of the initiative here</a></p>
+        
+        <p>For more information contact <a href="mailto:contact@org-id.guide">contact@org-id.guide</a></p>
+      </div>
+      <div class="about-page__half--right">
+        <h2 id="history">History</h2>
+        <p>org-id.guides started as a sanctioned fork of the <a href="http://iatistandard.org/202/codelists/OrganizationRegistrationAgency/">IATI Registration Agency codelist</a> in September 2016. A full revision history of the register itself can be found via GitHub.
       </div>
     </div>
   </main>
