@@ -20,7 +20,7 @@
           <label>Identifiers for…</label>
           <div class="dropdown">
             <select name="structure">
-              <option value="">Any type of organization</option>
+              <option value="all">Any type of organization</option>
               {% for code, title, disabled in lookups.structure %}
                 <option {% if request.GET.structure == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{% if title|slice:"1" in "AEIOU" %}An{% else %}A{% endif %} {{ title|lower }}</option>
               {% endfor %}
@@ -33,7 +33,7 @@
             <label>In particular…</label>
             <div class="dropdown">
               <select name="substructure">
-                <option value="">Any type</option>
+                <option value="all">Any type</option>
                 {% for code, title, disabled in lookups.substructure %}
                   <option {% if request.GET.substructure == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{% if title|slice:"1" in "AEIOU" %}An{% else %}A{% endif %} {{ title|lower }}</option>
                 {% endfor %}
@@ -46,7 +46,7 @@
           <label>Registered in…</label>
           <div class="dropdown">
             <select name="coverage">
-              <option value="">Any country</option>
+              <option value="all">Any country</option>
               {% for code, title, disabled in lookups.coverage %}
                 <option {% if request.GET.coverage == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
               {% endfor %}
@@ -59,7 +59,7 @@
             <label>In the state or region of…</label>
             <div class="dropdown">
               <select name="subnational">
-                <option value="">Any subnational location</option>
+                <option value="all">Any subnational location</option>
                 {% for code, title, disabled in lookups.subnational %}
                   <option {% if request.GET.subnational == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
                 {% endfor %}
@@ -72,7 +72,7 @@
           <label>Working in…</label>
           <div class="dropdown">
             <select name="sector">
-              <option value="">Any sector</option>
+              <option value="all">Any sector</option>
               {% for code, title, disabled in lookups.sector %}
                  <option {% if request.GET.sector == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
               {% endfor %}

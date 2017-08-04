@@ -15,7 +15,7 @@
         I need identifiers for
         <span class="homepage__select">
           <select name="structure" class="has-suboption">
-            <option value="">Any type of organization</option>
+            <option value="all">Any type of organization</option>
             {% for code, title, disabled in lookups.structure %}
               <option {% if query.structure == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{% if title|slice:"1" in "AEIOU" %}An{%else%}A{%endif%} {{ title|lower }}</option>
             {% endfor %}
@@ -27,7 +27,7 @@
         Registered in
         <span class="homepage__select">
           <select name="coverage" class="has-suboption">
-              <option value="">Any country</option>
+              <option value="all">Any country</option>
               {% for code, title, disabled in lookups.coverage %}
                 <option {% if query.coverage == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
               {% endfor %}
@@ -39,7 +39,7 @@
         Working in
         <span class="homepage__select">
           <select name="sector" >
-            <option value="">Any sector</option>
+            <option value="all">Any sector</option>
             {% for code, title, disabled in lookups.sector %}
               <option {% if query.sector == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
             {% endfor %}
@@ -52,8 +52,4 @@
       </div>
     </form>
   </main>
-{% endblock %}
-
-{% block extra_scripts %}
-  <script src="{% static 'js/main.js'%}"></script>
 {% endblock %}
