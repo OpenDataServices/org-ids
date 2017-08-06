@@ -112,8 +112,6 @@ code {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -1124,9 +1122,8 @@ fieldset {
 
 .homepage {
   text-align: center;
-  position: relative;
-  min-height: 100vh;
-  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 40em) {
   .homepage {
@@ -1135,6 +1132,7 @@ fieldset {
 }
 .homepage__logo {
   max-width: 421px;
+  margin: 0 auto;
   width: 80%;
 }
 @media (max-width: 39.9375em) {
@@ -1157,6 +1155,8 @@ fieldset {
 .homepage__form {
   max-width: 60%;
   margin: 0 auto;
+  flex: 1;
+  padding-bottom: 40px;
 }
 .homepage__field {
   display: block;
