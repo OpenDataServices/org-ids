@@ -261,6 +261,10 @@
 .selectize-dropdown .optgroup-header {
   padding: 5px 8px;
 }
+.selectize-dropdown [data-disabled] {
+  padding: 5px 8px;
+  cursor: no-drop;
+}
 .selectize-dropdown .optgroup:first-child .optgroup-header {
   border-top: 0 none;
 }
@@ -278,6 +282,9 @@
 }
 .selectize-dropdown .create {
   color: rgba(48, 48, 48, 0.5);
+}
+.selectize-dropdown [data-disabled] {
+  color: #a0a0a0;
 }
 .selectize-dropdown-content {
   overflow-y: auto;
