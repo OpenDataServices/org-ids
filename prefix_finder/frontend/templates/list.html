@@ -1,89 +1,65 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load results %}
-{% load i18n %}
-{% block main_content %}
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <ul class="list-inline clear-margin-bottom">
-      <h4>{{org_list.name.en}} ({{org_list.code}})</h4>
-    </ul>
-  </div>
-  <div class="panel-body">
-    <dl class="dl-horizontal">
 
+{% block main %}
+  <main class="main-wrapper" role="main">
+    {% include "sidebar.html" %}
 
-    <dt>Description</dt>
-    <dd>{{org_list.description.en|urlize|linebreaks}}</dd>
+    <div class="main-content single-content">
+      <header class="single-content__header">
+        <a href="{{ org_list.url }}" class="button" target="_blank"><i class="material-icons">link</i></a>
+        <h1>{{ org_list.name.en }} <span>({{ org_list.code }})</span></h1>
+      </header>
 
-    <dt>To find identifiers:</dt>
-    <dd>
-      {% if org_list.access.publicDatabase %}
-        Visit <a href="{{org_list.access.publicDatabase}}" target="_blank">{{org_list.access.publicDatabase}}</a>
-      {% else %}
-        {% if org_list.url %}
-          Visit <a href="{{org_list.url}}" target="_blank">{{org_list.url}}</a>
-        {% else %}
-          Consult the organisation responsible for this list.
-        {%endif %}
-      {% endif %}
-      {% if org_list.access.guidanceOnLocatingIds %}{{org_list.access.guidanceOnLocatingIds|urlize|linebreaks}}{% endif %}
-     The code for this list is <code>{{org_list.code}}</code>. When you can located the organisation you wish to identify in this list, you should either:
-     <div> 
-       <br>
-       <div>
-         <div class="col-md-6">
-           Enter it in an identifier database field prefixed with <code>{{org_list.code}}</code>.
-           <br>
-           <br>
-           <em>For example</em>: <code>{{org_list.code}}</code>-[ IDENTIFIER ]
-         </div>
-         <div class="col-md-6">
-          Or, use it within a two-part identifier, with <code>{{org_list.code}}</code> as the 'scheme', and the identifier you have located as the 'identifier' field. 
-          <br>
-          <br>
-          <em>For example</em>:
-          <pre class="prettyprint">
-           {
-              "scheme":"{{org_list.code}}",
-              "id":"[ IDENTIFIER ]"
-           }
+      <div class="single-content__sidebar single-sidebar">
+        <div class="single-sidebar__block quality-chart quality-chart--high" data-chart="{{ org_list.quality }}">
+          <div id="quality-chart-container"></div>
+        </div>
+        <div class="quality-chart__list-type quality-chart--high">
+            <p>List Type: <span>{{ org_list.listType }}</span></p>
+          </div>
+
+        <div class="single-sidebar__block single-sidebar--dark">
+          <p>The code for this list is <br/><code>{{ org_list.code }}</code>. When you can located the organization you wish to identify in this list, you should either:</p>
+          <p>Enter it in an identifier database field prefixed with <code>{{ org_list.code }}</code>.</p>
+          <h2>Example</h2>
+          <pre>
+<code>{{ org_list.code }}-[ IDENTIFIER ]</code>
           </pre>
-         </div>
-       </div>
-        Remember, if your data model also includes space to record the legal name or address of the organisation, and the list provides this information, this can aid data re-use.
-     </div>
-    </dd>
-     <br>
-     <hr>
-     <h3>List details</h3>
-     <dt>URL</dt>
-     <dd><a href="{{org_list.url}}">{{org_list.url}}</a></dd>
-      {% for key, value in org_list|tidy_results:'long' %}
-         {% if value %}
-           <dt> {{key|capfirst}} </dt>
-           <dd> 
-             {% if value|slice:":4" == "http" %}
-               {{value|urlize}}
-             {% else %}
-               {{value|capfirst}}
-             {% endif %}
-           </dd>
-         {% endif %}
-      {% endfor %}
-    </dl>
-    <hr>
-    <h4>Suggest changes</h4>
-    <div>
-      You can suggest an edit to our information about this list by:
-      <br>
-      <ul>
-        <li>Posting <a href="https://github.com/OpenDataServices/org-ids/issues/new?title=Updates%20to%20{{org_list.code}}">to the issue tracker</a></li>
-        <li>Submitting a pull request <a href='https://github.com/OpenDataServices/org-ids/tree/master/codes/{{org_list.code|slice:":2"|lower}}/{{org_list.code|lower}}.json'>against this code</a> with your direct updates and an explanation of your changes</li>
-      </ul>
-      <hr>
-      <h4>Coming soon: user-friendly editing interfaces...</h4>
+          <p>Or, use it within a two-part identifier, with <code>{{ org_list.code }}</code> as the 'scheme', and the identifier you have located as the 'identifier' field. </p>
+        </div>
+      </div>
+
+      <div class="single-content__main">
+
+        <div class="single-content__block single-description">
+          <h2>Description</h2>
+          <p>{{ org_list.description.en|urlize|linebreaks }}</p>
+        </div>
+
+        <div class="single-content__block single-meta-info">
+          <ul class="single-meta-info__categories single-categories">
+            <li class="single-categories__item single-categories--coverage">
+              <p>Coverage: {% for x in org_list.coverage %}<span>{{ x }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+            </li>
+
+            {% if org_list.sector %}
+              <li class="single-categories__item single-categories--sectors">
+                <p>Sectors: {% for x in org_list.sector %}<span>{{ x }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+              </li>
+            {% endif %}
+          </ul>
+
+          <div class="single-meta-info__instructions">
+            <h3>To find identifiers</h3>
+            <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks}}</p>
+          </div>
+        </div>
+
+        <div class="single-content__block single-suggest">
+          <p>You can suggest an edit to our information about this list by <a href="https://github.com/OpenDataServices/org-ids/issues/new">posting an issue</a> or <a href="https://github.com/OpenDataServices/org-ids/tree/master/codes/dk/dk-cvr.json">submitting a pull request</a>.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </main>
 {% endblock %}

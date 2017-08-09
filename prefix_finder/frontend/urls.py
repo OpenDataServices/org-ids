@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^results$', views.results, name='results'),
     url(r'^_update_lists$', views.update_lists, name='update_lists'),
     url(r'^_preview_branch/([A-Za-z0-9-]+)$', views.preview_branch, name='preview_branch'),
     url(r'^terms', TemplateView.as_view(template_name='terms.html'), name='terms'),

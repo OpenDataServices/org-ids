@@ -1,0 +1,94 @@
+<div class="sidebar">
+  <div class="sidebar__logo">
+    <a href="{% url "home" %}"><img src="/static/org-id-logo.png"></a>
+  </div>
+
+  <div class="sidebar__main">
+    {% if request.resolver_match.url_name == "list" %}
+      {% if request.META.HTTP_REFERER %}
+        <a href="{{ request.META.HTTP_REFERER }}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+      {% else %}
+        <a href="{% url "results" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+      {% endif %}
+
+    {% elif request.resolver_match.url_name == "about" %}
+      <a href="{% url "home" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to Home</span></a>
+
+    {% else %}
+      <form class="sidebar__filters">
+        <fieldset class="filter filter--organizations">
+          <label>Identifiers for…</label>
+          <div class="dropdown">
+            <select name="structure">
+              <option value="all">Any type of organization</option>
+              {% for code, title, disabled in lookups.structure %}
+                <option {% if request.GET.structure == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{% if title|slice:"1" in "AEIOU" %}An{% else %}A{% endif %} {{ title|lower }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </fieldset>
+
+        {% if lookups.substructure %}
+          <fieldset class="filter">
+            <label>In particular…</label>
+            <div class="dropdown">
+              <select name="substructure">
+                <option value="all">Any type</option>
+                {% for code, title, disabled in lookups.substructure %}
+                  <option {% if request.GET.substructure == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{% if title|slice:"1" in "AEIOU" %}An{% else %}A{% endif %} {{ title|lower }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </fieldset>
+        {% endif %}
+
+        <fieldset class="filter filter--countries">
+          <label>Registered in…</label>
+          <div class="dropdown">
+            <select name="coverage">
+              <option value="all">Any country</option>
+              {% for code, title, disabled in lookups.coverage %}
+                <option {% if request.GET.coverage == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </fieldset>
+
+        {% if lookups.subnational %}
+          <fieldset class="filter">
+            <label>In the state or region of…</label>
+            <div class="dropdown">
+              <select name="subnational">
+                <option value="all">Any subnational location</option>
+                {% for code, title, disabled in lookups.subnational %}
+                  <option {% if request.GET.subnational == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </fieldset>
+        {% endif %}
+
+        <fieldset class="filter filter--sector">
+          <label>Working in…</label>
+          <div class="dropdown">
+            <select name="sector">
+              <option value="all">Any sector</option>
+              {% for code, title, disabled in lookups.sector %}
+                 <option {% if request.GET.sector == code %}selected{% elif disabled %}disabled{% endif %} value="{{ code }}">{{ title }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </fieldset>
+      </form>
+    {% endif %}
+  </div>
+
+  <footer class="sidebar__footer">
+    <a href="/about" class="button button--block">About</a>
+
+    <h5>Download</h5>
+    <a href="{% url 'json_download' %}" class="button button--third">JSON</a>
+    <a href="{% url 'csv_download' %}" class="button button--third">CSV</a>
+    <a href="{% url 'xml_download' %}" class="button button--third">XML</a>
+  </footer>
+</div>

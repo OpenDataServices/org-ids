@@ -17,7 +17,7 @@ Everything we are working on, or considering, is kept in GitHub issues.
 
 If you are able to work with GitHub then please "Create an issue"
 
-Before creating a new issue check to see if the issue already exists. If not, then please do report it. If you have permissions to assign the issue to people and milestones then try to select suitable options. 
+Before creating a new issue check to see if the issue already exists. If not, then please do report it. If you have permissions to assign the issue to people and milestones then try to select suitable options.
 
 If you are not comfortable working with GitHub, but would still like to contribute, then talk to us.  Details at: https://github.com/opendataservices
 
@@ -29,11 +29,11 @@ In order to be clear with everyone involved about how code (and documentation) c
 
 The agreements we use allow the contributor to retain copyright over their contributions, while also granting us the rights to re-licence the projects in future without having to track down each contributor and ask for their agreement.
 
-We also stipulate that, should we re-licence a project, then we will only do so under an approved Open Source Institute licence.  
+We also stipulate that, should we re-licence a project, then we will only do so under an approved Open Source Institute licence.
 
 It also protects us, by requiring contributors to check and confirm that they own the copyright on the contributions they make - this can help keep everything clear when, for example, a contribution is made on employers time.
 
-What this doesn't give us is the right to go out and fight copyright infringements on a contributor's behalf. 
+What this doesn't give us is the right to go out and fight copyright infringements on a contributor's behalf.
 
 Our agreements are built of the templates provided by http://contributoragreements.org/
 
@@ -43,11 +43,11 @@ Before contributions to any of our projects are accepted, we require you to comp
 
 ### Submission Instructions
 
-We have a [generic agreement](http://contributoragreements.org/u2s/bm1v4q5je) that covers all code projects in the [Open Data Services GitHub Organisation](https://github.com/opendataservices)
+We have a [generic agreement](http://contributoragreements.org/u2s/bm1v4q5je) that covers all code projects in the [Open Data Services GitHub Organization](https://github.com/opendataservices)
 
 If this is amenable to you, feel free to complete it. We will be automatically notified that you have submitted an agreement and will contact you (usually in the same day, but in no more than 3 working days)
 
-However, we're more than happy to talk, so if you want to get in touch before you sign anything, then please do. 
+However, we're more than happy to talk, so if you want to get in touch before you sign anything, then please do.
 
 You can contact us at code@opendataservices.coop
 
@@ -71,7 +71,7 @@ Once we have reviewed and signed a copy of the agreement we will be able accept 
 
 ### Bitesize issues
 
-Getting started on someone else's software project can be daunting. So when we have an issue that we think would be a good task for someone new to the project, we mark them as  Bitesize.  
+Getting started on someone else's software project can be daunting. So when we have an issue that we think would be a good task for someone new to the project, we mark them as  Bitesize.
 
 Look for issues marked with the [Bitesize](https://github.com/issues?q=is%3Aopen+is%3Aissue+user%3Aopendataservices+label%3ABitesize) label if you want somewhere to start.
 
