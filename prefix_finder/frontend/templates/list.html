@@ -50,10 +50,12 @@
             {% endif %}
           </ul>
 
+          {% if org_list.access.guidanceOnLocatingIds %}
           <div class="single-meta-info__instructions">
             <h3>To find identifiers</h3>
             <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks}}</p>
           </div>
+          {% endif %}
         </div>
 
         <div class="single-content__block single-suggest">
