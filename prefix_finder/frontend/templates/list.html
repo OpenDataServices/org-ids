@@ -52,7 +52,9 @@
 
           <div class="single-meta-info__instructions">
             <h3>To find identifiers</h3>
+            <p>{%if org_list.access.publicDatabase %}A public database is available for this list at <a href='{{ org_list.access.publicDatabase }}' target="_blank">{{ org_list.access.publicDatabase }}</a>.{% else %}This list is not available online. You may need to contact the organization you plan to identify to ask if they have been given an identifier or registration number by {{ org_list.name.en }} {% endif %}</p>
             <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks}}</p>
+            {% if org_list.links.opencorporates %}<p>This list can also be searched on <a href='{{ org_list.links.opencorporates }}' target="_blank">OpenCorporates</a>.</p>{% endif %}
           </div>
         </div>
 
