@@ -1,7 +1,7 @@
 $(function() {
   // General
   // -------
-  $('select').selectize();
+  $('select').chosen();
 
   var progressBarConfig = {
     easing: 'easeInOut',
