@@ -462,6 +462,7 @@ fieldset {
 }
 .card__main p {
   margin-bottom: 10px;
+  word-wrap: break-word;
   color: rgba(0, 0, 0, 0.7);
 }
 .card__sidebar {
