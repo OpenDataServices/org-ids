@@ -597,6 +597,7 @@ fieldset {
   padding: 0 30px;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 @media (max-width: 64em) {
   .sidebar {
@@ -607,6 +608,11 @@ fieldset {
   max-width: 100%;
   padding: 40px 60px;
   margin-bottom: 30px;
+}
+@media (max-height: 715px) {
+  .sidebar__logo img {
+    padding-bottom: 0px;
+  }
 }
 .sidebar .button span {
   margin: 0 0 0 25px;
@@ -648,6 +654,11 @@ fieldset {
   font-weight: 300;
   font-size: 18px;
   color: #333;
+}
+@media (max-height: 715px) {
+  .filter {
+    padding-bottom: 0px;
+  }
 }
 
 .quality-chart.quality-chart {
