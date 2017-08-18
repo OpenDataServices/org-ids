@@ -52,7 +52,11 @@
 
           <div class="single-meta-info__instructions">
             <h3>To find identifiers</h3>
-            <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks}}</p>
+            {% if org_list.access.guidanceOnLocatingIds %}
+              <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks}}</p>
+            {% else %}
+              <p><a href="{{ org_list.url }}" target="_blank">Visit the website.</a></p>
+            {% endif %}
           </div>
         </div>
 
