@@ -1137,7 +1137,7 @@ fieldset {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 40em) {
+@media (min-width: 100em) {
   .homepage {
     height: 100vh;
   }
