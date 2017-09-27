@@ -27,7 +27,7 @@
         <p class="ribbon-alert"><i class="material-icons">error_outline</i> You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     {% if branch and branch != "master" %}
-      <p class="ribbon-alert"><i class="material-icons">error_outline</i> You are currently previewing branch {{ branch }}. <a href="/_preview_branch/master">Return to master</a> or <a href="https://github.com/org-id/register/compare/{{ branch }}">view on GitHub</a></p>
+      <p class="ribbon-alert"><i class="material-icons">error_outline</i> You are currently previewing branch {{ branch }}. <a href="/_preview_branch/master">Return to master</a> or <a href="https://github.com/org-id/register/compare/master...{{ branch }}">view on GitHub</a></p>
     {% endif %}
 
     {% block main %}{% endblock %}
