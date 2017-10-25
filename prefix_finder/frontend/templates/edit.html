@@ -19,8 +19,8 @@
             There are existing edits for this code. You can:
             <ul>
               <li>Make further edits below</li>
-              <li><a href="/_preview_branch/{{ org_list.code }}">Preview the changes</a></li>
-              <li>Submit a <a href="/edit/{{ org_list.code }}?pull_request=true">pull request for these changes to be merged</a></li>
+              <li><a href="/_preview_branch/{{ org_list.code }}" id="preview">Preview the changes</a></li>
+              <li>Submit a <a href="/edit/{{ org_list.code }}?pull_request=true&period=standard" class="pull_request">pull request (standard period)</a> Submit a <a href="/edit/{{ org_list.code }}?pull_request=true&period=fast" class="pull_request">pull request (no delay)</a> </li>
             </ul>
         {% endif %}
    {% endif %}
@@ -38,7 +38,12 @@
         var editor = new JSONEditor(element,{ajax:true, schema:{"$ref":"{% static 'js/list-schema-temp.json'%}"},startval:{{ org_json|safe }},theme:'bootstrap3',disable_edit_json:false,disable_collapse:true,disable_properties:false,iconlib:"bootstrap3",display_required_only:false })
         editor.on('change',function() {
              document.getElementById('json_data').value = JSON.stringify(editor.getValue(),null,2) // Do something
-        }) ;
+        }) ;    
+
+        $(function() {
+          $(".pull_request").click(function() { message = prompt("Please enter an optional commit message", "");  $(this).attr("href",$(this).attr("href") + "&message=" + encodeURIComponent(message));  } )
+        }) 
+
     --></script>
   
     <hr/>

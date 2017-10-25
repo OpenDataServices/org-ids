@@ -9,6 +9,7 @@ import zipfile
 import io
 import csv
 import base64
+import urllib
 from collections import OrderedDict
 
 from django.shortcuts import render, redirect
@@ -632,7 +633,7 @@ def git_create_branch(branch):
     return r
 
 
-def git_pull_request(prefix,org_list,new):
+def git_pull_request(prefix,org_list,new,request):
     if(settings.GITHUB_TOKEN):
         headers={"Authorization":"token "+settings.GITHUB_TOKEN}
     else:
@@ -645,13 +646,19 @@ def git_pull_request(prefix,org_list,new):
         message = "An update to the list with code " + prefix + " has been proposed"
         title_context = "Updated "
 
-    message = message + "\n\n" + "**List title:** " + org_list['name']['en']
+    message = message + "\n\n" + "**List title:** " + org_list['name']['en'] 
+
+    if request.GET["message"]:
+        message = message + "\n\n" + urllib.parse.unquote(request.GET["message"])
 
     message = message + "\n\n Preview the platform with this list at [http://org-id.guide/_preview_branch/" + prefix + "](http://org-id.guide/_preview_branch/" + prefix + ") "
     message = message + " (visiting [http://org-id.guide/list/" + prefix + "](http://org-id.guide/list/" + prefix + ") when the preview is active"
     message = message + " or check the files changed options above."
     
-    message = message + "\n\n" + "Unless objections are raised, this update will be merged after 7 days."
+    if request.GET["period"] == 'fast':
+        message = message + "\n\n" + "This is considered a minor change, and so will be merged shortly, but may be reverted if objections are raised in the next 7 days."
+    else:
+        message = message + "\n\n" + "Unless objections are raised, this update will be merged after 7 days."
 
     payload = {
         "title":title_context + " registry entry for '" + org_list['name']['en'] + "' ("+prefix +")",
@@ -742,7 +749,7 @@ def edit_details(request, prefix):
                 else:
                     new = True
 
-                pull_request = git_pull_request(prefix,org_list,new)
+                pull_request = git_pull_request(prefix,org_list,new,request)
         except Exception as e:
             print(e)
             pass
