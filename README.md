@@ -1,6 +1,6 @@
 # org-id.guide
 
-We are creating a simple proces, tool and codelist to enable data publishers and users to create and use joined up data that identifies organizations.
+We are creating a simple process, tool and codelist to enable data publishers and users to create and use joined up data that identifies organizations.
 
 This involves
 
