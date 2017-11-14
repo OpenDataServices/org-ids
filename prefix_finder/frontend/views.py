@@ -475,7 +475,7 @@ def home(request):
 
 
 def results(request):
-    branch = request.session.get('branch', 'master')
+    use_branch = request.session.get('branch', 'master')
     query = {key: value for key, value in request.GET.items() if value and value != 'all'}
     context = {
         'lookups': {
@@ -489,7 +489,10 @@ def results(request):
     if query:
         context['lookups'] = get_lookups(query, branch)
 
+    context['branch'] = use_branch
+
     return render(request, 'results.html', context=context)
+
 
 def list_details(request, prefix):
     use_branch = request.session.get('branch', 'master')
