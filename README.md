@@ -55,6 +55,7 @@ Steps to installation:
 * Create a virtual environment (note this application uses python3)
 * Activate the virtual environment
 * Install dependencies
+* Apply migrations
 * Run the development server
 
 ```
@@ -63,6 +64,7 @@ cd org-ids
 virtualenv .ve --python=/usr/bin/python3
 source .ve/bin/activate
 pip install -r requirements_dev.txt
+python manage.py migrate
 python manage.py runserver
 ```
 
