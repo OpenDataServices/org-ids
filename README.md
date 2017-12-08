@@ -66,6 +66,7 @@ virtualenv .ve --python=/usr/bin/python3
 source .ve/bin/activate
 pip install -r requirements_dev.txt
 export GITHUB_TOKEN={token}
+python manage.py migrate
 python manage.py runserver
 ```
 
