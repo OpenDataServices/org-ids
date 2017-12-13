@@ -51,10 +51,11 @@
           </ul>
 
           <div class="single-meta-info__instructions">
-            <h3>To find identifiers</h3>
+            <h3>Search options</h3>
             {% if org_list.access.onlineAccessDetails %}
               <p>{{ org_list.access.onlineAccessDetails|urlize|linebreaks }}</p>
             {% endif %}
+            <h3>Find and use identifiers</h3>
             {% if org_list.access.guidanceOnLocatingIds %}
               <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks }}</p>
             {% endif %}
