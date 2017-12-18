@@ -14,7 +14,7 @@
      {% if existing_edits = True %}
 
         {% if pull_request %}
-          Your pull request was made and <a href="{{ pull_request.html_url }}">can be reviewed here</a>.
+          Your pull request was made and <a href="https://github.com/org-id/register/compare/{{ org_list.url }}">can be reviewed here</a>.
         {% else %}
             There are existing edits for this code. You can:
             <ul>
