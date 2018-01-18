@@ -148,7 +148,7 @@ code {
 
 .sidebar {
   width: 300px;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
@@ -1137,7 +1137,7 @@ fieldset {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 40em) {
+@media (min-height: 40em) {
   .homepage {
     height: 100vh;
   }
