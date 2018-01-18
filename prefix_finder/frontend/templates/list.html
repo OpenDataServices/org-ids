@@ -9,7 +9,7 @@
 
     <div class="main-content single-content">
       <header class="single-content__header">
-        <a href="{{ org_list.url }}" class="button" target="_blank"><i class="material-icons">link</i></a>
+        <a href="{{ org_list.url }}" class="button" target="_blank"><i class="material-icons" title="Visit website for this list">launch</i></a>
         <h1>{{ org_list.name.en }} <span>({{ org_list.code }})</span></h1>
       </header>
 
@@ -54,7 +54,7 @@
         <div class="single-content__block single-meta-info">
           <ul class="single-meta-info__categories single-categories">
             <li class="single-categories__item single-categories--coverage">
-              <p>Coverage: {% for x in org_list.coverage %}<span>{{ x }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+              <p>Coverage: {% for code, title in org_list.coverage_codes_and_titles %}<span><abbr title="{{ title }}">{{ code }}</abbr>{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
             </li>
 
             {% if org_list.sector %}
@@ -65,13 +65,22 @@
           </ul>
 
           <div class="single-meta-info__instructions">
-            <h3>To find identifiers</h3>
-            <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks}}</p>
+            <h3>Search options</h3>
+            {% if org_list.access.onlineAccessDetails %}
+              <p>{{ org_list.access.onlineAccessDetails|urlize|linebreaks }}</p>
+            {% endif %}
+            <h3>Find and use identifiers</h3>
+            {% if org_list.access.guidanceOnLocatingIds %}
+              <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks }}</p>
+            {% else %}
+              <p><a href="{{ org_list.url }}" target="_blank">Visit the website.</a></p>
+            {% endif %}
           </div>
         </div>
 
         <div class="single-content__block single-suggest">
           <p>You can suggest an edit to our information about this list by <a href="https://github.com/org-id/register/issues/new">posting an issue</a> or <a href="https://github.com/org-id/register">submitting a pull request</a>.</p>
+          <p>The <a href="http://docs.org-id.guide/en/latest/contribute/#proposing-a-correction-or-update" target="_blank">contributors handbook</a> details how to propose changes to an existing list, and how you can request or propose a new list.</p>
         </div>
       </div>
     </div>

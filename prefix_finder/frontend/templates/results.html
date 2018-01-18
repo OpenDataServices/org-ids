@@ -56,9 +56,9 @@
                 </div>
 
                 <footer class="card__controls">
-                  <a href="{{ result.url }}" class="button" target="_blank"><i class="material-icons">link</i></a>
+                  <a href="{{ result.url }}" class="button" target="_blank"><i class="material-icons" title="Visit the website for this list">launch</i></a>
                   <div class="card__list-code"><p>List Code <code>{{ result.code }}</code></p></div>
-                  <a href="{% url "list" result.code %}" class="button"><i class="material-icons">zoom_out_map</i></a>
+                  <a href="{% url "list" result.code %}" class="button"><i class="material-icons" title="More information about this list">info_outline</i></a>
                 </footer>
               </article>
             </div>
@@ -71,8 +71,10 @@
           <h1>Possible Lists</h1>
           {% if all_results.recommended %}
             <p>It's possible you will find the organization(s) you are looking for in one of the lists below…</p>
-          {% else %}
+          {% elif all_result.suggested %}
             <p>No alternative results.</p>
+          {% else %}
+            <p>No alternative results. Think there should be a list here? You can make a request, read the <a href="http://docs.org-id.guide/en/latest/contribute/" target="_blank">contributors handbook</a> for details on how to request or propose a new list.</p>
           {% endif %}
         </header>
 
@@ -115,9 +117,9 @@
                 </div>
 
                 <footer class="card__controls">
-                  <a href="{{ result.url }}" class="button" target="_blank"><i class="material-icons">link</i></a>
+                  <a href="{{ result.url }}" class="button" target="_blank"><i class="material-icons" title="Visit the website for this list">launch</i></a>
                   <div class="card__list-code"><p>List Code <code>{{ result.code }}</code></p></div>
-                  <a href="{% url "list" result.code %}" class="button"><i class="material-icons">zoom_out_map</i></a>
+                  <a href="{% url "list" result.code %}" class="button"><i class="material-icons" title="More information about this list">info_outline</i></a>
                 </footer>
               </article>
             </div>
@@ -174,9 +176,9 @@
                 </div>
 
                 <footer class="card__controls">
-                  <a href="{{ result.url }}" class="button" target="_blank"><i class="material-icons">link</i></a>
+                  <a href="{{ result.url }}" class="button" target="_blank"><i class="material-icons" title="Visit the website for this list">launch</i></a>
                   <div class="card__list-code"><p>List Code <code>{{ result.code }}</code></p></div>
-                  <a href="{% url "list" result.code %}" class="button"><i class="material-icons">zoom_out_map</i></a>
+                  <a href="{% url "list" result.code %}" class="button"><i class="material-icons" title="More information about this list">info_outline</i></a>
                 </footer>
               </article>
             </div>
