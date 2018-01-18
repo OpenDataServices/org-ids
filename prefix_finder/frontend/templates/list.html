@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load list_filters %}
 {% load static %}
+
 
 {% block main %}
   <main class="main-wrapper" role="main">
@@ -33,7 +35,7 @@
             <h2>Examples</h2>
           {% endif %}
           <pre>
-              {% for x in org_list.access.exampleIdentifiers|slice:":3" %}
+              {% for x in org_list.access.exampleIdentifiers|split_examples:","|slice:":3" %}
 <code>{{ org_list.code }}-{{ x }}</code>
               {% endfor %}
           </pre>
