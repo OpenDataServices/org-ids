@@ -98,7 +98,3 @@ def join_with(value, conj):
     # join all but the last element
     all_but_last = ", ".join(value[:-1])
     return "%s %s %s" % (all_but_last, conj, value[-1])
-
-@register.filter
-def split_on(value, arg):
-    return value.split(arg)
