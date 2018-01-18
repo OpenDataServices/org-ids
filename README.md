@@ -1,18 +1,18 @@
-# Org-ID: A list of lists
+# org-id.guide
 
-We are creating a simple proces, tool and codelist to enable data publishers and users to create and use joined up data that identifies organizations.
+We are creating a simple process, tool and codelist to enable data publishers and users to create and use joined up data that identifies organisations.
 
 This involves
 
-* Maintaining an list of organization identifier lists;
+* Maintaining an list of organisation identifier lists;
 * Developing a methodology for updating the list
 * Providing simple lookup tools, and guidance on choosing the best identifiers to use
 
-## The register of organization identifier lists
+## The register of organisation identifier lists
 
-An organization identifier list is any list that contains at least an identifier, and a name, for a collection of organizations.
+An organisation identifier list is any list that contains at least an identifier, and a name, for a collection of organisations.
 
-Building on the [IATI Organization Registration Agency codelist](http://iatistandard.org/202/codelists/OrganisationRegistrationAgency/) we are creating an updated register of organization identifier lists.
+Building on the [IATI Organisation Registration Agency codelist](http://iatistandard.org/202/codelists/OrganisationRegistrationAgency/) we are creating an updated register of organisation identifier lists.
 
 This list will contain detailed meta-data on the nature of the identifiers provided, the coverage of identifier lists. It will provide a unique code to identify each list.
 
@@ -20,13 +20,13 @@ This code can be used as a prefix to create simple identifier strings, or can be
 
 ### For example:
 
-The code for the organization identifier list provided by UK Companies House is 'GB-COH'. The identifier assigned to Open Data Services Co-operative Ltd in this list is '09506232'. Putting this together allows a dataset to unambiguously identify Open Data Services Co-operative Ltd as:
+The code for the organisation identifier list provided by UK Companies House is 'GB-COH'. The identifier assigned to Open Data Services Co-operative Ltd in this list is '09506232'. Putting this together allows a dataset to unambiguously identify Open Data Services Co-operative Ltd as:
 
 GB-COH-09506232
 
 or in a table such as:
 
-| Organization ID Scheme | Organization ID |
+| Organisation ID Scheme | Organisation ID |
 |------------------------|-----------------|
 | GB-COH                 | 09506232        |
 
