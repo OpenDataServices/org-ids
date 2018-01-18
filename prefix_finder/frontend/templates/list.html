@@ -52,7 +52,7 @@
         <div class="single-content__block single-meta-info">
           <ul class="single-meta-info__categories single-categories">
             <li class="single-categories__item single-categories--coverage">
-              <p>Coverage: {% for x in org_list.coverage %}<span>{{ x }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+              <p>Coverage: {% for code, title in org_list.coverage_codes_and_titles %}<span><abbr title="{{ title }}">{{ code }}</abbr>{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
             </li>
 
             {% if org_list.sector %}
@@ -70,6 +70,8 @@
             <h3>Find and use identifiers</h3>
             {% if org_list.access.guidanceOnLocatingIds %}
               <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks }}</p>
+            {% else %}
+              <p><a href="{{ org_list.url }}" target="_blank">Visit the website.</a></p>
             {% endif %}
           </div>
         </div>
