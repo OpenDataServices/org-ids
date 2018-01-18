@@ -52,7 +52,7 @@
         <div class="single-content__block single-meta-info">
           <ul class="single-meta-info__categories single-categories">
             <li class="single-categories__item single-categories--coverage">
-              <p>Coverage: {% for x in org_list.coverage %}<span><abbr title="{% for key, value in lookups.coverage %}{% if key == x %}{{ value }}{% endif %}{% endfor %}">{{ x }}</abbr>{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+              <p>Coverage: {% for code, title in org_list.coverage_codes_and_titles %}<span><abbr title="{{ title }}">{{ code }}</abbr>{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
             </li>
 
             {% if org_list.sector %}

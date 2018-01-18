@@ -158,6 +158,7 @@ def add_titles(org_list):
     coverage_codes = org_list.get('coverage')
     if coverage_codes:
         org_list['coverage_titles'] = [tup[1] for tup in lookups['coverage'] if tup[0] in coverage_codes]
+        org_list['coverage_codes_and_titles'] = [tup for tup in lookups['coverage'] if tup[0] in coverage_codes]
     subnational_codes = org_list.get('subnationalCoverage')
     if subnational_codes:
         subnational_coverage = []
