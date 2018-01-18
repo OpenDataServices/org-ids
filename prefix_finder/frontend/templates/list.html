@@ -20,13 +20,25 @@
           </div>
 
         <div class="single-sidebar__block single-sidebar--dark">
+          <h2>How to use</h2>
           <p>The code for this list is <br/><code>{{ org_list.code }}</code>. When you have located the organization you wish to identify in this list, you should either:</p>
           <p>Enter it in an identifier database field prefixed with <code>{{ org_list.code }}</code>.</p>
-          <h2>Example</h2>
           <pre>
 <code>{{ org_list.code }}-[ IDENTIFIER ]</code>
           </pre>
-          <p>Or, use it within a two-part identifier, with <code>{{ org_list.code }}</code> as the 'scheme', and the identifier you have located as the 'identifier' field. </p>
+          {% if org_list.access.exampleIdentifiers|length >= 1 %}
+          {% if org_list.access.exampleIdentifiers|length = 1 %}
+            <h2>Example</h2>
+          {% else %}
+            <h2>Examples</h2>
+          {% endif %}
+          <pre>
+              {% for x in org_list.access.exampleIdentifiers|slice:":3" %}
+<code>{{ org_list.code }}-{{ x }}</code>
+              {% endfor %}
+          </pre>
+          {% endif %}
+          <p>Alternatively, use it within a two-part identifier, with <code>{{ org_list.code }}</code> as the 'scheme', and the identifier you have located as the 'identifier' field. </p>
         </div>
       </div>
 
@@ -64,6 +76,7 @@
 
         <div class="single-content__block single-suggest">
           <p>You can suggest an edit to our information about this list by <a href="https://github.com/org-id/register/issues/new">posting an issue</a> or <a href="https://github.com/org-id/register">submitting a pull request</a>.</p>
+          <p>The <a href="http://docs.org-id.guide/en/latest/contribute/#proposing-a-correction-or-update" target="_blank">contributors handbook</a> details how to propose changes to an existing list, and how you can request or propose a new list.</p>
         </div>
       </div>
     </div>
