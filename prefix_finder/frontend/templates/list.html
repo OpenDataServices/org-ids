@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load list_filters %}
 {% load static %}
+
 
 {% block main %}
   <main class="main-wrapper" role="main">
@@ -7,7 +9,7 @@
 
     <div class="main-content single-content">
       <header class="single-content__header">
-        <a href="{{ org_list.url }}" class="button" target="_blank"><i class="material-icons">link</i></a>
+        <a href="{{ org_list.url }}" class="button" target="_blank"><i class="material-icons" title="Visit website for this list">launch</i></a>
         <h1>{{ org_list.name.en }} <span>({{ org_list.code }})</span></h1>
       </header>
 
@@ -20,13 +22,25 @@
           </div>
 
         <div class="single-sidebar__block single-sidebar--dark">
+          <h2>How to use</h2>
           <p>The code for this list is <br/><code>{{ org_list.code }}</code>. When you have located the organization you wish to identify in this list, you should either:</p>
           <p>Enter it in an identifier database field prefixed with <code>{{ org_list.code }}</code>.</p>
-          <h2>Example</h2>
           <pre>
 <code>{{ org_list.code }}-[ IDENTIFIER ]</code>
           </pre>
-          <p>Or, use it within a two-part identifier, with <code>{{ org_list.code }}</code> as the 'scheme', and the identifier you have located as the 'identifier' field. </p>
+          {% if org_list.access.exampleIdentifiers|length >= 1 %}
+          {% if org_list.access.exampleIdentifiers|length = 1 %}
+            <h2>Example</h2>
+          {% else %}
+            <h2>Examples</h2>
+          {% endif %}
+          <pre>
+              {% for x in org_list.access.exampleIdentifiers|split_examples:","|slice:":3" %}
+<code>{{ org_list.code }}-{{ x }}</code>
+              {% endfor %}
+          </pre>
+          {% endif %}
+          <p>Alternatively, use it within a two-part identifier, with <code>{{ org_list.code }}</code> as the 'scheme', and the identifier you have located as the 'identifier' field. </p>
         </div>
       </div>
 
@@ -40,7 +54,7 @@
         <div class="single-content__block single-meta-info">
           <ul class="single-meta-info__categories single-categories">
             <li class="single-categories__item single-categories--coverage">
-              <p>Coverage: {% for x in org_list.coverage %}<span>{{ x }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+              <p>Coverage: {% for code, title in org_list.coverage_codes_and_titles %}<span><abbr title="{{ title }}">{{ code }}</abbr>{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
             </li>
 
             {% if org_list.sector %}
@@ -51,13 +65,22 @@
           </ul>
 
           <div class="single-meta-info__instructions">
-            <h3>To find identifiers</h3>
-            <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks}}</p>
+            <h3>Search options</h3>
+            {% if org_list.access.onlineAccessDetails %}
+              <p>{{ org_list.access.onlineAccessDetails|urlize|linebreaks }}</p>
+            {% endif %}
+            <h3>Find and use identifiers</h3>
+            {% if org_list.access.guidanceOnLocatingIds %}
+              <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks }}</p>
+            {% else %}
+              <p><a href="{{ org_list.url }}" target="_blank">Visit the website.</a></p>
+            {% endif %}
           </div>
         </div>
 
         <div class="single-content__block single-suggest">
           <p>You can suggest an edit to our information about this list by <a href="https://github.com/org-id/register/issues/new">posting an issue</a> or <a href="https://github.com/org-id/register">submitting a pull request</a>.</p>
+          <p>The <a href="http://docs.org-id.guide/en/latest/contribute/#proposing-a-correction-or-update" target="_blank">contributors handbook</a> details how to propose changes to an existing list, and how you can request or propose a new list.</p>
         </div>
       </div>
     </div>
