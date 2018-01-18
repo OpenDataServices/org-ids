@@ -79,7 +79,7 @@
         </div>
 
         <div class="single-content__block single-suggest">
-          <p>You can suggest an edit to our information about this list by <a href="https://github.com/org-id/register/issues/new">posting an issue</a> or <a href="https://github.com/org-id/register">submitting a pull request</a>.</p>
+          <p>You can suggest an edit to our information about this list by <a href="https://github.com/org-id/register/issues/new">posting an issue</a> or <a href="https://github.com/org-id/register/edit/{{ branch }}/lists/{{ org_list.code|lower|split_on:"-"|first }}/{{ org_list.code|lower }}.json">submitting a pull request</a>.</p>
           <p>The <a href="http://docs.org-id.guide/en/latest/contribute/#proposing-a-correction-or-update" target="_blank">contributors handbook</a> details how to propose changes to an existing list, and how you can request or propose a new list.</p>
         </div>
       </div>
