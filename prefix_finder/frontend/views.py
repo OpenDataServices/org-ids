@@ -565,7 +565,7 @@ def make_xml_codelist(use_branch="master"):
         Organization identifier lists and their code. These can be used as the
         prefix for an organization identifier. For general guidance about
         constructing Organization Identifiers, please see
-        http://iatistandard.org/organization-identifiers/
+        http://iatistandard.org/202/guidance/how-to-publish/iati-organisation-identifiers/
         
         This list was formerly maintained by the IATI Secretariat as the
         Organization Registration Agency codelist. This version is maintained
