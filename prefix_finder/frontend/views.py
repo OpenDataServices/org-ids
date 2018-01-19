@@ -158,6 +158,7 @@ def add_titles(org_list):
     coverage_codes = org_list.get('coverage')
     if coverage_codes:
         org_list['coverage_titles'] = [tup[1] for tup in lookups['coverage'] if tup[0] in coverage_codes]
+        org_list['coverage_codes_and_titles'] = [tup for tup in lookups['coverage'] if tup[0] in coverage_codes]
     subnational_codes = org_list.get('subnationalCoverage')
     if subnational_codes:
         subnational_coverage = []
@@ -475,7 +476,7 @@ def home(request):
 
 
 def results(request):
-    branch = request.session.get('branch', 'master')
+    use_branch = request.session.get('branch', 'master')
     query = {key: value for key, value in request.GET.items() if value and value != 'all'}
     context = {
         'lookups': {
@@ -489,7 +490,10 @@ def results(request):
     if query:
         context['lookups'] = get_lookups(query, branch)
 
+    context['branch'] = use_branch
+
     return render(request, 'results.html', context=context)
+
 
 def list_details(request, prefix):
     use_branch = request.session.get('branch', 'master')
@@ -500,7 +504,7 @@ def list_details(request, prefix):
 
     except KeyError:
         raise Http404('Organization list {} does not exist'.format(prefix))
-    return render(request, 'list.html', context={'org_list': org_list, 'branch':use_branch})
+    return render(request, 'list.html', context={'org_list': org_list, 'lookups': lookups, 'branch':use_branch})
 
 
 def _get_filename(use_branch='master'):
@@ -561,7 +565,18 @@ def make_xml_codelist(use_branch="master"):
     root = ET.Element("codelist")
     meta = ET.SubElement(root, "metadata")
     ET.SubElement(ET.SubElement(meta, "name"),"narrative").text = "Organization Identifier Lists"
-    ET.SubElement(ET.SubElement(meta, "description"),"narrative").text = "Organization identifier lists and their code. These can be used as the prefix for an organization identifier. For general guidance about constructing Organization Identifiers, please see http://iatistandard.org/organization-identifiers/  This list was formerly maintained by the IATI Secretariat as the Organization Registration Agency codelist. This version is maintained by the Identify-Org project, of which IATI is a member. New code requests should be made via Identify-org.net"
+    ET.SubElement(ET.SubElement(meta, "description"),"narrative").text = """
+        Organization identifier lists and their code. These can be used as the
+        prefix for an organization identifier. For general guidance about
+        constructing Organization Identifiers, please see
+        http://iatistandard.org/202/guidance/how-to-publish/iati-organisation-identifiers/
+        
+        This list was formerly maintained by the IATI Secretariat as the
+        Organization Registration Agency codelist. This version is maintained
+        by the org-id.guide project, of which IATI is a member. New code
+        requests should be made via
+        http://docs.org-id.guide/en/latest/contribute/
+    """
     items = ET.SubElement(root, "codelist-items")
 
     for entry in org_id_dict[use_branch].values():
