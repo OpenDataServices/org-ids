@@ -61,11 +61,11 @@ def load_schemas_from_disk():
 def create_codelist_lookups(schemas):
     lookups = {}
     lookups['coverage'] = sorted(
-        [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']],
+        [(item['code'], item['title']['en'], False) for item in schemas['codelist-coverage']['coverage']],
         key=lambda tup: tup[1]
     )
-    lookups['structure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if not item['parent']]
-    lookups['sector'] = [(item['code'], item['title']['en']) for item in schemas['codelist-sector']['sector']]
+    lookups['structure'] = [(item['code'], item['title']['en'], False) for item in schemas['codelist-structure']['structure'] if not item['parent']]
+    lookups['sector'] = [(item['code'], item['title']['en'], False) for item in schemas['codelist-sector']['sector']]
 
     lookups['subnational'] = {}
     for item in schemas['codelist-coverage']['subnationalCoverage']:

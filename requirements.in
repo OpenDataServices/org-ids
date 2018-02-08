@@ -1,5 +1,5 @@
-Django<1.9
-#^^ rq.filter: <1.9
+Django<1.12
+#^^ rq.filter: <1.12
 django-bootstrap3
 requests
 django-environ

@@ -29,7 +29,7 @@
 <code>{{ org_list.code }}-[ IDENTIFIER ]</code>
           </pre>
           {% if org_list.access.exampleIdentifiers|length >= 1 %}
-          {% if org_list.access.exampleIdentifiers|length = 1 %}
+          {% if org_list.access.exampleIdentifiers|length == 1 %}
             <h2>Example</h2>
           {% else %}
             <h2>Examples</h2>
@@ -54,7 +54,7 @@
         <div class="single-content__block single-meta-info">
           <ul class="single-meta-info__categories single-categories">
             <li class="single-categories__item single-categories--coverage">
-              <p>Coverage: {% for code, title in org_list.coverage_codes_and_titles %}<span><abbr title="{{ title }}">{{ code }}</abbr>{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+              <p>Coverage: {% for code, title, disabled in org_list.coverage_codes_and_titles %}<span><abbr title="{{ title }}">{{ code }}</abbr>{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
             </li>
 
             {% if org_list.sector %}
