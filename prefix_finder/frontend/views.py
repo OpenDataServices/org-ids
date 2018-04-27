@@ -61,23 +61,23 @@ def load_schemas_from_disk():
 def create_codelist_lookups(schemas):
     lookups = {}
     lookups['coverage'] = sorted(
-        [(item['code'], item['title']['en']) for item in schemas['codelist-coverage']['coverage']],
+        [(item['code'], item['title']['en'], False) for item in schemas['codelist-coverage']['coverage']],
         key=lambda tup: tup[1]
     )
-    lookups['structure'] = [(item['code'], item['title']['en']) for item in schemas['codelist-structure']['structure'] if not item['parent']]
-    lookups['sector'] = [(item['code'], item['title']['en']) for item in schemas['codelist-sector']['sector']]
+    lookups['structure'] = [(item['code'], item['title']['en'], False) for item in schemas['codelist-structure']['structure'] if not item['parent']]
+    lookups['sector'] = [(item['code'], item['title']['en'], False) for item in schemas['codelist-sector']['sector']]
 
     lookups['subnational'] = {}
     for item in schemas['codelist-coverage']['subnationalCoverage']:
         if lookups['subnational'].get(item['countryCode']):
-            lookups['subnational'][item['countryCode']].append((item['code'], item['title']['en']))
+            lookups['subnational'][item['countryCode']].append((item['code'], item['title']['en'], False))
         else:
-            lookups['subnational'][item['countryCode']] = [(item['code'], item['title']['en'])]
+            lookups['subnational'][item['countryCode']] = [(item['code'], item['title']['en'], False)]
 
     lookups['substructure'] = {}
     for item in schemas['codelist-structure']['structure']:
         if item['parent']:
-            code_title = (item['code'], item['title']['en'].split(' > ')[1])
+            code_title = (item['code'], item['title']['en'].split(' > ')[1], False)
             if lookups['substructure'].get(item['parent']):
                 lookups['substructure'][item['parent']].append(code_title)
             else:
@@ -415,27 +415,27 @@ def get_lookups(query_dict, use_branch='master'):
             if field_lookup[1]:
                 valid_lookups[field] = lookups[field]
             else:
-                valid_lookups[field] = [tup + (False, ) if tup[0] in field_lookup[0] else tup + (True, ) for tup in lookups[field]]
+                valid_lookups[field] = [tup if tup[0] in field_lookup[0] else (tup[0], tup[1], True) for tup in lookups[field]]
 
     if lookups['subnational'].get(coverage):
         if subnational_lookups:
             valid_lookups['subnational'] = [
-                tup + (False, ) if tup[0] in subnational_lookups else tup + (True, )
+                tup if tup[0] in subnational_lookups else (tup[0], tup[1], True)
                 for tup in lookups['subnational'][coverage]
             ]
         else:
-            valid_lookups['subnational'] = [tup + (True, ) for tup in lookups['subnational'][coverage]]
+            valid_lookups['subnational'] = [(tup[0], tup[1], True) for tup in lookups['subnational'][coverage]]
     else:
         valid_lookups['subnational'] = []
 
     if lookups['substructure'].get(structure):
         if substructure_lookups:
             valid_lookups['substructure'] = [
-                tup + (False,) if tup[0] in substructure_lookups else tup + (True, )
+                tup if tup[0] in substructure_lookups else (tup[0], tup[1], True)
                 for tup in lookups['substructure'][structure]
             ]
         else:
-            valid_lookups['substructure'] = [tup + (True, ) for tup in lookups['substructure'][structure]]
+            valid_lookups['substructure'] = [(tup[0], tup[1], True) for tup in lookups['substructure'][structure]]
     else:
         valid_lookups['substructure'] = []
 
