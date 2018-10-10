@@ -70,6 +70,23 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+#### With Vagrant
+
+If you want to use vagrant, run
+
+```
+vagrant up
+vagrant ssh
+cd /vagrant
+virtualenv .ve --python=python3
+source .ve/bin/activate
+pip install -r requirements_dev.txt 
+export GITHUB_TOKEN={token}
+python manage.py migrate
+python manage.py runserver 0:8000
+```
+
+There is not many differences; simply make sure to connect to the vagrant box and also to pass 0:8000 to runserver.
 
 ## Tools
 
