@@ -565,18 +565,15 @@ def make_xml_codelist(use_branch="master"):
     root = ET.Element("codelist")
     meta = ET.SubElement(root, "metadata")
     ET.SubElement(ET.SubElement(meta, "name"),"narrative").text = "Organization Identifier Lists"
-    ET.SubElement(ET.SubElement(meta, "description"),"narrative").text = """
-        Organization identifier lists and their code. These can be used as the
-        prefix for an organization identifier. For general guidance about
-        constructing Organization Identifiers, please see
-        http://iatistandard.org/202/guidance/how-to-publish/iati-organisation-identifiers/
-        
-        This list was formerly maintained by the IATI Secretariat as the
-        Organization Registration Agency codelist. This version is maintained
-        by the org-id.guide project, of which IATI is a member. New code
-        requests should be made via
-        http://docs.org-id.guide/en/latest/contribute/
-    """
+    ET.SubElement(ET.SubElement(meta, "description"),"narrative").text = """<![CDATA[
+                The values from this codelist are used to identify the particular list that an organisation identifier was drawn from. The codelist provides a register of known identifier lists, including national company registers, NGO directories and international and multilateral organisation lists - along with guidance and online resources to help locate the identifiers assigned to a specific organisation.
+
+                As of 17 July 2017 this list is maintained by the org-id.guide project. Data publishers can now search for and locate the relevant list for a particular organisation identifier using the `org-id.guide website <http://org-id.guide/>`__. The full register of identifier sources is also available to download in `XML <http://org-id.guide/download.xml>`__, `JSON <http://org-id.guide/download.json>`__ and `CSV <http://org-id.guide/download.csv>`__ formats.
+
+                IATI periodically replicates the codelist of identifier sources from org-id.guide, to assist those accessing IATI documentation. However, it is advised that the most up-to-date source is the `org-id.guide project <http://org-id.guide/>`__.
+
+                If org-id.guide does not contain an entry for the kind of organisation you need to identify, you can make a request a new list is included in the register following the `guidance <http://docs.org-id.guide/en/latest/contribute/>`__ or by getting in touch with org-id.guide at: contact@org-id.guide.
+            ]]>"""
     items = ET.SubElement(root, "codelist-items")
 
     for entry in sorted(org_id_dict[use_branch].values(), key=lambda entry: entry['code']):
