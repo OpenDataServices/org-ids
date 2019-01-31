@@ -24,6 +24,7 @@ pip freeze -r requirements.in | grep -v "pkg-resources" > requirements.txt
 # Same again for requirements_dev
 if [[ "$1" == "--new-only" ]]; then
     pip install -r requirements_dev.txt
+    pip install -r requirements.txt
 fi
 pip install $dashupgrade -r requirements_dev.in
 cat requirements.in requirements_dev.in > requirements_combined_tmp.in
