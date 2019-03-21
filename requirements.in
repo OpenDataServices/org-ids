@@ -6,7 +6,7 @@ django-environ
 raven
 python-dateutil
 titlecase
-dealer
+dealer==2.0.5
 ratelimit
 django-super-favicon
 jsonschema
