@@ -1145,7 +1145,7 @@ fieldset {
 .homepage__logo {
   max-width: 421px;
   margin: 0 auto;
-  width: 80%;
+  width: auto;
 }
 @media (max-width: 39.9375em) {
   .homepage__logo {
