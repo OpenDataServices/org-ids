@@ -13,3 +13,4 @@ pytest-localserver
 
 coveralls
 selenium
+werkzeug>=0.15.3
