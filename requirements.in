@@ -1,4 +1,4 @@
-Django<1.12
+Django>=1.11.23,<1.12
 #^^ rq.filter: <1.12
 django-bootstrap3
 requests
@@ -11,3 +11,4 @@ ratelimit
 django-super-favicon
 jsonschema
 lxml
+urllib3>=1.24.2
