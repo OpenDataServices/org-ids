@@ -697,7 +697,7 @@ fieldset {
   .quality-chart.quality-chart:before {
     width: 100%;
     text-align: center;
-    bottom: 90px;
+    bottom: calc(50% - 40px);
   }
 }
 .quality-chart.quality-chart:after {
@@ -723,6 +723,11 @@ fieldset {
     left: 0;
     width: 100%;
     text-align: center;
+  }
+}
+@media (max-width: 64em) {
+  #quality-chart-container {
+    display: none;
   }
 }
 #quality-chart-container {
