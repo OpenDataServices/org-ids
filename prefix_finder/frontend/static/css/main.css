@@ -116,17 +116,6 @@ code {
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.footer--sidebar {
-  margin-top: 30px;
-  position: static;
-  margin-left: 300px;
-  width: calc(100% - 300px);
-}
-.footer--sidebar p {
-  text-align: left;
-  max-width: 100% !important;
-  padding-left: 20px;
-}
 .footer p {
   color: rgba(255, 255, 255, 0.7);
   font-size: .8rem;
