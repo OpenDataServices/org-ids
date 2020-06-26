@@ -1,12 +1,11 @@
-Django>=1.11.23,<1.12
-#^^ rq.filter: <1.12
+Django>2.2<2.3
 django-bootstrap3
 requests
 django-environ
 raven
 python-dateutil
 titlecase
-dealer==2.0.5
+dealer
 ratelimit
 django-super-favicon
 jsonschema
