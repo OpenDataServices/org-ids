@@ -605,7 +605,7 @@ def make_xml_codelist(use_branch="master"):
             ET.SubElement(item, "category").text = entry['coverage'][0]
         else:
             ET.SubElement(item, "category").text = '-'
-        ET.SubElement(item, "url").text = entry['url']
+        ET.SubElement(item, "url").text = entry.get('url')
 
     return ET.tostring(root, encoding='unicode', pretty_print=True)
 
