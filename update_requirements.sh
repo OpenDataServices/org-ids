@@ -13,20 +13,20 @@ if [[ "$1" == "--new-only" ]]; then
     # If --new-only is supplied then we install the current versions of
     # packages into the virtualenv, so that the only change will be any new
     # packages and their dependencies.
-    pip install -r requirements.txt
+    pip install --use-feature=2020-resolver -r requirements.txt
     dashupgrade=""
 else
     dashupgrade="--upgrade"
 fi
-pip install $dashupgrade -r requirements.in
+pip install --use-feature=2020-resolver $dashupgrade -r requirements.in
 pip freeze -r requirements.in | grep -v "pkg-resources" > requirements.txt
 
 # Same again for requirements_dev
 if [[ "$1" == "--new-only" ]]; then
-    pip install -r requirements_dev.txt
-    pip install -r requirements.txt
+    pip install --use-feature=2020-resolver -r requirements_dev.txt
+    pip install --use-feature=2020-resolver -r requirements.txt
 fi
-pip install $dashupgrade -r requirements_dev.in
+pip install --use-feature=2020-resolver $dashupgrade -r requirements_dev.in
 cat requirements.in requirements_dev.in > requirements_combined_tmp.in
 pip freeze -r requirements_combined_tmp.in | grep -v "pkg-resources" > requirements_dev.txt
 rm requirements_combined_tmp.in
