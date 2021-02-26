@@ -257,7 +257,7 @@ def filter_and_score_results(query,use_branch="master"):
                     if len(prefix['coverage']) == 1:
                         prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]
                         prefix['relevance_debug'].append("List only covers this country +" + str(RELEVANCE["MATCH_DROPDOWN_ONLY_VALUE"]))
-                    if not subnational and not prefix['subnationalCoverage']:
+                    if not subnational and not prefix.get('subnationalCoverage'):
                         prefix['relevance'] += RELEVANCE["MATCH_DROPDOWN"]/2
                         prefix['relevance_debug'].append("List is only national +" + str(RELEVANCE["MATCH_DROPDOWN"]/2))
                 else:
