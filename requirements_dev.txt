@@ -35,7 +35,7 @@ regex==2021.3.17
 requests==2.25.1
 selenium==3.141.0
 six==1.15.0
-sqlparse==0.4.1
+sqlparse==0.4.2
 titlecase==2.0.0
 toml==0.10.2
 urllib3==1.26.5
