@@ -2,10 +2,10 @@ attrs==20.3.0
 certifi==2020.12.5
 chardet==4.0.0
 dealer==2.1.0
+django==2.2.24
 django-bootstrap3==14.2.0
 django-environ==0.4.5
 django-super-favicon==0.6.1
-django==2.2.19
 idna==2.10
 jsonschema==3.2.0
 lxml==4.6.3
