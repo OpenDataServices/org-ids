@@ -32,10 +32,10 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 lookups = None
 org_id_dict = {}
 git_commit_ref = {'master':''}
-branch = 'master'
+branch = 'main'
 
 
-def load_schemas_from_github(branch="master"):
+def load_schemas_from_github(branch="main"):
     schemas = {}
     response = requests.get("https://github.com/org-id/register/archive/"+branch+".zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
@@ -86,7 +86,7 @@ def create_codelist_lookups(schemas):
     return lookups
 
 
-def load_org_id_lists_from_github(branch="master"):
+def load_org_id_lists_from_github(branch="main"):
     org_id_lists = []
     response = requests.get("https://github.com/org-id/register/archive/"+branch+".zip")
     with zipfile.ZipFile(io.BytesIO(response.content)) as ziped_repo:
@@ -175,7 +175,7 @@ def add_titles(org_list):
         org_list['sector_titles'] = [tup[1] for tup in lookups['sector'] if tup[0] in sector_codes]
 
 
-def refresh_data(branch="master"):
+def refresh_data(branch="main"):
     global lookups
     global org_id_dict
     global git_commit_ref
@@ -232,7 +232,7 @@ def refresh_data(branch="master"):
 print(refresh_data())
 
 
-def filter_and_score_results(query,use_branch="master"):
+def filter_and_score_results(query,use_branch="main"):
     indexed = {key: value.copy() for key, value in org_id_dict[use_branch].items()}
     for prefix in list(indexed.values()):
         prefix['relevance'] = 0
@@ -336,7 +336,7 @@ def filter_and_score_results(query,use_branch="master"):
     return all_results
 
 
-def get_lookups(query_dict, use_branch='master'):
+def get_lookups(query_dict, use_branch='main'):
     ''' Get only those lookup combinations returning some result'''
     valid_lookups = {
         'coverage': None,
@@ -454,7 +454,7 @@ def preview_branch(request,branch_name):
 
 
 def home(request):
-    use_branch = request.session.get('branch', 'master')
+    use_branch = request.session.get('branch', 'main')
     query = {key: value for key, value in request.GET.items() if value and value != 'all'}
     context = {
         'lookups': {
@@ -476,7 +476,7 @@ def home(request):
 
 
 def results(request):
-    use_branch = request.session.get('branch', 'master')
+    use_branch = request.session.get('branch', 'main')
     query = {key: value for key, value in request.GET.items() if value and value != 'all'}
     context = {
         'lookups': {
@@ -496,7 +496,7 @@ def results(request):
 
 
 def list_details(request, prefix):
-    use_branch = request.session.get('branch', 'master')
+    use_branch = request.session.get('branch', 'main')
 
     try:
         org_list = org_id_dict[use_branch][prefix].copy()
@@ -507,7 +507,7 @@ def list_details(request, prefix):
     return render(request, 'list.html', context={'org_list': org_list, 'lookups': lookups, 'branch':use_branch})
 
 
-def _get_filename(use_branch='master'):
+def _get_filename(use_branch='main'):
     if git_commit_ref[use_branch]:
         return git_commit_ref[use_branch][:10]
     else:
@@ -515,7 +515,7 @@ def _get_filename(use_branch='master'):
 
 
 def json_download(request):
-    use_branch = request.session.get('branch', 'master')
+    use_branch = request.session.get('branch', 'main')
     response = HttpResponse(json.dumps({"lists": list(org_id_dict[use_branch].values())}, indent=2), content_type='text/json')
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.json"'.format(_get_filename())
     return response
@@ -533,7 +533,7 @@ def _flatten_list(obj, path=''):
 
 
 def csv_download(request):
-    use_branch = request.session.get('branch', 'master')
+    use_branch = request.session.get('branch', 'main')
     all_keys = set()
     all_rows = []
     for item in org_id_dict[use_branch].values():
@@ -561,7 +561,7 @@ def csv_download(request):
 import lxml.etree as ET
 
 
-def make_xml_codelist(use_branch="master"):
+def make_xml_codelist(use_branch="main"):
     root = ET.Element("codelist")
     meta = ET.SubElement(root, "metadata")
     ET.SubElement(ET.SubElement(meta, "name"),"narrative").text = "Organization Identifier Lists"
@@ -611,7 +611,7 @@ def make_xml_codelist(use_branch="master"):
 
 
 def xml_download(request):
-    use_branch = request.session.get('branch', 'master')
+    use_branch = request.session.get('branch', 'main')
     response = HttpResponse(make_xml_codelist(use_branch), content_type='text/xml')
     response['Content-Disposition'] = 'attachment; filename="org-id-{0}.xml"'.format(_get_filename())
     return response

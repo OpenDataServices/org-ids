@@ -12,7 +12,7 @@ def test_xml_codelists():
     schema_file_parsed = etree.parse(schema_file)
 
     xmlschema = etree.XMLSchema(schema_file_parsed)
-    created_xml_codelist = make_xml_codelist('master')
+    created_xml_codelist = make_xml_codelist('main')
     created_xml_codelist_file = io.StringIO(created_xml_codelist)
     xml_codelist_etree = etree.parse(created_xml_codelist_file)
 
