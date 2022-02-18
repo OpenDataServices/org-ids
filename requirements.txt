@@ -12,7 +12,7 @@ chardet==4.0.0
     # via requests
 dealer==2.1.0
     # via -r requirements.in
-django==2.2.24
+django==2.2.27
     # via
     #   -r requirements.in
     #   django-bootstrap3
@@ -26,9 +26,9 @@ idna==2.10
     # via requests
 jsonschema==3.2.0
     # via -r requirements.in
-lxml==4.6.3
+lxml==4.8.0
     # via -r requirements.in
-pillow==8.3.2
+pillow==9.0.1
     # via django-super-favicon
 pyrsistent==0.17.3
     # via jsonschema

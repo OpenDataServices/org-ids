@@ -22,7 +22,7 @@ coveralls==3.0.1
     # via -r requirements_dev.in
 dealer==2.1.0
     # via -r requirements.in
-django==2.2.24
+django==2.2.27
     # via
     #   -r requirements.in
     #   django-bootstrap3
@@ -42,7 +42,7 @@ iniconfig==1.1.1
     # via pytest
 jsonschema==3.2.0
     # via -r requirements.in
-lxml==4.6.3
+lxml==4.8.0
     # via -r requirements.in
 mccabe==0.6.1
     # via flake8
@@ -50,7 +50,7 @@ packaging==20.9
     # via pytest
 pep517==0.12.0
     # via pip-tools
-pillow==8.3.2
+pillow==9.0.1
     # via django-super-favicon
 pip-tools==6.5.1
     # via -r requirements_dev.in
