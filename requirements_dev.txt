@@ -42,7 +42,7 @@ iniconfig==1.1.1
     # via pytest
 jsonschema==3.2.0
     # via -r requirements.in
-lxml==4.8.0
+lxml==4.9.1
     # via -r requirements.in
 mccabe==0.6.1
     # via flake8
