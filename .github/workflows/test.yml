@@ -21,4 +21,4 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pip-
     - run: pip install -r requirements_dev.txt
-    - run: BROWSER=PhantomJS py.test
+    - run: py.test
