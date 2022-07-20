@@ -2,8 +2,10 @@ import os
 import time
 import pytest
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
-BROWSER = os.environ.get('BROWSER', 'Firefox')
+BROWSER = os.environ.get('BROWSER', 'ChromeHeadless')
 
 
 @pytest.fixture(scope="module")
@@ -16,14 +18,15 @@ def browser(request):
         profile.set_preference("browser.download.dir", os.getcwd())
         profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/json")
         browser = getattr(webdriver, BROWSER)(firefox_profile=profile)
-        browser.implicitly_wait(3)
-        request.addfinalizer(lambda: browser.quit())
-        return browser
+    elif BROWSER == 'ChromeHeadless':
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        browser = webdriver.Chrome(chrome_options=chrome_options)
     else:
         browser = getattr(webdriver, BROWSER)()
-        browser.implicitly_wait(3)
-        request.addfinalizer(lambda: browser.quit())
-        return browser
+    browser.implicitly_wait(3)
+    request.addfinalizer(lambda: browser.quit())
+    return browser
 
 
 @pytest.fixture(scope="module")
@@ -37,8 +40,8 @@ def server_url(request, live_server):
 
 def test_home(server_url, browser):
     browser.get(server_url)
-    assert "AGPLv3" in browser.find_element_by_tag_name("footer").text
-    browser.find_element_by_link_text('Terms & Conditions')
+    assert "AGPLv3" in browser.find_element(By.TAG_NAME, "footer").text
+    browser.find_element(By.LINK_TEXT, 'Terms & Conditions')
 
 
 def test_terms(server_url, browser):
