@@ -14,7 +14,7 @@ charset-normalizer==2.1.0
     # via requests
 dealer==2.1.0
     # via -r requirements.in
-django==3.2.14
+django==3.2.15
     # via
     #   -r requirements.in
     #   django-bootstrap3
@@ -26,8 +26,6 @@ django-super-favicon==0.6.1
     # via -r requirements.in
 idna==3.3
     # via requests
-importlib-resources==5.8.0
-    # via jsonschema
 jsonschema==4.7.2
     # via -r requirements.in
 lxml==4.9.1
@@ -56,5 +54,3 @@ urllib3==1.26.10
     # via
     #   -r requirements.in
     #   requests
-zipp==3.8.1
-    # via importlib-resources
