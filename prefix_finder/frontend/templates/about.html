@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block main %}
   <main class="main-wrapper" role="main">
-    {% include "sidebar.html" %}
+    {% include "sidebar.html" with sidebar_show_about_link=False %}
     <div class="main-content single-content about-page">
       <div>
         <h1 class="about-page__header">{% trans "About" %}</h1>
