@@ -119,25 +119,29 @@ def augment_quality(schemas, org_id_lists):
     for prefix in org_id_lists:
         quality = 0
         quality_explained = {}
-        for item in (prefix.get('data', {}).get('availability') or []):
-            value = availabilty_score.get(item)
-            if value:
-                quality += value
-                quality_explained["Availability: " + availabilty_names[item]] = value
-            else:
-                print('No availiablity type {}. Found in code {}'.format(item, prefix['code']))
 
-        if prefix['data'].get('licenseStatus'):
-            quality += license_score[prefix['data']['licenseStatus']]
-            quality_explained["License: " + license_names[prefix['data']['licenseStatus']]] = license_score[prefix['data']['licenseStatus']]
+        if prefix.get("deprecated"):
+            quality_explained["Deprecated"] = 0
+        else:
+            for item in (prefix.get('data', {}).get('availability') or []):
+                value = availabilty_score.get(item)
+                if value:
+                    quality += value
+                    quality_explained["Availability: " + availabilty_names[item]] = value
+                else:
+                    print('No availiablity type {}. Found in code {}'.format(item, prefix['code']))
 
-        if prefix.get('listType'):
-            value = listtype_score.get(prefix['listType'])
-            if value:
-                quality += value
-                quality_explained["List type: "  + listtype_names[prefix['listType']]] = value
-            else:
-                print('No licenseStatus for {}. Found in code {}'.format(prefix['listType'], prefix['code']))
+            if prefix['data'].get('licenseStatus'):
+                quality += license_score[prefix['data']['licenseStatus']]
+                quality_explained["License: " + license_names[prefix['data']['licenseStatus']]] = license_score[prefix['data']['licenseStatus']]
+
+            if prefix.get('listType'):
+                value = listtype_score.get(prefix['listType'])
+                if value:
+                    quality += value
+                    quality_explained["List type: "  + listtype_names[prefix['listType']]] = value
+                else:
+                    print('No licenseStatus for {}. Found in code {}'.format(prefix['listType'], prefix['code']))
 
         prefix['quality_explained'] = quality_explained
         prefix['quality'] = min(quality, 100)
@@ -316,7 +320,8 @@ def filter_and_score_results(query,use_branch="main"):
 
     all_results = {"suggested": [],
                    "recommended": [],
-                   "other": []}
+                   "other": [],
+                   "depreciated": [],}
 
     if not indexed:
         return all_results
@@ -324,7 +329,9 @@ def filter_and_score_results(query,use_branch="main"):
     for num, value in enumerate(sorted(indexed.values(), key=lambda k: -(k['relevance'] * 100 + k['quality']))):
         add_titles(value)
 
-        if (value['relevance'] >= RELEVANCE["SUGGESTED_RELEVANCE_THRESHOLD"]
+        if (value.get("deprecated")):
+            all_results['depreciated'].append(value)
+        elif (value['relevance'] >= RELEVANCE["SUGGESTED_RELEVANCE_THRESHOLD"]
             and value['quality'] > RELEVANCE["SUGGESTED_QUALITY_THRESHOLD"]
             and not all_results['suggested'] or (all_results['suggested'] and value['relevance'] == all_results['suggested'][0]['relevance'])):
             all_results['suggested'].append(value)
