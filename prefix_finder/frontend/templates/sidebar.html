@@ -6,9 +6,9 @@
   <div class="sidebar__main">
     {% if request.resolver_match.url_name == "list" %}
       {% if request.META.HTTP_REFERER %}
-        <a href="{{ request.META.HTTP_REFERER }}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+        <a href="{{ request.META.HTTP_REFERER }}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to results</span></a>
       {% else %}
-        <a href="{% url "results" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+        <a href="{% url "results" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to results</span></a>
       {% endif %}
 
     {% elif request.resolver_match.url_name == "about" %}
