@@ -1310,20 +1310,6 @@ fieldset {
   padding: 5px 10px;
   color: white;
 }
-.about-page__half--left {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-  margin-right: -5px;
-  padding-right: 10px;
-
-}
-.about-page__half--right {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-  padding-left: 10px;
-}
 .about-page__code {
   background-color: #e0e0e0;
   margin-bottom: 20px;
