@@ -538,7 +538,7 @@ fieldset {
   background-color: #C02942;
 }
 
-.card--depreciated header {
+.card--deprecated header {
   background-color: rgba(0, 0, 0, 0.7);;
 }
 
@@ -880,7 +880,7 @@ fieldset {
 .list-group--fallback h1 {
   background-color: #C02942;
 }
-.list-group--depreciated h1 {
+.list-group--deprecated h1 {
   background-color:rgba(0, 0, 0, 0.7);
 }
 

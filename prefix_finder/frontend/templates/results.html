@@ -60,10 +60,10 @@
         </div>
       </div>
 
-      <div class="list-group list-group--depreciated">
+      <div class="list-group list-group--deprecated">
         <header class="list-group__header">
           <h1>Deprecated lists</h1>
-          {% if all_results.depreciated %}
+          {% if all_results.deprecated %}
             <p>The following lists are for reference only. You may see them used in old data.</p>
           {% else %}
             <p>No deprecated lists meet the search criteria.</p>
@@ -71,8 +71,8 @@
         </header>
 
         <div class="list-group__main">
-          {% for result in all_results.depreciated %}
-            {% include "results-list.html"  with result_class="depreciated" %}
+          {% for result in all_results.deprecated %}
+            {% include "results-list.html"  with result_class="deprecated" %}
           {% endfor %}
         </div>
       </div>

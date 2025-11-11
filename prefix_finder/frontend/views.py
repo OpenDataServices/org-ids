@@ -321,7 +321,7 @@ def filter_and_score_results(query,use_branch="main"):
     all_results = {"suggested": [],
                    "recommended": [],
                    "other": [],
-                   "depreciated": [],}
+                   "deprecated": [],}
 
     if not indexed:
         return all_results
@@ -330,7 +330,7 @@ def filter_and_score_results(query,use_branch="main"):
         add_titles(value)
 
         if (value.get("deprecated")):
-            all_results['depreciated'].append(value)
+            all_results['deprecated'].append(value)
         elif (value['relevance'] >= RELEVANCE["SUGGESTED_RELEVANCE_THRESHOLD"]
             and value['quality'] > RELEVANCE["SUGGESTED_QUALITY_THRESHOLD"]
             and not all_results['suggested'] or (all_results['suggested'] and value['relevance'] == all_results['suggested'][0]['relevance'])):
