@@ -5,83 +5,145 @@
 
 {% block main %}
   <main class="main-wrapper" role="main">
-    {% include "sidebar.html" %}
+    {% include "sidebar.html" with sidebar_show_download_links=False  %}
 
     <div class="main-content single-content">
-      <header class="single-content__header">
+
+      <header class="single-content__header {% if org_list.deprecated %}single-content__header_warning{% endif %}">
         <a href="{{ org_list.url }}" class="button" target="_blank"><i class="material-icons" title="Visit website for this list">launch</i></a>
         <h1>{{ org_list.name.en }} <span>({{ org_list.code }})</span></h1>
+
+        {% if org_list.deprecated %}
+          <h1>This record is deprecated and should only be used for interpreting older datasets.</h1>
+        {% endif %}
       </header>
 
-      <div class="single-content__sidebar single-sidebar">
-        <div class="single-sidebar__block quality-chart quality-chart--high" data-chart="{{ org_list.quality }}">
-          <div id="quality-chart-container"></div>
-        </div>
-        <div class="quality-chart__list-type quality-chart--high">
-            <p>List Type: <span>{{ org_list.listType }}</span></p>
-          </div>
 
-        <div class="single-sidebar__block single-sidebar--dark">
+      <div class="single-content__block single-description">
+        <h2>Description</h2>
+        <p>{{ org_list.description.en|urlize|linebreaks }}</p>
+      </div>
+
+      {% if not org_list.deprecated %}
+        <div class="single-meta-info__instructions">
+          {% if org_list.access.onlineAccessDetails %}
+            <h3>Search options</h3>
+            <p>{{ org_list.access.onlineAccessDetails|urlize|linebreaks }}</p>
+          {% endif %}
+          <h3>Find and use identifiers</h3>
+          {% if org_list.access.guidanceOnLocatingIds %}
+            <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks }}</p>
+          {% endif %}
+          {% if org_list.access.publicDatabase %}
+            <p class="align-right">
+              <a href="{{ org_list.access.publicDatabase }}" target="_blank" class="button button--main-color">
+                Search the list here <i class="material-icons" title="Visit website for this list">launch</i>
+              </a>
+            </p>
+          {% elif org_list.url %}
+            <p class="align-right">
+              <a href="{{ org_list.url }}" target="_blank" class="button button--main-color">
+                Visit the website <i class="material-icons" title="Visit website for this list">launch</i>
+              </a>
+            </p>
+          {% endif %}
+        </div>
+
+        <div class="single-content__block single-content--dark">
           <h2>How to use</h2>
-          <p>The code for this list is <br/><code>{{ org_list.code }}</code>. When you have located the organization you wish to identify in this list, you should either:</p>
+          <p>The code for this list is <code>{{ org_list.code }}</code>.</p>
+          <p>When you have located the organization you wish to identify in this list, you should either:</p>
           <p>Enter it in an identifier database field prefixed with <code>{{ org_list.code }}</code>.</p>
           <pre>
 <code>{{ org_list.code }}-[ IDENTIFIER ]</code>
           </pre>
           {% if org_list.access.exampleIdentifiers|length >= 1 %}
-          {% if org_list.access.exampleIdentifiers|length == 1 %}
-            <h2>Example</h2>
-          {% else %}
-            <h2>Examples</h2>
-          {% endif %}
-          <pre>
-              {% for x in org_list.access.exampleIdentifiers|split_examples:","|slice:":3" %}
+            {% if org_list.access.exampleIdentifiers|length == 1 %}
+              <h2>Example</h2>
+            {% else %}
+              <h2>Examples</h2>
+            {% endif %}
+            <pre>
+                {% for x in org_list.access.exampleIdentifiers|split_examples:","|slice:":3" %}
 <code>{{ org_list.code }}-{{ x }}</code>
-              {% endfor %}
-          </pre>
+                {% endfor %}
+            </pre>
           {% endif %}
           <p>Alternatively, use it within a two-part identifier, with <code>{{ org_list.code }}</code> as the 'scheme', and the identifier you have located as the 'identifier' field. </p>
         </div>
+      {% endif %}
+
+
+      <div class="single-content__block single-meta-info">
+        <ul class="single-meta-info__categories single-categories">
+          <li class="single-categories__item">
+            <p>Coverage: {% for code, title, disabled in org_list.coverage_codes_and_titles %}<span><abbr title="{{ title }}">{{ code }}</abbr>{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+          </li>
+          {% if org_list.subnationalCoverage %}
+            <li class="single-categories__item">
+              <p>Subnational jurisdiction: {% for code in org_list.subnationalCoverage %}<span>{{ code }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+            </li>
+          {% endif %}
+
+          {% if org_list.structure %}
+            <li class="single-categories__item">
+              <p>Legal structure: {% for code in org_list.structure %}<span>{{ code }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+            </li>
+          {% endif %}
+
+          {% if org_list.sector %}
+            <li class="single-categories__item">
+              <p>Sectors: {% for x in org_list.sector %}<span>{{ x }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+            </li>
+          {% endif %}
+
+          <li class="single-categories__item">
+            <p>List Type: <span>{{ org_list.listType }}</span></p>
+          </li>
+
+          <!-- access_availableOnline 	Access - Available online? 	boolean 		View -->
+          <!-- access_onlineAccessDetails 	Access - Online access details 	string 		View -->
+          <!-- access_publicDatabase 	Access - List URL 	string 		View -->
+          <!-- access_guidanceOnLocatingIds 	Access - How to locate identifiers 	string 		View -->
+          <!-- access_exampleIdentifiers 	Access - Example identifiers 	string 		View -->
+          <!-- access_languages 	Access - Languages 	list-strings 		View -->
+
+          <!-- data_availability 	Dataset access - Data availability 	list-strings 		View -->
+          <!-- data_dataAccessDetails 	Dataset access - Data access details 	string 		View -->
+          <!-- data_features 	Dataset access - Dataset features 	list-strings 		View -->
+          <!-- data_licenseStatus 	Dataset access - License status 	string 		View -->
+          <!-- data_licenseDetails 	Dataset access - License details 	string 		View  -->
+
+          <!-- meta_source 	Meta - Source 	string 		View -->
+          <!-- meta_lastUpdated 	Meta - Last updated 	string 		View  -->
+
+
+          {% if org_list.links.opencorporates %}
+            <li class="single-categories__item">
+              <p>Open Corporates Link: <span><a href="{{ org_list.links.opencorporates }}">{{ org_list.links.opencorporates }}</a></span></p>
+            </li>
+          {% endif %}
+
+          {% if org_list.links.wikipedia %}
+            <li class="single-categories__item">
+              <p>Wikipedia page: <span><a href="{{ org_list.links.wikipedia }}">{{ org_list.links.wikipedia }}</a></span></p>
+            </li>
+          {% endif %}
+
+          {% if org_list.formerPrefixes %}
+            <li class="single-categories__item">
+              <p>Former list codes: {% for x in org_list.formerPrefixes %}<span>{{ x }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
+            </li>
+          {% endif %}
+
+
+        </ul>
+
       </div>
 
-      <div class="single-content__main">
-
-        <div class="single-content__block single-description">
-          <h2>Description</h2>
-          <p>{{ org_list.description.en|urlize|linebreaks }}</p>
-        </div>
-
-        <div class="single-content__block single-meta-info">
-          <ul class="single-meta-info__categories single-categories">
-            <li class="single-categories__item single-categories--coverage">
-              <p>Coverage: {% for code, title, disabled in org_list.coverage_codes_and_titles %}<span><abbr title="{{ title }}">{{ code }}</abbr>{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
-            </li>
-
-            {% if org_list.sector %}
-              <li class="single-categories__item single-categories--sectors">
-                <p>Sectors: {% for x in org_list.sector %}<span>{{ x }}{% if not forloop.last %},{% endif %} </span>{% endfor %}</p>
-              </li>
-            {% endif %}
-          </ul>
-
-          <div class="single-meta-info__instructions">
-            {% if org_list.access.onlineAccessDetails %}
-              <h3>Search options</h3>
-              <p>{{ org_list.access.onlineAccessDetails|urlize|linebreaks }}</p>
-            {% endif %}
-            <h3>Find and use identifiers</h3>
-            {% if org_list.access.guidanceOnLocatingIds %}
-              <p>{{ org_list.access.guidanceOnLocatingIds|urlize|linebreaks }}</p>
-            {% else %}
-              <p><a href="{{ org_list.url }}" target="_blank">Visit the website.</a></p>
-            {% endif %}
-          </div>
-        </div>
-
-        <div class="single-content__block single-suggest">
-          <p>You can suggest an edit to our information about this list by <a href="https://github.com/org-id/register/issues/new">posting an issue</a> or <a href="https://github.com/org-id/register/edit/{{ branch }}/lists/{{ org_list.code|lower|split_on:"-"|first }}/{{ org_list.code|lower }}.json">submitting a pull request</a>.</p>
-          <p>The <a href="http://docs.org-id.guide/en/latest/contribute/#proposing-a-correction-or-update" target="_blank">contributors handbook</a> details how to propose changes to an existing list, and how you can request or propose a new list.</p>
-        </div>
+      <div class="single-content__block single-suggest">
+        <p>You can suggest an edit to our information about this list by <a href="https://github.com/org-id/register/issues/new">posting an issue</a> or <a href="https://github.com/org-id/register/edit/{{ branch }}/lists/{{ org_list.code|lower|split_on:"-"|first }}/{{ org_list.code|lower }}.json">submitting a pull request</a>.</p>
+        <p>The <a href="http://docs.org-id.guide/en/latest/contribute/#proposing-a-correction-or-update" target="_blank">contributors handbook</a> details how to propose changes to an existing list, and how you can request or propose a new list.</p>
       </div>
     </div>
   </main>

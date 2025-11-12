@@ -6,9 +6,9 @@
   <div class="sidebar__main">
     {% if request.resolver_match.url_name == "list" %}
       {% if request.META.HTTP_REFERER %}
-        <a href="{{ request.META.HTTP_REFERER }}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+        <a href="{{ request.META.HTTP_REFERER }}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to results</span></a>
       {% else %}
-        <a href="{% url "results" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to List</span></a>
+        <a href="{% url "results" %}" class="button button--main-color button--block"><i class="material-icons">arrow_back</i><span>Back to results</span></a>
       {% endif %}
 
     {% elif request.resolver_match.url_name == "about" %}
@@ -84,11 +84,15 @@
   </div>
 
   <footer class="sidebar__footer">
+    {% if sidebar_show_about_link is None or sidebar_show_about_link is True %}
     <a href="/about" class="button button--block">About</a>
+    {% endif %}
 
+    {% if sidebar_show_download_links is None or sidebar_show_download_links is True %}
     <h5>Download</h5>
     <a href="{% url 'json_download' %}" class="button button--third">JSON</a>
     <a href="{% url 'csv_download' %}" class="button button--third">CSV</a>
     <a href="{% url 'xml_download' %}" class="button button--third">XML</a>
+    {% endif %}
   </footer>
 </div>

@@ -3,7 +3,7 @@
 
 {% block main %}
   <main class="main-wrapper" role="main">
-    {% include "sidebar.html" %}
+    {% include "sidebar.html" with sidebar_show_download_links=False %}
 
     <div class="main-content">
       <div class="list-group list-group--suggested">
@@ -19,49 +19,7 @@
 
         <div class="list-group__main">
           {% for result in all_results.suggested %}
-            <div class="list-group__item">
-              <article class="card card--suggested">
-                <header class="card__header">
-                  <div class="card__score">
-                    <div class="quality-chart-container" data-chart="{{ result.quality }}"></div>
-                  </div>
-                  <h2 title="{{ result.name.en }}"><a href="{% url "list" result.code %}">{{ result.name.en }}</a></h2>
-                  <h3>{{ result.code }}</h3>
-                </header>
-
-                <div class="card__main">
-                  <div class="card__text">
-                    <p>{{ result.description.en|truncatewords_html:50 }}</p>
-                  </div>
-
-                  <div class="card__sidebar">
-                    {% if result.coverage %}
-                      <ul class="categories categories--countries">
-                        <h4>Countries</h4>
-                        {% for coverage in result.coverage %}
-                          <li>{{ coverage }}</li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-
-                    {% if result.sector %}
-                      <ul class="categories categories--sectors">
-                        <h4>Sectors</h4>
-                        {% for sector in result.sector %}
-                          <li>{{ sector }}</li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-                  </div>
-                </div>
-
-                <footer class="card__controls">
-                  <a href="{{ result.url }}" class="button" target="_blank"><i class="material-icons" title="Visit the website for this list">launch</i></a>
-                  <div class="card__list-code"><p>List Code <code>{{ result.code }}</code></p></div>
-                  <a href="{% url "list" result.code %}" class="button"><i class="material-icons" title="More information about this list">info_outline</i></a>
-                </footer>
-              </article>
-            </div>
+            {% include "results-list.html"  with result_class="suggested" %}
           {% endfor %}
         </div>
       </div>
@@ -80,49 +38,7 @@
 
         <div class="list-group__main">
           {% for result in all_results.recommended %}
-            <div class="list-group__item">
-              <article class="card card--possible">
-                <header class="card__header">
-                  <div class="card__score">
-                    <div class="quality-chart-container" data-chart="{{ result.quality }}"></div>
-                  </div>
-                  <h2 title="{{ result.name.en }}"><a href="{% url "list" result.code %}">{{ result.name.en }}</a></h2>
-                  <h3>{{ result.code }}</h3>
-                </header>
-
-                <div class="card__main">
-                  <div class="card__text">
-                    <p>{{ result.description.en|truncatewords_html:50 }}</p>
-                  </div>
-
-                  <div class="card__sidebar">
-                    {% if result.coverage %}
-                      <ul class="categories categories--countries">
-                        <h4>Countries</h4>
-                        {% for coverage in result.coverage %}
-                          <li>{{ coverage }}</li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-
-                    {% if result.sector %}
-                      <ul class="categories categories--sectors">
-                        <h4>Sectors</h4>
-                        {% for sector in result.sector %}
-                          <li>{{ sector }}</li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-                  </div>
-                </div>
-
-                <footer class="card__controls">
-                  <a href="{{ result.url }}" class="button" target="_blank"><i class="material-icons" title="Visit the website for this list">launch</i></a>
-                  <div class="card__list-code"><p>List Code <code>{{ result.code }}</code></p></div>
-                  <a href="{% url "list" result.code %}" class="button"><i class="material-icons" title="More information about this list">info_outline</i></a>
-                </footer>
-              </article>
-            </div>
+            {% include "results-list.html"  with result_class="possible" %}
           {% endfor %}
         </div>
       </div>
@@ -139,52 +55,28 @@
 
         <div class="list-group__main">
           {% for result in all_results.other %}
-            <div class="list-group__item">
-              <article class="card card--fallback">
-                <header class="card__header">
-                  <div class="card__score">
-                    <div class="quality-chart-container" data-chart="{{ result.quality }}"></div>
-                  </div>
-                  <h2 title="{{ result.name.en }}"><a href="{% url "list" result.code %}">{{ result.name.en }}</a></h2>
-                  <h3>{{ result.code }}</h3>
-                </header>
-
-                <div class="card__main">
-                  <div class="card__text">
-                    <p>{{ result.description.en|truncatewords_html:50 }}</p>
-                  </div>
-
-                  <div class="card__sidebar">
-                    {% if result.coverage %}
-                      <ul class="categories categories--countries">
-                        <h4>Countries</h4>
-                        {% for coverage in result.coverage %}
-                          <li>{{ coverage }}</li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-
-                    {% if result.sector %}
-                      <ul class="categories categories--sectors">
-                        <h4>Sectors</h4>
-                        {% for sector in result.sector %}
-                          <li>{{ sector }}</li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-                  </div>
-                </div>
-
-                <footer class="card__controls">
-                  <a href="{{ result.url }}" class="button" target="_blank"><i class="material-icons" title="Visit the website for this list">launch</i></a>
-                  <div class="card__list-code"><p>List Code <code>{{ result.code }}</code></p></div>
-                  <a href="{% url "list" result.code %}" class="button"><i class="material-icons" title="More information about this list">info_outline</i></a>
-                </footer>
-              </article>
-            </div>
+            {% include "results-list.html"  with result_class="fallback" %}
           {% endfor %}
         </div>
       </div>
+
+      <div class="list-group list-group--deprecated">
+        <header class="list-group__header">
+          <h1>Deprecated lists</h1>
+          {% if all_results.deprecated %}
+            <p>The following lists are for reference only. You may see them used in old data.</p>
+          {% else %}
+            <p>No deprecated lists meet the search criteria.</p>
+          {% endif %}
+        </header>
+
+        <div class="list-group__main">
+          {% for result in all_results.deprecated %}
+            {% include "results-list.html"  with result_class="deprecated" %}
+          {% endfor %}
+        </div>
+      </div>
+
     </div>
   </main>
 {% endblock %}

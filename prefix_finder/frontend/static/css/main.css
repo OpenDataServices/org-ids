@@ -538,6 +538,10 @@ fieldset {
   background-color: #C02942;
 }
 
+.card--deprecated header {
+  background-color: rgba(0, 0, 0, 0.7);;
+}
+
 .topbar {
   position: relative;
   background-color: rgba(0, 0, 0, 0.05);
@@ -876,6 +880,9 @@ fieldset {
 .list-group--fallback h1 {
   background-color: #C02942;
 }
+.list-group--deprecated h1 {
+  background-color:rgba(0, 0, 0, 0.7);
+}
 
 .single-content {
   margin-left: auto;
@@ -919,6 +926,7 @@ fieldset {
     font-weight: 400;
   }
 }
+
 .single-content__header {
   background-color: #00a6ab;
 }
@@ -940,6 +948,11 @@ fieldset {
 .single-content__header .button {
   float: right;
 }
+
+.single-content__header_warning {
+  background-color: lightcoral;
+}
+
 @media (min-width: 64em) {
   .single-content__main {
     float: left;
@@ -998,7 +1011,6 @@ fieldset {
 
 .single-categories__item {
   padding: 15px;
-  background-color: rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 64em) {
   .single-categories__item {
@@ -1018,12 +1030,6 @@ fieldset {
 }
 .single-categories__item p span {
   font-weight: 100;
-}
-.single-categories--coverage {
-  background-color: rgba(0, 166, 171, 0.1);
-}
-.single-categories--sectors {
-  background-color: rgba(227, 168, 48, 0.1);
 }
 
 .single-suggest {
@@ -1086,25 +1092,28 @@ fieldset {
 .single-sidebar__block p:last-child {
   padding-bottom: 20px;
 }
-.single-sidebar--dark {
+.single-content--dark {
   background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 20px;
 }
-.single-sidebar--dark h2, .single-sidebar--dark p {
+.single-content--dark h2, .single-content--dark p {
   color: white;
 }
-.single-sidebar--dark code {
+.single-content--dark code {
   padding: 4px;
   background-color: rgba(255, 255, 255, 0.1);
   font-family: "Lucida Console", "Courier New", monospace;
   color: white;
 }
-.single-sidebar--dark pre {
+.single-content--dark pre {
   background-color: rgba(255, 255, 255, 0.1);
   padding-top: 20px;
   padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-bottom: 20px;
 }
-.single-sidebar--dark pre code {
+.single-content--dark pre code {
   background-color: transparent;
 }
 
@@ -1301,20 +1310,6 @@ fieldset {
   padding: 5px 10px;
   color: white;
 }
-.about-page__half--left {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-  margin-right: -5px;
-  padding-right: 10px;
-
-}
-.about-page__half--right {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-  padding-left: 10px;
-}
 .about-page__code {
   background-color: #e0e0e0;
   margin-bottom: 20px;
@@ -1401,4 +1396,7 @@ fieldset {
 }
 .sidebar .chosen-drop {
   width: 100%;
+}
+.align-right {
+  text-align: right;
 }
