@@ -73,7 +73,6 @@ INSTALLED_APPS = (
     'bootstrap3',
     'prefix_finder.frontend',
     'raven.contrib.django.raven_compat',
-    'favicon',
 )
 
 MIDDLEWARE = (
