@@ -21,7 +21,7 @@ def browser(request):
     elif BROWSER == 'ChromeHeadless':
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        browser = webdriver.Chrome(chrome_options=chrome_options)
+        browser = webdriver.Chrome(options=chrome_options)
     else:
         browser = getattr(webdriver, BROWSER)()
     browser.implicitly_wait(3)

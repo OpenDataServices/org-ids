@@ -14,7 +14,7 @@
   <xs:complexType>
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute ref="xml:lang" use="optional">
+        <xs:attribute name="lang" type="xs:language" use="optional">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               ISO 639-1 code specifying the language of text in this element. If a default language is specified in the iati-activity element it does not have to be repeated here.
@@ -82,7 +82,7 @@
     <xs:attribute name="ref" use="optional"/>
     <xs:attribute name="name" use="optional"/>
     <xs:attribute name="category-codelist" use="optional"/>
-    <xs:attribute ref="xml:lang" use="optional" />
+    <xs:attribute name="lang" type="xs:language" use="optional" />
     <xs:attribute name="complete" use="optional" type="xs:boolean" />
   </xs:complexType>
 </xs:element>
